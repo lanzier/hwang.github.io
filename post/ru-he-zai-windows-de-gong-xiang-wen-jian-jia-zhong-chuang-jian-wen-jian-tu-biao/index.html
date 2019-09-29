@@ -2,9 +2,9 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello  | Hwang&#39;s Blog</title>
+<title>如何 在 Windows 的共享文件夹中创建文件图标 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569722657246">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569722824845">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1569722657246" alt="">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1569722824845" alt="">
   </a>
   <h1 class="site-title">
     Hwang&#39;s Blog
@@ -73,11 +73,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello 
+              如何 在 Windows 的共享文件夹中创建文件图标
             </h2>
             <div class="post-info">
               <span>
-                2019-09-27
+                2019-07-11
               </span>
               <span>
                 1 min read
@@ -87,18 +87,45 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>🆕 新的 blog</p>
-<p>重新用 Gridea 配置 我的博客。</p>
-<hr>
+                <p>Windows 系统中可以通过右键文件夹属性的方式创建文件夹图标。然而，在共享文件夹中并不能直接创建。</p>
+<p>🎬 <a href="https://www.youtube.com/watch?v=oFHkWfXbxYo">Apply an Icon to a Folder on a NetWork Drive </a><br>
+视频中演示了一种相对曲折的方法在共享文件夹中，创建带有图标的文件夹。</p>
+<p>究其原理，其实就是共享文件夹中系统没有创建 <code>desktop.ini</code> 文件的设置（可能是安全原因的考虑？）。</p>
+<p>参考：<a href="https://superuser.com/questions/685732/set-custom-folder-icon-for-a-network-folder-in-windows-file-explorer">Set custom folder icon for a network folder in Windows file explorer</a></p>
+<h2 id="做法">做法：</h2>
+<p>这种方法的前提就是你有共享文件夹的写入权限，在windows 10 上已经不能正常使用了</p>
+<ol>
+<li>在本地创建一个有 icon 的文件夹；</li>
+<li>移动该文件夹到 共享文件夹中；</li>
+<li>在弹出窗口中 允许 <code>desktop.ini</code> 的相关选项；</li>
+<li>刷新一下共享文件夹</li>
+<li>OK</li>
+</ol>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%81%9A%E6%B3%95">做法：</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
+              <h3 class="post-title">
+                Python Pexpect 库的简单入门
+              </h3>
+            </a>
+          </div>
         
 
         
