@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-27T01:43:41.399Z</updated>
+    <updated>2019-09-29T02:04:22.134Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -16,32 +16,33 @@
         <link href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
         </link>
         <updated>2019-09-27T01:37:38.000Z</updated>
-        <content type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
+        <content type="html"><![CDATA[<h1 id="hwang-的低质阅读单-new">Hwang 的低质阅读单 New</h1>
+<h6 id="这些文章来自-hwang-的-instapaper-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
 <ul>
-<li>[ 来自 Petra Collins 的“驱魔仪式” | 异视异色｜i-D 中国｜来自VICE的时尚频道]</li>
-<li>[ 公众号「信息流」改版一周年，有人说没有想的那么糟糕 | 人人都是产品经理]</li>
-<li>[ 复盘 Evernote：笔记 App 的开山鼻祖，为什么没落了？]</li>
-<li>[ 苹果的后 iPhone 时代]</li>
-<li>[ 无大台的时代]</li>
-<li>[ 苹果的跨平台计划：如何用 App 打通 iPad 和 Mac]</li>
-<li>[ PyQt + QML 快速开发GUI总结]</li>
-<li>[ 2019中国α世代线上娱乐价值观念洞察 | 人人都是产品经理]</li>
-<li>[ 机器学习能成为因果推断的“圣杯”吗？]</li>
-<li>[ 如何用 Python 和 BERT 做多标签（multi-label）文本分类？]</li>
-<li>[ 怎么选择数据服务器？请记住这五条]</li>
-<li>[ 如何用约会软件进行艺术创作？]</li>
-<li>[ 亚马逊中国停售纸质书／李楠宣布从魅族离职／京都动画大火已造成 33 人遇难]</li>
-<li>[ 社交围城里的刷新机器]</li>
-<li>[ 马斯克的脑机接口来了，USB 连大脑，用 iPhone 操控 | 近未来 ⑫]</li>
-<li>[ 早报 | 明年 iPhone 或全线支持 5G vivo 首款 5G 手机或将亏本卖 《哪吒》破动画票房纪录]</li>
-<li>[ 港真，乱么？ | 可能吧]</li>
-<li>[ win10引导错误的修复（内容系转载） - 技术经验 - W3xue]</li>
-<li>[ AI 语音模仿老板声音要求转账，成功骗走了 173 万]</li>
-<li>[ Designing Dark Mode]</li>
-<li>[ 一篇文章让你彻底搞清楚Python中self的含义 - jessonsh - 博客园]</li>
-<li>[ 出身清华姚班，斯坦福博士毕业，她的毕业论文成了「爆款」]</li>
-<li>[ 高清图标SVG解决方案全总结（上） - 文章 - 伯乐在线]</li>
-<li>[ 高清图标SVG解决方案全总结（下） - 文章 - 伯乐在线]</li>
+<li><a href="https://ift.tt/2KP9jma"> 来自 Petra Collins 的“驱魔仪式” | 异视异色｜i-D 中国｜来自VICE的时尚频道</a></li>
+<li><a href="https://ift.tt/2Jk8uyy"> 公众号「信息流」改版一周年，有人说没有想的那么糟糕 | 人人都是产品经理</a></li>
+<li><a href="https://ift.tt/2XAAcAp"> 复盘 Evernote：笔记 App 的开山鼻祖，为什么没落了？</a></li>
+<li><a href="https://ift.tt/2Xb7HoL"> 苹果的后 iPhone 时代</a></li>
+<li><a href="https://ift.tt/2YlJ2PI"> 无大台的时代</a></li>
+<li><a href="https://ift.tt/2NxjMVH"> 苹果的跨平台计划：如何用 App 打通 iPad 和 Mac</a></li>
+<li><a href="https://ift.tt/30hEzOj"> PyQt + QML 快速开发GUI总结</a></li>
+<li><a href="https://ift.tt/2XvPdnd"> 2019中国α世代线上娱乐价值观念洞察 | 人人都是产品经理</a></li>
+<li><a href="https://ift.tt/2YyeXMJ"> 机器学习能成为因果推断的“圣杯”吗？</a></li>
+<li><a href="https://ift.tt/2JnoboO"> 如何用 Python 和 BERT 做多标签（multi-label）文本分类？</a></li>
+<li><a href="https://ift.tt/30kBQnD"> 怎么选择数据服务器？请记住这五条</a></li>
+<li><a href="https://ift.tt/2Sz79YR"> 如何用约会软件进行艺术创作？</a></li>
+<li><a href="https://ift.tt/2Y1EuwI"> 亚马逊中国停售纸质书／李楠宣布从魅族离职／京都动画大火已造成 33 人遇难</a></li>
+<li><a href="https://ift.tt/2YIO4FW"> 社交围城里的刷新机器</a></li>
+<li><a href="https://ift.tt/31I1TWt"> 马斯克的脑机接口来了，USB 连大脑，用 iPhone 操控 | 近未来 ⑫</a></li>
+<li><a href="https://ift.tt/2YqQImZ"> 早报 | 明年 iPhone 或全线支持 5G vivo 首款 5G 手机或将亏本卖 《哪吒》破动画票房纪录</a></li>
+<li><a href="https://ift.tt/2KIHh9H"> 港真，乱么？ | 可能吧</a></li>
+<li><a href="https://ift.tt/301BHsJ"> win10引导错误的修复（内容系转载） - 技术经验 - W3xue</a></li>
+<li><a href="https://ift.tt/2HJC7JV"> AI 语音模仿老板声音要求转账，成功骗走了 173 万</a></li>
+<li><a href="https://ift.tt/2LcUqIn"> Designing Dark Mode</a></li>
+<li><a href="https://ift.tt/2M7vv9w"> 一篇文章让你彻底搞清楚Python中self的含义 - jessonsh - 博客园</a></li>
+<li><a href="https://ift.tt/332qNAv"> 出身清华姚班，斯坦福博士毕业，她的毕业论文成了「爆款」</a></li>
+<li><a href="https://ift.tt/1PzbZyK"> 高清图标SVG解决方案全总结（上） - 文章 - 伯乐在线</a></li>
+<li><a href="https://ift.tt/1PzL3P8"> 高清图标SVG解决方案全总结（下） - 文章 - 伯乐在线</a></li>
 </ul>
 ]]></content>
     </entry>
