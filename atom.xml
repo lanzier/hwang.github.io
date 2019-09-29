@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-29T02:16:36.569Z</updated>
+    <updated>2019-09-29T02:47:03.711Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -10,50 +10,6 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
-    <entry>
-        <title type="html"><![CDATA[ML- Python 岭回归]]></title>
-        <id>https://hwang.top/post/ml-python-ling-hui-gui</id>
-        <link href="https://hwang.top/post/ml-python-ling-hui-gui">
-        </link>
-        <updated>2019-09-29T02:12:51.000Z</updated>
-        <summary type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
-	xTx = xMat.T*xMat
-	denom = xTx + eye(shape(xMat)[1])*lam
-	if linalg.det(denom) == 0.0:
-		print &quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = denom.I * (xMat.T*yMat)
-	return ws
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
-	xTx = xMat.T*xMat
-	denom = xTx + eye(shape(xMat)[1])*lam
-	if linalg.det(denom) == 0.0:
-		print &quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = denom.I * (xMat.T*yMat)
-	return ws
-</code></pre>
-<!-- more -->
-<figure data-type="image" tabindex="1"><img src="Image%202018-7-11%20%E4%B8%8B%E5%8D%886-36.jpeg" alt=""></figure>
-<pre><code class="language-python">def ridgeTest(xArr,yArr):
-	xMat = mat(xArr); yMat=mat(yArr).T
-	yMean = mean(yMat,0)
-	yMat = yMat - yMean     #to eliminate X0 take mean off of Y
-	#regularize X's
-	xMeans = mean(xMat,0)   #calc mean then subtract it off
-	xVar = var(xMat,0)      #calc variance of Xi then divide by it
-	xMat = (xMat - xMeans)/xVar
-	numTestPts = 30
-	wMat = zeros((numTestPts,shape(xMat)[1]))
-	for i in range(numTestPts):
-		ws = ridgeRegres(xMat,yMat,exp(i-10))
-		wMat[i,:]=ws.T
-	return wMat
-</code></pre>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Python 的虚拟环境管理  virtualenv & pyenv]]></title>
         <id>https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv</id>
@@ -690,6 +646,50 @@ process.sendline('mypassword')
 <li>Pic：和图像处理有关的动作：白描、picsew、pico、vsco 等</li>
 <li>Bose：连接音箱。</li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ML- Python 岭回归]]></title>
+        <id>https://hwang.top/post/ml-python-ling-hui-gui</id>
+        <link href="https://hwang.top/post/ml-python-ling-hui-gui">
+        </link>
+        <updated>2018-07-24T02:12:51.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="Image%202018-7-11%20%E4%B8%8B%E5%8D%886-36.jpeg" alt=""></figure>
+<pre><code class="language-python">def ridgeTest(xArr,yArr):
+	xMat = mat(xArr); yMat=mat(yArr).T
+	yMean = mean(yMat,0)
+	yMat = yMat - yMean     #to eliminate X0 take mean off of Y
+	#regularize X's
+	xMeans = mean(xMat,0)   #calc mean then subtract it off
+	xVar = var(xMat,0)      #calc variance of Xi then divide by it
+	xMat = (xMat - xMeans)/xVar
+	numTestPts = 30
+	wMat = zeros((numTestPts,shape(xMat)[1]))
+	for i in range(numTestPts):
+		ws = ridgeRegres(xMat,yMat,exp(i-10))
+		wMat[i,:]=ws.T
+	return wMat
+</code></pre>
 ]]></content>
     </entry>
     <entry>
