@@ -1,0 +1,310 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ML - Python LASSO 算法实现 | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569723393648">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1569723393648" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ML - Python LASSO 算法实现
+            </h2>
+            <div class="post-info">
+              <span>
+                2018-07-13
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
+                  # ML
+                </a>
+              
+                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/ml-python-lasso-suan-fa-shi-xian.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <pre><code class="language-python">import itertools
+from math import exp
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy import *
+
+
+&lt;!-- more --&gt;
+
+
+## 库导入
+
+def load_data(filename):
+## 加载数据的函数
+	X, Y = [], [] ##列表存储
+	with open(filename, 'r') as f: #读取文件
+		for line in f:
+			splited_line = [float(i) for i in line.split()] #分割行储存到 splited_line 中
+			x, y = splited_line[: -1], splited_line[-1] #读取第一列和第一行数据，储存为x，y
+			X.append(x)
+			Y.append(y)
+	X, Y = np.matrix(X), np.matrix(Y).T
+	return X, Y
+
+####################################
+
+
+def standarize(X):
+# 中心化 &amp; 标准化数据 (零均值, 单位标准差)
+
+	std_deviation = np.std(X, 0) 
+
+# 利用numpy，计算X的标准差。
+# std（a, axis = None） ：同理，计算标准差。 依给定轴axis计算数组a相关元素标准差，其中axis为整数或者元组。
+	
+	mean = np.mean(X, 0)# 对数组a的第1维度的数据进行求平均 
+	return (X - mean)/std_deviation 
+
+
+#######################################
+
+# 一般线性回归函数 OLS；
+
+def std_linreg(X, Y):
+	xTx = X.T*X # 利用numpy 做矩阵的装置。
+	if np.linalg.det(xTx) == 0:
+		print('xTx is a singular matrix')
+		return
+	return xTx.I*X.T*Y
+
+
+#######################################
+
+
+def get_corrcoef(X, Y):
+	# X Y 的协方差
+	cov = np.mean(X*Y) - np.mean(X)*np.mean(Y)
+	return cov/(np.var(X)*np.var(Y))**0.5
+
+ 
+
+
+#######################################
+
+
+def lasso_regression(X, y, lambd=0.2, threshold=0.1):
+
+# 通过坐标下降(coordinate descent)法获取LASSO回归系数
+
+	# 计算残差平方和
+	rss = lambda X, y, w: (y - X*w).T*(y - X*w)
+	# 初始化回归系数w.
+	m, n = X.shape
+	w = np.matrix(np.zeros((n, 1)))
+	r = rss(X, y, w)
+	# 使用坐标下降法优化回归系数w
+	niter = itertools.count(1)
+	for it in niter:
+		for k in range(n):
+			# 计算常量值z_k和p_k
+			z_k = (X[:, k].T*X[:, k])[0, 0]
+			p_k = 0
+			for i in range(m):
+				p_k += X[i, k]*(y[i, 0] - sum([X[i, j]*w[j, 0] for j in range(n) if j != k]))
+			if p_k &lt; -lambd/2:
+				w_k = (p_k + lambd/2)/z_k
+			elif p_k &gt; lambd/2:
+				w_k = (p_k - lambd/2)/z_k
+			else:
+				w_k = 0
+			w[k, 0] = w_k
+		r_prime = rss(X, y, w)
+		delta = abs(r_prime - r)[0, 0]
+		r = r_prime
+		print('Iteration: {}, delta = {}'.format(it, delta))
+		if delta &lt; threshold:
+			break
+	return w
+
+
+##################################
+
+
+# 定义lasso算法
+
+def lasso_traj(X, y, ntest=30):
+#  获取回归系数轨迹矩阵
+
+	_, n = X.shape
+	ws = np.zeros((ntest, n))
+	for i in range(ntest):
+		w = lasso_regression(X, y, lambd=exp(i-10))
+		ws[i, :] = w.T
+		print('lambda = e^({}), w = {}'.format(i-10, w.T[0, :]))
+	return ws
+
+####################################
+
+
+if '__main__' == __name__: #模块是对象，并且所有的模块都有一个内置属性 __name__。一个模块的 __name__ 的值取决于您如何应用模块。如果 import 一个模块，那么模块__name__ 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这种情况下, __name__ 的值将是一个特别缺省&quot;__main__&quot;。
+## https://www.zhihu.com/question/49136398
+
+
+	X, y = load_data('abalone.txt')
+	X, y = standarize(X), standarize(y)
+	w = lasso_regression(X, y, lambd=10)
+	y_prime = X*w
+	## 计算相关系数
+
+	corrcoef = get_corrcoef(np.array(y.reshape(1, -1)),
+							np.array(y_prime.reshape(1, -1)))
+								## 计算协方差
+
+	print('Correlation coefficient: {}'.format(corrcoef))
+	ntest = 30
+
+	## 绘制轨迹
+
+	ws = lasso_traj(X, y, ntest)
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+	lambdas = [i - 10 for i in range(ntest)]
+	ax.plot(lambdas, ws)
+	plt.show()
+
+
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

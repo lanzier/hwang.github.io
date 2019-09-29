@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-29T02:07:10.699Z</updated>
+    <updated>2019-09-29T02:16:36.569Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -10,6 +10,290 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[ML- Python 岭回归]]></title>
+        <id>https://hwang.top/post/ml-python-ling-hui-gui</id>
+        <link href="https://hwang.top/post/ml-python-ling-hui-gui">
+        </link>
+        <updated>2019-09-29T02:12:51.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="Image%202018-7-11%20%E4%B8%8B%E5%8D%886-36.jpeg" alt=""></figure>
+<pre><code class="language-python">def ridgeTest(xArr,yArr):
+	xMat = mat(xArr); yMat=mat(yArr).T
+	yMean = mean(yMat,0)
+	yMat = yMat - yMean     #to eliminate X0 take mean off of Y
+	#regularize X's
+	xMeans = mean(xMat,0)   #calc mean then subtract it off
+	xVar = var(xMat,0)      #calc variance of Xi then divide by it
+	xMat = (xMat - xMeans)/xVar
+	numTestPts = 30
+	wMat = zeros((numTestPts,shape(xMat)[1]))
+	for i in range(numTestPts):
+		ws = ridgeRegres(xMat,yMat,exp(i-10))
+		wMat[i,:]=ws.T
+	return wMat
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python 的虚拟环境管理  virtualenv & pyenv]]></title>
+        <id>https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv</id>
+        <link href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
+        </link>
+        <updated>2019-09-29T02:11:01.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>pyenv : 用于Python版本管理。<br>
+virtualenv ：用于构建按项目的虚拟环境。<br>
+pyenv-virtualenv  ： pyenv 的插件，用于构建项目的虚拟环境。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>pyenv : 用于Python版本管理。<br>
+virtualenv ：用于构建按项目的虚拟环境。<br>
+pyenv-virtualenv  ： pyenv 的插件，用于构建项目的虚拟环境。</p>
+</blockquote>
+<!-- more -->
+<p>由于生产需要，用 PyQt5 写了小程序，打包成 <code>.app</code> 过程中发现，打包后竟然有200多M，应该是因为之前使用的python环境中其他包比较多的关系。所以就想到建虚拟环境，来打包。</p>
+<p>首先想到的是按项目建虚拟环境，那就用virtualenv 。简单看了一下，实践如下：</p>
+<h2 id="virtualenv">virtualenv</h2>
+<h3 id="1-安装virtualenv">1. 安装virtualenv</h3>
+<p>用pip进行安装。</p>
+<pre><code class="language-bash">$ pip install virtualenv 
+</code></pre>
+<p>先建文件夹，再<code>cd</code>到需要的文件夹中，运行下面的命令：</p>
+<pre><code class="language-bash">$ virtualenv --python=&quot;/usr/local/bin/python3.7&quot; --no-site-packages venv
+</code></pre>
+<p>其中：</p>
+<pre><code class="language-bash">--python （-p） # 用于指定版本
+--no-site-packges # 表示不需要包
+venv # 虚拟环境的名称
+</code></pre>
+<p>其它选项：</p>
+<pre><code class="language-bash">--version
+#显示当前版本号。
+-h, --help
+#显示帮助信息。
+-v, --verbose
+#显示详细信息。
+-q, --quiet
+#不显示详细信息。
+-p PYTHON_EXE, --python=PYTHON_EXE
+#指定所用的python解析器的版本，比如 --python=python2.5 就使用2.5版本的解析器创建新的隔离环境。 默认使用的是当前系统安装(/usr/bin/python)的python解析器
+--clear
+#清空非root用户的安装，并重头开始创建隔离环境。
+--no-site-packages
+#令隔离环境不能访问系统全局的site-packages目录。
+--system-site-packages
+#令隔离环境可以访问系统全局的site-packages目录。
+--unzip-setuptools
+#安装时解压Setuptools或Distribute
+--relocatable
+#重定位某个已存在的隔离环境。使用该选项将修正脚本并令所有.pth文件使用相当路径。
+--distribute
+#使用Distribute代替Setuptools，也可设置环境变量VIRTUALENV_DISTRIBUTE达到同样效要。
+--extra-search-dir=SEARCH_DIRS
+#用于查找setuptools/distribute/pip发布包的目录。可以添加任意数量的–extra-search-dir路径。
+--never-download
+#禁止从网上下载任何数据。此时，如果在本地搜索发布包失败，virtualenv就会报错。
+--prompt==PROMPT
+#定义隔离环境的命令行前缀。
+#环境变量和配置文件
+</code></pre>
+<h3 id="2-激活虚拟环境">2. 激活虚拟环境</h3>
+<pre><code class="language-bash">$ . venv/bin/activate
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt=""></figure>
+<p>前面出现<code>(venv)</code> 即可。</p>
+<h3 id="一些发现">一些发现</h3>
+<ul>
+<li>virtualenv 默认似乎是从原环境中下载包的。就是优先直接从原有库中拷贝，不通过下载。这样速度会比较快。</li>
+</ul>
+<blockquote>
+<p>由于本地环境除了 anaconda 的以为， Python 3.7。在打包中出现了一些兼容性问题，具体可见：<br>
+<a href="https://github.com/pyinstaller/pyinstaller/issues/1957">https://github.com/pyinstaller/pyinstaller/issues/1957</a><br>
+<a href="https://github.com/pyinstaller/pyinstaller/issues/3753">https://github.com/pyinstaller/pyinstaller/issues/3753</a><br>
+即便按照issues里说的做了，我也没能解决问题。所以想到下载 3.6版本的 Python 来使用。所以就想到了用 pyenv</p>
+</blockquote>
+<h2 id="pyenv">pyenv</h2>
+<p>基本过程可参考：<a href="https://www.jianshu.com/p/4646dedaaff5">https://www.jianshu.com/p/4646dedaaff5</a></p>
+<h3 id="1-安装">1. 安装</h3>
+<p>我是通过 Homebrew 下载的（可参考：<a href="https://zhuanlan.zhihu.com/p/27294128">https://zhuanlan.zhihu.com/p/27294128</a>）。</p>
+<blockquote>
+<p>备份一下 <code>.bash_profile</code></p>
+</blockquote>
+<pre><code class="language-bash"># Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH=&quot;/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}&quot;
+export PATH
+
+# added by Anaconda3 5.2.0 installer
+export PATH=&quot;/Users/wangxuexi/anaconda3/bin:$PATH&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;
+export PYENV_ROOT=&quot;$HOME/.pyenv&quot;
+export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
+eval &quot;$(pyenv init -)&quot;
+export PYENV_ROOT=&quot;$HOME/.pyenv&quot;
+export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
+eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;
+</code></pre>
+<pre><code class="language-bash">$ brew install pyenv
+</code></pre>
+<p>有可能需要：</p>
+<pre><code class="language-bash">$ echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bash_profile
+$ echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bash_profile
+$ echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bash_profile
+</code></pre>
+<p>写完后，用以下命令重新登录一下：</p>
+<pre><code class="language-bash">$ source ~/.bash_profile
+</code></pre>
+<p>如果有需要可以安装 pyenv-virtualenv:</p>
+<pre><code class="language-bash">$ brew install pyenv-virtualenv
+</code></pre>
+<p>同样的：</p>
+<pre><code class="language-bash">$ echo 'eval &quot;$(pyenv virtualenv-init -)&quot;' &gt;&gt; ~/.bash_profile
+# 写入 profile
+$ source  ~/.bash_profile
+# 重新进登录一遍
+</code></pre>
+<p>命令参数如下</p>
+<pre><code class="language-bash">pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] &lt;virtualenv-name&gt; # 建虚拟环境
+pyenv virtualenv activate &lt;virtualenv-name&gt; # 激活虚拟环境
+pyenv virtualenv-delete &lt;virtualenv-name&gt; # 删除虚拟环境
+</code></pre>
+<h3 id="2-pyenv-的使用">2. pyenv 的使用</h3>
+<p>基本的下载、删除 命令：</p>
+<pre><code class="language-bash">v=3.6.7|wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v # 用国内源安装很快
+</code></pre>
+<pre><code class="language-bash">v=3.6.7|wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;PYTHON_CONFIGURE_OPTS=&quot;--enable-framework&quot; pyenv install
+</code></pre>
+<hr>
+<pre><code class="language-bash">$ pyenv install -v 3.6.0  # 安装
+
+$ pyenv uninstall 2.7.10 # 删除
+</code></pre>
+<p>激活，pyenv 有几种激活方式：</p>
+<pre><code class="language-bash">local       Set or show the local application-specific Python version
+global      Set or show the global Python version
+shell       Set or show the shell-specific Python version
+</code></pre>
+<p>通过<code>version</code> 、  <code>versions</code>  查看版本。</p>
+<p>其他：</p>
+<pre><code class="language-bash">Usage: pyenv &lt;command&gt; [&lt;args&gt;]
+
+Some useful pyenv commands are:
+   commands    List all available pyenv commands
+   local       Set or show the local application-specific Python version
+   global      Set or show the global Python version
+   shell       Set or show the shell-specific Python version
+   install     Install a Python version using python-build
+   uninstall   Uninstall a specific Python version
+   rehash      Rehash pyenv shims (run this after installing executables)
+   version     Show the current Python version and its origin
+   versions    List all Python versions available to pyenv
+   which       Display the full path to an executable
+   whence      List all Python versions that contain the given executable
+
+See `pyenv help &lt;command&gt;' for information on a specific command.
+For full documentation, see: https://github.com/yyuu/pyenv#readme
+</code></pre>
+<h3 id="3-pyenv-virtualenv-的使用">3. Pyenv virtualenv 的使用</h3>
+<h4 id="31-创建">3.1 创建：</h4>
+<pre><code class="language-bash">pyenv virtualenv [-f|--force] [-u|--upgrade] [VIRTUALENV_OPTIONS] &lt;version&gt; &lt;virtualenv-name&gt;
+</code></pre>
+<ul>
+<li><code>-f</code> 表示强制的（假如虚拟环境已存在，将会覆盖这个虚拟环境）</li>
+<li><code>-u</code> 表示upgrade，用于修改已经存在的虚拟环境的Python版本</li>
+<li><code>VIRTUALENV_OPTIONS</code> 是传递给virtualenv的选项，可以通过virtualenv的帮助获取选项的含义</li>
+<li><code>version</code> 表示Python版本</li>
+<li><code>virtualenv-name</code> 指定虚拟环境名</li>
+</ul>
+<h4 id="32-使用">3.2 使用</h4>
+<p>pyenv的virtual不用手动去激活环境；当把本地目录与环境相关联起来后，将自动激活虚拟环境，离开目录时自动退出虚拟环境</p>
+<h3 id="注意事项">注意事项：</h3>
+<ol>
+<li>pyenv 下载慢：<a href="http://huanyouchen.github.io/2018/04/29/pyenv-install-python-very-slow/">http://huanyouchen.github.io/2018/04/29/pyenv-install-python-very-slow/</a></li>
+</ol>
+<blockquote>
+<p>先去官网下载对应版本的源码：https://www.python.org/downloads/source/<br>
+然后创建/.pyenv/cache目录： mkdir /.pyenv/cache (如果已经有该目录直接进入: cd /.pyenv/cache) 然后 <code>pyenv install 3.6.0</code></p>
+</blockquote>
+<ol start="2">
+<li>打包出错，提示需要 python-dev：<a href="https://github.com/pyenv/pyenv/issues/1095">https://github.com/pyenv/pyenv/issues/1095</a></li>
+</ol>
+<blockquote>
+<p>使用以下命令进行安装：</p>
+<pre><code class="language-bash">PYTHON_CONFIGURE_OPTS=&quot;--enable-framework&quot; pyenv install 3.6.0
+</code></pre>
+</blockquote>
+<h3 id="删除虚拟环境">删除虚拟环境</h3>
+<pre><code class="language-bash">$ pyenv local system
+$ pyenv virtualenv-delete venv
+pyenv-virtualenv: remove /home/will/.pyenv/versions/3.4.1/envs/venv? y
+$ pyenv versions
+* system (set by /home/will/test/.python-version)
+  3.4.1
+  3.4.2
+
+$ pyenv uninstall 3.4.1
+pyenv: remove /home/will/.pyenv/versions/3.4.1? y
+$ pyenv versions
+* system (set by /home/will/test/.python-version)
+  3.4.2
+</code></pre>
+<h2 id="windows-上的虚拟环境管理">Windows 上的虚拟环境管理</h2>
+<p>Windows 上同样支持 Virtualenv 进行虚拟环境的管理的。步骤与上述差不多。</p>
+<p>Windows 不支持 Pyenv 。</p>
+<h3 id="安装-virtualenvwrapper">安装  virtualenvwrapper</h3>
+<p>使用 virtualenvwrapper 能够比较容易的使用虚拟环境。</p>
+<pre><code class="language-bash">$ pip install virtualenvwrapper-win
+</code></pre>
+<h3 id="创建-虚拟环境">创建 虚拟环境</h3>
+<p>使用 <code>mkvirtualenv</code> 创建虚拟环境。</p>
+<pre><code class="language-bash">$ mkvirtualenv -p [python路径] [虚拟环境名称]
+</code></pre>
+<p>环境默认创建地址为：<code>C:\Users\[username]\envs</code></p>
+<h3 id="激活-虚拟环境">激活 虚拟环境</h3>
+<p>使用 <code>workon + [虚拟环境名称]</code> 命令进行激活。</p>
+<pre><code class="language-bash">$ workon env1
+</code></pre>
+<p>使用 <code>workon</code> 列出当前的虚拟环境：</p>
+<pre><code class="language-bash">$ workon
+</code></pre>
+<p>退出虚拟环境：</p>
+<pre><code class="language-bash">$ deactivate
+</code></pre>
+<p>删除环境：</p>
+<pre><code class="language-bash">$ rmvirtualenv
+</code></pre>
+<p>复制虚拟环境：</p>
+<pre><code class="language-bash">$ cpvirtualenv env1 env3
+</code></pre>
+<ul>
+<li>参考：<a href="https://www.jianshu.com/p/60f361822a7e">https://www.jianshu.com/p/60f361822a7e</a></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang 的低质阅读单 New 1]]></title>
         <id>https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1</id>
@@ -52,9 +336,14 @@
         <link href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao">
         </link>
         <updated>2019-07-11T02:06:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>Windows 系统中可以通过右键文件夹属性的方式创建文件夹图标。然而，在共享文件夹中并不能直接创建。</p>
+<p>🎬 <a href="https://www.youtube.com/watch?v=oFHkWfXbxYo">Apply an Icon to a Folder on a NetWork Drive </a><br>
+视频中演示了一种相对曲折的方法在共享文件夹中，创建带有图标的文件夹。</p>
+]]></summary>
         <content type="html"><![CDATA[<p>Windows 系统中可以通过右键文件夹属性的方式创建文件夹图标。然而，在共享文件夹中并不能直接创建。</p>
 <p>🎬 <a href="https://www.youtube.com/watch?v=oFHkWfXbxYo">Apply an Icon to a Folder on a NetWork Drive </a><br>
 视频中演示了一种相对曲折的方法在共享文件夹中，创建带有图标的文件夹。</p>
+<!-- more -->
 <p>究其原理，其实就是共享文件夹中系统没有创建 <code>desktop.ini</code> 文件的设置（可能是安全原因的考虑？）。</p>
 <p>参考：<a href="https://superuser.com/questions/685732/set-custom-folder-icon-for-a-network-folder-in-windows-file-explorer">Set custom folder icon for a network folder in Windows file explorer</a></p>
 <h2 id="做法">做法：</h2>
@@ -66,6 +355,33 @@
 <li>刷新一下共享文件夹</li>
 <li>OK</li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SQL 的一些内容]]></title>
+        <id>https://hwang.top/post/sql-de-yi-xie-nei-rong</id>
+        <link href="https://hwang.top/post/sql-de-yi-xie-nei-rong">
+        </link>
+        <updated>2019-05-07T02:11:54.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="mysql-累计求和">MySQL 累计求和</h2>
+<pre><code class="language-sql">SET @csum := 0;
+SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
+FROM all_location_data LIMIT 20;
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="mysql-累计求和">MySQL 累计求和</h2>
+<pre><code class="language-sql">SET @csum := 0;
+SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
+FROM all_location_data LIMIT 20;
+</code></pre>
+<!-- more -->
+<p>首先 是设置一个变量 @csum 为0<br>
+接着 选择要显示的字段，设置一个公式<code>(@csum := @csum + ADCODE)</code> 这里 ADCODE 就是想要 累积加总的变量，将其记为 CUMSUM。<br>
+最后加上 <code>FROM all_location_data LIMIT 20;</code> 限制了现实20条。</p>
+<hr>
+<h2 id="mysql-统计某个-字段-不重复的行数">MySQL 统计某个 字段 不重复的行数</h2>
+<pre><code class="language-sql">SELECT count(DISTINCT name) AS nu FROM company;
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -286,6 +602,255 @@ process.sendline('mypassword')
 </li>
 </ol>
 </section>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2018 - 我的主屏]]></title>
+        <id>https://hwang.top/post/2018-wo-de-zhu-ping</id>
+        <link href="https://hwang.top/post/2018-wo-de-zhu-ping">
+        </link>
+        <updated>2019-01-17T02:09:55.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt=""></figure>
+<p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt=""></figure>
+<p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
+<!-- more -->
+<h2 id="第一排">第一排</h2>
+<ol>
+<li>微信：糟糕的高墙。</li>
+<li>倍洽：办公用的聊天工具。工作用。</li>
+<li>Castro：一个高效便捷好看的播客应用。已订阅。💰</li>
+<li>Copied：剪贴板工具。Mac 和 iPhone 上双平台在用。利用一些脚本，可以自动记录一些特殊信息，例如颜色（#0068B8）、淘宝分享信息，并且用以存放常用的文本信息（邮件模板、日常工作等）。iOS上，输入法中切换能够快速输入，对我来说很方便。</li>
+</ol>
+<h2 id="第二排">第二排</h2>
+<ol>
+<li>Trello：项目管理工具。工作用。</li>
+<li>Outlook：目前主力的邮件 App。邮件处理坚持 「Inbox Zero」，要么去 Todoist，要么去 Evernote，剩下的就是通通进入 achieve。 并不做整理，因为需要整理的都在 Evernote 里。</li>
+<li>App store ：🌚</li>
+<li>tweetbot ： 用来刷tweet的第三方客户端。只看不发的那种，twitter 第三方政策变动对我来说，其实并没有什么影响。</li>
+</ol>
+<h2 id="第三排">第三排</h2>
+<p>文件夹。跳过。</p>
+<h2 id="第四排">第四排</h2>
+<ol>
+<li>Evernote ：国区高级版用户+国际版普通用户。是我数字生活的归档箱。所有能够归档的都是归档于此。国际版只是为方便我的阅读流程使用。</li>
+<li>Instapaper ： 依然没有换 Pocket ... 是我阅读输入流程中的一环，也是对我来说最重要的软件之一。</li>
+<li>Moneywiz ：记账软件。最近开销有点大……</li>
+<li>telegram ：主要拿来联系亲人。加了一堆群，几乎不发言。以及用来看各种 channel。</li>
+</ol>
+<h2 id="第五排">第五排</h2>
+<ol>
+<li>Timepage ： 老用户，免费送了 iPad 版，相比（其他转订阅的厂商）而言，尽然有些不好意思。用以查看各种日程，离开学校后，明显还没有找到使用日历的节奏。需求并没有那么强了。</li>
+<li>Ulysses ： 用「Markdown XL」写作的写作软件。日常工作的文档，非常方便。平时写东西，习惯分节写作，这样能够减少长篇大论的压力感。</li>
+<li>极光字典 ：一个查单词的应用，满足我点开即用的需求，并且能够导出历史记录、收藏记录。</li>
+<li>NOMO ：拍照软件，满足的需求了打开就能拍。并且一个个好看的相机也满足了收藏癖的虚荣心。VSCO 设置后也能直接打开相机，NOMO 给我的那种精致感，让我选择留它在主页。（说得好像我多会拍照似的）</li>
+</ol>
+<h2 id="第六排">第六排</h2>
+<ol>
+<li>Spotify ： 听歌软件。</li>
+<li>捷径 ： iPhone、iPad上处理许多流程的重要工具。</li>
+<li>Pythonista ：即买了Jsbox，又买了 Pythonista……我也不知道为什么。还不熟悉，能够在捷径中运行python，所以买了。</li>
+<li>hyperapp ：经常需要临时操作一下服务器。总体感觉还行，比较而言，在终端的使用体验上，还是 termius 操作更便利一些（一些在手机上的手势操作，让人用的更加舒服）。优势是一些服务的快速部署，以及非常棒的连接方式。</li>
+</ol>
+<h2 id="dock-栏">Dock 栏</h2>
+<ol>
+<li>Todoist ：任务管理，GTD。</li>
+<li>Drafts ：碎片收集与整理。</li>
+<li>Launch ：启动器。</li>
+<li>Reeder ：RSS阅读器。</li>
+</ol>
+<h2 id="launch-中的动作">Launch 中的动作</h2>
+<figure data-type="image" tabindex="2"><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyja5xap7tj30u01nogpf.jpg" alt=""></figure>
+<blockquote>
+<p>上至下左至右</p>
+</blockquote>
+<ol>
+<li>Time ：看倒计时</li>
+<li>翻译：输入文本翻译</li>
+</ol>
+<hr>
+<ol>
+<li>即刻</li>
+<li>立即开始番茄钟倒计时</li>
+<li>快速创建长截图</li>
+</ol>
+<hr>
+<ol>
+<li>切换apple store地区</li>
+<li>剪贴板相关的动作：清空剪贴板、剪贴板搜索（ai search、淘宝两个动作）；发送剪贴板内容到Twitter、微博；查单词；</li>
+<li>Workflow （捷径）相关：主要用来存放一些定期执行的任务。</li>
+<li>Person ： 一些个人常用的动作</li>
+<li>📱：一个人常用的比较复杂一些的快捷操作</li>
+<li>QuickS：搜索聚合。各种搜索。</li>
+<li>国内：各种 pay 、扫描二维码、充话费等服务。</li>
+<li>Newspaper：用来打开软件看下载客户端的媒体的文章，好奇心日报、Medium、少数派、数字尾巴。</li>
+<li>冗余：一些需要打开，又不需要出现在首页上的app。</li>
+<li>App 兑换 ：并不常用。</li>
+<li>Pic：和图像处理有关的动作：白描、picsew、pico、vsco 等</li>
+<li>Bose：连接音箱。</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ML - Python LASSO 算法实现]]></title>
+        <id>https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian</id>
+        <link href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian">
+        </link>
+        <updated>2018-07-13T02:15:38.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-python">import itertools
+from math import exp
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy import *</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-python">import itertools
+from math import exp
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy import *
+
+
+&lt;!-- more --&gt;
+
+
+## 库导入
+
+def load_data(filename):
+## 加载数据的函数
+	X, Y = [], [] ##列表存储
+	with open(filename, 'r') as f: #读取文件
+		for line in f:
+			splited_line = [float(i) for i in line.split()] #分割行储存到 splited_line 中
+			x, y = splited_line[: -1], splited_line[-1] #读取第一列和第一行数据，储存为x，y
+			X.append(x)
+			Y.append(y)
+	X, Y = np.matrix(X), np.matrix(Y).T
+	return X, Y
+
+####################################
+
+
+def standarize(X):
+# 中心化 &amp; 标准化数据 (零均值, 单位标准差)
+
+	std_deviation = np.std(X, 0) 
+
+# 利用numpy，计算X的标准差。
+# std（a, axis = None） ：同理，计算标准差。 依给定轴axis计算数组a相关元素标准差，其中axis为整数或者元组。
+	
+	mean = np.mean(X, 0)# 对数组a的第1维度的数据进行求平均 
+	return (X - mean)/std_deviation 
+
+
+#######################################
+
+# 一般线性回归函数 OLS；
+
+def std_linreg(X, Y):
+	xTx = X.T*X # 利用numpy 做矩阵的装置。
+	if np.linalg.det(xTx) == 0:
+		print('xTx is a singular matrix')
+		return
+	return xTx.I*X.T*Y
+
+
+#######################################
+
+
+def get_corrcoef(X, Y):
+	# X Y 的协方差
+	cov = np.mean(X*Y) - np.mean(X)*np.mean(Y)
+	return cov/(np.var(X)*np.var(Y))**0.5
+
+ 
+
+
+#######################################
+
+
+def lasso_regression(X, y, lambd=0.2, threshold=0.1):
+
+# 通过坐标下降(coordinate descent)法获取LASSO回归系数
+
+	# 计算残差平方和
+	rss = lambda X, y, w: (y - X*w).T*(y - X*w)
+	# 初始化回归系数w.
+	m, n = X.shape
+	w = np.matrix(np.zeros((n, 1)))
+	r = rss(X, y, w)
+	# 使用坐标下降法优化回归系数w
+	niter = itertools.count(1)
+	for it in niter:
+		for k in range(n):
+			# 计算常量值z_k和p_k
+			z_k = (X[:, k].T*X[:, k])[0, 0]
+			p_k = 0
+			for i in range(m):
+				p_k += X[i, k]*(y[i, 0] - sum([X[i, j]*w[j, 0] for j in range(n) if j != k]))
+			if p_k &lt; -lambd/2:
+				w_k = (p_k + lambd/2)/z_k
+			elif p_k &gt; lambd/2:
+				w_k = (p_k - lambd/2)/z_k
+			else:
+				w_k = 0
+			w[k, 0] = w_k
+		r_prime = rss(X, y, w)
+		delta = abs(r_prime - r)[0, 0]
+		r = r_prime
+		print('Iteration: {}, delta = {}'.format(it, delta))
+		if delta &lt; threshold:
+			break
+	return w
+
+
+##################################
+
+
+# 定义lasso算法
+
+def lasso_traj(X, y, ntest=30):
+#  获取回归系数轨迹矩阵
+
+	_, n = X.shape
+	ws = np.zeros((ntest, n))
+	for i in range(ntest):
+		w = lasso_regression(X, y, lambd=exp(i-10))
+		ws[i, :] = w.T
+		print('lambda = e^({}), w = {}'.format(i-10, w.T[0, :]))
+	return ws
+
+####################################
+
+
+if '__main__' == __name__: #模块是对象，并且所有的模块都有一个内置属性 __name__。一个模块的 __name__ 的值取决于您如何应用模块。如果 import 一个模块，那么模块__name__ 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这种情况下, __name__ 的值将是一个特别缺省&quot;__main__&quot;。
+## https://www.zhihu.com/question/49136398
+
+
+	X, y = load_data('abalone.txt')
+	X, y = standarize(X), standarize(y)
+	w = lasso_regression(X, y, lambd=10)
+	y_prime = X*w
+	## 计算相关系数
+
+	corrcoef = get_corrcoef(np.array(y.reshape(1, -1)),
+							np.array(y_prime.reshape(1, -1)))
+								## 计算协方差
+
+	print('Correlation coefficient: {}'.format(corrcoef))
+	ntest = 30
+
+	## 绘制轨迹
+
+	ws = lasso_traj(X, y, ntest)
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+	lambdas = [i - 10 for i in range(ntest)]
+	ax.plot(lambdas, ws)
+	plt.show()
+
+
+</code></pre>
 ]]></content>
     </entry>
 </feed>

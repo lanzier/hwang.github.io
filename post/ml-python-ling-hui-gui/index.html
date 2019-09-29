@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hwang&#39;s Blog</title>
+<title>ML- Python 岭回归 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569723393648">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,114 +70,81 @@
   </div>
 </div>
 
-    
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ML- Python 岭回归
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-09-29
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
+                  # ML
+                </a>
+              
+                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/ml-python-ling-hui-gui.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="Image%202018-7-11%20%E4%B8%8B%E5%8D%886-36.jpeg" alt=""></figure>
+<pre><code class="language-python">def ridgeTest(xArr,yArr):
+	xMat = mat(xArr); yMat=mat(yArr).T
+	yMean = mean(yMat,0)
+	yMat = yMat - yMean     #to eliminate X0 take mean off of Y
+	#regularize X's
+	xMeans = mean(xMat,0)   #calc mean then subtract it off
+	xVar = var(xMat,0)      #calc variance of Xi then divide by it
+	xMat = (xMat - xMeans)/xVar
+	numTestPts = 30
+	wMat = zeros((numTestPts,shape(xMat)[1]))
+	for i in range(numTestPts):
+		ws = ridgeRegres(xMat,yMat,exp(i-10))
+		wMat[i,:]=ws.T
+	return wMat
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
+              <h3 class="post-title">
+                Python 的虚拟环境管理  virtualenv &amp; pyenv
+              </h3>
+            </a>
+          </div>
         
 
-<div class="archives-container">
-  
-    <h2 class="year">2019</h2>
-    
-      
-        <a href="https://hwang.top/post/ml-python-ling-hui-gui" class="post">
-          <h2 class="post-title">
-            ML- Python 岭回归
-          </h2>
-          <div class="time">2019-09-29</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv" class="post">
-          <h2 class="post-title">
-            Python 的虚拟环境管理  virtualenv &amp; pyenv
-          </h2>
-          <div class="time">2019-09-29</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1" class="post">
-          <h2 class="post-title">
-            Hwang 的低质阅读单 New 1
-          </h2>
-          <div class="time">2019-09-27</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao" class="post">
-          <h2 class="post-title">
-            如何 在 Windows 的共享文件夹中创建文件图标
-          </h2>
-          <div class="time">2019-07-11</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong" class="post">
-          <h2 class="post-title">
-            SQL 的一些内容
-          </h2>
-          <div class="time">2019-05-07</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men" class="post">
-          <h2 class="post-title">
-            Python Pexpect 库的简单入门
-          </h2>
-          <div class="time">2019-03-26</div>
-        </a>
-      
-    
-      
-        <a href="https://hwang.top/post/2018-wo-de-zhu-ping" class="post">
-          <h2 class="post-title">
-            2018 - 我的主屏
-          </h2>
-          <div class="time">2019-01-17</div>
-        </a>
-      
-    
-      
-    
-  
-    <h2 class="year">2018</h2>
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian" class="post">
-          <h2 class="post-title">
-            ML - Python LASSO 算法实现
-          </h2>
-          <div class="time">2018-07-13</div>
-        </a>
-      
-    
-  
-</div>
+        
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
-
-    
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
   <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
