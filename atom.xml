@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-30T10:31:03.624Z</updated>
+    <updated>2019-09-30T10:34:52.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -375,6 +375,159 @@ $ pyenv versions
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[ 用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels ]]></title>
+        <id>https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels</id>
+        <link href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels">
+        </link>
+        <updated>2019-07-16T10:31:58.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文发布于 「 数据Seminar 」公众号：https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569839526&amp;ver=1884&amp;signature=hxZrP-JJKRnGggkDaM2PDBJc7DJsrqQWkpBciqqbDAEeqjNhRKIc37VK4bPqNUKSDjtXPGV0yto99QK5ywqoagPK1PhKPC0dynzFMNVchJWrQG5X3VUMMBadcyBnh7hi&amp;new=1</p>
+</blockquote>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({tex2jax: {inlineMath:[['$','$']]}});
+ </script>
+ <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<blockquote>
+<p>阅读本文前需要掌握的基础知识：<br>
+Python 的基础知识、 numpy 的基础知识、 pandas 的基础知识<br>
+基本的计量知识<br>
+如果你还不会，那么本文也会介绍一些 python 语法的基础内容，方便大家理解。</p>
+</blockquote>
+<p>随着数据资源的日渐丰富，学者们越来越多的需要接触到大数据的处理，许多学者还是习惯使用 Stata 对数据进行处理，而 Stata 由于其自身的限制，在处理大数据集时要么需要强劲的处理性能（昂贵的硬件成本），要么需要等待较长时间（更加昂贵的时间成本）。Python 和 R 也就日渐进入学者的视野，相对于 R ，Python 的语法更为简单，成为一部分学者的首选。</p>
+<p>在数据处理上，numpy 和 pandas 的组合，使得 Python 能够轻松应对千万级别的数据处理。在攻克数据处理这一环后，在数据应用上，除了新潮的机器学习、深度学习的方法，对于现阶段社科学者来说，计量可能才是最现实的。在 Python 中处理的数据如果还需要调回到 Stata 中做计量，那未免太「蹩脚」。今天，数据Seminar 公众号将带大家体验 Python 上的第三方计量库：<a href="https://www.statsmodels.org/stable/index.html">Statsmodels</a> 。</p>
+<h2 id="简介">简介</h2>
+<p>Statsmodels 是一个Python的第三方模块，他封装了许多计量模型，方便学者直接调用。所谓封装，就相当于 Stata 中一个 <code>reg</code> 命令，代表了最基础的 OLS 回归命令，在Statsmodels 中也有类似 <code>reg</code> 的语句，提供给 OLS 估计。另外 Statsmodels 的开源协议为 <a href="https://baike.baidu.com/item/BSD%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE">BSD </a>（基本上对于用户来说属于为所欲为协议，你可以任意使用这款扩张包，具体参见链接地址）。</p>
+<blockquote>
+<p>statsmodels is a Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration. An extensive list of result statistics are available for each estimator. The results are tested against existing statistical packages to ensure that they are correct. The package is released under the open source Modified BSD (3-clause) license. The online documentation is hosted at statsmodels.org.</p>
+</blockquote>
+<h2 id="安装">安装：</h2>
+<p>如果你使用 Anaconda 安装的 python ，那么：</p>
+<pre><code class="language-bash">conda install statsmodels
+</code></pre>
+<p>如果你使用 pip 管理你的python包，那么：</p>
+<pre><code class="language-bash">pip install statsmodels # python2 
+</code></pre>
+<p>或者：</p>
+<pre><code class="language-bash">pip3 install statsmodels #python3
+</code></pre>
+<h2 id="精读代码初探ols">“精读”代码，初探：OLS</h2>
+<p>官方的说明文档：<a href="http://www.statsmodels.org/stable/gettingstarted.html">http://www.statsmodels.org/stable/gettingstarted.html</a></p>
+<p>首先先看了一下 OLS 的示例：</p>
+<pre><code class="language-python">import numpy as np
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+dat = sm.datasets.get_rdataset(&quot;Guerry&quot;, &quot;HistData&quot;).data
+results = smf.ols('Lottery ~ Literacy + np.log(Pop1831)', data=dat).fit()
+print(results.summary())
+</code></pre>
+<p>运行后：<br>
+<img src="DraggedImage.png" alt=""><br>
+*(本文采用的编辑器为 Google 的 colab) *</p>
+<p>是的，OLS就是这么几行，具体来看内容，其实进行 OLS 回归只需要一行内容。为了方便 Python 基础不那么好的同学，我们驻行“精读”一遍这些代码：</p>
+<h3 id="1-导入模块">1. 导入模块</h3>
+<pre><code class="language-python">import numpy as np
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+</code></pre>
+<p>首先是需要导入 numpy、statsmodels 的相关模块，numpy 推荐的缩写命名 np，statsmodels 推荐的缩写命名是 sm，这样后面的代码就可以通过 <code>np.[具体的函数\方法]</code> ，<code>sm. [具体的函数\方法]</code> 的方式来更加简洁的调用了。</p>
+<h3 id="2-生成测试数据集">2. 生成测试数据集</h3>
+<pre><code class="language-python">dat = sm.datasets.get_rdataset(&quot;Guerry&quot;, &quot;HistData&quot;).data
+</code></pre>
+<p>由于并没有现成数据，我们可以通过 statsmodels 中自带的数据集，关于该数据集的具体信息可以参考：<a href="https://vincentarelbundock.github.io/Rdatasets/doc/HistData/Guerry.html">https://vincentarelbundock.github.io/Rdatasets/doc/HistData/Guerry.html</a>，简单来说，这是一个关于犯罪、识字等相关内容的社会科学领域的数据集。<br>
+<img src="DraggedImage-1.png" alt=""></p>
+<p>这个数据集以DataFrame 格式的储存在了 <code>dat</code> 这个变量中。 DataFrame 格式在 Python 中被广泛的使用，可以说无论是机器学习还是本文介绍的计量相关内容，DataFrame 格式相关的操作都需要熟练掌握。关于 DataFrame 的相关内容，需要更加细致的去学习Python的另一个第三方库 pandas ，本文不再赘述。</p>
+<h3 id="3-回归操作">3. 回归操作</h3>
+<pre><code class="language-python">results = smf.ols('Lottery ~ Literacy + np.log(Pop1831)', data=dat).fit()
+</code></pre>
+<p>首先是<code>smf.ols</code>， <code>smf</code> 就是前面的 <code>statsmodels.formula.api</code> ，OLS 回归的方法在 <code>statsmodels.formula.api</code>下，如果前文没有声明 <code>smf</code> 代表<code>statsmodels.formula.api</code> 的话，你这里可就要写成 <code>statsmodels.formula.api.ols</code> 了，可见合理的缩写声明对于代码的简洁美观非常有帮助。</p>
+<p>接下来是括号内的内容<code>('Lottery ~ Literacy + np.log(Pop1831)', data=dat)</code><br>
+这其实是<code>OLS</code>模型需要传入的参数，以<code>,</code>为区隔，第一个参数是回归模型，第二个参数是数据。</p>
+<p>在这行代码中，回归模型是：<code>'Lottery ~ Literacy + np.log(Pop1831)'</code>，数据是前面加载的<code>dat</code> ，比较方便的是，<code>statsmodels</code>，直接从数据<code>dat</code>中读取了变量名称，并不需要进行额外的赋值操作。我们具体看一下这个模型的写法，对于没有接触过 Python 和 R 的读者来说，这种写法可能相对有些陌生，其实这个模型代表了：</p>
+<figure data-type="image" tabindex="1"><img src="DraggedImage-2.png" alt=""></figure>
+<p>这种写法参考了R的相关内容，具体是由 Python 中的 Patsy 库实现的。上面这个就是一个计量模型（他当然不是计算 <code>Literacy + np.log(Pop1831)</code>的和，<code>Literacy</code> 和 <code>np.log(Pop1831)</code> 都是矩阵）。这就和 Stata 中 <code>reg y x0 x1 x2</code> 是一样，只是在Python 中模型需要写成<code>y~x0+x1+x2</code>，而 reg 需要写成 <code>smf.ols()</code>。</p>
+<p>这个模型中还用到了一个知识点：<code>np.log</code> ，就是说引用了 numpy 中的 log 函数，对变量<code>Pop1831</code> 取对数，就是使用 numpy 进行 log 运算。 如果你直接写 <code>log(Pop1831)</code>，Python是不知道 log 是做什么的，所以要告诉 Python，这个 log 来自于 numpy，这样 Python 就能正常处理 <code>Pop1831</code> 这个数据切片（“切片” 是Python数据处理中常用名词，可以理解为一个 DataFrame 的一列、一行或者几列、几行的数据）了。</p>
+<p>最后 <code>data=dat</code> 就是声明对于这个模型，使用的数据时 <code>dat</code>， 这样前面的模型中的 <code>Lottery</code> 、<code>Literacy</code> 和 <code>Pop1831</code>，statsmodels 都能智能的去从 DataFrame 切片（切片操作需要学习Pandas哦），然后应用到模型中。</p>
+<p>括号内的内容就是进行回归操作的核心。</p>
+<p>括号外还有<code>.fit()</code>，就是告诉 Python，可以进行回归计算了。如果没有这个<code>.fit()</code> ，Python 只会记录这个模型和相关的数据信息，而添加了<code>.fit()</code>，记录时回归后的结果。<br>
+<img src="DraggedImage-3.png" alt=""><br>
+（上图可以看到储存在计算机中的内容是有差异的）</p>
+<p>同样，<code>.fit()</code> 后输出的结果也并非像 Stata 那样那样直接输出的事结果，而是将结果储存，可以进行多种方式的调用。</p>
+<p>如果想输入结果，那么就使用 <code>results.summary()</code> ，将其打印出来，正如示例中展示的那样：</p>
+<figure data-type="image" tabindex="2"><img src="DraggedImage-4.png" alt=""></figure>
+<h2 id="ols-实例">OLS 实例</h2>
+<p>这里简单演示一下 OLS 回归，数据处理这一部分内容，在 Python 中主要使用 numpy 和 pandas，这里就不演示，本文直接读取处理完的数据来演示 OLS 的内容：</p>
+<p>本文的数据来自CFPS，主要研究的内容是子女认知能力和服务是否创业的关系，处理后的第一个回归模型的内容主要是，母亲的创业状态（<code>self_employed_m_16</code>），教育年限(<code>edu</code>)，是否参加课外补习(<code>extra_classes</code>)，家庭药品支出(<code>expend_medical</code>)、自评健康状况(<code>health</code>)、家庭氛围(<code>quarrel</code>)、与母亲同住时长(<code>livewith_m</code>)、与父亲同住时常(<code>livewith_f</code>)、log的家庭收入(<code>lg_fin</code>)、子女数量(<code>num_chd</code>)、母亲的受教育程度(<code>edu_m</code>)、父亲的受教育程度(<code>edu_f</code>)、户口(<code>hukou</code>)、东中西部虚拟变量（<code>east 、 west</code>），然后被解释变量就是认知能力(<code>y_rznl</code>)。</p>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+df = pd.read_csv(&quot;testing.csv&quot;)
+OLS_1 = smf.ols(&quot;y_rznl~ self_employed_m_16 + edu + extra_classes + \
+    expend_medical + health + quarrel + livewith_m + livewith_f + \
+    lg_fin + num_chd + edu_m + edu_f + hukou + east + west&quot;, data=df).fit()
+print(OLS_1.summary())
+</code></pre>
+<p>最后输出结果：<br>
+<img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-07%20%E4%B8%8B%E5%8D%883.04.11.png" alt=""></p>
+<p>而stata输出的结果（置信区间是97.5%）：<br>
+<img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-07%20%E4%B8%8B%E5%8D%883.11.40.png" alt=""></p>
+<p>可以看到，结果基本一致。</p>
+<p>最后，在OLS这里案例中，可以看到 Python 输出结果基本与 Stata 相同，在代码的撰写上， Python 同样非常方便，并且由于 Python 是一门编程语言，在一些循环的撰写上非常有优势，例如我需要多次循环某几个变量，以及对应的被解释变量：</p>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+df = pd.read_csv(&quot;testing.csv&quot;)
+y_list =[y1, y2, y3, y4] # 被解释变量的列表
+x0_list = [x0_1, x0_2, x0_3, x0_4, x0_5] # 某一个解释变量的列表
+model_list = []
+for y in y_list:
+	for x0 in x0_list:
+		model = &quot;%s ~ %s + edu + extra_classes + \
+    expend_medical + health + quarrel + livewith_m + livewith_f + \
+    lg_fin + num_chd + edu_m + edu_f + hukou + east + west&quot; % (y, x0)
+		OLS = smf.ols(model, data = df).fit()
+		print(OLS.summary())
+		
+</code></pre>
+<p>这样就能一次性依次输出，以下内容的回归结果：</p>
+<ul>
+<li>
+<p><code>y1 = x0_1 + edu + extra_calsses +...</code></p>
+</li>
+<li>
+<p><code>y1 = x0_2 + edu + extra_calsses +...</code></p>
+</li>
+<li>
+<p><code>y1 = x0_3 + edu + extra_calsses +...</code><br>
+…</p>
+</li>
+<li>
+<p><code>y1 = x0_5 + edu + extra_calsses +...</code></p>
+</li>
+<li>
+<p><code>y2 = x0_1 + edu + extra_calsses +...</code></p>
+</li>
+<li>
+<p><code>y2 = x0_2 + edu + extra_calsses +...</code><br>
+…</p>
+</li>
+<li>
+<p><code>y2 = x0_5 + edu + extra_calsses +...</code><br>
+…</p>
+</li>
+<li>
+<p><code>y4 = x0_5 + edu + extra_calsses +...</code></p>
+</li>
+</ul>
+<p>所以无论是数据处理还是计量回归中，都能给你极大的便利。</p>
+<p>相比Stata，Python  是免费开源的，不需要额外的授权费用，并且如果志在机器学习，那么先从相对熟悉的计量入手或许是一个不错的选择。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[如何 在 Windows 的共享文件夹中创建文件图标]]></title>
         <id>https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao</id>
         <link href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao">
@@ -654,7 +807,10 @@ process.sendline('mypassword')
         <link href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
         </link>
         <updated>2019-03-15T10:30:15.000Z</updated>
-        <content type="html"><![CDATA[<p>2018年，于我而言是人生中最非同一般的一年，我从大三升到了大四，更为重要的是我从「学习」的状态转变为了「工作」状态。说出来我自己也不信，2018年初我还是一个立志成为「经济学家」的学子，2018年底我却深度参与到了一项创业活动中。我的文档库中从文献笔记，变为了代码与日志。在这之中，需要去适应许多的改变，少数派是一个讲求「效率」的网站，各种「酸甜苦辣」自然按下不表，作为2018年的年度总结，下文我会尝试梳理这一年中对我产生影响的学习「陌生概念」的思路，希望能够为大家提供一些参考。</p>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文发布于少数派：https://beta.sspai.com/post/52935</p>
+</blockquote>
+<p>2018年，于我而言是人生中最非同一般的一年，我从大三升到了大四，更为重要的是我从「学习」的状态转变为了「工作」状态。说出来我自己也不信，2018年初我还是一个立志成为「经济学家」的学子，2018年底我却深度参与到了一项创业活动中。我的文档库中从文献笔记，变为了代码与日志。在这之中，需要去适应许多的改变，少数派是一个讲求「效率」的网站，各种「酸甜苦辣」自然按下不表，作为2018年的年度总结，下文我会尝试梳理这一年中对我产生影响的学习「陌生概念」的思路，希望能够为大家提供一些参考。</p>
 <p>事先需要声明的是，效率思维看起来太过「空洞」，而本人对于各种思考范式的认识也并非「专家」，所以撰文、用词、举例之中有偏颇之处也请包涵。本文叙述的也只是我本人的经验，并不一定适用于他人。</p>
 <p>这一年，我做的最多的事就是在不断做新的事。我是经济学的在读本科生，6个月前，我连 vim 编辑器需要先按 「i」 进入编辑模式才能修改文本都不知道；而现在，我已经能够实现基本的诸如 apache 、nginx 的各种配置了。2018年，我第一次学习了使用命令行的方式操作系统，第一次知道原来有配置文件这种东西，第一次知道了虚拟化这种东西，第一次写了网页，第一次编写了程序，<em>我甚至知道了 Windows 系统在执行打印操作是把文件暂存在C:\\WINDOWS\Spool\printers 系统文件夹内，然后慢慢发给打印机进行处理的</em>。而且这之中大多数东西，都是下半年才发生的，因为2018年上半年，我每周还有三天是上课的。同事都认为这是因为我「学习能力强」，但是你凭什么就「学习能力强」了？ 我并不觉得，这之中有任何一件事情对我来说是简单的、容易的。</p>
 <p><em>2018年第一次进机房部署服务</em></p>
@@ -781,144 +937,6 @@ process.sendline('mypassword')
 <li>Pic：和图像处理有关的动作：白描、picsew、pico、vsco 等</li>
 <li>Bose：连接音箱。</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ML - Python 实现 OLS]]></title>
-        <id>https://hwang.top/post/ml-python-shi-xian-ols</id>
-        <link href="https://hwang.top/post/ml-python-shi-xian-ols">
-        </link>
-        <updated>2018-10-10T05:03:48.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>几种回归的尝试</p>
-</blockquote>
-<h2 id="标准回归-ols">标准回归 OLS</h2>
-<pre><code class="language-python">from numpy import *
-def loadDataSet(fileName):      #general function to parse tab -delimited floats
-	numFeat = len(open(fileName).readline().split('\t')) - 1 #get number of fields
-	dataMat = []; labelMat = []
-	fr = open(fileName)
-	for line in fr.readlines():
-		lineArr =[]
-		curLine = line.strip().split('\t')
-		for i in range(numFeat):
-			lineArr.append(float(curLine[i]))
-		dataMat.append(lineArr)
-		labelMat.append(float(curLine[-1]))
-	return dataMat,labelMat
-
-def standRegres(xArr,yArr):
-	xMat = mat(xArr); yMat = mat(yArr).T
-	xTx = xMat.T*xMat
-	if linalg.det(xTx) == 0.0:
-		print #&quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = xTx.I * (xMat.T*yMat)
-	return ws
-def lwlr(testPoint,xArr,yArr,k=1.0):
-	xMat = mat(xArr); yMat = mat(yArr).T
-	m = shape(xMat)[0]
-	weights = mat(eye((m)))
-	for j in range(m):                      #next 2 lines create weights matrix
-		diffMat = testPoint - xMat[j,:]     #
-		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
-	xTx = xMat.T * (weights * xMat)
-	if linalg.det(xTx) == 0.0:
-		print #&quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = xTx.I * (xMat.T * (weights * yMat))
-	return testPoint * ws
-
-def lwlrTest(testArr,xArr,yArr,k=1.0):  #loops over all the data points and applies lwlr to each one
-	m = shape(testArr)[0]
-	yHat = zeros(m)
-	for i in range(m):
-		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
-	return yHat
-
-xArr,yArr=loadDataSet('ex0.txt')
-ws=standRegres(xArr,yArr)
-xMat=mat(xArr)
-yMat=mat(yArr)
-yHat = xMat*ws
-import matplotlib.pyplot as plt
-fig=plt.figure()
-ax =fig.add_subplot(111)
-ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0])
-
-xCopy = xMat.copy()
-xCopy.sort(0)
-yHat=xCopy*ws
-ax.plot(xCopy[:,1],yHat,'cx--')
-plt.show()
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt=""></figure>
-<pre><code class="language-python">from numpy import *
-def loadDataSet(fileName):      #  general function to parse tab -delimited floats
-	numFeat = len(open(fileName).readline().split('\t')) - 1 # get number of fields
-	dataMat = []; labelMat = []
-	fr = open(fileName)
-	for line in fr.readlines():
-		lineArr =[]
-		curLine = line.strip().split('\t')
-		for i in range(numFeat):
-			lineArr.append(float(curLine[i]))
-		dataMat.append(lineArr)
-		labelMat.append(float(curLine[-1]))
-	return dataMat,labelMat
-
-def standRegres(xArr,yArr):
-	xMat = mat(xArr); yMat = mat(yArr).T
-	xTx = xMat.T*xMat
-	if linalg.det(xTx) == 0.0:
-		print #&quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = xTx.I * (xMat.T*yMat)
-	return ws
-def lwlr(testPoint,xArr,yArr,k=1.0):
-	xMat = mat(xArr); yMat = mat(yArr).T
-	m = shape(xMat)[0]
-	weights = mat(eye((m)))
-	for j in range(m):                      # next 2 lines create weights matrix
-		diffMat = testPoint - xMat[j,:]     #
-		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
-	xTx = xMat.T * (weights * xMat)
-	if linalg.det(xTx) == 0.0:
-		print # &quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = xTx.I * (xMat.T * (weights * yMat))
-	return testPoint * ws
-
-def lwlrTest(testArr,xArr,yArr,k=1.0):  # loops over all the data points and applies lwlr to each one
-	m = shape(testArr)[0]
-	yHat = zeros(m)
-	for i in range(m):
-		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
-	return yHat
-
-xArr , yArr = loadDataSet('ex0.txt')
-
-lwlr(xArr[0],xArr,yArr,1.0)
-lwlr(xArr[0],xArr,yArr,0.001)
-yHat=lwlrTest(xArr,xArr,yArr,0.03)
-yHat2=lwlrTest(xArr,xArr,yArr,0.01)
-yHat3=lwlrTest(xArr,xArr,yArr,0.1)
-xMat=mat(xArr)
-yMat=mat(yArr)
-strInd = xMat[:,1].argsort(0)
-xSort=xMat[strInd][:,0,:]
-import matplotlib.pyplot as plt
-fig=plt.figure()
-ax=fig.add_subplot(111)
-ax.plot(xSort[:,1],yHat[strInd],label='k=0.03')
-ax.plot(xSort[:,1],yHat2[strInd],label='k=0.01')
-ax.plot(xSort[:,1],yHat3[strInd],label='k=0.1')
-ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0],s=2,c='green')
-plt.legend()
-plt.show()
-
-</code></pre>
-<p><img src="DraggedImage-1.png" alt=""><img src="DraggedImage-2.png" alt=""></p>
 ]]></content>
     </entry>
 </feed>
