@@ -1,0 +1,309 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ML - Python 实现 OLS | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569808893388">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1569808893388" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ML - Python 实现 OLS
+            </h2>
+            <div class="post-info">
+              <span>
+                2018-10-10
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
+                  # ML
+                </a>
+              
+                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/ml-python-shi-xian-ols.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>几种回归的尝试</p>
+</blockquote>
+<h2 id="标准回归-ols">标准回归 OLS</h2>
+<pre><code class="language-python">from numpy import *
+def loadDataSet(fileName):      #general function to parse tab -delimited floats
+	numFeat = len(open(fileName).readline().split('\t')) - 1 #get number of fields
+	dataMat = []; labelMat = []
+	fr = open(fileName)
+	for line in fr.readlines():
+		lineArr =[]
+		curLine = line.strip().split('\t')
+		for i in range(numFeat):
+			lineArr.append(float(curLine[i]))
+		dataMat.append(lineArr)
+		labelMat.append(float(curLine[-1]))
+	return dataMat,labelMat
+
+def standRegres(xArr,yArr):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	xTx = xMat.T*xMat
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T*yMat)
+	return ws
+def lwlr(testPoint,xArr,yArr,k=1.0):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	m = shape(xMat)[0]
+	weights = mat(eye((m)))
+	for j in range(m):                      #next 2 lines create weights matrix
+		diffMat = testPoint - xMat[j,:]     #
+		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
+	xTx = xMat.T * (weights * xMat)
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T * (weights * yMat))
+	return testPoint * ws
+
+def lwlrTest(testArr,xArr,yArr,k=1.0):  #loops over all the data points and applies lwlr to each one
+	m = shape(testArr)[0]
+	yHat = zeros(m)
+	for i in range(m):
+		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
+	return yHat
+
+xArr,yArr=loadDataSet('ex0.txt')
+ws=standRegres(xArr,yArr)
+xMat=mat(xArr)
+yMat=mat(yArr)
+yHat = xMat*ws
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax =fig.add_subplot(111)
+ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0])
+
+xCopy = xMat.copy()
+xCopy.sort(0)
+yHat=xCopy*ws
+ax.plot(xCopy[:,1],yHat,'cx--')
+plt.show()
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt=""></figure>
+<pre><code class="language-python">from numpy import *
+def loadDataSet(fileName):      #  general function to parse tab -delimited floats
+	numFeat = len(open(fileName).readline().split('\t')) - 1 # get number of fields
+	dataMat = []; labelMat = []
+	fr = open(fileName)
+	for line in fr.readlines():
+		lineArr =[]
+		curLine = line.strip().split('\t')
+		for i in range(numFeat):
+			lineArr.append(float(curLine[i]))
+		dataMat.append(lineArr)
+		labelMat.append(float(curLine[-1]))
+	return dataMat,labelMat
+
+def standRegres(xArr,yArr):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	xTx = xMat.T*xMat
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T*yMat)
+	return ws
+def lwlr(testPoint,xArr,yArr,k=1.0):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	m = shape(xMat)[0]
+	weights = mat(eye((m)))
+	for j in range(m):                      # next 2 lines create weights matrix
+		diffMat = testPoint - xMat[j,:]     #
+		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
+	xTx = xMat.T * (weights * xMat)
+	if linalg.det(xTx) == 0.0:
+		print # &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T * (weights * yMat))
+	return testPoint * ws
+
+def lwlrTest(testArr,xArr,yArr,k=1.0):  # loops over all the data points and applies lwlr to each one
+	m = shape(testArr)[0]
+	yHat = zeros(m)
+	for i in range(m):
+		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
+	return yHat
+
+xArr , yArr = loadDataSet('ex0.txt')
+
+lwlr(xArr[0],xArr,yArr,1.0)
+lwlr(xArr[0],xArr,yArr,0.001)
+yHat=lwlrTest(xArr,xArr,yArr,0.03)
+yHat2=lwlrTest(xArr,xArr,yArr,0.01)
+yHat3=lwlrTest(xArr,xArr,yArr,0.1)
+xMat=mat(xArr)
+yMat=mat(yArr)
+strInd = xMat[:,1].argsort(0)
+xSort=xMat[strInd][:,0,:]
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.plot(xSort[:,1],yHat[strInd],label='k=0.03')
+ax.plot(xSort[:,1],yHat2[strInd],label='k=0.01')
+ax.plot(xSort[:,1],yHat3[strInd],label='k=0.1')
+ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0],s=2,c='green')
+plt.legend()
+plt.show()
+
+</code></pre>
+<p><img src="DraggedImage-1.png" alt=""><img src="DraggedImage-2.png" alt=""></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%A0%87%E5%87%86%E5%9B%9E%E5%BD%92-ols">标准回归 OLS</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/ml-python-ling-hui-gui">
+              <h3 class="post-title">
+                ML- Python 岭回归
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

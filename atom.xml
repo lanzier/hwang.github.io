@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-29T02:47:03.711Z</updated>
+    <updated>2019-09-30T02:58:25.397Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -10,6 +10,84 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[一个用了 3 个月 PyQt 的人，在学 Vue.js 基础]]></title>
+        <id>https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu</id>
+        <link href="https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu">
+        </link>
+        <updated>2019-09-30T01:53:10.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p>el:</p>
+</li>
+<li>
+<p>data:</p>
+</li>
+<li>
+<p>methods: 用于存放 事件内的方法。 可以理解为 PyQt 中 存放 槽函数 的一个字典。</p>
+</li>
+<li>
+<p>v-cloak 能够解决插值表达式（<code>{{}}</code>） 闪烁 的问题<br>
+<code>&lt;v-test='msg'&gt;</code></p>
+</li>
+<li>
+<p>v-test 没有闪烁问题，会覆盖元素中原本的内容，但是，插值表达式只会替换自己的占位符。</p>
+</li>
+<li>
+<p>v-html : 输出闪烁问题</p>
+</li>
+<li>
+<p>v-blind : 绑定 属性 的指令，简写为 <code>:</code> ; v-blind 可以写合法的 js 表达式</p>
+</li>
+<li>
+<p>v-on : 绑定 事件的 （类似 qt 中的 信号与槽的绑定），简写为 <code>@</code></p>
+</li>
+<li>
+<p>v-model: 双向数据绑定，只能用在表单元素（input（radio、text、address、email...） select checkbox textarea）中。</p>
+</li>
+<li>
+<p>v-for: 循环操作</p>
+<ul>
+<li><code>&lt;p v-for =&quot;item in list&quot;&gt;{{item}}&lt;/p&gt;</code></li>
+<li><code>&lt;p v-for =&quot;(item, i) in list&quot;&gt;索引值:{{i}} --- 项目：{{item}}&lt;/p&gt;</code></li>
+<li>可以迭代 1.普通数组；2.对象数组；3.对象；4. 数字（起始是1）</li>
+<li>在组件中使用 V-for 循环的时候，必须使用 v-for 的同时，制定唯一的字符串/数字类型的 key 值</li>
+</ul>
+</li>
+<li>
+<p>v-if</p>
+<ul>
+<li>每次都会重新删除或者创建元素</li>
+<li>有较高的切换性能消耗</li>
+</ul>
+</li>
+<li>
+<p>v-show</p>
+<ul>
+<li>切换元素的 display:none 样式</li>
+<li>有较高的初始渲染消耗</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件修饰符">事件修饰符</h2>
+<ul>
+<li>@click.stop 阻止事件的冒泡（从内到外，触发事件）</li>
+<li>@click.prevent 阻止默认行为的使用</li>
+<li>.capture 以捕获机制触发行为（从外到里，触发事件）</li>
+<li>.self 只有自身的时候执行</li>
+<li>.once 只触发一次</li>
+</ul>
+<h2 id="vue-中使用样式">vue 中使用样式</h2>
+<ul>
+<li>使用数组 <code>:class = ['style1','style2']</code> 会给出style1和style2的合并样式效果</li>
+<li><code>:class = ['style1','style2',{'style3':flag}]</code>使用 v-blind ，伪 Class 表达可以使用对象的方式赋值，能够更好的实现样式变化的情况,在data中：<br>
+<code>data flag: true }</code><br>
+此时能够通过js来控制这个样式的实现与否。</li>
+<li>在数组中可以使用 <a href="#">三元表达式</a>(https://baike.baidu.com/item/%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6/1394210)，python 中 类是 if 的判断语句</li>
+<li>可以直接使用对象的方式调用样式。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python 的虚拟环境管理  virtualenv & pyenv]]></title>
         <id>https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv</id>
@@ -646,6 +724,144 @@ process.sendline('mypassword')
 <li>Pic：和图像处理有关的动作：白描、picsew、pico、vsco 等</li>
 <li>Bose：连接音箱。</li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ML - Python 实现 OLS]]></title>
+        <id>https://hwang.top/post/ml-python-shi-xian-ols</id>
+        <link href="https://hwang.top/post/ml-python-shi-xian-ols">
+        </link>
+        <updated>2018-10-10T05:03:48.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>几种回归的尝试</p>
+</blockquote>
+<h2 id="标准回归-ols">标准回归 OLS</h2>
+<pre><code class="language-python">from numpy import *
+def loadDataSet(fileName):      #general function to parse tab -delimited floats
+	numFeat = len(open(fileName).readline().split('\t')) - 1 #get number of fields
+	dataMat = []; labelMat = []
+	fr = open(fileName)
+	for line in fr.readlines():
+		lineArr =[]
+		curLine = line.strip().split('\t')
+		for i in range(numFeat):
+			lineArr.append(float(curLine[i]))
+		dataMat.append(lineArr)
+		labelMat.append(float(curLine[-1]))
+	return dataMat,labelMat
+
+def standRegres(xArr,yArr):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	xTx = xMat.T*xMat
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T*yMat)
+	return ws
+def lwlr(testPoint,xArr,yArr,k=1.0):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	m = shape(xMat)[0]
+	weights = mat(eye((m)))
+	for j in range(m):                      #next 2 lines create weights matrix
+		diffMat = testPoint - xMat[j,:]     #
+		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
+	xTx = xMat.T * (weights * xMat)
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T * (weights * yMat))
+	return testPoint * ws
+
+def lwlrTest(testArr,xArr,yArr,k=1.0):  #loops over all the data points and applies lwlr to each one
+	m = shape(testArr)[0]
+	yHat = zeros(m)
+	for i in range(m):
+		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
+	return yHat
+
+xArr,yArr=loadDataSet('ex0.txt')
+ws=standRegres(xArr,yArr)
+xMat=mat(xArr)
+yMat=mat(yArr)
+yHat = xMat*ws
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax =fig.add_subplot(111)
+ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0])
+
+xCopy = xMat.copy()
+xCopy.sort(0)
+yHat=xCopy*ws
+ax.plot(xCopy[:,1],yHat,'cx--')
+plt.show()
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt=""></figure>
+<pre><code class="language-python">from numpy import *
+def loadDataSet(fileName):      #  general function to parse tab -delimited floats
+	numFeat = len(open(fileName).readline().split('\t')) - 1 # get number of fields
+	dataMat = []; labelMat = []
+	fr = open(fileName)
+	for line in fr.readlines():
+		lineArr =[]
+		curLine = line.strip().split('\t')
+		for i in range(numFeat):
+			lineArr.append(float(curLine[i]))
+		dataMat.append(lineArr)
+		labelMat.append(float(curLine[-1]))
+	return dataMat,labelMat
+
+def standRegres(xArr,yArr):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	xTx = xMat.T*xMat
+	if linalg.det(xTx) == 0.0:
+		print #&quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T*yMat)
+	return ws
+def lwlr(testPoint,xArr,yArr,k=1.0):
+	xMat = mat(xArr); yMat = mat(yArr).T
+	m = shape(xMat)[0]
+	weights = mat(eye((m)))
+	for j in range(m):                      # next 2 lines create weights matrix
+		diffMat = testPoint - xMat[j,:]     #
+		weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
+	xTx = xMat.T * (weights * xMat)
+	if linalg.det(xTx) == 0.0:
+		print # &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = xTx.I * (xMat.T * (weights * yMat))
+	return testPoint * ws
+
+def lwlrTest(testArr,xArr,yArr,k=1.0):  # loops over all the data points and applies lwlr to each one
+	m = shape(testArr)[0]
+	yHat = zeros(m)
+	for i in range(m):
+		yHat[i] = lwlr(testArr[i],xArr,yArr,k)
+	return yHat
+
+xArr , yArr = loadDataSet('ex0.txt')
+
+lwlr(xArr[0],xArr,yArr,1.0)
+lwlr(xArr[0],xArr,yArr,0.001)
+yHat=lwlrTest(xArr,xArr,yArr,0.03)
+yHat2=lwlrTest(xArr,xArr,yArr,0.01)
+yHat3=lwlrTest(xArr,xArr,yArr,0.1)
+xMat=mat(xArr)
+yMat=mat(yArr)
+strInd = xMat[:,1].argsort(0)
+xSort=xMat[strInd][:,0,:]
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.plot(xSort[:,1],yHat[strInd],label='k=0.03')
+ax.plot(xSort[:,1],yHat2[strInd],label='k=0.01')
+ax.plot(xSort[:,1],yHat3[strInd],label='k=0.1')
+ax.scatter(xMat[:,1].flatten().A[0],yMat.T[:,0].flatten().A[0],s=2,c='green')
+plt.legend()
+plt.show()
+
+</code></pre>
+<p><img src="DraggedImage-1.png" alt=""><img src="DraggedImage-2.png" alt=""></p>
 ]]></content>
     </entry>
     <entry>

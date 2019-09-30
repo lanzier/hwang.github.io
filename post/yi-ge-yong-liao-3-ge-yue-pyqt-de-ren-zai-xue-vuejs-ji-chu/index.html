@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SQL 的一些内容 | Hwang&#39;s Blog</title>
+<title>一个用了 3 个月 PyQt 的人，在学 Vue.js 基础 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569808893388">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,43 +73,100 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SQL 的一些内容
+              一个用了 3 个月 PyQt 的人，在学 Vue.js 基础
             </h2>
             <div class="post-info">
               <span>
-                2019-05-07
+                2019-09-30
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
               
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/sql-de-yi-xie-nei-rong.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="mysql-累计求和">MySQL 累计求和</h2>
-<pre><code class="language-sql">SET @csum := 0;
-SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
-FROM all_location_data LIMIT 20;
-</code></pre>
-<!-- more -->
-<p>首先 是设置一个变量 @csum 为0<br>
-接着 选择要显示的字段，设置一个公式<code>(@csum := @csum + ADCODE)</code> 这里 ADCODE 就是想要 累积加总的变量，将其记为 CUMSUM。<br>
-最后加上 <code>FROM all_location_data LIMIT 20;</code> 限制了现实20条。</p>
-<hr>
-<h2 id="mysql-统计某个-字段-不重复的行数">MySQL 统计某个 字段 不重复的行数</h2>
-<pre><code class="language-sql">SELECT count(DISTINCT name) AS nu FROM company;
-</code></pre>
+                <ul>
+<li>
+<p>el:</p>
+</li>
+<li>
+<p>data:</p>
+</li>
+<li>
+<p>methods: 用于存放 事件内的方法。 可以理解为 PyQt 中 存放 槽函数 的一个字典。</p>
+</li>
+<li>
+<p>v-cloak 能够解决插值表达式（<code>{{}}</code>） 闪烁 的问题<br>
+<code>&lt;v-test='msg'&gt;</code></p>
+</li>
+<li>
+<p>v-test 没有闪烁问题，会覆盖元素中原本的内容，但是，插值表达式只会替换自己的占位符。</p>
+</li>
+<li>
+<p>v-html : 输出闪烁问题</p>
+</li>
+<li>
+<p>v-blind : 绑定 属性 的指令，简写为 <code>:</code> ; v-blind 可以写合法的 js 表达式</p>
+</li>
+<li>
+<p>v-on : 绑定 事件的 （类似 qt 中的 信号与槽的绑定），简写为 <code>@</code></p>
+</li>
+<li>
+<p>v-model: 双向数据绑定，只能用在表单元素（input（radio、text、address、email...） select checkbox textarea）中。</p>
+</li>
+<li>
+<p>v-for: 循环操作</p>
+<ul>
+<li><code>&lt;p v-for =&quot;item in list&quot;&gt;{{item}}&lt;/p&gt;</code></li>
+<li><code>&lt;p v-for =&quot;(item, i) in list&quot;&gt;索引值:{{i}} --- 项目：{{item}}&lt;/p&gt;</code></li>
+<li>可以迭代 1.普通数组；2.对象数组；3.对象；4. 数字（起始是1）</li>
+<li>在组件中使用 V-for 循环的时候，必须使用 v-for 的同时，制定唯一的字符串/数字类型的 key 值</li>
+</ul>
+</li>
+<li>
+<p>v-if</p>
+<ul>
+<li>每次都会重新删除或者创建元素</li>
+<li>有较高的切换性能消耗</li>
+</ul>
+</li>
+<li>
+<p>v-show</p>
+<ul>
+<li>切换元素的 display:none 样式</li>
+<li>有较高的初始渲染消耗</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件修饰符">事件修饰符</h2>
+<ul>
+<li>@click.stop 阻止事件的冒泡（从内到外，触发事件）</li>
+<li>@click.prevent 阻止默认行为的使用</li>
+<li>.capture 以捕获机制触发行为（从外到里，触发事件）</li>
+<li>.self 只有自身的时候执行</li>
+<li>.once 只触发一次</li>
+</ul>
+<h2 id="vue-中使用样式">vue 中使用样式</h2>
+<ul>
+<li>使用数组 <code>:class = ['style1','style2']</code> 会给出style1和style2的合并样式效果</li>
+<li><code>:class = ['style1','style2',{'style3':flag}]</code>使用 v-blind ，伪 Class 表达可以使用对象的方式赋值，能够更好的实现样式变化的情况,在data中：<br>
+<code>data flag: true }</code><br>
+此时能够通过js来控制这个样式的实现与否。</li>
+<li>在数组中可以使用 <a href="#">三元表达式</a>(https://baike.baidu.com/item/%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6/1394210)，python 中 类是 if 的判断语句</li>
+<li>可以直接使用对象的方式调用样式。</li>
+</ul>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#mysql-%E7%B4%AF%E8%AE%A1%E6%B1%82%E5%92%8C">MySQL 累计求和</a></li>
-<li><a href="#mysql-%E7%BB%9F%E8%AE%A1%E6%9F%90%E4%B8%AA-%E5%AD%97%E6%AE%B5-%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E8%A1%8C%E6%95%B0">MySQL 统计某个 字段 不重复的行数</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">事件修饰符</a></li>
+<li><a href="#vue-%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F">vue 中使用样式</a></li>
 </ul>
 </li>
 </ul>
@@ -122,9 +179,9 @@ FROM all_location_data LIMIT 20;
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
+            <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
               <h3 class="post-title">
-                Python Pexpect 库的简单入门
+                Python 的虚拟环境管理  virtualenv &amp; pyenv
               </h3>
             </a>
           </div>
