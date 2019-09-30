@@ -1,8 +1,8 @@
 <html>
   <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ML- Python 岭回归 | Hwang&#39;s Blog</title>
+<title>figma | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1569838002224">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,80 +70,42 @@
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              ML- Python 岭回归
-            </h2>
-            <div class="post-info">
-              <span>
-                2018-07-24
-              </span>
-              <span>
-                1 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
-                  # ML
-                </a>
-              
-                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-                  # python
-                </a>
-              
-            </div>
-            
-              <img class="post-feature-image" src="https://hwang.top/post-images/ml-python-ling-hui-gui.png" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
-	xTx = xMat.T*xMat
-	denom = xTx + eye(shape(xMat)[1])*lam
-	if linalg.det(denom) == 0.0:
-		print &quot;This matrix is singular, cannot do inverse&quot;
-		return
-	ws = denom.I * (xMat.T*yMat)
-	return ws
-</code></pre>
-<!-- more -->
-<figure data-type="image" tabindex="1"><img src="Image%202018-7-11%20%E4%B8%8B%E5%8D%886-36.jpeg" alt=""></figure>
-<pre><code class="language-python">def ridgeTest(xArr,yArr):
-	xMat = mat(xArr); yMat=mat(yArr).T
-	yMean = mean(yMat,0)
-	yMat = yMat - yMean     #to eliminate X0 take mean off of Y
-	#regularize X's
-	xMeans = mean(xMat,0)   #calc mean then subtract it off
-	xVar = var(xMat,0)      #calc variance of Xi then divide by it
-	xMat = (xMat - xMeans)/xVar
-	numTestPts = 30
-	wMat = zeros((numTestPts,shape(xMat)[1]))
-	for i in range(numTestPts):
-		ws = ridgeRegres(xMat,yMat,exp(i-10))
-		wMat[i,:]=ws.T
-	return wMat
-</code></pre>
-
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# figma
+            </h2> 
         </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian">
+        <h2 class="post-title"># Update 了一下 figma 的封面</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-30
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/jr-IKFXF3" class="post-tag">
+            # figma
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </di>
+    </article>
+  
+</div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian">
-              <h3 class="post-title">
-                ML - Python LASSO 算法实现
-              </h3>
-            </a>
-          </div>
-        
-
-        
+        <div class="pagination-container">
+  
+  
+</div>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
