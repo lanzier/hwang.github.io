@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-09-30T10:34:52.678Z</updated>
+    <updated>2019-10-01T12:21:53.286Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Procreate 练习]]></title>
+        <id>https://hwang.top/post/procreate-lian-xi</id>
+        <link href="https://hwang.top/post/procreate-lian-xi">
+        </link>
+        <updated>2019-10-01T12:17:19.000Z</updated>
+        <content type="html"><![CDATA[<p>画图，画图。</p>
+<p>好久没有动笔了。线条画的一点都不流畅了。</p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1569932434983.PNG" alt=""></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Update 了一下 figma 的封面]]></title>
         <id>https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian</id>
@@ -849,94 +860,6 @@ process.sendline('mypassword')
 <p>少数派之前关于精力管理的文章，让我开始意识到学习中投入精力这件事。以我自己的经验来说，我现在仍然清晰的记着在小学的时候，就习惯在下午 2:30 的时候，搬着小板凳开始写作业，所以我一直以来的习惯就是在下午2-3点的时候精力较为集中，Todoist 的纪录同样验证了这一点。以前自己并没有刻意关注这个问题，但是实际的体验在说明，精力集中时，我自己的脑子就是会更加清晰。自己精力最为充沛的时间段做那些需要集中精力的事情才是最优决策。所以筛选出需要集中精力的任务非常有必要。如果你对于自己何时精力充沛没有认识，可以尝试此前少数派介绍过的<a href="https://sspai.com/post/45357">精力管理模板</a>。然后这个结果也许会是一种安慰剂，暗示自己能够实现高效的集中精力，完成自己的目标。</p>
 <p>大胆的猜测，需要你有更多信息这样能够更好的辅助自己的判断。所以更多的阅读是有必要的。少数派上有不少关于阅读流程的内容，我也参照着学习过，对于 Web 内容我依然使用 RSS 作为主要的信息摄入方式，我也没有将其精简，因为对于我来说，内容没读完并不会让我感到焦虑，我也没有一定要在 RSS 中获得什么的想发，更多的是一种眼界的拓宽，思维的拓展。我十分习惯也热衷于「刷 RSS」 。简单来说，我的阅读流程大概是这样的：在 Reeder 中看简单文章，觉得好的保存道印象笔记中，需要仔细看的发到 Instapaper 中，需要学习的发送到 Goodnotes 中，最后都归档到印象笔记中。我希望自己看到更加看到更加多元的东西，但是我也不想让算法暴露我的癖好，所以我选择用 RSS 来作为主要的信息摄入渠道。</p>
 <p>总体来说，我的经验是，如果你需要快速入门一个东西，那么比起抓紧时间，更为重要时期是去思考，去理解。而面对陌生概念，要勇敢的去猜测，去迁移自己的知识，之后才是按照轻重缓急的去学习，去操作。就像前文提到的，本文所提到的方法，并不一定适用于他人。但是，于我而言，这些都是有效的，这些都是影响我的。所以，请去思考，去理解，去猜测，大胆践行自己的思考，为自己所做承担即可。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2018 - 我的主屏]]></title>
-        <id>https://hwang.top/post/2018-wo-de-zhu-ping</id>
-        <link href="https://hwang.top/post/2018-wo-de-zhu-ping">
-        </link>
-        <updated>2019-01-17T02:09:55.000Z</updated>
-        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt=""></figure>
-<p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
-]]></summary>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt=""></figure>
-<p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
-<!-- more -->
-<h2 id="第一排">第一排</h2>
-<ol>
-<li>微信：糟糕的高墙。</li>
-<li>倍洽：办公用的聊天工具。工作用。</li>
-<li>Castro：一个高效便捷好看的播客应用。已订阅。💰</li>
-<li>Copied：剪贴板工具。Mac 和 iPhone 上双平台在用。利用一些脚本，可以自动记录一些特殊信息，例如颜色（#0068B8）、淘宝分享信息，并且用以存放常用的文本信息（邮件模板、日常工作等）。iOS上，输入法中切换能够快速输入，对我来说很方便。</li>
-</ol>
-<h2 id="第二排">第二排</h2>
-<ol>
-<li>Trello：项目管理工具。工作用。</li>
-<li>Outlook：目前主力的邮件 App。邮件处理坚持 「Inbox Zero」，要么去 Todoist，要么去 Evernote，剩下的就是通通进入 achieve。 并不做整理，因为需要整理的都在 Evernote 里。</li>
-<li>App store ：🌚</li>
-<li>tweetbot ： 用来刷tweet的第三方客户端。只看不发的那种，twitter 第三方政策变动对我来说，其实并没有什么影响。</li>
-</ol>
-<h2 id="第三排">第三排</h2>
-<p>文件夹。跳过。</p>
-<h2 id="第四排">第四排</h2>
-<ol>
-<li>Evernote ：国区高级版用户+国际版普通用户。是我数字生活的归档箱。所有能够归档的都是归档于此。国际版只是为方便我的阅读流程使用。</li>
-<li>Instapaper ： 依然没有换 Pocket ... 是我阅读输入流程中的一环，也是对我来说最重要的软件之一。</li>
-<li>Moneywiz ：记账软件。最近开销有点大……</li>
-<li>telegram ：主要拿来联系亲人。加了一堆群，几乎不发言。以及用来看各种 channel。</li>
-</ol>
-<h2 id="第五排">第五排</h2>
-<ol>
-<li>Timepage ： 老用户，免费送了 iPad 版，相比（其他转订阅的厂商）而言，尽然有些不好意思。用以查看各种日程，离开学校后，明显还没有找到使用日历的节奏。需求并没有那么强了。</li>
-<li>Ulysses ： 用「Markdown XL」写作的写作软件。日常工作的文档，非常方便。平时写东西，习惯分节写作，这样能够减少长篇大论的压力感。</li>
-<li>极光字典 ：一个查单词的应用，满足我点开即用的需求，并且能够导出历史记录、收藏记录。</li>
-<li>NOMO ：拍照软件，满足的需求了打开就能拍。并且一个个好看的相机也满足了收藏癖的虚荣心。VSCO 设置后也能直接打开相机，NOMO 给我的那种精致感，让我选择留它在主页。（说得好像我多会拍照似的）</li>
-</ol>
-<h2 id="第六排">第六排</h2>
-<ol>
-<li>Spotify ： 听歌软件。</li>
-<li>捷径 ： iPhone、iPad上处理许多流程的重要工具。</li>
-<li>Pythonista ：即买了Jsbox，又买了 Pythonista……我也不知道为什么。还不熟悉，能够在捷径中运行python，所以买了。</li>
-<li>hyperapp ：经常需要临时操作一下服务器。总体感觉还行，比较而言，在终端的使用体验上，还是 termius 操作更便利一些（一些在手机上的手势操作，让人用的更加舒服）。优势是一些服务的快速部署，以及非常棒的连接方式。</li>
-</ol>
-<h2 id="dock-栏">Dock 栏</h2>
-<ol>
-<li>Todoist ：任务管理，GTD。</li>
-<li>Drafts ：碎片收集与整理。</li>
-<li>Launch ：启动器。</li>
-<li>Reeder ：RSS阅读器。</li>
-</ol>
-<h2 id="launch-中的动作">Launch 中的动作</h2>
-<figure data-type="image" tabindex="2"><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyja5xap7tj30u01nogpf.jpg" alt=""></figure>
-<blockquote>
-<p>上至下左至右</p>
-</blockquote>
-<ol>
-<li>Time ：看倒计时</li>
-<li>翻译：输入文本翻译</li>
-</ol>
-<hr>
-<ol>
-<li>即刻</li>
-<li>立即开始番茄钟倒计时</li>
-<li>快速创建长截图</li>
-</ol>
-<hr>
-<ol>
-<li>切换apple store地区</li>
-<li>剪贴板相关的动作：清空剪贴板、剪贴板搜索（ai search、淘宝两个动作）；发送剪贴板内容到Twitter、微博；查单词；</li>
-<li>Workflow （捷径）相关：主要用来存放一些定期执行的任务。</li>
-<li>Person ： 一些个人常用的动作</li>
-<li>📱：一个人常用的比较复杂一些的快捷操作</li>
-<li>QuickS：搜索聚合。各种搜索。</li>
-<li>国内：各种 pay 、扫描二维码、充话费等服务。</li>
-<li>Newspaper：用来打开软件看下载客户端的媒体的文章，好奇心日报、Medium、少数派、数字尾巴。</li>
-<li>冗余：一些需要打开，又不需要出现在首页上的app。</li>
-<li>App 兑换 ：并不常用。</li>
-<li>Pic：和图像处理有关的动作：白描、picsew、pico、vsco 等</li>
-<li>Bose：连接音箱。</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
