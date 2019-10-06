@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-10-01T12:21:53.286Z</updated>
+    <updated>2019-10-06T07:41:26.410Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,39 @@
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
     <entry>
+        <title type="html"><![CDATA[Qt for Python 的小Tips —— 外部加载 QSS]]></title>
+        <id>https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss</id>
+        <link href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss">
+        </link>
+        <updated>2019-10-06T07:37:52.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="pyqt5pyside2-加载-qss-文件">PyQt5/PySide2 —— 加载 QSS 文件</h2>
+<pre><code class="language-python">class beautifyUI(object):
+    def __init__(self):
+        pass
+    def readQss(self, qssfile):
+        &quot;&quot;&quot;
+        加载 QSS 文件；
+        qssfile：qss文件路径；
+        &quot;&quot;&quot;
+        with open(qssfile, &quot;r&quot;) as f:
+            return f.read()   
+</code></pre>
+<p>定义一个函数，基本上就可以通过这个 读取 QSS 作为字符串，然后存为变量，读取进去就OK了。</p>
+<p>当然这个文件在打包时也要特殊处理：要么作为字符串储存于某个变量中，要么直接在特定目录下去读取这个文件。在mac的应用打包中，格外需要注意这点。请尽量使用绝对路径记录信息。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus]]></title>
+        <id>https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus</id>
+        <link href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus">
+        </link>
+        <updated>2019-10-06T07:35:37.000Z</updated>
+        <content type="html"><![CDATA[<p>这里设置 软件的底部信息栏，PySide 中称为 QStatusbar。</p>
+<p>利用 QT Creator 生成的 mainWindows 软件会自动添加该部件。如果不需要底部状态栏，注释掉就可以了。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/06/3iQ5fJxY1rZNEgb.png" alt=""></figure>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Procreate 练习]]></title>
         <id>https://hwang.top/post/procreate-lian-xi</id>
         <link href="https://hwang.top/post/procreate-lian-xi">
@@ -18,7 +51,7 @@
         <updated>2019-10-01T12:17:19.000Z</updated>
         <content type="html"><![CDATA[<p>画图，画图。</p>
 <p>好久没有动笔了。线条画的一点都不流畅了。</p>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1569932434983.PNG" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/01/xwQ8BVtOInGfvW7.png" alt="IMG_0404.PNG"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -590,276 +623,6 @@ FROM all_location_data LIMIT 20;
 <h2 id="mysql-统计某个-字段-不重复的行数">MySQL 统计某个 字段 不重复的行数</h2>
 <pre><code class="language-sql">SELECT count(DISTINCT name) AS nu FROM company;
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python Pexpect 库的简单入门]]></title>
-        <id>https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men</id>
-        <link href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
-        </link>
-        <updated>2019-03-26T02:04:35.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>2019.03.26<br>
-Hwang<br>
-参考：<br>
-1.<a href="https://www.jianshu.com/p/cfd163200d12">https://www.jianshu.com/p/cfd163200d12</a><br>
-2.<a href="https://blog.csdn.net/Cloud_Strife0/article/details/82217494">https://blog.csdn.net/Cloud_Strife0/article/details/82217494</a></p>
-</blockquote>
-<h2 id="1-pexpect-是什么">1. Pexpect  是什么</h2>
-<blockquote>
-<p>pexpect 是 Python 语言的类 Expect 实现。<br>
-而 expect 主要用于模拟人机对话，简单地说就是可以使用正则匹配捕捉系统的提问（ssh登录需要输入密码等），并且根据捕捉到的提问进行不同的操作。<br>
-例子：</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>2019.03.26<br>
-Hwang<br>
-参考：<br>
-1.<a href="https://www.jianshu.com/p/cfd163200d12">https://www.jianshu.com/p/cfd163200d12</a><br>
-2.<a href="https://blog.csdn.net/Cloud_Strife0/article/details/82217494">https://blog.csdn.net/Cloud_Strife0/article/details/82217494</a></p>
-</blockquote>
-<h2 id="1-pexpect-是什么">1. Pexpect  是什么</h2>
-<blockquote>
-<p>pexpect 是 Python 语言的类 Expect 实现。<br>
-而 expect 主要用于模拟人机对话，简单地说就是可以使用正则匹配捕捉系统的提问（ssh登录需要输入密码等），并且根据捕捉到的提问进行不同的操作。<br>
-例子：</p>
-</blockquote>
-<!-- more -->
-<pre><code class="language-python">import pexpect
-import sys
-
-# 用spawn来执行一个指令
-child = pexpect.spawn('ftp ftp.openbsd.org')
-# 用expect等待指定的关键字’name‘
-child.expect('(?i)name .*: ')
-# 若上一步匹配到了，则向计算机输入name
-child.sendline('anonymous')
-# 用expect等待指定的关键字’password‘
-child.expect('(?i)password')
-# 若上一步匹配到了，则向计算机输入password
-child.sendline('pexpect@sourceforge.net')
-# 用expect等待指定的关键字’ftp&gt;‘
-child.expect('ftp&gt; ')
-# 若上一步成功匹配，则意味着进入了ftp连接，现在做一些操作
-child.sendline('cd /pub/OpenBSD/3.7/packages/i386')
-child.expect('ftp&gt; ')
-child.sendline('bin')
-child.expect('ftp&gt; ')
-child.sendline('prompt')
-child.expect('ftp&gt; ')
-child.sendline('pwd')
-child.expect('ftp&gt; ')
-print(&quot;Escape character is '^]'.\n&quot;)
-sys.stdout.write (child.after)
-sys.stdout.flush()
-child.interact() # Escape character defaults to ^]
-# At this point this script blocks until the user presses the escape character
-# or until the child exits. The human user and the child should be talking
-# to each other now.
-
-# At this point the script is running again.
-print('Left interactve mode.')
-
-# The rest is not strictly necessary. This just demonstrates a few functions.
-# This makes sure the child is dead; although it would be killed when Python exits.
-if child.isalive():
-    child.sendline('bye') # Try to ask ftp child to exit.
-    child.close()
-# Print the final state of the child. Normally isalive() should be FALSE.
-if child.isalive():
-    print('Child did not exit gracefully.')
-else:
-    print('Child exited gracefully.')
-</code></pre>
-<h2 id="2-用法">2. 用法</h2>
-<h3 id="21-spawn">2.1 spawn()</h3>
-<pre><code class="language-python">demo_ssh = pexpect.spawn('ssh xxx@&lt;ip&gt;')
-</code></pre>
-<p>如上例中，spawn() 返还的是句柄（handle）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，一般用法：<code>spawn(&lt;cmd 命令&gt;)</code> ， 后续的操作都会基于这里定义的变量 <code>demo_ssh</code>	。</p>
-<blockquote>
-<p>注意: spawn() ，或者说 pexpect 并不会转译任何特殊字符 比如 <code>| *</code>字符在Linux的shell中有特殊含义，但是在 pexpect 中不会转译它们，如果在 linux 系统中想使用这些符号的正确含义就必须加上 shell 来运行，这是很容易犯的一个错误。<br>
-正确的方式：</p>
-<pre><code class="language-python">process = pexpect.spawn('/bin/bash -c &quot;ls -l | grep LOG &gt; log_list.txt&quot;')
-process.expect(pexpect.EOF)
-</code></pre>
-</blockquote>
-<h4 id="参数">参数</h4>
-<ul>
-<li>timeout</li>
-</ul>
-<p>设置超时时间（30默认）</p>
-<ul>
-<li>
-<p>maxread 缓存设置<br>
-默认 2000 字符</p>
-</li>
-<li>
-<p>searchwindowsize - 模式匹配阀值</p>
-</li>
-<li>
-<p>logfile - 运行输出控制</p>
-</li>
-<li>
-<p>logfile_read - 获取标准输出的内容</p>
-</li>
-<li>
-<p>logfile_send - 获取发送的内容</p>
-</li>
-<li>
-<p>cwd - 指定命令执行的目录</p>
-</li>
-<li>
-<p>env - 指定环境变量</p>
-</li>
-<li>
-<p>ignore_sighup - 是否过滤 SIGHUP 信号</p>
-</li>
-<li>
-<p>delaybeforesend - 字符发送延时</p>
-</li>
-</ul>
-<h3 id="22-expect">2.2 expect()</h3>
-<p>关键字匹配，当spawn 启动一个程序并且返回程序控制句柄后，可以用expect() 来指定匹配内容。 使用 expect() 使用正则表达式来匹配。</p>
-<h3 id="221-expect_exact">2.2.1 expect_exact()</h3>
-<p>精确匹配，它的使用和 expect() 是一样的，唯一不同的就是它的匹配列表中不再使用正则表达式。<br>
-从性能上来说 expect_exact() 要更好一些，因为即使你没有使用正则表达式而只是简单的用了几个字符 expect() 也会先将它们转换成正则表达式模式然后再搜索，但 expect_exact() 不会，而且也不会把一些特殊符号转换掉。</p>
-<h3 id="222expect_list">2.2.2expect_list()</h3>
-<p>预转换匹配，使用方式和 expect() 一样，唯一不同的就是它里面接受的正则表达式列表只会转换一次。</p>
-<h3 id="223-expect_loop">2.2.3 expect_loop()</h3>
-<p>用于从标准输入中获取内容，loop这个词代表它会进入一个循环，必须要从标准输入中获取到关键字才会往下继续执行。</p>
-<h3 id="23-send">2.3 send()</h3>
-<p>发送关键字。用来向程序发送指定的字符串。</p>
-<h3 id="231-sendline">2.3.1 sendline()</h3>
-<p>发送带回车符的字符串。</p>
-<h3 id="232-sendcontrol">2.3.2 sendcontrol()</h3>
-<p>发送控制信号</p>
-<h3 id="233-sendeof">2.3.3 sendeof()</h3>
-<p>发送 EOF 信号</p>
-<h3 id="234-sendintr">2.3.4 sendintr()</h3>
-<p>发送终止信号</p>
-<h3 id="24-interact-将控制权交给用户">2.4 interact() - 将控制权交给用户</h3>
-<center><span style="font-size:40px">🧡</span></center>
-<p>interact() 表示将控制权限交给用户（或者说标准输入）。一般情况下 pexpect 会接管所有的输入和输出，但有的时候还是希望用户介入，或者仅仅是为了完成一部分工作的时候， interact() 就很有用了。</p>
-<h3 id="25-close">2.5 close()</h3>
-<p>停止应用程序<br>
-如果想中途关闭子程序，那么可以用 close 来完成，调用这个方法后会返回这个程序的返回值。<br>
-如果设置 force=True 会强行关闭这个程序，大概的过程就是先发送 SIGHUP 和 SIGINT 信号，如果都无效的话就发 SIGKILL 信号，反正不管怎么样都会保证这个程序被关闭掉。<br>
-多次调用这个方法是允许的，但是不保证每次都能返回正确的返回值。尽量不要这么做，如果想保证程序被关闭的话只要设置force的值就可以了。</p>
-<h3 id="26-terminate">2.6 terminate()</h3>
-<p>可以看作是上面 close() 的别名</p>
-<h3 id="27-kill">2.7 Kill()</h3>
-<p>发送 SIGKILL 信号，向子程序发送 SIGKILL 的信号。</p>
-<h3 id="28-flush">2.8 flush()</h3>
-<p>什么都不干，只是为了与文件方法兼容而已。</p>
-<h3 id="29-isalive">2.9 isalive()</h3>
-<p>检查子程序运行状态。<br>
-检查被调用的子程序是否正在运行，这个方法是运行在非阻断模式下面的。<br>
-如果获得的返回是 True 表示子程序正在运行；返回 False 则表示程序运行终止。</p>
-<h3 id="210-isatty">2.10 isatty()</h3>
-<p>检查是否运行在 TTY （即控制台）设备上</p>
-<h3 id="211-next">2.11 next()</h3>
-<p>返回下一行内容，和操作文件一样，这个方法也是返回缓存中下一行的内容。</p>
-<h3 id="212-read">2.12 read()</h3>
-<p>返回剩下的所有内容。</p>
-<p>获取子程序返回的所有内容，一般情况下我们可以用 expect 来期待某些内容，然后通过 process.before 这样的方式来获取，但这种方式有一个前提：那就是必须先 expect 某些字符，然后才能用 process.before 来获取缓存中剩下的内容。</p>
-<p>read() 的使用很不同，它期待一个 EOF 信号，然后将直到这个信号之前的所有输出全部返回，就像读一个文件那样。<br>
-一般情况下，交互式程序只有关闭的时候才会返回 EOF ，比如用 by 命令关闭 ftp 服务器，或者用 exit 命令关闭一个 ssh 连接。<br>
-这个方法使用范围比较狭窄，因为完全可以用 expect.EOF 方式来代替。当然如果是本机命令，每执行完一次之后都会返回 EOF ，这种情况下倒是很有用：</p>
-<pre><code>process = pexpect.spawn('ls -l')output = process.read()print output
-</code></pre>
-<p>看起来这么做有点无聊？但我想一定有什么理由支持这个方法。<br>
-可以用指定 read(size=-1) 的方式来设置返回的字符数，如果没有设置或者设置为负数则返回所有内容，正数则返回指定数量的内容，返回的内容是字符串形式。</p>
-<h3 id="213-readlines-返回列表模式的所有输出">2.13 readlines() - 返回列表模式的所有输出</h3>
-<p>返回一个列表，列表中的每个元素都是一行（包括\r\n字符）。</p>
-<h3 id="214-setecho-子程序响应模式">2.14 setecho() - 子程序响应模式</h3>
-<p>设置子程序运行时的响应方式，一般情况下向子程序发送字符的时候，这些字符都会在标准输出上显示出来，这样你可以看到你发送出去的内容，但是有的时候，我们不需要显示，那么就可以用这个方法来设置了。<br>
-注意，必须在发送字符之前设置，设置之后在之后的代码中都一直有效。比如：</p>
-<pre><code>process = pexpect.spawn('cat')# 默认情况下，下面的1234这个字符串会显示2次，一次是pexpect返回的，一次是cat命令返回的process.sendline(&quot;1234&quot;)# 现在我们关闭pexpect()的echo功能process.setecho(False)# 下面的字符只会显示一次了，这是由cat返回的process.sendline(&quot;abcd&quot;)# 现在重新开启echo功能，就可以再次看到我们发送的字符了process.setecho(True)
-</code></pre>
-<h3 id="215-setwinsize-控制台窗口大小">2.15 setwinsize() - 控制台窗口大小</h3>
-<p>如果子程序是一个控制台（TTY），比如 SSH 连接、 Telnet 连接这种通过网络登陆到系统并发送命令的都算控制台，那么可以用这个方法来设置这个控制太的大小（或者说长宽）。<br>
-它的调用方式是 <code>process.setwinsize(r, c)</code><br>
-默认值是 <code>setwinsize(24, 80)</code>，其中 24 是高度，单位是行； 80 是宽度，单位是字符。<br>
-为什么要用它？想像下面的场景：<br>
-有的时候你通过pexpect登陆到某个ssh控制台之后，又用 interact() 来将控制权交给用户，然后用户到控制台里面写自己的命令，如果命令比较长，就会发现当命令到屏幕边缘之后不会自动换行，而是又返回到这一行的最前面重新覆盖前面的字符；这不会影响命令的实际效果，但是很恼人。<br>
-这种情况用 setwinsize() 就可以解决，找到自己终端支持的长度，重新设置一下，比如 setwinsize(25, 96 )，如果设置的正确的话就可以解决了。</p>
-<h3 id="216-wait-执行等待">2.16 wait() - 执行等待</h3>
-<p>直到被调用的子程序执行完毕之前，程序都停止（或者说等待）执行。它不会从被调用的子程序中读取任何内容。</p>
-<h3 id="217-waitnoecho">2.17 waitnoecho()</h3>
-<p>它使用的地方比较特殊，唯一匹配的地方就是：当子程序的 echo 功能被设置为 Fals 时。<br>
-看起来很奇怪？其实这个功能是基于一个很让人难以置信但的确是真实的情况：<br>
-在命令行模式下，很多要求输入密码的地方，比如 FTP/SSH 等，密码实际上都会在你输入之后又重新返回并打印出来的，但是为什么我们看不到我们自己输入的密码呢？这就是因为密码在要打印出来之前被程序将 echo 功能设置为 False 了。<br>
-现在知道为什么有这么一个方法了吧？比如要进行一个 ssh 连接时，如何检查是否要输入密码？用关键字 password 是一个方法，但还有一个方法就是这样：</p>
-<pre><code class="language-python"># 启动ssh连接
-process = pexpect.spawn(&quot;ssh user@example.com&quot;)
-# 等待echo被设置为False，这就意味着本地不会有回显
-process.waitnoecho()
-process.sendline('mypassword')
-</code></pre>
-<p>可以设置超时时间，默认是：<code>waitnoecho(timeout=-1)</code>，表示和系统设置的超时时间相同，也可以设置为 None 表示永远等待，直到回显被设置为 False ，当然还可以设置其他的数字来表示超时时间。</p>
-<h3 id="218-write-发送字符串">2.18  write() - 发送字符串</h3>
-<p>类似于send()命令，只不过不会返回发送的字符数。</p>
-<h3 id="219-writelines-发送包含字符串的列表">2.19 writelines() - 发送包含字符串的列表</h3>
-<p>类似于 write() 命令，只不过接受的是一个字符串列表， writelines() 会向子程序一条一条的发送列表中的元素，但是不会自动在每个元素的最后加上回车换行符。<br>
-与 write() 相似的是，这个方法也不会返回发送的字符数量。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>句柄则是由系统所管理的引用标识，该标识可以被系统重新定位到一个内存地址上。这种间接访问对象的模式增强了系统对引用对象的控制。（参见封装）。通俗的说就是我们调用句柄就是调用句柄所提供的服务，即句柄已经把它能做的操作都设定好了，我们只能在句柄所提供的操作范围内进行操作，但是普通指针的操作却多种多样，不受限制。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[去思考，去理解，去猜测，《xxx快速入门》指北 ]]></title>
-        <id>https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei</id>
-        <link href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
-        </link>
-        <updated>2019-03-15T10:30:15.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文发布于少数派：https://beta.sspai.com/post/52935</p>
-</blockquote>
-<p>2018年，于我而言是人生中最非同一般的一年，我从大三升到了大四，更为重要的是我从「学习」的状态转变为了「工作」状态。说出来我自己也不信，2018年初我还是一个立志成为「经济学家」的学子，2018年底我却深度参与到了一项创业活动中。我的文档库中从文献笔记，变为了代码与日志。在这之中，需要去适应许多的改变，少数派是一个讲求「效率」的网站，各种「酸甜苦辣」自然按下不表，作为2018年的年度总结，下文我会尝试梳理这一年中对我产生影响的学习「陌生概念」的思路，希望能够为大家提供一些参考。</p>
-<p>事先需要声明的是，效率思维看起来太过「空洞」，而本人对于各种思考范式的认识也并非「专家」，所以撰文、用词、举例之中有偏颇之处也请包涵。本文叙述的也只是我本人的经验，并不一定适用于他人。</p>
-<p>这一年，我做的最多的事就是在不断做新的事。我是经济学的在读本科生，6个月前，我连 vim 编辑器需要先按 「i」 进入编辑模式才能修改文本都不知道；而现在，我已经能够实现基本的诸如 apache 、nginx 的各种配置了。2018年，我第一次学习了使用命令行的方式操作系统，第一次知道原来有配置文件这种东西，第一次知道了虚拟化这种东西，第一次写了网页，第一次编写了程序，<em>我甚至知道了 Windows 系统在执行打印操作是把文件暂存在C:\\WINDOWS\Spool\printers 系统文件夹内，然后慢慢发给打印机进行处理的</em>。而且这之中大多数东西，都是下半年才发生的，因为2018年上半年，我每周还有三天是上课的。同事都认为这是因为我「学习能力强」，但是你凭什么就「学习能力强」了？ 我并不觉得，这之中有任何一件事情对我来说是简单的、容易的。</p>
-<p><em>2018年第一次进机房部署服务</em></p>
-<p>这些事都是有外力推动你去做的。大多数人，需要进入一个新的领域时，会选择先从诸如《xxx快速入门》、《xxx快速上手》这样的内容出发，去学习这个领域的东西。但是，由于我往往是有这个需求时，这个项目就要求你需要快速上手，解决问题。基本上不可能让你一步一个脚印的去学习然后等你学会了再去解决这个需求。也就是说，一个外生的变量迫使你不得不快速的进入状态。这个外生变量，直接拒绝「不积跬步，无以至千里」这样的想法。我的解决方法是第一步，先去思考「需要的是什么」；第二步，再去理解你所需要的「对象」大体上是长得什么样的，最后描绘出符合自己需求学习清单，按照理解的步骤学习，按照重要程度进行精力的分配。这种像蜻蜓点水的学习方法，帮助我较为快速的上手解决问题。下面我总结了一些自己的经验：</p>
-<h2 id="一需要的是什么">（一）需要的是什么</h2>
-<p>首先，是明确「需要的是什么」。一开始思考的「需要的是什么」，应当是从需求出发的思考，就是做这件事目的是什么。这个话术的前提是，你对这个需求所需要的背景知识几乎「一无所知」。所以需要优先构建的是这个需求的背景知识。也就是说要先与这个陌生的概念建立联系，并且能够基本定位到这些背景知识在自己已有的知识体系的未知。所以，我一般会进行两步：</p>
-<p>**1.利用搜索引擎，建立与陌生概念的联系。 **许多时候是相对明确的。例如一个经济学学生，被老师要求学习 Stata ，那么他需要的其实就是：<strong>学会使用这个软件进行计量分析</strong>。这个就是「目标」，那么假设我是一个对于 Stata 一片空白人。我需要的首先就是 <strong>「Stata 是什么？」</strong>，这个问题很容易就能在搜索引擎中找到。不过，当我在进行空白的概念理解时，我会多搜索几个关键词，例如「stata 经济学」（空格在一般搜索引擎中都是「和」的意思）。**这是非常重要的一步，因为当你把一个未知概念（stata）与你所知概念（经济学）结合时，出现的内容，大概率是你知晓大半但是不全懂的东西。**也许这个技巧，你觉得这并没有什么了不起的，但是这个习惯就能一下将陌生概念变得更加清晰，消除令人恐惧的陌生感，下图展示了这一步的重要性。</p>
-<p><img src="DraggedImage.png" alt=""><br>
-<em>经济学学生在「stata 经济学」的搜索结果中能够很直接获取他正真需要的信息。</em></p>
-<p>简单几轮下来，当你很容易就能把「 Stata 」与「计量经济学」相联系。现实中遇到问题可能并不那么快速，但是这样的方法能够让你更加快速的理解「陌生概念」对于「你所需要的是什么」的相对位置。即这个「陌生概念」，对于你已有的知识体系，所处的位置。例如使用 Stata 是更加「靠近」计量经济学，而不是数理经济学或者其他什么的。这样在头脑地图中有一个比较明确的标的，上手起真正的「未知概念」会有莫大的帮助。</p>
-<figure data-type="image" tabindex="1"><img src="DraggedImage-1.png" alt=""></figure>
-<p>合格的搜索引擎会提供了许多维度的过滤方式——高级检索语法，能够更加快速的搜到你真正需要的东西，在这里提供了一个我自己收集整理的 <a href="https://docs.google.com/spreadsheets/d/12SLN7V2b9KkI_ObRQAZ5z6A4-aK6uSGvLJRKl9irBhI/edit?usp=sharing">Google高级语法表</a> 。</p>
-<p>**2.把握「规律」来迁移已有的知识。**我一直将知识想象成一个多层的网状的结构，这样的一个「库」，里面的各个元素之间都会有复杂的链接，而我相信这之中会有某种「规律」，能够在较大程度上去解释这些「链接」。而这些「规律」，可以理解为各种思维方法，这些思维方法能够帮助你进行知识点与知识点的链接。这里说的可能有些玄妙了，举例来说，类比的思维方式能够在你理解一个逻辑的前提下，快速理解另一个逻辑。例如当你理解「外网」，是通过 IP 地址来识别各种请求的，这样你去理解内网就非常容易了。再比如，你知道 Stata 中回归的命令是 <code>reg y x1 x2 x3</code> ，其中 <code>reg</code> 是命令，后面的 <code>y x1 x2 x3</code> 是参数，那么你就能理解<code>ssh -p 10022 admin@192.168.1.1</code> ，类似的 <code>ssh</code> 也是某种命令， <code>-p 1022 admin@192.168.1.1</code> 都是类似的不同参数。这就是类比的思维去迁移。当然例子中提到的仅仅是类比的思维而已，许多学科的「方法论」内容能够在一定程度上去理解其他的内容（至少经济学在这一方面做的相对不错）。</p>
-<p>这两步写了这么大段的文字，但其实在真正操作起来并不复杂，用搜索引擎去搜索不知道的和你知道的关键词，然后去猜测这个「需要的是什么」，在实际中可能只是你坐在电脑前面按两下 Ctrl 键，唤起 Alfred ，键入关键词然后回车，再拿笔写写画画，再按两下 Ctrl 键，再次唤起 Alfred ，键入关键词然后回车的过程。</p>
-<p>理解了这个位置概念的基本背景知识，并且有所标的的迁移到已有的知识体系后，你就能基本明确这个陌生概念对于自己目标的实现需要的是什么了。</p>
-<p>最后，如果你对自己模式化思维的能力有所怀疑，可以看看几年前的畅销书《思考的快与慢》，应该会有所帮助，如果对经济学的解释感兴趣，可以看看张五常的《经济解释》，非科班出生看第一本就能看到很多关于经济学方法论的内容（虽然没有目前主流的计量内容）。</p>
-<h2 id="二对象长什么样">（二）「对象」长什么样</h2>
-<p>这种迁移不仅仅对理解「需要什么」有帮助，其实也对厘清「对象长什么样」有帮助。对象长什么样，就是要对这个位置概念又一个较为整体的认识。只要较为整体即可，并不需要非常完整的认识，因为这个认识总是随着知识水平的提高，不断完善的。那些与目前需求无关的连接点，并不需要在快速入门的情况下被关注。</p>
-<p>**首先，阅读「前言」性质的内容，快速形成概念的整体认识。 **看前言或者摘要这一类性质的内容，是理解一个概念、一篇文章的捷径。一般作者都会在这里就先整理好这个概念的历史。例如<a href="https://sspai.com/post/31500"> URL Schemes 使用详解</a> 中，前3部分就是这个性质的内容。阅读这些内容，并不需要多大的基础，集中精力基本都能看懂。这里也没有太多的技巧，唯一有的建议就是看优秀的内容生产者生产的文字会更加节省时间。</p>
-<p>其次，对于这些「知识点」的认识，我的思考角度一般是这样的，先从对于员工的我来说这个「陌生概念」是怎么样的，其次是对于公司来说这个「陌生概念」起到的重要程度是怎么样的：</p>
-<p>**1.这个「陌生概念」在我所做的工作流程中应当处于什么位置。**因为这个「对象长什么样」是对于我来说的，也就是说，我需要理解他对于我来说到底有多重要，然后是对于公司业务来说有多重要。所以，这里「什么位置」主要是为其贴上重要程度的分类、业务流程的分类、技能结构的分类以及其他有助于梳理的标签。例如，我有一段时间被要求去学习 R 语言。那么我基本了解到了，R 主要应用于大数据处理相关的工作，例如大数据的计量、画图等，还在机器学习方面有一定的应用。而我的背景是学习了一些 Python 基础，Python 的应用比 R 广泛，能够覆盖到我一些运维的工作。所以这是一个在我的工作流程中相对不那么重要的事情，但是我依然需要去解决它。在业务上，这是一项我们必须要做的业务，所以我需要的就是把它放在一个「需要被解决的需求」的位置上就可以了。解决完这个问题后，我并不需要过多的再去关注其他领域的东西。第一步就界定好这个「位置」，才能做到下手又轻重，避免不必要的精力花费。</p>
-<p><strong>3. 尝试去理解团队对这个需求的要求是什么。</strong> 最后一个，对于小团队来说非常适用，因为产品信息可能相对透明。当领导让你去实现一个陌生的需求时，如果有可能，那么去揣度一些产品真正的需求是什么，能够帮助我们判断哪里是需要精益求精的，哪里是会有「加工余量」的，这样能够更加快速的安排工作。这里的建议就是，能够偷懒的地方，需要慎重，因为「坑」一般是要自己填的。理解上级需求的前提是，你是知道公司的产品是怎么样的产品。如果连这个都不知道，那么还是不要做过多的揣度。</p>
-<p>除了从个人、团队角度的思考外，还有一种普遍性很强的思维方式，即横向的思考和纵向的思考。<strong>1.所谓横向的思考</strong>，就是与其他东西做横向的比较，然后得出差异，来标定这个「陌生概念」到底需要多少投入。<strong>2.所谓纵向思考</strong>，就是在时间线上去理解思考。在学习新事物这件事上，其实主要是考虑未来这个「陌生概念」中会不会有几个部分是对团队非常重要的内容。</p>
-<p>最后，总结一下，这一步的思考其实就是需要肢解这个「陌生概念」，然后去理解这个「陌生概念」中的知识点，并尝试划分轻重缓急，为后续有重点的快速入门作准备。我认为这一样是一个思考、理解、猜测的过程。</p>
-<h2 id="三为自己写下清单">（三）为自己写下清单</h2>
-<p>在思考「需要什么」时，可以理解为 GTD 的「收集」工作，因为这些关键词的结果，其实是进行具体的学习与操作的素材。在定位「对象」时，也可以认为在「处理」与「组织」，重点是为厘清后续的操作。在思考完这些事情后，我一般会在 Todoist 中创建具体的任务。一般我至少会打上以下标签：</p>
-<ol>
-<li>重要程度：Todoist 中 p1 表示重要，没有标注就表示一般。</li>
-<li>难度：困难、简单</li>
-<li>时间范围：DDL 表示截止日、 FT（free time）表示闲暇时、Hold 表示需要注意再次安排的，以及具体的时间</li>
-<li>精力：专注 ，表示要集中精力做的，没有标注就表示一般。</li>
-<li>其他根据具体情况会再添加辅助分类用的标签。</li>
-</ol>
-<p>清单写完后，就是根据 Todoist 的任务一项一项进行学习与操作。</p>
-<figure data-type="image" tabindex="2"><img src="WechatIMG74.jpeg" alt=""></figure>
-<p>少数派之前关于精力管理的文章，让我开始意识到学习中投入精力这件事。以我自己的经验来说，我现在仍然清晰的记着在小学的时候，就习惯在下午 2:30 的时候，搬着小板凳开始写作业，所以我一直以来的习惯就是在下午2-3点的时候精力较为集中，Todoist 的纪录同样验证了这一点。以前自己并没有刻意关注这个问题，但是实际的体验在说明，精力集中时，我自己的脑子就是会更加清晰。自己精力最为充沛的时间段做那些需要集中精力的事情才是最优决策。所以筛选出需要集中精力的任务非常有必要。如果你对于自己何时精力充沛没有认识，可以尝试此前少数派介绍过的<a href="https://sspai.com/post/45357">精力管理模板</a>。然后这个结果也许会是一种安慰剂，暗示自己能够实现高效的集中精力，完成自己的目标。</p>
-<p>大胆的猜测，需要你有更多信息这样能够更好的辅助自己的判断。所以更多的阅读是有必要的。少数派上有不少关于阅读流程的内容，我也参照着学习过，对于 Web 内容我依然使用 RSS 作为主要的信息摄入方式，我也没有将其精简，因为对于我来说，内容没读完并不会让我感到焦虑，我也没有一定要在 RSS 中获得什么的想发，更多的是一种眼界的拓宽，思维的拓展。我十分习惯也热衷于「刷 RSS」 。简单来说，我的阅读流程大概是这样的：在 Reeder 中看简单文章，觉得好的保存道印象笔记中，需要仔细看的发到 Instapaper 中，需要学习的发送到 Goodnotes 中，最后都归档到印象笔记中。我希望自己看到更加看到更加多元的东西，但是我也不想让算法暴露我的癖好，所以我选择用 RSS 来作为主要的信息摄入渠道。</p>
-<p>总体来说，我的经验是，如果你需要快速入门一个东西，那么比起抓紧时间，更为重要时期是去思考，去理解。而面对陌生概念，要勇敢的去猜测，去迁移自己的知识，之后才是按照轻重缓急的去学习，去操作。就像前文提到的，本文所提到的方法，并不一定适用于他人。但是，于我而言，这些都是有效的，这些都是影响我的。所以，请去思考，去理解，去猜测，大胆践行自己的思考，为自己所做承担即可。</p>
 ]]></content>
     </entry>
 </feed>
