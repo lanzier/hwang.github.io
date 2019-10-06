@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-10-06T07:41:26.410Z</updated>
+    <updated>2019-10-06T07:51:10.606Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -10,6 +10,37 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang 的低质阅读单 New 2]]></title>
+        <id>https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2</id>
+        <link href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2">
+        </link>
+        <updated>2019-10-06T07:47:27.000Z</updated>
+        <content type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
+<ul>
+<li><a href="https://jonuknownothingsnow.github.io/2019/04/13/%E8%B0%90%E9%97%A8%E6%AD%A6%E5%AD%A6%EF%BC%9A%E4%BD%BF%E7%94%A8JupyterHub%E6%90%AD%E5%BB%BA%E5%A4%9A%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E6%8E%A7%E5%88%B6%E5%8F%B0/index.html"> 谐门武学：使用JupyterHub搭建多用户数据控制台</a></li>
+<li><a href="https://ift.tt/2mGOpv0"> 使用 Python 函数进行模块化</a></li>
+<li><a href="https://ift.tt/2mLmHxh"> 约定式提交</a></li>
+<li><a href="https://ift.tt/2NRTWeO"> PyQt5 tutorial - Python GUI programming examples - Like Geeks</a></li>
+<li><a href="https://ift.tt/2zphOwJ"> 为什么你的SaaS会“失败”？_36氪</a></li>
+<li><a href="https://ift.tt/2LL5u0F"> 香港：（曾经的）实践中有限政府的最好例子</a></li>
+<li><a href="https://ift.tt/30Ikele"> 12条经验，让你在机器学习的路上避免很多坑</a></li>
+<li><a href="https://ift.tt/2Yi3L6P"> 苹果不再需要 Jony Ive</a></li>
+<li><a href="https://ift.tt/2LVP077"> Qt for Python &amp; PyInstaller — Qt for Python</a></li>
+<li><a href="https://ift.tt/2LMRZgT"> 整容的人越来越年轻了，自拍是罪魁祸首</a></li>
+<li><a href="https://ift.tt/2OnjbF0"> 刘林平 | 规律与因果：大数据对社会科学研究冲击之反思</a></li>
+<li><a href="https://ift.tt/32WXsro"> 组策略应用——安装软件-Rainy`s IT Tech Blog-51CTO博客</a></li>
+<li><a href="https://ift.tt/3209O1C"> PyQt 5信号与槽的几种高级玩法 - 博文视点</a></li>
+<li><a href="https://ift.tt/2Vcqsc0"> Python 工匠：使用数字与字符串的技巧</a></li>
+<li><a href="https://ift.tt/2LLMTBK"> 5代防火墙 -- 网络系统 -- IT技术博客大学习 -- 共学习 共进步！</a></li>
+<li><a href="https://ift.tt/2OmMI1e"> 我的书桌——先砸一块砖</a></li>
+<li><a href="https://ift.tt/2APiRXf"> 漫话中文自动分词和语义识别（下）：句法结构和语义结构 -- 算法 -- IT技术博客大学习 -- 共学习 共进步！</a></li>
+<li><a href="https://ift.tt/34qeNur"> Type is Beautiful » 孔雀计划：中文字体排印的思路</a></li>
+<li><a href="https://ift.tt/2MeDdP1"> 简明Vim练级攻略 -- Linux -- IT技术博客大学习 -- 共学习 共进步！</a></li>
+<li><a href="https://ift.tt/2pNiASF"> 数据科学入门后，该做什么？</a></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Qt for Python 的小Tips —— 外部加载 QSS]]></title>
         <id>https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss</id>
@@ -596,33 +627,6 @@ for y in y_list:
 <li>刷新一下共享文件夹</li>
 <li>OK</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SQL 的一些内容]]></title>
-        <id>https://hwang.top/post/sql-de-yi-xie-nei-rong</id>
-        <link href="https://hwang.top/post/sql-de-yi-xie-nei-rong">
-        </link>
-        <updated>2019-05-07T02:11:54.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="mysql-累计求和">MySQL 累计求和</h2>
-<pre><code class="language-sql">SET @csum := 0;
-SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
-FROM all_location_data LIMIT 20;
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="mysql-累计求和">MySQL 累计求和</h2>
-<pre><code class="language-sql">SET @csum := 0;
-SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
-FROM all_location_data LIMIT 20;
-</code></pre>
-<!-- more -->
-<p>首先 是设置一个变量 @csum 为0<br>
-接着 选择要显示的字段，设置一个公式<code>(@csum := @csum + ADCODE)</code> 这里 ADCODE 就是想要 累积加总的变量，将其记为 CUMSUM。<br>
-最后加上 <code>FROM all_location_data LIMIT 20;</code> 限制了现实20条。</p>
-<hr>
-<h2 id="mysql-统计某个-字段-不重复的行数">MySQL 统计某个 字段 不重复的行数</h2>
-<pre><code class="language-sql">SELECT count(DISTINCT name) AS nu FROM company;
-</code></pre>
 ]]></content>
     </entry>
 </feed>
