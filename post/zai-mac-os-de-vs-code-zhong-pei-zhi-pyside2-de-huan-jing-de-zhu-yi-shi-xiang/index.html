@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus | Hwang&#39;s Blog</title>
+<title>在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1571810204722">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,15 +73,19 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
+              在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
             </h2>
             <div class="post-info">
               <span>
-                2019-10-06
+                2019-10-23
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
+              
+                <a href="https://hwang.top/tag/c9N8A6XHq" class="post-tag">
+                  # Vscode
+                </a>
               
                 <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
                   # Python
@@ -93,17 +97,39 @@
               
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>这里设置 软件的底部信息栏，PySide 中称为 QStatusbar。</p>
-<p>利用 QT Creator 生成的 mainWindows 软件会自动添加该部件。如果不需要底部状态栏，注释掉就可以了。</p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/06/3iQ5fJxY1rZNEgb.png" alt=""></figure>
+                <p>基本信息可以参考：<a href="https://blog.csdn.net/gongjianbo1992/article/details/100654638">https://blog.csdn.net/gongjianbo1992/article/details/100654638</a></p>
+<p><code>pyside2-rcc</code>  : 将 资源文件专为 Python 可以用的文件<br>
+<code>pyside2-uic</code> : 将 Ui 文件 专为 Python 文件</p>
+<p>记录一下几个注意事项：</p>
+<h2 id="1-环境变量的一些问题">1. 环境变量的一些问题：</h2>
+<p>一般来说 <code>pyside2-rcc</code> 这类命令不一定会自动添加到环境变量中，所以需要添加到环境变量或者直接在设置项中选择完整的文件路径，例如我的：</p>
+<pre><code class="language-bash">/Library/Frameworks/Python.framework/Versions/3.7/bin/pyside2-rcc
+</code></pre>
+<p>在 Vs code 中填入即可。</p>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g882wxli97j30xg0do0te.jpg" alt=""></figure>
+<p>类似的 <code>pyside2-uic</code>  也是一样的。</p>
+<p>现在 为使用的 是 zsh， 所以配置文件也是在  .zshrc 中，配置文件中一般都会有标示环境变量的。可以直接在里面添加。 如果添加成功那么 直接在终端中输入 <code>pyside2-rcc</code> 是不会报错的。</p>
+<p>当然，默认直接在 <code>/usr/bin</code> 目录里面添加添加替身也是可以的。</p>
+<h2 id="2-绑定-designer-软件的注意事项">2. 绑定 Designer 软件的注意事项</h2>
+<p>如果使用 Ui 文件来创建用户界面，那么可能需要通过 Qt Designer 来修改文件。</p>
+<p>一个 mac OS 的常识，应用程序都是以 <code>.app</code> 结尾的 「文件夹」 所以在 VScode 中添加的路径不能是一个文件夹，需要是一个可执行文件。</p>
+<p>右键显示包内容，然后在 <code>/Contents/MacOS</code> 里面就能看到可执行文件了。需要添加的是这个可执行文件的路径。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">1. 环境变量的一些问题：</a></li>
+<li><a href="#2-%E7%BB%91%E5%AE%9A-designer-%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">2. 绑定 Designer 软件的注意事项</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -112,9 +138,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/procreate-lian-xi">
+            <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei">
               <h3 class="post-title">
-                Procreate 练习
+                Docker 的入门「指北」
               </h3>
             </a>
           </div>
