@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SQL 的一些内容 | Hwang&#39;s Blog</title>
+<title> STQT 查询工具 Oracle 相关记录 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1571996656004">
@@ -75,34 +75,65 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SQL 的一些内容
+               STQT 查询工具 Oracle 相关记录
             </h2>
             <div class="post-info">
               <span>
-                2019-05-07
+                2019-10-25
               </span>
               <span>
                 1 min read
               </span>
               
+                <a href="https://hwang.top/tag/TnrvUOUag" class="post-tag">
+                  # oracle
+                </a>
+              
+                <a href="https://hwang.top/tag/IH3pegZIE4" class="post-tag">
+                  # 数据库
+                </a>
+              
+                <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
+                  # Python
+                </a>
+              
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/sql-de-yi-xie-nei-rong.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="mysql-累计求和">MySQL 累计求和</h2>
-<pre><code class="language-sql">SET @csum := 0;
-SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
-FROM all_location_data LIMIT 20;
+                <figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1571996426849.png" alt=""></figure>
+<h2 id="一-sql-oracle-中的表名-字段名-字段类型等信息">一、SQL - Oracle 中的表名、字段名、字段类型等信息</h2>
+<h3 id="表-all_tab_columns">表 <code>ALL_TAB_COLUMNS</code></h3>
+<p>表 <code>all_tab_columns</code> 的内容包含了所有表的字段信息，可以通过查询语句获取需要的内容。</p>
+<pre><code class="language-sql">SELECT * FROM ALL_TAB_COLUMNS 
 </code></pre>
-<!-- more -->
-<p>首先 是设置一个变量 @csum 为0<br>
-接着 选择要显示的字段，设置一个公式<code>(@csum := @csum + ADCODE)</code> 这里 ADCODE 就是想要 累积加总的变量，将其记为 CUMSUM。<br>
-最后加上 <code>FROM all_location_data LIMIT 20;</code> 限制了现实20条。</p>
-<hr>
-<h2 id="mysql-统计某个-字段-不重复的行数">MySQL 统计某个 字段 不重复的行数</h2>
-<pre><code class="language-sql">SELECT count(DISTINCT name) AS nu FROM company;
+<p>示例：</p>
+<pre><code class="language-sql">--查询某张表中的字段名，字段类型，是否为空，字段长度等信息
+SELECT COLUMN_ID, TABLE_NAME, COLUMN_NAME, DATA_TYPE, DATA_LENGTH, NULLABLE
+  FROM ALL_TAB_COLUMNS
+ WHERE TABLE_NAME = 'EMPLOYEES'
+ ORDER BY COLUMN_ID;
+ 
+--查询某张表中的字段名，字段类型，是否为空，字段长度等信息
+SELECT * FROM  ALL_TAB_COLUMNS WHERE TABLE_NAME = 'EMPLOYEES'
+</code></pre>
+<h3 id="表-user_table-用户表">表 <code>USER_TABLE</code> 用户表</h3>
+<p>去除系统内的表格</p>
+<pre><code class="language-sql"> SELECT * FROM USER_TABLES WHERE TABLESPACE_NAME&lt;&gt;'SYSTEM' AND TABLESPACE_NAME&lt;&gt;'SYSAUX' 
+</code></pre>
+<h2 id="二-权限管理记录">二、权限管理记录</h2>
+<ul>
+<li>自己本地使用 Docker 搭了一个 Oracle 数据库</li>
+</ul>
+<h3 id="授权表空间">授权表空间</h3>
+<pre><code class="language-sql">alter user 用户名 quota unlimited on 表空间;
+</code></pre>
+<blockquote>
+<p>eg:</p>
+</blockquote>
+<pre><code class="language-sql">ALTER USER test01 QUOTA UNLIMITED ON QY_TEST;
 </code></pre>
 
               </div>
@@ -110,8 +141,17 @@ FROM all_location_data LIMIT 20;
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#mysql-%E7%B4%AF%E8%AE%A1%E6%B1%82%E5%92%8C">MySQL 累计求和</a></li>
-<li><a href="#mysql-%E7%BB%9F%E8%AE%A1%E6%9F%90%E4%B8%AA-%E5%AD%97%E6%AE%B5-%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E8%A1%8C%E6%95%B0">MySQL 统计某个 字段 不重复的行数</a></li>
+<li><a href="#%E4%B8%80-sql-oracle-%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%90%8D-%E5%AD%97%E6%AE%B5%E5%90%8D-%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B%E7%AD%89%E4%BF%A1%E6%81%AF">一、SQL - Oracle 中的表名、字段名、字段类型等信息</a>
+<ul>
+<li><a href="#%E8%A1%A8-all_tab_columns">表 <code>ALL_TAB_COLUMNS</code></a></li>
+<li><a href="#%E8%A1%A8-user_table-%E7%94%A8%E6%88%B7%E8%A1%A8">表 <code>USER_TABLE</code> 用户表</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AE%B0%E5%BD%95">二、权限管理记录</a>
+<ul>
+<li><a href="#%E6%8E%88%E6%9D%83%E8%A1%A8%E7%A9%BA%E9%97%B4">授权表空间</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -124,9 +164,9 @@ FROM all_location_data LIMIT 20;
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
+            <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang">
               <h3 class="post-title">
-                Python Pexpect 库的简单入门
+                在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
               </h3>
             </a>
           </div>
