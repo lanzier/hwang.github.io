@@ -2,11 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-10-23T05:56:48.813Z</updated>
+    <updated>2019-10-25T04:35:29.575Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
-    <subtitle>欢迎来到 Hwang 的小博客</subtitle>
+    <subtitle>欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;</subtitle>
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
