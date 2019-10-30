@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项 | Hwang&#39;s Blog</title>
+<title>STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1572413943353">
@@ -75,18 +75,18 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
+              STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
             </h2>
             <div class="post-info">
               <span>
-                2019-10-23
+                2019-10-30
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://hwang.top/tag/c9N8A6XHq" class="post-tag">
-                  # Vscode
+                <a href="https://hwang.top/tag/TnrvUOUag" class="post-tag">
+                  # oracle
                 </a>
               
                 <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
@@ -99,35 +99,45 @@
               
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>基本信息可以参考：<a href="https://blog.csdn.net/gongjianbo1992/article/details/100654638">https://blog.csdn.net/gongjianbo1992/article/details/100654638</a></p>
-<p><code>pyside2-rcc</code>  : 将 资源文件专为 Python 可以用的文件<br>
-<code>pyside2-uic</code> : 将 Ui 文件 专为 Python 文件</p>
-<p>记录一下几个注意事项：</p>
-<h2 id="1-环境变量的一些问题">1. 环境变量的一些问题：</h2>
-<p>一般来说 <code>pyside2-rcc</code> 这类命令不一定会自动添加到环境变量中，所以需要添加到环境变量或者直接在设置项中选择完整的文件路径，例如我的：</p>
-<pre><code class="language-bash">/Library/Frameworks/Python.framework/Versions/3.7/bin/pyside2-rcc
-</code></pre>
-<p>在 Vs code 中填入即可。</p>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g882wxli97j30xg0do0te.jpg" alt=""></figure>
-<p>类似的 <code>pyside2-uic</code>  也是一样的。</p>
-<p>现在 为使用的 是 zsh， 所以配置文件也是在  .zshrc 中，配置文件中一般都会有标示环境变量的。可以直接在里面添加。 如果添加成功那么 直接在终端中输入 <code>pyside2-rcc</code> 是不会报错的。</p>
-<p>当然，默认直接在 <code>/usr/bin</code> 目录里面添加添加替身也是可以的。</p>
-<h2 id="2-绑定-designer-软件的注意事项">2. 绑定 Designer 软件的注意事项</h2>
-<p>如果使用 Ui 文件来创建用户界面，那么可能需要通过 Qt Designer 来修改文件。</p>
-<p>一个 mac OS 的常识，应用程序都是以 <code>.app</code> 结尾的 「文件夹」 所以在 VScode 中添加的路径不能是一个文件夹，需要是一个可执行文件。</p>
-<p>右键显示包内容，然后在 <code>/Contents/MacOS</code> 里面就能看到可执行文件了。需要添加的是这个可执行文件的路径。</p>
+                <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
+<p><code>pip install cx_Oracle</code> 即可安装。</p>
+<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
+<!-- more -->
+<p>下载驱动，注意版本号：</p>
+<ol>
+<li>下载地址：https://www.oracle.com/database/technologies/instant-client/downloads.html 需要下载与服务器端对应的 版本。 我这里下载的文件是：<code>instantclient-basic-windows.x64-11.2.0.4.0.zip</code></li>
+<li>解压，里面是一个 <code>instantclient_11_2</code> 文件夹。比如直接放在 C 盘下。</li>
+<li>添加这个文件到环境路径中 <code>C:\instantclient_11_2</code></li>
+<li>重启 Python 运行一遍。</li>
+</ol>
+<h2 id="3-连接如果环境变量并没有解决问题">3. 连接如果环境变量并没有解决问题：</h2>
+<p>尝试将 <code>.dll</code> 文件存放到 python 的 <code>Lib\site-packages</code> 路径中。</p>
+<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191028180549WzAo.jpg" alt=""></figure>
+<p>一般来说这样就可以了。</p>
+<h2 id="4-一些错误记录">4. 一些错误记录</h2>
+<ol>
+<li>
+<p>错误代码 ORA-28547，应该是 <code>oci.dll</code> 文件版本错误。</p>
+</li>
+<li>
+<p>错误代码 ORA-03135，也可能是上面这个问题。</p>
+<p>出现以上错误，优先检查数据库版本号是不是正确的，或者是不是下来 <code>basiclite</code>之类的文件。</p>
+</li>
+</ol>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#1-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">1. 环境变量的一些问题：</a></li>
-<li><a href="#2-%E7%BB%91%E5%AE%9A-designer-%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">2. 绑定 Designer 软件的注意事项</a></li>
+<li><a href="#1-sqlalchemy-%E9%9C%80%E8%A6%81%E9%80%9A%E8%BF%87-cx_oracle-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</a></li>
+<li><a href="#2-cx_oracle-%E5%B9%B6%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E8%BF%9E%E6%8E%A5-oracle-%E8%BF%98%E9%9C%80%E8%A6%81%E9%A9%B1%E5%8A%A8">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</a></li>
+<li><a href="#3-%E8%BF%9E%E6%8E%A5%E5%A6%82%E6%9E%9C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%B9%B6%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">3. 连接如果环境变量并没有解决问题：</a></li>
+<li><a href="#4-%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95">4. 一些错误记录</a></li>
 </ul>
 </li>
 </ul>
@@ -140,9 +150,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei">
+            <a href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren">
               <h3 class="post-title">
-                Docker 的入门「指北」
+                所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
               </h3>
             </a>
           </div>
