@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-10-30T10:59:36.055Z</updated>
+    <updated>2019-11-03T10:19:21.397Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,104 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[为公众号撰稿—如何精准检索我们公众号的文章]]></title>
+        <id>https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang</id>
+        <link href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
+        </link>
+        <updated>2019-11-03T10:14:06.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>2019.11.03<br>
+为刘老师准备的一篇小教程</p>
+</blockquote>
+<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>2019.11.03<br>
+为刘老师准备的一篇小教程</p>
+</blockquote>
+<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
+<!-- more -->
+<p>这位读者的意图其实很明显——希望查找我们公众平台关于「实证研究」的文章。但是由于我们精力和技术有限，以及微信公众平台本身的限制，并不能实时返还相关的内容。那么如何正确的检索我们公众号的文章呢？</p>
+<p>其实微信提供了定向搜索特定微信公众号推文的功能，具体操作如下：</p>
+<ol>
+<li>打开「刘西川文献阅读与写作」公众号，相信爱学习的你一定已经把我们置顶了（如果没有还不赶快星标我们的公众号）</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt=""></figure>
+<ol start="2">
+<li>点击右上方 头像 按钮 ，即可查看详情</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt=""></figure>
+<ol start="3">
+<li>点击搜索按钮，即可搜索「刘西川文献阅读与写作」下的所有推文啦。</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt=""></figure>
+<p>如下图：</p>
+<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt=""></figure>
+<p>甚至是正文内出现关键字都能找到哦。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点]]></title>
+        <id>https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian</id>
+        <link href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
+        </link>
+        <updated>2019-11-03T10:09:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
+<!-- more -->
+<p>注：以下知识点主要以 Python 的第三方包为主。</p>
+<blockquote>
+<p>onePoint<br>
+Python的第三方包：Python 具有丰富的扩展性，成千上万的第三方扩展包不断为 Python 赋能，使得其能够承载各式各样的不同需求。一般代码前几行，诸如<code>import pandas as pd</code> ，就是在导入第三方包。得益于开源免费，任何人都可以为其贡献第三包，而许多优秀的第三方包又促进更多的人使用Python，进而创造出更多的第三方包，进而形成一种良性的循环。</p>
+</blockquote>
+<p>经济学使用 Stata 也好，Python 也好，根本目的是为了对于数据进行分析，从而了解到隐藏在数据背后的“经济解释”。所以数据分析是学完 Python 基础的第一课，也是最重要的一课。</p>
+<h3 id="1-pandas-数据操作的基石">1. Pandas ：数据操作的基石</h3>
+<p><img src="http://112.17.171.130:10080/FTPshare/20191103155953fnjC.png" alt=""><br>
+毫不过分的说，学好 Pandas 甚至比学好 Python 更重要。可以说，正是因为 Pandas 的好用，奠定了 Python 在数据科学地位。</p>
+<p>那么，Pandas  是什么？ Pandas 是 Python 的第三方包，用于数据处理。 Python 默认的数据格式，无论是列表还是字典，都不能很好的用于操作在现实中常见的二维数据。Pandas 为此而生， Pandas 提供了一种名为 DataFrame 的数据格式，将数据储存为一个二维表的形式，再通过各种函数方法，对数据进行横向、纵向、亦或者按条件的切片来对数据进行处理，最终得到需要的数据结果。</p>
+<p>Pandas 提供了快速而高效的 DataFrame 对象，用于数据操作与综合索引（索引就是用来快速查找对象的，例如快速找到标示性别的一列）。通过 Pandas 你可以轻松的读取CSV和文本文件、Microsoft Excel、SQL数据库和快速HDF 5格式的数据。并且基于各种索引与标签，你可以轻松的创建数据切片（例如一个数据里标示年纪的切片），通过大数据集筛选特定子集（例如，筛选性别为男性、年龄大于18岁的成人男性样本）。</p>
+<p>总结一下，无论是基础的数据操作，还是为日后扩展，Pandas 都是极为基础，极为重要的一款第三方包。</p>
+<ul>
+<li>GitHub 项目地址👉：<a href="https://github.com/pandas-dev/pandas">https://github.com/pandas-dev/pandas</a></li>
+<li>官方文档地址👉：<a href="https://pandas.pydata.org/pandas-docs/stable/">https://pandas.pydata.org/pandas-docs/stable/</a></li>
+</ul>
+<h3 id="2-numpy为python-提供强劲的运算支持">2. Numpy：为Python 提供强劲的运算支持</h3>
+<p><img src="http://112.17.171.130:10080/FTPshare/20191103170116W0Ld.png" alt=""><br>
+Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy），Pandas 的高效率一部分原因就是归功于 Numpy 的强大。</p>
+<p>简单理解就是 Numpy 提供了一个比 Python 自带的数组运算更加快速的 Numpy数据的数据格式。当你的分析涉及到数组运算，尤其是多维的数组运算时，那你应当考虑学习使用 Numpy。同时，Numpy也提供了强大的线性代数、傅立叶变换和随机数的功能。</p>
+<p>Numpy 是Python 数据处理的又一块基石，在机器学习和深度学习领域，Numpy 具有广泛的应用。所以学习 Numpy 到如何的深度，需要看你所研究的领域，是否需要用到较为高级的数学运算。</p>
+<ul>
+<li>官方地址👉：<a href="https://numpy.org/">https://numpy.org/</a></li>
+<li>官方文档👉：<a href="https://numpy.org/doc/">https://numpy.org/doc/</a></li>
+<li>如果你熟悉 Matalab，可以查看：<a href="https://numpy.org/doc/1.17/user/numpy-for-matlab-users.html?highlight=matlab">《与matlab比较》</a>，也可以对照<a href="https://www.numpy.org.cn/user/numpy_for_matlab_users.html#%E4%BB%8B%E7%BB%8D">中文翻译版</a></li>
+</ul>
+<h3 id="3-statsmodels-将计量搬到python上来">3. Statsmodels： 将计量搬到python上来</h3>
+<p>通过 Pandas 进行数据处理，我筛选到了需要的数据，接下来我们经济学的学生需要做什么呢？当然是开始计量之旅喽！</p>
+<p>那么我们还需要将数据从 Pandas 的 DataFrame 导出成 CSV，再导入到 Stata 中，进行计量运算嘛？ 大可不必，在 Python 你可以自己手写一个 OLS 函数，然后反复调用即可。(此时可能有读者冒出了大量的 「黑人问号.jpg」)</p>
+<p>其实关注本公众号的读者应该已经阅读过：<a href="https://mp.weixin.qq.com/s/Sr8MRQNN5beN9MzLjnZE8Q">工具&amp;方法 | 6行代码教你用python做OLS回归 </a></p>
+<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191103170130lVDP.png" alt=""></figure>
+<p>是的 Python 当中也有计量库了：Statsmodels 。Statsmodels 是一个Python的第三方模块，他封装了许多计量模型，方便学者直接调用。所谓封装，就相当于 Stata 中一个 reg 命令，代表了最基础的 OLS 回归命令，在Statsmodels 中也有类似 reg 的语句，提供给 OLS 估计。详细的内容可以参考<a href="https://mp.weixin.qq.com/s/Sr8MRQNN5beN9MzLjnZE8Q">工具&amp;方法 | 6行代码教你用python做OLS回归 </a>，以及下面的官方链接。</p>
+<p>不得不说，通过 Statsmodels，Python 中做计量的成本大大降低，学习 Python 对于经济学学生来说，也能做到「全栈」式的使用体验。</p>
+<ul>
+<li>官方地址👉： <a href="https://www.statsmodels.org/stable/index.html">https://www.statsmodels.org/stable/index.html</a></li>
+<li>官方示例👉：<a href="https://www.statsmodels.org/stable/examples/index.html">https://www.statsmodels.org/stable/examples/index.html</a></li>
+</ul>
+<h3 id="4-sqlachemy-or-pymysql-cx_oracle-进阶操作处理-sql-数据库">4 . sqlachemy ( or pymysql、cx_oracle) ：进阶操作，处理 SQL 数据库</h3>
+<figure data-type="image" tabindex="2"><img src="http://112.17.171.130:10080/FTPshare/20191103170148Ccue.png" alt=""></figure>
+<p>相比于 Stata ，Python 还可以通过很容易的方式，链接到数据库中，对数据库内的数据进行操作。与经济学关系更为密切的一般是 关系型数据库，即 MySQL、Oracle 为代表的数据库类型。 Python 当中提供了极其便利的方式链接到 以上类型的数据库。通过 pymysql 能够链接到 mysql 数据库，通过 cx_oracle 能够链接到 Oracle 数据库，并且，如果你对 SQL 语句不熟悉，你可以使用 sqlachemy 一类的ORM框架的方式，跳过原生 SQL 语句，通过类似 Pandas 的筛选语句的方式来操作数据库查询，获取需要的数据子集。</p>
+<p>经济学对于SQL 数据库的处理，更多时候是在总的大数据集中，筛选出自己需要子集，再进行操作。这个过程，你可以通过 sqlachemy 的方式筛选数据，也可以通过原生sql查询的方式获取数据，再将数据储存为 DataFrame 格式，利用 Pandas 进行精细化的二次处理，再通过上面提到的 Statsmodels 等第三方包进行计量处理。</p>
+<ul>
+<li>官方地址👉：<a href="https://www.sqlalchemy.org/">https://www.sqlalchemy.org/</a></li>
+</ul>
+<hr>
+<p>至此，小编整理的，经济学学生需要用的数据处理相关的包已经介绍完毕了。简单总结一下，当你拿到数据是 CSV 一类格式的数据时，通过 Pandas 将文件读取为一个 DataFrame，然后对其按需求进行筛选和运算，得到自己需要的数据集。如果数据储存在 SQL 数据库中，通过Python 连接数据库，运用 ORM 框架或者 原生 SQL 语句对数据进行筛选，拿到自己需要子集后，读取到 DataFrame 中，在Pandas中再进行更加精细化的处理，得到真正需要的数据集。这些数据集，依然可以通过 Python 的Statsmodels进行计量，得到计量的结果。至此一个数据处理 Workflow 在 Python 得到完整的体现。</p>
+<p>根据本文的阅读的阅读数量和点赞情况，我们会考虑基础推出数据获取（爬虫）、数据可视化的相关内容哦。</p>
+<pre><code class="language-sql">做一个投票，投一下希望先做数据获取（爬虫）还是先做数据可视化
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 03]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-03</id>
@@ -346,28 +444,6 @@ $ docker kill &lt;容器名称/ID&gt; # 强制停止容器
 </code></pre>
 <p>定义一个函数，基本上就可以通过这个 读取 QSS 作为字符串，然后存为变量，读取进去就OK了。</p>
 <p>当然这个文件在打包时也要特殊处理：要么作为字符串储存于某个变量中，要么直接在特定目录下去读取这个文件。在mac的应用打包中，格外需要注意这点。请尽量使用绝对路径记录信息。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus]]></title>
-        <id>https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus</id>
-        <link href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus">
-        </link>
-        <updated>2019-10-06T07:35:37.000Z</updated>
-        <content type="html"><![CDATA[<p>这里设置 软件的底部信息栏，PySide 中称为 QStatusbar。</p>
-<p>利用 QT Creator 生成的 mainWindows 软件会自动添加该部件。如果不需要底部状态栏，注释掉就可以了。</p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/06/3iQ5fJxY1rZNEgb.png" alt=""></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Procreate 练习]]></title>
-        <id>https://hwang.top/post/procreate-lian-xi</id>
-        <link href="https://hwang.top/post/procreate-lian-xi">
-        </link>
-        <updated>2019-10-01T12:17:19.000Z</updated>
-        <content type="html"><![CDATA[<p>画图，画图。</p>
-<p>好久没有动笔了。线条画的一点都不流畅了。</p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/01/xwQ8BVtOInGfvW7.png" alt="IMG_0404.PNG"></figure>
 ]]></content>
     </entry>
 </feed>
