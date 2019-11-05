@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PySide2/PyQt 在 Windows 中添加对高分屏的支持 | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1572956733155">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1572956733155" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              PySide2/PyQt 在 Windows 中添加对高分屏的支持
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-05
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
+                  # qt for python
+                </a>
+              
+                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
+<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
+<!-- more -->
+<p>直到在<a href="https://doc.qt.io/qtforpython/PySide2/QtCore/Qt.html?highlight=applicationattribute#PySide2.QtCore.PySide2.QtCore.Qt.ApplicationAttribute">QtCore</a>下面找到了：</p>
+<table>
+<thead>
+<tr>
+<th>Qt.AA_UseHighDpiPixmaps</th>
+<th>Make <code>pixmap()</code> generate high-dpi pixmaps that can be larger than the requested size. Such pixmaps will have <code>devicePixelRatio()</code> set to a value higher than 1. After setting this attribute, application code that uses pixmap sizes in layout geometry calculations should typically divide by <code>devicePixelRatio()</code> to get device-independent layout geometry.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qt.AA_EnableHighDpiScaling</td>
+<td>Enables high-DPI scaling in Qt on supported platforms (see also High DPI Displays). Supported platforms are X11, Windows and Android. Enabling makes Qt scale the main (device independent) coordinate system according to display scale factors provided by the operating system. This corresponds to setting the QT_AUTO_SCREEN_SCALE_FACTOR environment variable to 1. This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</td>
+</tr>
+<tr>
+<td>Qt.AA_DisableHighDpiScaling</td>
+<td>Disables high-DPI scaling in Qt, exposing window system coordinates. Note that the window system may do its own scaling, so this does not guarantee that <code>devicePixelRatio()</code> will be equal to 1. In addition, scale factors set by QT_SCALE_FACTOR will not be affected. This corresponds to setting the QT_AUTO_SCREEN_SCALE_FACTOR environment variable to 0. This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</td>
+</tr>
+</tbody>
+</table>
+<p><code>AA_</code> 前缀表示，是ApplicationAttribute。</p>
+<p>其中的<code>Qt.AA_EnableHighDpiScaling</code> 里面明确写了：</p>
+<blockquote>
+<p>support platforms are x11, Windows , Android</p>
+</blockquote>
+<p>并且说明了这个设置项必须在 <code>QGuiApplication</code>创建前：</p>
+<blockquote>
+<p>This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</p>
+</blockquote>
+<p>所以接下来就好做了，只需要一行代码即可实现对高分屏的适配：</p>
+<p><code>QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)</code></p>
+<p>例如：</p>
+<pre><code class="language-python"># -*- coding:utf-8 -*-
+import sys
+from UI import styleBook
+from PySide2 import QtCore
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QApplication
+from PySide2.QtGui import QIcon
+from stqt import mainWindows
+
+if __name__ == '__main__':
+    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+    app = QApplication(sys.argv)
+    mainWindow = mainWindows()
+    mainWindow.setWindowTitle('Single Table Query Tools')
+    mainWindow.setWindowIcon(QIcon('./LOGO.ico'))
+    main_qss = styleBook.get_main_style()
+    mainWindow.setStyleSheet(main_qss)
+    mainWindow.show()
+    sys.exit(app.exec_())
+
+</code></pre>
+<p>在 app = QApplication 创建前添加即可。</p>
+<h2 id="其他建议">其他建议：</h2>
+<ol>
+<li>推荐图标直接使用 SVG 文件，这样在拉伸中不会导致分辨率问题。</li>
+<li>样式写在单独的 QSS 文件中，每一个 Widget 组件都用 <code>px</code> 标示尺寸，这样在放大缩小中都能够很好的按倍数支持。同样文字内容也用 font-size 标注，能够很好的支持。</li>
+</ol>
+<h2 id="one-more-thing">One More Thing</h2>
+<p>这个设置在应用从高分屏切换到低分辨率的时候也能够自动适应。挺方便的。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%BB%BA%E8%AE%AE">其他建议：</a></li>
+<li><a href="#one-more-thing">One More Thing</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
+              <h3 class="post-title">
+                为公众号撰稿—如何精准检索我们公众号的文章
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
