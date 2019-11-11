@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-11-05T12:25:37.069Z</updated>
+    <updated>2019-11-11T03:55:25.376Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,76 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识]]></title>
+        <id>https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi</id>
+        <link href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi">
+        </link>
+        <updated>2019-11-11T03:53:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
+<!-- more -->
+<p>利用 Python 获取网页中的信息，就是所谓的爬虫。而越来越多经济学专业的学生也被导师“要求”学习 Python 以及爬虫的技巧。那么对于经济学学生来说，学习 Python 来爬虫，到底需要学习哪些知识呢？</p>
+<h2 id="1-html-了解网页的基础知道爬取的对象是什么">1. HTML ：了解网页的基础，知道爬取的对象是什么</h2>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t44ozzm4j32700fyju2.jpg" alt=""></figure>
+<p>现如今，我们已经习惯了打开浏览器查看各式各样的网络内容，而浏览器中所出现的所有内容，都可以简单概括为 HTML+ CSS+Javascript，其中 HTML 用于储存网页内容，CSS 用于储存网页的样式，Javascript 负责网页的交互。所以，要获取数据，就必须要对 HTML 下手。</p>
+<p>学习和了解 HTML 成为了必不可少的知识。当然，你也无需担心，抱怨“又要学一门新的语言”HTML 是一种标记型语言，所谓标记型语言就类似于：</p>
+<h1> Hello HTML </h1>
+<p>非常容易理解，<code>&lt;h1&gt;&lt;/h1&gt;</code>就是一个标记，标记里面的内容属于<code>h1</code>，也就是一级标题的意思。不同的标记代表不同的功能比如<code>h2</code> 就代表二级标题，<code>p</code> 就代表正文等等，浏览器根据这个标记去显示内容的样式。所以对于爬取数据来说，只要知道哪个是标记，哪个内容，并且能够找到自己需要的标记在哪个层级的标记下就可以了。</p>
+<h2 id="2-浏览器的开发者界面获取网页背后的代码">2. 浏览器的开发者界面：获取网页背后的代码</h2>
+<p>学会了HTML，你还需要知道，去哪里看到这些代码。所以，这时候你就需要学习如何使用浏览器的开发者模式了。</p>
+<blockquote>
+<p>Chrome 浏览器是比较常用的一款能够较好显示网页源码的软件，你可以在界面右上角选择更多工具，然后打开开发者工具：<br>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45fen5sj30v00u0dit.jpg" alt=""><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45nt7j5j31820lgq5d.jpg" alt=""><br>
+打开以后，你就能够看到网页的源代码了。浏览器就是根据这些代码，显示出网页的。</p>
+</blockquote>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t459mwl9j31iq0u0h3h.jpg" alt=""></figure>
+<p>总的来说，Chrome 提供了这么几个板块的功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：<br>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45sfcbkj30rw0280sp.jpg" alt=""></p>
+<ul>
+<li>Elements: 允许我们从浏览器的角度看页面，也就是说我们可以看到chrome渲染页面所需要的的HTML、CSS和DOM(Document Object Model)对象。也就是为我们显示源码。</li>
+<li>Network: 可以看到页面向服务器请求了哪些资源、资源的大小以及加载资源花费的时间，当然也能看到哪些资源不能成功加载。此外，还可以查看HTTP的请求头，返回内容等；</li>
+<li>Resources: 对本地缓存（IndexedDB、Web SQL、Cookie、应用程序缓存、Web Storage）中的数据进行确认及编辑；记录了Cookie等信息，可以用于爬取一些需要登录的网址。</li>
+</ul>
+<p>以及我们并不常用，但是可以了解一下：</p>
+<ul>
+<li>Sources: 主要用来调试js；对于我们经济学学生来说，并不那么重要。</li>
+<li>Timeline: 提供了加载页面时花费时间的完整分析，所有事件，从下载资源到处理Javascript，计算CSS样式等花费的时间都展示在Timeline中；</li>
+<li>Profiles: 分析web应用或者页面的执行时间以及内存使用情况；</li>
+<li>Audits: 分析页面加载的过程，进而提供减少页面加载时间、提升响应速度的方案；</li>
+<li>Console: 显示各种警告与错误信息，并且提供了shell用来和文档、开发者工具交互。</li>
+</ul>
+<p>通过这个界面，你就可以获取诸如 Xpath 、Cookie 这些对于爬虫非常重要的信息，学会使用这个工具，对于爬虫来说必不可少。</p>
+<h2 id="3-python-的爬虫框架">3. Python 的爬虫框架</h2>
+<p>最后，就是使用爬虫框架来进行爬虫，不同框架的上手难度以及自由度个有不同，纵多的爬虫框架，用于处理不同的情况，比较常用的有：</p>
+<ul>
+<li>
+<p>Requests 库<a href="https://requests.kennethreitz.org/en/master/">https://requests.kennethreitz.org/en/master/</a>：适合新手上手的一个爬虫框架，如果你有了一定的 Python 基础，那么先用 request 库上手一般都是没错的。</p>
+</li>
+<li>
+<p>Beautiful Soup <a href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/">https://beautifulsoup.readthedocs.io/</a>：将网页变为 Soup，然后在Soup中提取HTML内信息的爬虫方案。同样比较容易学习，易于上手。</p>
+</li>
+<li>
+<p>Scrapy<a href="https://scrapy.org/">https://scrapy.org/</a> ：他是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 比较适合结构化数据的提取。</p>
+</li>
+<li>
+<p>Pyspider <a href="https://github.com/binux/pyspider">https://github.com/binux/pyspider</a>：一个带有GUI的爬虫框架，可以在GUI上直接写 爬虫脚本。</p>
+</li>
+</ul>
+<p>除此之外，还有许多不同类型的爬虫框架，大家可以根据自己的需求在网络上简单搜索，就能找到各种不同库的比较，届时选择自己想对能够接受的包即可。</p>
+<hr>
+<p>以上三部分就是爬虫中需要知道的三大块的知识了，除此之外，你可能还需要一定的网络知识，用于处理爬虫实践中的不同种类的错误。并且，爬虫是一个可以不断深入的领域，不同类型的网站又会有不同的“反爬虫”策略，为了处理这些策略可能会需要用到更多不同的知识，对于经济学专业的学生来说，继续深入可能会有些“得不偿失”了，选取那些爬虫成本更低的网站才符合效用最大化。</p>
+<p>所以简单总结，爬虫需要了解HTML的基础知识，然后要学会使用 浏览器开发者模式，查看源码以及网络信息，最后就是选择一个称手的第三包来进行爬虫操作。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>参考：<a href="https://segmentfault.com/a/1190000000683599">https://segmentfault.com/a/1190000000683599</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[PySide2/PyQt 在 Windows 中添加对高分屏的支持]]></title>
         <id>https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi</id>
@@ -465,37 +535,6 @@ $ docker kill &lt;容器名称/ID&gt; # 强制停止容器
 </code></pre>
 <p>就是说你可以通过这个命令，进入到 容器的 <code>bash</code> 中，对容器内进行一些修改。</p>
 <p>最后 docker 还有许多其他的命令和方法可供学习。作为当今最受欢迎的容器化解决方案，docker 在业界发光发亮的同时，也为一般用户，「一键」启用某些服务提供了契机。利用开源社区，你可以比以往任何时候都更为容易的实现许多互联网服务的「自给自足」。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang 的低质阅读单 New 2]]></title>
-        <id>https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2</id>
-        <link href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2">
-        </link>
-        <updated>2019-10-06T07:47:27.000Z</updated>
-        <content type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
-<ul>
-<li><a href="https://jonuknownothingsnow.github.io/2019/04/13/%E8%B0%90%E9%97%A8%E6%AD%A6%E5%AD%A6%EF%BC%9A%E4%BD%BF%E7%94%A8JupyterHub%E6%90%AD%E5%BB%BA%E5%A4%9A%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E6%8E%A7%E5%88%B6%E5%8F%B0/index.html"> 谐门武学：使用JupyterHub搭建多用户数据控制台</a></li>
-<li><a href="https://ift.tt/2mGOpv0"> 使用 Python 函数进行模块化</a></li>
-<li><a href="https://ift.tt/2mLmHxh"> 约定式提交</a></li>
-<li><a href="https://ift.tt/2NRTWeO"> PyQt5 tutorial - Python GUI programming examples - Like Geeks</a></li>
-<li><a href="https://ift.tt/2zphOwJ"> 为什么你的SaaS会“失败”？_36氪</a></li>
-<li><a href="https://ift.tt/2LL5u0F"> 香港：（曾经的）实践中有限政府的最好例子</a></li>
-<li><a href="https://ift.tt/30Ikele"> 12条经验，让你在机器学习的路上避免很多坑</a></li>
-<li><a href="https://ift.tt/2Yi3L6P"> 苹果不再需要 Jony Ive</a></li>
-<li><a href="https://ift.tt/2LVP077"> Qt for Python &amp; PyInstaller — Qt for Python</a></li>
-<li><a href="https://ift.tt/2LMRZgT"> 整容的人越来越年轻了，自拍是罪魁祸首</a></li>
-<li><a href="https://ift.tt/2OnjbF0"> 刘林平 | 规律与因果：大数据对社会科学研究冲击之反思</a></li>
-<li><a href="https://ift.tt/32WXsro"> 组策略应用——安装软件-Rainy`s IT Tech Blog-51CTO博客</a></li>
-<li><a href="https://ift.tt/3209O1C"> PyQt 5信号与槽的几种高级玩法 - 博文视点</a></li>
-<li><a href="https://ift.tt/2Vcqsc0"> Python 工匠：使用数字与字符串的技巧</a></li>
-<li><a href="https://ift.tt/2LLMTBK"> 5代防火墙 -- 网络系统 -- IT技术博客大学习 -- 共学习 共进步！</a></li>
-<li><a href="https://ift.tt/2OmMI1e"> 我的书桌——先砸一块砖</a></li>
-<li><a href="https://ift.tt/2APiRXf"> 漫话中文自动分词和语义识别（下）：句法结构和语义结构 -- 算法 -- IT技术博客大学习 -- 共学习 共进步！</a></li>
-<li><a href="https://ift.tt/34qeNur"> Type is Beautiful » 孔雀计划：中文字体排印的思路</a></li>
-<li><a href="https://ift.tt/2MeDdP1"> 简明Vim练级攻略 -- Linux -- IT技术博客大学习 -- 共学习 共进步！</a></li>
-<li><a href="https://ift.tt/2pNiASF"> 数据科学入门后，该做什么？</a></li>
-</ul>
 ]]></content>
     </entry>
 </feed>
