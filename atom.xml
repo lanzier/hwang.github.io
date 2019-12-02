@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-11-17T05:28:30.449Z</updated>
+    <updated>2019-12-02T13:58:19.925Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,155 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份]]></title>
+        <id>https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen</id>
+        <link href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen">
+        </link>
+        <updated>2019-12-02T13:56:12.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
+<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
+<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
+<!-- more -->
+<p>首先，SMB 协议是一种能够将本机电脑上的文件夹分享到局域网内其他设备上的一种协议。你可以简单的理解为是一种文件共享的协议。我们要做的就是通过这个协议，将主机上的某个文件共享到你的 Mac 上，然后在那上面创建备份。所以，我们需要的具体步骤就是：1. 通过 SMB 分享一个文件夹； 2. 在 Mac 上加载这个文件夹；3. 利用这个文件夹创建备份。</p>
+<h2 id="1-通过-smb-分享一个文件夹">1. 通过 SMB 分享一个文件夹</h2>
+<p>这一步，我们需要做的事，具体而言就是：</p>
+<ol>
+<li>开启 SMB 服务；</li>
+<li>配置一个文件夹进行共享；<br>
+所以，正如标题里写的，无论是树莓派这种 Linux 设备，还是 Windows 设备，你都可以开启 SMB 服务，进行局域网内的文件的共享。所以，如果你有一台 Linux 设备，你可以参考下面的树莓派的步骤，如果你有一台 Windows 设备，可以参考 Windows 的步骤。</li>
+</ol>
+<h3 id="树莓派上开启-smb-服务">树莓派上开启 SMB 服务</h3>
+<p>详细内容，同样可以参考我派的文章：<a href="https://sspai.com/post/40721">利用 Samba - 像管理本地文件一样处理树莓派文件</a>。<br>
+首先，更新源：</p>
+<pre><code class="language-bash">$ sudo apt-get update
+</code></pre>
+<p>第二步，安装 samba 服务：</p>
+<pre><code class="language-bash">$ sudo apt-get install samba samba-common-bin
+</code></pre>
+<p>第三步，修改 SMB 的配置，这里使用 vim 进行编辑：</p>
+<pre><code class="language-bash">$ sudo vim /etc/samba/smb.conf
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt=""></figure>
+<p>在配置文件的最后添加：</p>
+<pre><code class="language-bash">[pi]
+
+    path = /home/pi/
+
+    valid users = pi
+
+    browseable = Yes
+
+    writeable = Yes
+
+    writelist = pi
+
+    create mask = 0777
+
+    directory mask = 0777
+</code></pre>
+<p>保存退出后，重启一下 samba 服务</p>
+<pre><code class="language-bash">$ sudo /etc/init.d/samba restart
+</code></pre>
+<p>最后一步，就是添加 <code>pi</code> 用户为 <code>Samba</code>用户，这一步，会让你设置共享时的密码。</p>
+<pre><code class="language-bash">$ sudo smbpasswd -a pi
+</code></pre>
+<h3 id="windows-上开启-smb-服务">Windows 上开启 SMB 服务</h3>
+<p>Windows 上做 Smb 共享会方便很多，首先在一个磁盘空间比较富裕的地方，创建一个文件夹，然后右键，属性，打开「共享」栏：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt=""><br>
+然后点击共享，弹出用户设置界面：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt=""></p>
+<p>设置共享的账户，以及权限设置为「读和写」，一般而言推荐在这里新建一个专门的共享账户，账户和密码就是届时需要在mac上输入的账户和密码：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt=""></p>
+<p>账户设置完成后，点击「共享」即可：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt=""></p>
+<p>点击完成，这个文件就已经能够在局域网访问了。这里做个简单的提醒，部分Windows设备的防火墙设置，会禁用共享，可以先通过关闭防火墙的方式来排除是不是防火墙的问题，再通过对应规则的设置，重新开启防火墙即可。</p>
+<h2 id="2-在-mac-上加载这个文件夹">2. 在 Mac 上加载这个文件夹</h2>
+<p>这个时候，打开你的 finder，应该能够在「位置这一栏」下看到树莓派，或者你的 Windows 设备的名字了。点击后，就能看到你共享的文件夹了。</p>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt=""></figure>
+<p>如果没有看到，那么通过右键 finder 图标，点击「连接服务器」，输入：<code>smb://设备的IP地址/共享的文件夹名称</code> 的方式连接，在输入账号密码后，也能够连接上这个文件夹。正确连接后，就说明，其他设备上的硬盘，已经能够为你的 Mac 所用了。</p>
+<p>接下来我们就要进行最后一个步骤，创建一个「时间机器」了！</p>
+<h2 id="3-利用这个文件夹创建备份">3. 利用这个文件夹创建备份</h2>
+<p>当你兴奋的打开你的 Time Machine 设置，点击「选择备份磁盘」时，看到却是：</p>
+<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt=""><br>
+<em>是的，并没有你想要的那个文件夹</em></p>
+<p>接下来，我们要做的，其实是创建一个磁盘镜像文件，然后将这个磁盘镜像文件挂载到你的 Mac 上，作为一个「虚拟硬盘」，然后利用这个「虚拟硬盘」进行备份。具体的：</p>
+<h3 id="31-创建一个空白映像">3.1 创建一个空白映像：</h3>
+<p>打开「磁盘工具」，选择菜单栏中的 「新建映像」，选择「空白映像…」，然后如图所示，填入信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt=""><br>
+其中「大小」可以根据你实际需求来填写<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<h3 id="32-将此这个空白映像拷贝到你的-smb-共享文件夹中">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</h3>
+<p>在 finder 中先推出这个磁盘，然后在保存的位置中，将这个磁盘文件拖入 SMB 共享文件夹的对应位置：</p>
+<h3 id="33-挂载这个磁盘">3.3 挂载这个磁盘</h3>
+<p>双击在 SMB 共享文件夹中的这个映像文件，然后他就会挂在在你的 Mac 上：</p>
+<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt=""></figure>
+<p>最后，通过 terminal 将这个磁盘设置为 TimeMachine 的备份磁盘：</p>
+<pre><code class="language-bash">$sudo tmutil setdestination /Volumes/TimeMachine
+</code></pre>
+<p>这里的 <code>/Volumes/TimeMachine</code> 就是这个磁盘的挂载点，一般而言就是 <code>/Volumes/</code> + 磁盘的名称，如果你不是很确定，可以在磁盘工具中，选择这个磁盘，点击右键，选择「显示简介」，看到挂载信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt=""></p>
+<p>输入完命令后，再输入你的Mac密码，即可成功挂载。当你再次打开 TimeMachine 时，已经可以开始备份了。</p>
+<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt=""></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一个400GB的空白磁盘映像，大概有400MB <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker-compose 的使用（一）]]></title>
+        <id>https://hwang.top/post/docker-compose-de-shi-yong-yi</id>
+        <link href="https://hwang.top/post/docker-compose-de-shi-yong-yi">
+        </link>
+        <updated>2019-12-02T13:45:22.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="文件目录">文件目录</h2>
+<p>在一个 文件夹下，我这里是 Docker</p>
+<pre><code class="language-bash">├── docker-compose.yml
+├── gitlab
+└── nginx
+    └── conf.d
+</code></pre>
+<p>其中 <code>gitlab</code>，是直接在shell脚本中运行的，不是使用 <code>docker-compose</code>的方式进行管理的，就以启动一个 nginx 为例：</p>
+<pre><code class="language-yaml">version: '3.4' #版本号
+services:
+  web:
+    image: nginx
+    container_name: web_nginx
+    restart: always
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - 80:80
+</code></pre>
+<p>一般来说一份标准配置文件应该包含 version、services、networks （可选）、volumes（可选）</p>
+<h3 id="首先是-version">首先是 Version</h3>
+<p>Version 3 支持多机和单机，而2仅支持单机。版本1已经废弃了。推荐直接用3及以上版本</p>
+<h3 id="其次是-services">其次是 Services</h3>
+<p>就是服务主体，这里设置了一个 nignx ，名称是 web，然后 是声明 <code>image</code> 是 nginx，这个<code>image</code> 通过 <code>docker pull nginx</code>拉取。接着是 <code>container_name</code>，定义这个容器名称，这样方便通过docker 命令进行直接的管理，然后是 <code>restart:always</code>，表明自动重启。之后是 <code>volumns</code> 相当于docker 命令中的<code>-v</code>参数，用于做容器内的和宿主机的映射。最后是 <code>ports</code> ，端口映射。这样就OK了。</p>
+<h2 id="利用-docker-compose-进行管理">利用 docker-compose 进行管理</h2>
+<p>通过以下命令运行：</p>
+<pre><code class="language-yaml">$ docker-compose up -d 
+</code></pre>
+<p>其中 <code>-d</code> 表示在后台运行。</p>
+<p>如果需要重启服务可以通过：</p>
+<pre><code class="language-yaml">$ docker-compose restart web
+</code></pre>
+<p>这里的<code>web</code> 就是 services 的名称。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 04]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-04</id>
@@ -388,71 +537,6 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <p>最后，再次祝贺刘西川阅读写作课微信公众号，终于迈出了更坚实的一步，取得了关注者突破10000 名的可喜成绩，希望该号能够在社科领域继续发光发热，指引更多在社科领域努力的学子们前行，帮助更多对社科写作感到困惑的初学者和年轻朋友。同时，也希望“阅读写作课”能够在更广泛的领域产生更积极的影响，近期的 推文<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1572080468&amp;ver=1935&amp;signature=XNfF9b4Na6yg8syPbnHhnFp0maurfbLN12DJ6bNeqbvqPdSeao0pXSOey5PAJuBKRdsOFKizMhmkzUS15ekpHtOxToHp6TIIP*orb*tvVmTTQmazUZ8ZtjdkcFTrK9AE&amp;new=1">《会议纪要这样写，才专业！》</a>(#)推文就是一次积极的尝试。</p>
 <p>😹 结尾彩蛋：</p>
 <figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572235983560.png" alt=""></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ STQT 查询工具 Oracle 相关记录]]></title>
-        <id>https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu</id>
-        <link href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu">
-        </link>
-        <updated>2019-10-25T09:40:11.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1571996426849.png" alt=""></figure>
-<h2 id="一-sql-oracle-中的表名-字段名-字段类型等信息">一、SQL - Oracle 中的表名、字段名、字段类型等信息</h2>
-<h3 id="表-all_tab_columns">表 <code>ALL_TAB_COLUMNS</code></h3>
-<p>表 <code>all_tab_columns</code> 的内容包含了所有表的字段信息，可以通过查询语句获取需要的内容。</p>
-<pre><code class="language-sql">SELECT * FROM ALL_TAB_COLUMNS 
-</code></pre>
-<p>示例：</p>
-<pre><code class="language-sql">--查询某张表中的字段名，字段类型，是否为空，字段长度等信息
-SELECT COLUMN_ID, TABLE_NAME, COLUMN_NAME, DATA_TYPE, DATA_LENGTH, NULLABLE
-  FROM ALL_TAB_COLUMNS
- WHERE TABLE_NAME = 'EMPLOYEES'
- ORDER BY COLUMN_ID;
- 
---查询某张表中的字段名，字段类型，是否为空，字段长度等信息
-SELECT * FROM  ALL_TAB_COLUMNS WHERE TABLE_NAME = 'EMPLOYEES'
-</code></pre>
-<h3 id="表-user_table-用户表">表 <code>USER_TABLE</code> 用户表</h3>
-<p>去除系统内的表格</p>
-<pre><code class="language-sql"> SELECT * FROM USER_TABLES WHERE TABLESPACE_NAME&lt;&gt;'SYSTEM' AND TABLESPACE_NAME&lt;&gt;'SYSAUX' 
-</code></pre>
-<h2 id="二-权限管理记录">二、权限管理记录</h2>
-<ul>
-<li>自己本地使用 Docker 搭了一个 Oracle 数据库</li>
-</ul>
-<h3 id="授权表空间">授权表空间</h3>
-<pre><code class="language-sql">alter user 用户名 quota unlimited on 表空间;
-</code></pre>
-<blockquote>
-<p>eg:</p>
-</blockquote>
-<pre><code class="language-sql">ALTER USER test01 QUOTA UNLIMITED ON QY_TEST;
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项]]></title>
-        <id>https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang</id>
-        <link href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang">
-        </link>
-        <updated>2019-10-23T05:55:54.000Z</updated>
-        <content type="html"><![CDATA[<p>基本信息可以参考：<a href="https://blog.csdn.net/gongjianbo1992/article/details/100654638">https://blog.csdn.net/gongjianbo1992/article/details/100654638</a></p>
-<p><code>pyside2-rcc</code>  : 将 资源文件专为 Python 可以用的文件<br>
-<code>pyside2-uic</code> : 将 Ui 文件 专为 Python 文件</p>
-<p>记录一下几个注意事项：</p>
-<h2 id="1-环境变量的一些问题">1. 环境变量的一些问题：</h2>
-<p>一般来说 <code>pyside2-rcc</code> 这类命令不一定会自动添加到环境变量中，所以需要添加到环境变量或者直接在设置项中选择完整的文件路径，例如我的：</p>
-<pre><code class="language-bash">/Library/Frameworks/Python.framework/Versions/3.7/bin/pyside2-rcc
-</code></pre>
-<p>在 Vs code 中填入即可。</p>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g882wxli97j30xg0do0te.jpg" alt=""></figure>
-<p>类似的 <code>pyside2-uic</code>  也是一样的。</p>
-<p>现在 为使用的 是 zsh， 所以配置文件也是在  .zshrc 中，配置文件中一般都会有标示环境变量的。可以直接在里面添加。 如果添加成功那么 直接在终端中输入 <code>pyside2-rcc</code> 是不会报错的。</p>
-<p>当然，默认直接在 <code>/usr/bin</code> 目录里面添加添加替身也是可以的。</p>
-<h2 id="2-绑定-designer-软件的注意事项">2. 绑定 Designer 软件的注意事项</h2>
-<p>如果使用 Ui 文件来创建用户界面，那么可能需要通过 Qt Designer 来修改文件。</p>
-<p>一个 mac OS 的常识，应用程序都是以 <code>.app</code> 结尾的 「文件夹」 所以在 VScode 中添加的路径不能是一个文件夹，需要是一个可执行文件。</p>
-<p>右键显示包内容，然后在 <code>/Contents/MacOS</code> 里面就能看到可执行文件了。需要添加的是这个可执行文件的路径。</p>
 ]]></content>
     </entry>
 </feed>

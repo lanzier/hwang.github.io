@@ -1,0 +1,285 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份 | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1575295095076">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1575295095076" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-12-02
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
+                  # 少数派
+                </a>
+              
+                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
+                  # 长文
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
+<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
+<!-- more -->
+<p>首先，SMB 协议是一种能够将本机电脑上的文件夹分享到局域网内其他设备上的一种协议。你可以简单的理解为是一种文件共享的协议。我们要做的就是通过这个协议，将主机上的某个文件共享到你的 Mac 上，然后在那上面创建备份。所以，我们需要的具体步骤就是：1. 通过 SMB 分享一个文件夹； 2. 在 Mac 上加载这个文件夹；3. 利用这个文件夹创建备份。</p>
+<h2 id="1-通过-smb-分享一个文件夹">1. 通过 SMB 分享一个文件夹</h2>
+<p>这一步，我们需要做的事，具体而言就是：</p>
+<ol>
+<li>开启 SMB 服务；</li>
+<li>配置一个文件夹进行共享；<br>
+所以，正如标题里写的，无论是树莓派这种 Linux 设备，还是 Windows 设备，你都可以开启 SMB 服务，进行局域网内的文件的共享。所以，如果你有一台 Linux 设备，你可以参考下面的树莓派的步骤，如果你有一台 Windows 设备，可以参考 Windows 的步骤。</li>
+</ol>
+<h3 id="树莓派上开启-smb-服务">树莓派上开启 SMB 服务</h3>
+<p>详细内容，同样可以参考我派的文章：<a href="https://sspai.com/post/40721">利用 Samba - 像管理本地文件一样处理树莓派文件</a>。<br>
+首先，更新源：</p>
+<pre><code class="language-bash">$ sudo apt-get update
+</code></pre>
+<p>第二步，安装 samba 服务：</p>
+<pre><code class="language-bash">$ sudo apt-get install samba samba-common-bin
+</code></pre>
+<p>第三步，修改 SMB 的配置，这里使用 vim 进行编辑：</p>
+<pre><code class="language-bash">$ sudo vim /etc/samba/smb.conf
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt=""></figure>
+<p>在配置文件的最后添加：</p>
+<pre><code class="language-bash">[pi]
+
+    path = /home/pi/
+
+    valid users = pi
+
+    browseable = Yes
+
+    writeable = Yes
+
+    writelist = pi
+
+    create mask = 0777
+
+    directory mask = 0777
+</code></pre>
+<p>保存退出后，重启一下 samba 服务</p>
+<pre><code class="language-bash">$ sudo /etc/init.d/samba restart
+</code></pre>
+<p>最后一步，就是添加 <code>pi</code> 用户为 <code>Samba</code>用户，这一步，会让你设置共享时的密码。</p>
+<pre><code class="language-bash">$ sudo smbpasswd -a pi
+</code></pre>
+<h3 id="windows-上开启-smb-服务">Windows 上开启 SMB 服务</h3>
+<p>Windows 上做 Smb 共享会方便很多，首先在一个磁盘空间比较富裕的地方，创建一个文件夹，然后右键，属性，打开「共享」栏：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt=""><br>
+然后点击共享，弹出用户设置界面：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt=""></p>
+<p>设置共享的账户，以及权限设置为「读和写」，一般而言推荐在这里新建一个专门的共享账户，账户和密码就是届时需要在mac上输入的账户和密码：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt=""></p>
+<p>账户设置完成后，点击「共享」即可：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt=""></p>
+<p>点击完成，这个文件就已经能够在局域网访问了。这里做个简单的提醒，部分Windows设备的防火墙设置，会禁用共享，可以先通过关闭防火墙的方式来排除是不是防火墙的问题，再通过对应规则的设置，重新开启防火墙即可。</p>
+<h2 id="2-在-mac-上加载这个文件夹">2. 在 Mac 上加载这个文件夹</h2>
+<p>这个时候，打开你的 finder，应该能够在「位置这一栏」下看到树莓派，或者你的 Windows 设备的名字了。点击后，就能看到你共享的文件夹了。</p>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt=""></figure>
+<p>如果没有看到，那么通过右键 finder 图标，点击「连接服务器」，输入：<code>smb://设备的IP地址/共享的文件夹名称</code> 的方式连接，在输入账号密码后，也能够连接上这个文件夹。正确连接后，就说明，其他设备上的硬盘，已经能够为你的 Mac 所用了。</p>
+<p>接下来我们就要进行最后一个步骤，创建一个「时间机器」了！</p>
+<h2 id="3-利用这个文件夹创建备份">3. 利用这个文件夹创建备份</h2>
+<p>当你兴奋的打开你的 Time Machine 设置，点击「选择备份磁盘」时，看到却是：</p>
+<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt=""><br>
+<em>是的，并没有你想要的那个文件夹</em></p>
+<p>接下来，我们要做的，其实是创建一个磁盘镜像文件，然后将这个磁盘镜像文件挂载到你的 Mac 上，作为一个「虚拟硬盘」，然后利用这个「虚拟硬盘」进行备份。具体的：</p>
+<h3 id="31-创建一个空白映像">3.1 创建一个空白映像：</h3>
+<p>打开「磁盘工具」，选择菜单栏中的 「新建映像」，选择「空白映像…」，然后如图所示，填入信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt=""><br>
+其中「大小」可以根据你实际需求来填写<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<h3 id="32-将此这个空白映像拷贝到你的-smb-共享文件夹中">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</h3>
+<p>在 finder 中先推出这个磁盘，然后在保存的位置中，将这个磁盘文件拖入 SMB 共享文件夹的对应位置：</p>
+<h3 id="33-挂载这个磁盘">3.3 挂载这个磁盘</h3>
+<p>双击在 SMB 共享文件夹中的这个映像文件，然后他就会挂在在你的 Mac 上：</p>
+<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt=""></figure>
+<p>最后，通过 terminal 将这个磁盘设置为 TimeMachine 的备份磁盘：</p>
+<pre><code class="language-bash">$sudo tmutil setdestination /Volumes/TimeMachine
+</code></pre>
+<p>这里的 <code>/Volumes/TimeMachine</code> 就是这个磁盘的挂载点，一般而言就是 <code>/Volumes/</code> + 磁盘的名称，如果你不是很确定，可以在磁盘工具中，选择这个磁盘，点击右键，选择「显示简介」，看到挂载信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt=""></p>
+<p>输入完命令后，再输入你的Mac密码，即可成功挂载。当你再次打开 TimeMachine 时，已经可以开始备份了。</p>
+<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt=""></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一个400GB的空白磁盘映像，大概有400MB <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E9%80%9A%E8%BF%87-smb-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9">1. 通过 SMB 分享一个文件夹</a>
+<ul>
+<li><a href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E5%BC%80%E5%90%AF-smb-%E6%9C%8D%E5%8A%A1">树莓派上开启 SMB 服务</a></li>
+<li><a href="#windows-%E4%B8%8A%E5%BC%80%E5%90%AF-smb-%E6%9C%8D%E5%8A%A1">Windows 上开启 SMB 服务</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%9C%A8-mac-%E4%B8%8A%E5%8A%A0%E8%BD%BD%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9">2. 在 Mac 上加载这个文件夹</a></li>
+<li><a href="#3-%E5%88%A9%E7%94%A8%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%9B%E5%BB%BA%E5%A4%87%E4%BB%BD">3. 利用这个文件夹创建备份</a>
+<ul>
+<li><a href="#31-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%98%A0%E5%83%8F">3.1 创建一个空白映像：</a></li>
+<li><a href="#32-%E5%B0%86%E6%AD%A4%E8%BF%99%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%98%A0%E5%83%8F%E6%8B%B7%E8%B4%9D%E5%88%B0%E4%BD%A0%E7%9A%84-smb-%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</a></li>
+<li><a href="#33-%E6%8C%82%E8%BD%BD%E8%BF%99%E4%B8%AA%E7%A3%81%E7%9B%98">3.3 挂载这个磁盘</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi">
+              <h3 class="post-title">
+                Docker-compose 的使用（一）
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
