@@ -1,0 +1,811 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Qt for Python 学习 —— 看看别人的项目 | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018278902">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018278902" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Qt for Python 学习 —— 看看别人的项目
+            </h2>
+            <div class="post-info">
+              <span>
+                2018-12-07
+              </span>
+              <span>
+                16 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
+                  # qt for python
+                </a>
+              
+                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>picpong 一个PyQt 写的图床应用；</p>
+<p>项目地址：https://github.com/shuoGG1239/PicPong</p>
+</blockquote>
+<!-- more -->
+<h2 id="文件目录">文件目录</h2>
+<pre><code>./PicPong-master
+├── ConfigWidget.py
+├── PicPong.py
+├── README.md
+├── UploadWidget.py
+├── ViewWidget.py
+├── asset
+│   ├── config.png
+│   ├── ...
+│   └── view_hover.png
+├── main.py
+├── pyinstaller.py
+├── screen_capture.py
+├── shuoGG_re.ico
+├── ui_ConfigWidget.py
+├── ui_...//省略UI
+├── ui_ViewWidget.ui
+└── util
+    ├── __init__.py
+    ├── sm_util.py
+    └── system_util.py
+</code></pre>
+<h2 id="文件1-mainpy">文件1-main.py</h2>
+<p>程序入口，就20行代码。<br>
+from PyQt5.QtGui import QIcon<br>
+from PyQt5.QtWidgets import QApplication</p>
+<pre><code>from PicPong import PicPong
+
+if __name__ == '__main__':
+    import sys
+    app = QApplication(sys.argv)
+    mainWindow = PicPong()
+    mainWindow.setWindowTitle('PicPong')
+    mainWindow.setWindowIcon(QIcon('./asset/myicon.ico'))
+    mainWindow.setStyleSheet(&quot;QFrame#WindowWithTitleBar{background: #33CCCC}&quot;)
+    mainWindow.setStyleSheet(&quot;QWidget#uploadWidget{background: #FFFFFF}&quot;)
+    # fixSize
+    mainWindow.setSupportStretch(False)
+    mainWindow.setMaxEnable(False)
+    # 不然快捷键失效
+    mainWindow.mainwidget.setFocus()
+    mainWindow.show()
+    sys.exit(app.exec_())
+</code></pre>
+<p>设置mianWindow实例<br>
+然后设置一些样式、ico 等内容。<br>
+修复一些内容。</p>
+<h2 id="文件2-picpongpy">文件2-PicPong.py</h2>
+<p>共150行代码，一个 <code>class</code> PicPong</p>
+<h3 id="0-导出的库">0. 导出的库</h3>
+<pre><code>from PyQt5.QtCore import pyqtSlot, QSize, QRect, Qt
+from PyQt5.QtGui import QPixmap, QIcon
+from PyQt5.QtWidgets import QWidget
+from QCandyUi.CandyWindow import colorful
+
+import ui_PicPong
+from ConfigWidget import ConfigWidget
+from UploadWidget import UploadWidget
+from ViewWidget import ViewWidget
+from screen_capture import CaptureScreen
+</code></pre>
+<ul>
+<li>Qt 相关内容，不太用的是 QRect：
+<blockquote>
+<p>QRect类定了平面上的矩形。 一个矩形在内部是由左上角和右下角表示的，但是通常它所表达到是一个左上角和一个大小。</p>
+</blockquote>
+</li>
+<li>QCandyUi ：一个UI样式库，快速添加UI：https://github.com/shuoGG1239/QCandyUi</li>
+<li>ConfigWidget、UploadWidget、ViewWidget： 自定义的 Widget 内容</li>
+<li>screen_capture： 截图功能</li>
+</ul>
+<p>接着是静态资源路径：</p>
+<pre><code># 资源路径
+ROOT_URL = './asset/'
+CUT_ICON_URL = 'scissors.png'
+CONFIG_ICON_URL = 'config.png'
+SET_ICON_URL = 'set.png'
+VIEW_ICON_URL = 'view.png'
+OPEN_FILE_ICON_URL = 'file.png'
+FRAME_FILE_ICON_URL = 'frame.png'
+</code></pre>
+<p>按规范这里的变量需要大写。</p>
+<hr>
+<pre><code>@colorful('blueGreen')
+class PicPong(QWidget):
+</code></pre>
+<p><code>@colorful('blueGreen')</code> QCandy—UI 提供的装饰器，能够快速的创建颜色UI。</p>
+<h3 id="1-初始化">1. 初始化：</h3>
+<pre><code>QWidget.__init__(self)
+self.ui = ui_PicPong.Ui_picPong()
+self.ui.setupUi(self)
+</code></pre>
+<p>UI初始化</p>
+<pre><code>self.widgetUpload = UploadWidget(self)
+self.widgetUpload.setGeometry(QRect(41, 0, 450, 360))
+
+self.widgetView = ViewWidget(self)
+self.widgetView.setGeometry(QRect(41, 0, 450, 360))
+self.widgetView.hide()
+self.widgetConfig = ConfigWidget(self)
+self.widgetConfig.setGeometry(QRect(41, 0, 450, 360))
+self.widgetConfig.hide()
+</code></pre>
+<p>将widget设置在布局的位置中 <code>self.widgetUpload = UploadWidget(self)</code> 上面import 的内容 widget 初始化为 传入 <code>self</code> 类。 hide 其他的 widget。</p>
+<pre><code>self.widgetUpload.signal_img.connect(self.widgetView.slot_recv_img)
+self.widgetUpload.signal_response.connect(self.widgetView.slot_recv_resp)
+self.widgetUpload.signal_fail.connect(self.__slot_showTip)
+</code></pre>
+<p>信号槽绑定，均为自定义信号，具体需要参见 uploadwidget 内的内容。<br>
+主要是3个内容，一个是图片，一个是响应，一个是失败的回复</p>
+<pre><code>@pyqtSlot(str)
+def __slot_showTip(self, msg):
+        self.parent().showTip(msg, 'red')
+</code></pre>
+<p>绑定显示信息的咨询</p>
+<pre><code>self.__init_style()
+self.ui.pushButtonCut.setToolTip('ctrl+shift+alt+F8')
+</code></pre>
+<p>接下来是初始化UI<br>
+设置按钮提示</p>
+<h3 id="2美化相关">2.美化相关：</h3>
+<pre><code>def __init_style(self):
+    self.ui.widgetSide.setStyleSheet(&quot;QWidget{background: #33CCCC;border:none}&quot;)
+    self.widgetUpload.setStyleSheet(&quot;QWidget#uploadWidget{background: #FFFFFF;border:none}&quot;)
+    self.__btn_style3()
+</code></pre>
+<p>设置 styleSheet，进行 __btn_style3()</p>
+<pre><code>def __btn_style3(self):
+    self.beautify_button3(self.ui.pushButtonUp, ROOT_URL, 'up.png', 'up_hover.png', 'up.png', 'up.png')
+    self.beautify_button3(self.ui.pushButtonView, ROOT_URL, 'view.png', 'view_hover.png', 'view.png', 'view.png')
+    self.beautify_button3(self.ui.pushButtonCut, ROOT_URL, 'scissors.png', 'scissors_hover.png', 'scissors.png',
+                            'scissors.png')
+    self.beautify_button3(self.ui.pushButtonConfig, ROOT_URL, 'config.png', 'config_hover.png', 'config.png',
+                            'config.png')
+</code></pre>
+<p>这里均为运行 <code>self.beautify_button3()</code></p>
+<pre><code> def beautify_button3(self, button, root, norm, hover, press, disable):
+        qss = str()
+        qss += &quot;QPushButton{background:transparent; background-image:url(%s); border:none}&quot; % (
+                root + norm)
+        qss += &quot;QPushButton:hover{background:transparent; background-image:url(%s)}&quot; % (
+                root + hover)
+        qss += &quot;QPushButton:pressed{background:transparent; background-image:url(%s)}&quot; % (
+                root + press)
+        qss += &quot;QPushButton:disabled{background:transparent; background-image:url(%s)}&quot; % (
+                root + disable)
+        button.setStyleSheet(qss)
+        button.setText('')
+</code></pre>
+<p>以上均为设置按钮样式</p>
+<hr>
+<h3 id="3按钮功能">3.按钮功能</h3>
+<ol>
+<li>
+<p>pushButtonUp 的 clicked 事件：</p>
+<p>@pyqtSlot()<br>
+def on_pushButtonUp_clicked(self):<br>
+self.widgetUpload.show()<br>
+self.widgetConfig.hide()<br>
+self.widgetView.hide()<br>
+点击按钮时，显示 widgetUpload，隐藏其他的 widget</p>
+</li>
+<li>
+<p>pushButtonCut 的 clicked 事件：</p>
+<p>@pyqtSlot()<br>
+def on_pushButtonCut_clicked(self):<br>
+self.minimize()<br>
+self.capture = CaptureScreen()<br>
+self.capture.signal_complete_capture.connect(self.__slot_screen_capture)</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>先最小化主窗口，见 minimize 函数：</p>
+<p>def minimize(self):<br>
+if self.widgetConfig.minWhenCut:<br>
+self.parentWidget().showMinimized()</p>
+</li>
+<li>
+<p>实例化 <code>CaptureScreen()</code></p>
+</li>
+<li>
+<p>绑定自定义信号槽<code>self.capture.signal_complete_capture.connect(self.__slot_screen_capture)</code></p>
+</li>
+</ul>
+<p>而<code>self.__slot_screen_capture</code>，如下：<br>
+@pyqtSlot(QPixmap)<br>
+def __slot_screen_capture(self, pixmap):<br>
+temp_img_path = 'screenShot.png'<br>
+pixmap.save(temp_img_path, 'png')<br>
+self.widgetUpload.run_upload_async(temp_img_path)<br>
+self.widgetUpload.signal_img.emit(pixmap)<br>
+接受<code>QPixmap</code> 对象；</p>
+<ul>
+<li>定义文件名称 <code>screenShot.png</code></li>
+<li>保存为png，调用了 QPixmap 的 save 方法：<code>pixmap.save(temp_img_path, 'png')</code></li>
+<li>运行<code>self.widgetUpload</code> 的 <code>run_upload_async(temp_img_path)</code>方法（该方法负责开进程上传，然后显示动画），然后发送自定义信号<code>signal_img.emit(pixmap)</code>，该信号绑定了：<code>self.widgetUpload.signal_img.connect(self.widgetView.slot_recv_img)</code> 需要参考 widgetView中的函数；</li>
+</ul>
+<ol start="3">
+<li>
+<p>pushButtonView 的 clicked 动作<br>
+显示 widgetView，隐藏其他的 widget。</p>
+</li>
+<li>
+<p>pushButtonConfig 的 clicked动作<br>
+一样是显示widget</p>
+</li>
+</ol>
+<h3 id="键盘事件">键盘事件</h3>
+<pre><code>def keyPressEvent(self, e):
+</code></pre>
+<p>键盘事件，不是很会，下次再学。</p>
+<h2 id="文件3-uploadwidgetpy">文件3 UploadWidget.py</h2>
+<pre><code>import json
+import os
+import threading
+
+from PyQt5.QtCore import pyqtSlot, QFileInfo, pyqtSignal, QSize
+from PyQt5.QtGui import QMovie, QPixmap, QIcon
+from PyQt5.QtWidgets import QWidget, QFileDialog, QLabel
+
+import ui_UploadWidget
+from util import sm_util
+from util import system_util
+`
+</code></pre>
+<p>倒入内置库，Qt相关库以及 自己写的 util 包</p>
+<p>开始依然是全局路径。</p>
+<h3 id="初始化">初始化</h3>
+<p>先定义了几个信号槽：<br>
+class UploadWidget(QWidget):<br>
+signal_fail = pyqtSignal(str)<br>
+signal_response = pyqtSignal(str)  # sm应答信号<br>
+signal_img = pyqtSignal(QPixmap)<br>
+第一个是失败时的信号，接受 str 字符串<br>
+第二个是响应，接受str字符串<br>
+第三个是接受 QPixmap对象</p>
+<pre><code>  def __init__(self, parent):
+    QWidget.__init__(self, parent)
+    self.ui = ui_UploadWidget.Ui_uploadWidget()
+    self.ui.setupUi(self)
+    self.setAcceptDrops(True)
+    self.ui.pushButtonUpload.setAcceptDrops(False)
+    self.signal_response.connect(self.__slot_sm_response)
+    self.__init_loading_gif()
+    self.__init_style()
+</code></pre>
+<p>初始化UI，传入了一个 parent 参数。<br>
+设置允许拖拽。不允许按钮 .ui.pushButtonUpload.拖拽。<br>
+绑定信号到槽的，槽函数 self.__slot_sm_respons。<br>
+初始化加载动画，初始化样式：</p>
+<p>初始化style：<br>
+def __init_style(self):<br>
+&quot;&quot;&quot;<br>
+带button外壳的imageButton<br>
+:return:<br>
+&quot;&quot;&quot;<br>
+self.setStyleSheet(&quot;QWidget#widgetView{background: #FFFFFF;border:none}&quot;)<br>
+self.__btn_style3()</p>
+<p>这里面<code>self.__btn_style3()</code>:<br>
+def __btn_style3(self):<br>
+&quot;&quot;&quot;<br>
+三态button<br>
+:return:<br>
+&quot;&quot;&quot;<br>
+self.beautify_button3(self.ui.pushButtonUpload, ROOT_URL, 'upload.png', 'upload_hover.png', 'upload.png',<br>
+'upload.png')</p>
+<pre><code>    def beautify_button3(self, button, root, norm, hover, press, disable):
+        qss = str()
+        qss += &quot;QPushButton{background:transparent; background-image:url(%s); border:none}&quot; % (
+                root + norm)
+        qss += &quot;QPushButton:hover{background:transparent; background-image:url(%s)}&quot; % (
+                root + hover)
+        qss += &quot;QPushButton:pressed{background:transparent; background-image:url(%s)}&quot; % (
+                root + press)
+        qss += &quot;QPushButton:disabled{background:transparent; background-image:url(%s)}&quot; % (
+                root + disable)
+        button.setStyleSheet(qss)
+        button.setText('')
+</code></pre>
+<p>初始化 加载动画</p>
+<pre><code>    def __init_loading_gif(self):
+        &quot;&quot;&quot;
+        初始化loading动画
+        :return:
+        &quot;&quot;&quot;
+        gif = QMovie(ROOT_URL + LOADING_GIF_URL)
+        gif.start()
+        x, y = 190, 110
+        self.loadingLabel = QLabel(self)
+        self.loadingLabel.setMovie(gif)
+        self.loadingLabel.adjustSize()
+        self.loadingLabel.setGeometry(x, y, self.loadingLabel.width(), self.loadingLabel.height())
+        self.loadingLabel.setVisible(False)
+</code></pre>
+<p>这个初始化函数，生成了一个 父对象为 'self' 的 <code>self.loadingLabel</code> QLabel 的对象。</p>
+<h3 id="按钮与信号">按钮与信号</h3>
+<ol>
+<li>
+<p>pushButtonUpload 的 clicked</p>
+<pre><code> @pyqtSlot()
+ def on_pushButtonUpload_clicked(self):
+     self.ui.lineEdit.clear()
+     img_full_path = QFileDialog.getOpenFileName()[0]
+     if img_full_path is None or img_full_path == '':
+         return
+     _, name = os.path.split(img_full_path)
+     self.signal_img.emit(QPixmap(img_full_path))
+     self.run_upload_async(img_full_path)
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>
+<p><code>self.ui.lineEdit.clear()</code> self.ui 是 ui_uploadWidget 的 ui。清除 lineEdit。</p>
+</li>
+<li>
+<p><code>img_full_path = QFileDialog.getOpenFileName()[0]</code> 打开 GUI 文件选择器 （QFileDialog） 获得打开的文件路径。 <code>.getOpenFileName()[0]</code> 切出来的就是文件路径了。<br>
+-<code>if img_full_path is None or img_full_path == '':</code> 检查非空。如果是空的话 return ，直接跳过。<br>
+-<code>_, name = os.path.split(img_full_path)</code> 没有<br>
+-<code>self.signal_img.emit(QPixmap(img_full_path))</code> 发送信号<br>
+-<code>self.run_upload_async(img_full_path)</code> 运行上传动作，上传动作上面以及解释过来。</p>
+<pre><code>  @pyqtSlot(str)
+  def __slot_sm_response(self, resp_json):
+      self.loadingLabel.hide()
+      if resp_json is not '':
+          ret = json.loads(resp_json)
+          md_image = '![' + ret['filename'] + '](' + ret['url'] + ')'
+          self.ui.lineEdit.setText(md_image)
+          system_util.set_clipboard_text(md_image)
+</code></pre>
+</li>
+<li>
+<p><code>self.loadingLabel.hide()</code> 隐藏加载项</p>
+</li>
+<li>
+<p><code>if resp_json is not '':</code> 传入参数不为空：</p>
+</li>
+<li>
+<p>读取字符串为为dict，命名ret；</p>
+</li>
+<li>
+<p>md_image: md 的字符串模板；</p>
+</li>
+<li>
+<p>将lineEdit 的文本设置为 md_image</p>
+</li>
+<li>
+<p>system_util.set_clipboard_text(md_image) 拷贝到剪贴板。</p>
+</li>
+</ul>
+<blockquote>
+<p>这里注意下 util 下的文件结构：<br>
+util 内有一个空的<code>__init__.py</code>文件，导入时执行。<br>
+<code>system_util.py</code> 内没有class 类，都是函数。<br>
+这样导入时可以避免实例化</p>
+</blockquote>
+<pre><code>   def dragEnterEvent(self, event):
+        if (event.mimeData().hasUrls()):
+            event.acceptProposedAction()
+
+    def dragMoveEvent(self, event):
+        if (event.mimeData().hasUrls()):
+            event.acceptProposedAction()
+
+    def dropEvent(self, event):
+        if (event.mimeData().hasUrls()):
+            self.ui.lineEdit.clear()
+            urlList = event.mimeData().urls()
+            fileInfo = QFileInfo(urlList[0].toLocalFile())
+            img_full_path = fileInfo.filePath()
+            self.signal_img.emit(QPixmap(img_full_path))
+            self.run_upload_async(img_full_path)
+            event.acceptProposedAction()
+</code></pre>
+<p>拖拽动作，前面两个至接受mimeData() 内带有 Urls的内容。<br>
+<code>def dropEvent(self, event):</code> 为需要执行的动作：</p>
+<ul>
+<li>清理 lineEdit；</li>
+<li>获取 Url list</li>
+<li>获取文件信息：fileInfo = QFileInfo(urlList[0].toLocalFile())</li>
+<li>获取图片路径： img_full_path = fileInfo.filePath()</li>
+<li>发送信号：self.signal_img.emit(QPixmap(img_full_path))</li>
+<li>运行上传背景动作；</li>
+<li>event.acceptProposedAction() 完成拖放动作。</li>
+</ul>
+<h2 id="文件4-viewwidgetpy">文件4 ViewWidget.py</h2>
+<h3 id="0初始化">0.初始化</h3>
+<pre><code>    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        self.ui = ui_ViewWidget.Ui_widgetView()
+        self.ui.setupUi(self)
+        self.del_url = str()
+</code></pre>
+<p>前三行，初始化UI</p>
+<ul>
+<li><code>self.del_url = str()</code> 初始化一个字符串</li>
+</ul>
+<h3 id="1信号槽函数">1.信号槽函数：</h3>
+<p>slot_recv_img，接收一个 QPixmap 对象。<br>
+@pyqtSlot(QPixmap)<br>
+def slot_recv_img(self, pixmap):<br>
+self.__set_image(pixmap)</p>
+<p>对 QPixmap 执行__set_image()方法：</p>
+<pre><code>    def __set_image(self, pixmap):
+        &quot;&quot;&quot;
+        pixmap适应label
+        :param label:
+        :param pixmap:
+        :return:
+        &quot;&quot;&quot;
+        label = self.ui.labelImage
+        if pixmap.width() &gt; self.ui.labelImage.width() or pixmap.height() &gt; self.ui.labelImage.height():
+            label.setPixmap(pixmap.scaled(label.width(), label.height(), Qt.KeepAspectRatio))
+        else:
+            label.setPixmap(pixmap)
+</code></pre>
+<p>这里首先是初始化了一个 labelImage 对象，在 UI 文件中：<br>
+self.labelImage = QtWidgets.QLabel(widgetView)<br>
+self.labelImage.setGeometry(QtCore.QRect(18, 10, 411, 261))<br>
+self.labelImage.setFrameShape(QtWidgets.QFrame.Box)<br>
+self.labelImage.setText(&quot;&quot;)<br>
+self.labelImage.setAlignment(QtCore.Qt.AlignCenter)<br>
+self.labelImage.setObjectName(&quot;labelImage&quot;)<br>
+这是一个父类是 <code>widgetView</code> 的 <code>QLabel</code> 对象。<br>
+之后比较传入的 QPixmap 和 Qlabel 对象的宽度、高度：如果传入太大，则以缩略图设置QLabel对象。</p>
+<hr>
+<pre><code>    @pyqtSlot(str)
+    def slot_recv_resp(self, resp_json):
+        if resp_json is not '':
+            ret = json.loads(resp_json)
+            self.del_url = ret.get('delete')
+</code></pre>
+<p>接着：slot_recv_resp 信号槽接受 一个 json 格式的字符串。如果非空，则：<br>
+改为字典，设置 self.del_url 为 字典中的 'delete' 文本。</p>
+<hr>
+<p>然后是一个删除按钮：</p>
+<pre><code>    @pyqtSlot()
+    def on_pushButtonDel_clicked(self):
+        print('del: ' + self.del_url)
+        if self.del_url is not None and self.del_url is not '':
+            threading.Thread(target=sm_util.delete_img, args=(self.del_url,)).start()
+            self.del_url = ''
+            self.ui.labelImage.clear()
+</code></pre>
+<p>如果 self.del_url 不为空：<br>
+进行进程：<br>
+<code>target=sm_util.delete_img</code> ：<br>
+def delete_img(del_url):<br>
+requests.get(del_url)<br>
+传入的参数为：<code>args=(self.del_url,)</code><br>
+然后将 self.del_url 这个变量清空；<br>
+再将 labelImage 清空；<br>
+其他么的了。</p>
+<h2 id="文件5-configwidgetpy">文件5 ConfigWidget.py</h2>
+<pre><code>    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        self.ui = ui_ConfigWidget.Ui_configWidget()
+        self.ui.setupUi(self)
+        self.minWhenCut = self.ui.checkBoxMin.isChecked()
+
+    @pyqtSlot(int)
+    def on_checkBoxMin_stateChanged(self, state):
+        if state == 0:
+            self.minWhenCut = False
+        else:
+            self.minWhenCut = True
+</code></pre>
+<p>这里有一个知识点，checkBox 的状态为数值状态记录的，所以型号槽绑定的时候可以用int来接受state状态。</p>
+<h2 id="文件6-screen_capturepy">文件6 screen_capture.py</h2>
+<p>这个是实现截图功能的</p>
+<pre><code>from PyQt5.QtGui import QPixmap, QGuiApplication, QColor, QPen, QPainter
+from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtCore import Qt, pyqtSlot, pyqtSignal, qAbs, QRect
+</code></pre>
+<p>导入诸如 QPen、QPainter qAbs这我不怎么熟悉的库。</p>
+<p>首先是函数的功能都是写在一个类 CaptureScreen 里面的<br>
+class CaptureScreen(QWidget):<br>
+&quot;&quot;&quot;<br>
+截屏: 使用时仅需直接new一个该实例即可出现全屏的截屏界面<br>
+&quot;&quot;&quot;<br>
+load_pixmap = None<br>
+screen_width = None<br>
+screen_height = None<br>
+is_mouse_pressed = None<br>
+begin_pos = None<br>
+end_pos = None<br>
+capture_pixmap = None<br>
+painter = QPainter()<br>
+signal_complete_capture = pyqtSignal(QPixmap)<br>
+一些布尔值之的设定，都是 None，然后是实例化一个 QPainter对象。 S<br>
+定义一个信号<code>signal_complete_capture</code></p>
+<p>具体的，初始化中：<br>
+def <strong>init</strong>(self):<br>
+QWidget.<strong>init</strong>(self)<br>
+self.init_window()<br>
+self.load_background_pixmap()<br>
+self.setCursor(Qt.CrossCursor)<br>
+self.show()</p>
+<ul>
+<li>
+<p>实例化一个 QWidget 对象。</p>
+</li>
+<li>
+<p>运行<code>init_window()</code></p>
+<pre><code>  ```
+  def init_window(self):
+          self.setMouseTracking(True)
+          self.setWindowFlags(Qt.FramelessWindowHint)
+          self.setWindowState(Qt.WindowActive | Qt.WindowFullScreen)
+  ```
+  这里有一些设置：
+  1.`setMouseTracking(True)`这个属性保存的是窗口部件跟踪鼠标是否生效。
+  2.设置无边框
+  3.设置桌面窗口处于激活状态。设置激活为全屏。
+</code></pre>
+</li>
+<li>
+<p><code>load_background_pixmap()</code> 截取当前屏幕的图片：<br>
+<code>def load_background_pixmap(self): 	 # 截下当前屏幕的图像 	 self.load_pixmap = QGuiApplication.primaryScreen().grabWindow(QApplication.desktop().winId()) 	 self.screen_width = self.load_pixmap.width() 	 self.screen_height = self.load_pixmap.height()</code><br>
+1. <code>QGuiApplication.primaryScreen().grabWindow(QApplication.desktop().winId())</code> 截图操作。<br>
+2. 获取截图的长度与宽度。</p>
+</li>
+<li>
+<p>setCursor参考：https://doc-snapshots.qt.io/qtforpython/PySide2/QtGui/QCursor.html 是用来设置鼠标样式的。这里就是把鼠标设置为十字架样式。</p>
+</li>
+</ul>
+<p>初始化结束后，应当是获取一张当前全屏幕的截图，然后获得<code>self.screen_width 与 self.screen_height</code> 全局变量，鼠标变为十字架样式。开始监控鼠标行为。</p>
+<p>接下来为鼠标行为：</p>
+<pre><code>  def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.is_mouse_pressed = True
+            self.begin_pos = event.pos()
+        if event.button() == Qt.RightButton:
+            self.close()
+        return QWidget.mousePressEvent(self, event)
+
+    def mouseMoveEvent(self, event):
+        if self.is_mouse_pressed is True:
+            self.end_pos = event.pos()
+            self.update()
+        return QWidget.mouseMoveEvent(self, event)
+
+    def mouseReleaseEvent(self, event):
+        self.end_pos = event.pos()
+        self.is_mouse_pressed = False
+        return QWidget.mouseReleaseEvent(self, event)
+
+    def mouseDoubleClickEvent(self, event):
+        if self.capture_pixmap is not None:
+            self.signal_complete_capture.emit(self.capture_pixmap)
+            self.close()
+</code></pre>
+<p>一共四个函数，需要后续再学习鼠标事件的相关内容。</p>
+<ol>
+<li>mousePressEvent：</li>
+<li>先判断点击事件，如果是leftButton 左键点击，那么开始，右键点击则取消。</li>
+<li>记住位置 envt.pos() ：由pos()获取的位置是主窗口（widget窗口）左上角（边框的左上角，外左上角）相对于电脑屏幕的左上角的（x=0,y=0）偏移位置<br>
+2.mouseMoveEvent ：</li>
+</ol>
+<ul>
+<li>做鼠标移动事件，如果已经点击来左键，就开始记录 end_pos 的位置。</li>
+</ul>
+<ol start="3">
+<li>mouseReleaseEvent</li>
+<li>鼠标释放的动作，获取的<code>self.end_pos</code>的位置；</li>
+<li>将变量<code>self.is_mouse_pressed = False</code>重置为 False。</li>
+</ol>
+<p>4.mouseDoubleClickEvent</p>
+<ul>
+<li>鼠标双击动作，如果 self.capture_pixmap 不为空，则发送信号，并关闭。</li>
+</ul>
+<p>接下来是重绘事件：</p>
+<pre><code>    def paintEvent(self, event):
+        self.painter.begin(self)
+        shadow_color = QColor(0, 0, 0, 100)  # 阴影颜色设置
+        self.painter.setPen(QPen(Qt.blue, 1, Qt.SolidLine, Qt.FlatCap))  # 设置画笔
+        self.painter.drawPixmap(0, 0, self.load_pixmap)  # 将背景图片画到窗体上
+        self.painter.fillRect(self.load_pixmap.rect(), shadow_color)  # 画影罩效果
+        if self.is_mouse_pressed:
+            selected_rect = self.get_rect(self.begin_pos, self.end_pos)
+            self.capture_pixmap = self.load_pixmap.copy(selected_rect)
+            self.painter.drawPixmap(selected_rect.topLeft(), self.capture_pixmap)
+            self.painter.drawRect(selected_rect)
+        self.painter.end()  # 重绘结束
+</code></pre>
+<p>注释已经写了，大致就是将背景图画出来，并且根据鼠标事件得到的：<code>self.begin_pos, self.end_pos</code>位置。 这里用到来 get_rect 函数：<br>
+def get_rect(self, beginPoint, endPoint):<br>
+width = qAbs(beginPoint.x() - endPoint.x())<br>
+height = qAbs(beginPoint.y() - endPoint.y())<br>
+x = beginPoint.x() if beginPoint.x() &lt; endPoint.x() else endPoint.x()<br>
+y = beginPoint.y() if beginPoint.y() &lt; endPoint.y() else endPoint.y()<br>
+selected_rect = QRect(x, y, width, height)<br>
+# 避免宽或高为零时拷贝截图有误<br>
+# 可以看QQ截图，当选取截图宽或高为零时默认为2<br>
+if selected_rect.width() == 0:<br>
+selected_rect.setWidth(1)<br>
+if selected_rect.height() == 0:<br>
+selected_rect.setHeight(1)<br>
+return selected_rect</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95">文件目录</a></li>
+<li><a href="#%E6%96%87%E4%BB%B61-mainpy">文件1-main.py</a></li>
+<li><a href="#%E6%96%87%E4%BB%B62-picpongpy">文件2-PicPong.py</a>
+<ul>
+<li><a href="#0-%E5%AF%BC%E5%87%BA%E7%9A%84%E5%BA%93">0. 导出的库</a></li>
+<li><a href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96">1. 初始化：</a></li>
+<li><a href="#2%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3">2.美化相关：</a></li>
+<li><a href="#3%E6%8C%89%E9%92%AE%E5%8A%9F%E8%83%BD">3.按钮功能</a></li>
+<li><a href="#%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6">键盘事件</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B63-uploadwidgetpy">文件3 UploadWidget.py</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E6%8C%89%E9%92%AE%E4%B8%8E%E4%BF%A1%E5%8F%B7">按钮与信号</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B64-viewwidgetpy">文件4 ViewWidget.py</a>
+<ul>
+<li><a href="#0%E5%88%9D%E5%A7%8B%E5%8C%96">0.初始化</a></li>
+<li><a href="#1%E4%BF%A1%E5%8F%B7%E6%A7%BD%E5%87%BD%E6%95%B0">1.信号槽函数：</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B65-configwidgetpy">文件5 ConfigWidget.py</a></li>
+<li><a href="#%E6%96%87%E4%BB%B66-screen_capturepy">文件6 screen_capture.py</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/ml-python-shi-xian-ols">
+              <h3 class="post-title">
+                ML - Python 实现 OLS
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
