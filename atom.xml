@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-12-22T12:38:02.993Z</updated>
+    <updated>2019-12-22T12:49:31.077Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -29,15 +29,23 @@
 <!-- more -->
 <p><a href="https://ift.tt/2qsSNzG">基于QTdesigner的PyQt编程</a> \</p>
 <blockquote>
-<p>前面的教程中有讲过对于python自带的Tk模块的使用，实际上个人感觉Tk的使用不仅繁琐，而且做出来的界面并不美观，这里向大家推荐pyqt。 qyqt这个模块的最大优势在于界面可以使用qtdesigner直观的制作，然后代码直接读取就可以<br>
-<a href="https://ift.tt/2Na0inF">Kindle 十二岁</a> <br>
-两个多星期后的十一月十九日，就是 Kindle 的正式十二岁生日。正版电子书发展至今，对于我这种不住在英语国家但要看英文书的人带来了许多便利，但它在排版上依然远远劣于盗版 PDF（即远未达到平面出版的排版水平）。我认<br>
-<a href="https://ift.tt/2rBrG5D">知料 | 越薄越好？噼里啪啦的键盘是怎么成为苹果绊脚石的</a> <br>
-蝶形键盘失败了，这一苹果曾力推的全新设计，在短暂四年后便狼狈退场。<br>
-<a href="https://ift.tt/34tr155">极圈化</a> <br>
-不知道从什么时候开始，阶层固化、鄙视链定序、圈内刻奇成了舆论热点的源头，这一部分是商业社会价格歧视的结果，一部分是分工后专业化的信息壁垒，另一部分则是本质上人群价值观割裂后产生的信息不对称与隔离。每个<br>
-<a href="https://ift.tt/36l1prv">我推荐的 RSS 订阅列表</a> <br>
-每次推荐 RSS 阅读器，总有人条件反射地说「现在谁还用那个！」，令人生厌。但另一个条件反射式的反应非常合理：就算我装了 RSS 阅读器，里面一片空白，我该订什么呢？</p>
+<p>前面的教程中有讲过对于python自带的Tk模块的使用，实际上个人感觉Tk的使用不仅繁琐，而且做出来的界面并不美观，这里向大家推荐pyqt。 qyqt这个模块的最大优势在于界面可以使用qtdesigner直观的制作，然后代码直接读取就可以</p>
+</blockquote>
+<p><a href="https://ift.tt/2Na0inF">Kindle 十二岁</a> \</p>
+<blockquote>
+<p>两个多星期后的十一月十九日，就是 Kindle 的正式十二岁生日。正版电子书发展至今，对于我这种不住在英语国家但要看英文书的人带来了许多便利，但它在排版上依然远远劣于盗版 PDF（即远未达到平面出版的排版水平）。</p>
+</blockquote>
+<p><a href="https://ift.tt/2rBrG5D">知料 | 越薄越好？噼里啪啦的键盘是怎么成为苹果绊脚石的</a> \</p>
+<blockquote>
+<p>蝶形键盘失败了，这一苹果曾力推的全新设计，在短暂四年后便狼狈退场。</p>
+</blockquote>
+<p><a href="https://ift.tt/34tr155">极圈化</a> \</p>
+<blockquote>
+<p>不知道从什么时候开始，阶层固化、鄙视链定序、圈内刻奇成了舆论热点的源头，这一部分是商业社会价格歧视的结果，一部分是分工后专业化的信息壁垒，另一部分则是本质上人群价值观割裂后产生的信息不对称与隔离。</p>
+</blockquote>
+<p><a href="https://ift.tt/36l1prv">我推荐的 RSS 订阅列表</a> \</p>
+<blockquote>
+<p>每次推荐 RSS 阅读器，总有人条件反射地说「现在谁还用那个！」，令人生厌。但另一个条件反射式的反应非常合理：就算我装了 RSS 阅读器，里面一片空白，我该订什么呢？</p>
 </blockquote>
 ]]></content>
     </entry>
