@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-12-02T13:58:19.925Z</updated>
+    <updated>2019-12-22T12:33:08.304Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,28 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 05]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-05</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-05">
+        </link>
+        <updated>2019-12-22T12:31:36.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>最近真就没怎么更新博客...</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>最近真就没怎么更新博客...</p>
+</blockquote>
+<!-- more -->
+<!-- more -->
+<p>[基于QTdesigner的PyQt编程] &gt; 前面的教程中有讲过对于python自带的Tk模块的使用，实际上个人感觉Tk的使用不仅繁琐，而且做出来的界面并不美观，这里向大家推荐pyqt。 qyqt这个模块的最大优势在于界面可以使用qtdesigner直观的制作，然后代码直接读取就可以<br>
+[Kindle 十二岁] &gt; 两个多星期后的十一月十九日，就是 Kindle 的正式十二岁生日。正版电子书发展至今，对于我这种不住在英语国家但要看英文书的人带来了许多便利，但它在排版上依然远远劣于盗版 PDF（即远未达到平面出版的排版水平）。我认<br>
+[知料 | 越薄越好？噼里啪啦的键盘是怎么成为苹果绊脚石的] &gt; 蝶形键盘失败了，这一苹果曾力推的全新设计，在短暂四年后便狼狈退场。<br>
+[极圈化] &gt; 不知道从什么时候开始，阶层固化、鄙视链定序、圈内刻奇成了舆论热点的源头，这一部分是商业社会价格歧视的结果，一部分是分工后专业化的信息壁垒，另一部分则是本质上人群价值观割裂后产生的信息不对称与隔离。每个<br>
+[我推荐的 RSS 订阅列表] &gt; 每次推荐 RSS 阅读器，总有人条件反射地说「现在谁还用那个！」，令人生厌。但另一个条件反射式的反应非常合理：就算我装了 RSS 阅读器，里面一片空白，我该订什么呢？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份]]></title>
         <id>https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen</id>
@@ -502,41 +524,6 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <p>出现以上错误，优先检查数据库版本号是不是正确的，或者是不是下来 <code>basiclite</code>之类的文件。</p>
 </li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人]]></title>
-        <id>https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren</id>
-        <link href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren">
-        </link>
-        <updated>2019-10-28T04:08:40.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>本文是应刘老师邀请写的。<br>
-属实是太久没写了，生疏了。<br>
-还好有刘老师修改，不然真是惨不忍睹了。<br>
-刚写完，给女朋友改，她都破口大骂 “写的什么垃圾”。 🌚</p>
-</blockquote>
-<p>从零到一（万）经历了不平凡的过程，零是开始，10000是被初步的认可。祝贺“刘西川阅读写作课”微信公众号关注人数，突破10000人，完成了从零到一（万）的重要一步。二零一八年 四月，该号正式上线，开启了它的不易之旅。我也有幸参与到这个“旅程”之中，作为一名后台人员，我负责将刘西川老师的文章排布到公众号上，并制作推送给大家。各位阅读的早期文章，都是由我这个小编排版的。</p>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文是应刘老师邀请写的。<br>
-属实是太久没写了，生疏了。<br>
-还好有刘老师修改，不然真是惨不忍睹了。<br>
-刚写完，给女朋友改，她都破口大骂 “写的什么垃圾”。 🌚</p>
-</blockquote>
-<p>从零到一（万）经历了不平凡的过程，零是开始，10000是被初步的认可。祝贺“刘西川阅读写作课”微信公众号关注人数，突破10000人，完成了从零到一（万）的重要一步。二零一八年 四月，该号正式上线，开启了它的不易之旅。我也有幸参与到这个“旅程”之中，作为一名后台人员，我负责将刘西川老师的文章排布到公众号上，并制作推送给大家。各位阅读的早期文章，都是由我这个小编排版的。</p>
-<!-- more -->
-<p>我至今仍然非常喜欢张五常曾经举过的一个例子，他说：</p>
-<p>他拿100元钱，掉在地上，为什么这个钱会掉在地上，这个问题物理学能够解释，而这100块钱，为什么不见了呢？这个问题，经济学能够解释。</p>
-<p>这个例子非常好的诠释了经济学的价值。我很喜欢这个“讨巧”的例子，它让我这位刚踏入大学就选择经济学专业的大学生豁然开朗：经济学居然如此有用，在自然学科群中，物理学是基础，而经济学（经济学的解释）则是社会科学中的“物理学”。我为自己能在经济学专业学习而感到高兴。在我看来，这是一种所学有用的观念，这种观念让我更加自信，也更加坚定的去汲取更多的知识。</p>
-<p>我们公众号中上就曾经推送过类比物理学的经济学文章<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1572080568&amp;ver=1935&amp;signature=XNfF9b4Na6yg8syPbnHhnFp0maurfbLN12DJ6bNeqbupjQPeu8NhfvvDg3xDQA2PJgpxT9BsqPAXKqeMH6EZVguDWwAqhMFbccEh42gL7nNB1SXW2CO50o0f06fIMLbw&amp;new=1">《张五常 | 演化、逻辑与公理：经济学是社会科学中的皇后？》</a>。每次为文章排版时，我都会提前仔细阅读这些文章，这一过程也让我积累了许多写作、阅读以及社科研究相关的知识。古语曰“家中有粮，心里不慌”，积累的这些知识给我最大的底气是，当我写本科毕业论文的时候，能够有条不紊，相对比较自如，有一种拿着“答案”写“答案”的感觉。也许会有人质疑我，认为这有点夸张。但我可以肯定的告诉大家，如果不信，可以翻阅刘老师的写作课系列推文，学习论文写作每个部分的要点，必然能找到“手握答案”的感觉。除了有关社会科学范式的文章，我们还推送了一些有关引言、摘要等方面的文章。如果你还为写本科毕业论文而苦恼，那么我推荐你拜读一下这篇：<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1572080621&amp;ver=1935&amp;signature=XNfF9b4Na6yg8syPbnHhnFp0maurfbLN12DJ6bNeqbvzDHtCYl-gGz*IBaiwxdz2NBhzQqAivTbE*kjuk1zPpKc-0jwi0*MNIGl-2bCVpF7sTFvlyd8rqubY0zdcApSi&amp;new=1">《彭玉生： “洋八股”与社会科学规范 》</a>，相信你读完定会恍然大悟——天呐！社科写作原来也是有套路可寻的。</p>
-<p>因为大部分推文的内容都专注于阅读与写作，这里的学与用是能够相匹配的，对论文写作的帮助也是有口皆碑。若各位老师与同学以此为目的来关注本号，必会有意想不到的收获。细心的关注者也许会发现，这个公众号以“文心雕龙”为 logo ，《文心雕龙》是一本文艺理论方面的书籍，该书作者一是反对不切实际的浮靡文风，二是主张实用的“攡文必在纬军国”之落实文风。我想，尽显真诚，力推干活，也许正是刘老师选择文新雕龙的初心吧。实用的文风其实也隐含着实用主义的价值主张。信息网络的发达亦让人们更加容易的输出内容，海量信息使得人们更加注重甄别信息，同时也更加“爱惜”自己的时间。人们总会扪心自问：看这个有用吗？或许基于实用主义追求所谓的干货，并没有什么错！我只想借助自己的例子，谈谈自己的一些认识。</p>
-<p>在为刘老师运营这个公众号的过程中，为了提高自己的编辑效率，我专门学习了 CSS 的写法。很多人可能不大了解 CSS，其实它像是推文的&quot;衣服&quot;，通过学习和编辑一个文件，可以为刘老师的文章快速地套上“衣服”，排出一篇精美版式的文章。在一般人看来，作为一名经济学专业的大学生，学习这些，并没有太多益处，反而有点浪费时间。但是，谁又能想到，毕业后的我竟然真的写起了代码。我学 CSS 的经验其实也是来自于学习 stata 、撰写 do 文件。do 文件几乎是经济学学生对于 “编程”的初步认识。而往后，我以 CSS 为基础，掌握了 HTML，又学会 了Python，但如今，竟成了半个&quot;码农&quot;。这一切，谁又能想到呢 ？</p>
-<p>大学，是学习效率最高，也最能够集中精力学习的时期，于我而言，多学习一些自己喜欢的知识总是没有坏处的。我相信所学皆会有所用。有时候，在很多人看来，这样的观点显得有些 阿 Q 精神。我也很难去反驳那些有用才学的“精英”的观点，而我所做的，只是真诚地分享一些自己的体会。</p>
-<p>说了这么多，“腹有诗书气自华”，多多阅读好的内容，总是能够让人在任何时候提笔撰文都更加有状态。无论是社科写作，还是程序员要写的各类技术文档，“多阅读”总是“写得好”的前提。刘老师常说，“己所不欲，勿施于人”，自己都不愿意看的东西，就不要放在公众号上。我的经历与体会分享给大家，只是想说，刘老师所选所作之内容，都有其价值所在，值得我们阅读和学习。</p>
-<p>最后，再次祝贺刘西川阅读写作课微信公众号，终于迈出了更坚实的一步，取得了关注者突破10000 名的可喜成绩，希望该号能够在社科领域继续发光发热，指引更多在社科领域努力的学子们前行，帮助更多对社科写作感到困惑的初学者和年轻朋友。同时，也希望“阅读写作课”能够在更广泛的领域产生更积极的影响，近期的 推文<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1572080468&amp;ver=1935&amp;signature=XNfF9b4Na6yg8syPbnHhnFp0maurfbLN12DJ6bNeqbvqPdSeao0pXSOey5PAJuBKRdsOFKizMhmkzUS15ekpHtOxToHp6TIIP*orb*tvVmTTQmazUZ8ZtjdkcFTrK9AE&amp;new=1">《会议纪要这样写，才专业！》</a>(#)推文就是一次积极的尝试。</p>
-<p>😹 结尾彩蛋：</p>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572235983560.png" alt=""></figure>
 ]]></content>
     </entry>
 </feed>
