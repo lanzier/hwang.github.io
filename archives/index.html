@@ -1,406 +1,343 @@
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
-这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607927379">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://hwang.top">
-        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://hwang.top">
-        <h1 class="site-title">Hwang&#39;s Blog</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607927379" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
+    
         
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-        <div class="content-container">
-          
-          
 
 <div class="archives-container">
   
     <h2 class="year">2019</h2>
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hwang-reading-list-new-05">
-            <h2 class="post-title">
-              Hwang Reading List - New 05
-              <small>2019-12-22</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hwang-reading-list-new-05" class="post">
+          <h2 class="post-title">
+            Hwang Reading List - New 05
+          </h2>
+          <div class="time">2019-12-22</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen">
-            <h2 class="post-title">
-              树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
-              <small>2019-12-02</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen" class="post">
+          <h2 class="post-title">
+            树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
+          </h2>
+          <div class="time">2019-12-02</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi">
-            <h2 class="post-title">
-              Docker-compose 的使用（一）
-              <small>2019-12-02</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi" class="post">
+          <h2 class="post-title">
+            Docker-compose 的使用（一）
+          </h2>
+          <div class="time">2019-12-02</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hwang-reading-list-new-04">
-            <h2 class="post-title">
-              Hwang Reading List - New 04
-              <small>2019-11-17</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hwang-reading-list-new-04" class="post">
+          <h2 class="post-title">
+            Hwang Reading List - New 04
+          </h2>
+          <div class="time">2019-11-17</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi">
-            <h2 class="post-title">
-              划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识
-              <small>2019-11-11</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi" class="post">
+          <h2 class="post-title">
+            划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识
+          </h2>
+          <div class="time">2019-11-11</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
-            <h2 class="post-title">
-              PySide2/PyQt 在 Windows 中添加对高分屏的支持
-              <small>2019-11-05</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi" class="post">
+          <h2 class="post-title">
+            PySide2/PyQt 在 Windows 中添加对高分屏的支持
+          </h2>
+          <div class="time">2019-11-05</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
-            <h2 class="post-title">
-              为公众号撰稿—如何精准检索我们公众号的文章
-              <small>2019-11-03</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang" class="post">
+          <h2 class="post-title">
+            为公众号撰稿—如何精准检索我们公众号的文章
+          </h2>
+          <div class="time">2019-11-03</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
-            <h2 class="post-title">
-              划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
-              <small>2019-11-03</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian" class="post">
+          <h2 class="post-title">
+            划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
+          </h2>
+          <div class="time">2019-11-03</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hwang-reading-list-new-03">
-            <h2 class="post-title">
-              Hwang Reading List - New 03
-              <small>2019-10-30</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hwang-reading-list-new-03" class="post">
+          <h2 class="post-title">
+            Hwang Reading List - New 03
+          </h2>
+          <div class="time">2019-10-30</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
-            <h2 class="post-title">
-              STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
-              <small>2019-10-30</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang" class="post">
+          <h2 class="post-title">
+            STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
+          </h2>
+          <div class="time">2019-10-30</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren">
-            <h2 class="post-title">
-              所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
-              <small>2019-10-28</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren" class="post">
+          <h2 class="post-title">
+            所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
+          </h2>
+          <div class="time">2019-10-28</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu">
-            <h2 class="post-title">
-               STQT 查询工具 Oracle 相关记录
-              <small>2019-10-25</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu" class="post">
+          <h2 class="post-title">
+             STQT 查询工具 Oracle 相关记录
+          </h2>
+          <div class="time">2019-10-25</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang">
-            <h2 class="post-title">
-              在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
-              <small>2019-10-23</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang" class="post">
+          <h2 class="post-title">
+            在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
+          </h2>
+          <div class="time">2019-10-23</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei">
-            <h2 class="post-title">
-              Docker 的入门「指北」
-              <small>2019-10-07</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei" class="post">
+          <h2 class="post-title">
+            Docker 的入门「指北」
+          </h2>
+          <div class="time">2019-10-07</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2">
-            <h2 class="post-title">
-              Hwang 的低质阅读单 New 2
-              <small>2019-10-06</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2" class="post">
+          <h2 class="post-title">
+            Hwang 的低质阅读单 New 2
+          </h2>
+          <div class="time">2019-10-06</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss">
-            <h2 class="post-title">
-              Qt for Python 的小Tips —— 外部加载 QSS
-              <small>2019-10-06</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss" class="post">
+          <h2 class="post-title">
+            Qt for Python 的小Tips —— 外部加载 QSS
+          </h2>
+          <div class="time">2019-10-06</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus">
-            <h2 class="post-title">
-              Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
-              <small>2019-10-06</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus" class="post">
+          <h2 class="post-title">
+            Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
+          </h2>
+          <div class="time">2019-10-06</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/procreate-lian-xi">
-            <h2 class="post-title">
-              Procreate 练习
-              <small>2019-10-01</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/procreate-lian-xi" class="post">
+          <h2 class="post-title">
+            Procreate 练习
+          </h2>
+          <div class="time">2019-10-01</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian">
-            <h2 class="post-title">
-              Update 了一下 figma 的封面
-              <small>2019-09-30</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian" class="post">
+          <h2 class="post-title">
+            Update 了一下 figma 的封面
+          </h2>
+          <div class="time">2019-09-30</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu">
-            <h2 class="post-title">
-              一个用了 3 个月 PyQt 的人，在学 Vue.js 基础
-              <small>2019-09-30</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu" class="post">
+          <h2 class="post-title">
+            一个用了 3 个月 PyQt 的人，在学 Vue.js 基础
+          </h2>
+          <div class="time">2019-09-30</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
-            <h2 class="post-title">
-              Python 的虚拟环境管理  virtualenv &amp; pyenv
-              <small>2019-09-29</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv" class="post">
+          <h2 class="post-title">
+            Python 的虚拟环境管理  virtualenv &amp; pyenv
+          </h2>
+          <div class="time">2019-09-29</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
-            <h2 class="post-title">
-              Hwang 的低质阅读单 New 1
-              <small>2019-09-27</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1" class="post">
+          <h2 class="post-title">
+            Hwang 的低质阅读单 New 1
+          </h2>
+          <div class="time">2019-09-27</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels">
-            <h2 class="post-title">
-               用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels 
-              <small>2019-07-16</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels" class="post">
+          <h2 class="post-title">
+             用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels 
+          </h2>
+          <div class="time">2019-07-16</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao">
-            <h2 class="post-title">
-              如何 在 Windows 的共享文件夹中创建文件图标
-              <small>2019-07-11</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao" class="post">
+          <h2 class="post-title">
+            如何 在 Windows 的共享文件夹中创建文件图标
+          </h2>
+          <div class="time">2019-07-11</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong">
-            <h2 class="post-title">
-              SQL 的一些内容
-              <small>2019-05-07</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong" class="post">
+          <h2 class="post-title">
+            SQL 的一些内容
+          </h2>
+          <div class="time">2019-05-07</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
-            <h2 class="post-title">
-              Python Pexpect 库的简单入门
-              <small>2019-03-26</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men" class="post">
+          <h2 class="post-title">
+            Python Pexpect 库的简单入门
+          </h2>
+          <div class="time">2019-03-26</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
-            <h2 class="post-title">
-              去思考，去理解，去猜测，《xxx快速入门》指北 
-              <small>2019-03-15</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei" class="post">
+          <h2 class="post-title">
+            去思考，去理解，去猜测，《xxx快速入门》指北 
+          </h2>
+          <div class="time">2019-03-15</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu">
-            <h2 class="post-title">
-              Ubuntu 配置VNC服务
-              <small>2019-03-06</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu" class="post">
+          <h2 class="post-title">
+            Ubuntu 配置VNC服务
+          </h2>
+          <div class="time">2019-03-06</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/2018-wo-de-zhu-ping">
-            <h2 class="post-title">
-              2018 - 我的主屏
-              <small>2019-01-17</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/2018-wo-de-zhu-ping" class="post">
+          <h2 class="post-title">
+            2018 - 我的主屏
+          </h2>
+          <div class="time">2019-01-17</div>
+        </a>
       
     
       
@@ -479,125 +416,126 @@
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu">
-            <h2 class="post-title">
-              Qt for Python 学习 —— 看看别人的项目
-              <small>2018-12-07</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu" class="post">
+          <h2 class="post-title">
+            Qt for Python 学习 —— 看看别人的项目
+          </h2>
+          <div class="time">2018-12-07</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/ml-python-shi-xian-ols">
-            <h2 class="post-title">
-              ML - Python 实现 OLS
-              <small>2018-10-10</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/ml-python-shi-xian-ols" class="post">
+          <h2 class="post-title">
+            ML - Python 实现 OLS
+          </h2>
+          <div class="time">2018-10-10</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/ml-python-ling-hui-gui">
-            <h2 class="post-title">
-              ML- Python 岭回归
-              <small>2018-07-24</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/ml-python-ling-hui-gui" class="post">
+          <h2 class="post-title">
+            ML- Python 岭回归
+          </h2>
+          <div class="time">2018-07-24</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu">
-            <h2 class="post-title">
-              Kepler.gl 不需要一行代码！玩转酷炫的数据地图
-              <small>2018-07-23</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu" class="post">
+          <h2 class="post-title">
+            Kepler.gl 不需要一行代码！玩转酷炫的数据地图
+          </h2>
+          <div class="time">2018-07-23</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong">
-            <h2 class="post-title">
-              《会读才会写》的读书笔记——利用标签来整理阅读内容
-              <small>2018-07-20</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong" class="post">
+          <h2 class="post-title">
+            《会读才会写》的读书笔记——利用标签来整理阅读内容
+          </h2>
+          <div class="time">2018-07-20</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian">
-            <h2 class="post-title">
-              ML - Python LASSO 算法实现
-              <small>2018-07-13</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian" class="post">
+          <h2 class="post-title">
+            ML - Python LASSO 算法实现
+          </h2>
+          <div class="time">2018-07-13</div>
+        </a>
       
     
       
-        <article class="post">
-          <a href="https://hwang.top/post/2017-kai-shi-de-shu-zi-sheng-huo">
-            <h2 class="post-title">
-               2017 开始的「数字生活」
-              <small>2018-02-14</small>
-            </h2>
-          </a>
-        </article>
+        <a href="https://hwang.top/post/2017-kai-shi-de-shu-zi-sheng-huo" class="post">
+          <h2 class="post-title">
+             2017 开始的「数字生活」
+          </h2>
+          <div class="time">2018-02-14</div>
+        </a>
       
     
   
 </div>
 
-
-        </div>
-
-        <div class="site-footer">
-  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
-  <div class="social-container">
     
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+        <div class="pagination-container">
+  
+  
 </div>
 
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
 
-      </div>
-      <script type="application/javascript">
+<script>
+  hljs.initHighlightingOnLoad()
 
-hljs.initHighlightingOnLoad()
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
     </div>
   </body>
 </html>

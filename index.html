@@ -1,482 +1,62 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
-这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607927379">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://hwang.top">
-        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://hwang.top">
-        <h1 class="site-title">Hwang&#39;s Blog</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607927379" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/hwang-reading-list-new-05">
-        <h2 class="post-title">Hwang Reading List - New 05</h2>
-      </a>
-      <div class="post-abstract">
-        <blockquote>
-<p>最近真就没怎么更新博客...<br>
-注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-12-22</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/lV404AuaF">
-                阅读清单
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/hwang-reading-list-new-05">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-05.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen">
-        <h2 class="post-title">树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份</h2>
-      </a>
-      <div class="post-abstract">
-        <blockquote>
-<p>本文以发布于少数派：https://sspai.com/post/57539<br>
-推荐在少数派阅读</p>
-</blockquote>
-<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
-<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-12-02</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/AMJH5xgec">
-                少数派
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/CjydnGrXlu">
-                长文
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi">
-        <h2 class="post-title">Docker-compose 的使用（一）</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-12-02</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/wJNvGSVZG">
-                docker
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/hwang-reading-list-new-04">
-        <h2 class="post-title">Hwang Reading List - New 04</h2>
-      </a>
-      <div class="post-abstract">
-        <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-11-17</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/lV404AuaF">
-                阅读清单
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/hwang-reading-list-new-04">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-04.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi">
-        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识</h2>
-      </a>
-      <div class="post-abstract">
-        <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-11-11</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/oEltlpWF3">
-                Python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/w0VIrv_ivr">
-                数据Seminar
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/_SDeCkYG4">
-                推文
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/CjydnGrXlu">
-                长文
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
-        <h2 class="post-title">PySide2/PyQt 在 Windows 中添加对高分屏的支持</h2>
-      </a>
-      <div class="post-abstract">
-        <p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
-<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-11-05</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/GY_B5UX_b">
-                qt for python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/Zf-hLAESr">
-                python
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
-        <h2 class="post-title">为公众号撰稿—如何精准检索我们公众号的文章</h2>
-      </a>
-      <div class="post-abstract">
-        <blockquote>
-<p>2019.11.03<br>
-为刘老师准备的一篇小教程</p>
-</blockquote>
-<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-11-03</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/PtaUFx3_w">
-                文献阅读与写作
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/YpqBw4qDP3">
-                公众号
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
-        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点</h2>
-      </a>
-      <div class="post-abstract">
-        <p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-11-03</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/oEltlpWF3">
-                Python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/w0VIrv_ivr">
-                数据Seminar
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/CjydnGrXlu">
-                长文
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/hwang-reading-list-new-03">
-        <h2 class="post-title">Hwang Reading List - New 03</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-10-30</span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/hwang-reading-list-new-03">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-03.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
-        <h2 class="post-title">STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项</h2>
-      </a>
-      <div class="post-abstract">
-        <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
-<p><code>pip install cx_Oracle</code> 即可安装。</p>
-<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-10-30</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://hwang.top/tag/TnrvUOUag">
-                oracle
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/oEltlpWF3">
-                Python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://hwang.top/tag/GY_B5UX_b">
-                qt for python
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
-        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png')">
-        </div>
-      </a>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-    <a href="https://hwang.top/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
   <div class="social-container">
     
       
@@ -490,26 +70,383 @@
       
     
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://hwang.top/post/hwang-reading-list-new-05">
+        <h2 class="post-title">Hwang Reading List - New 05</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-12-22
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/lV404AuaF" class="post-tag">
+            # 阅读清单
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/hwang-reading-list-new-05" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-05.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <blockquote>
+<p>最近真就没怎么更新博客...<br>
+注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
 
-    </div>
-    <script type="application/javascript">
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen">
+        <h2 class="post-title">树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-12-02
+        </span>
+        <span>
+          6 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
+            # 少数派
+          </a>
+        
+          <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
+            # 长文
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
+<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
 
-hljs.initHighlightingOnLoad()
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi">
+        <h2 class="post-title">Docker-compose 的使用（一）</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-12-02
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/wJNvGSVZG" class="post-tag">
+            # docker
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/hwang-reading-list-new-04">
+        <h2 class="post-title">Hwang Reading List - New 04</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-11-17
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/lV404AuaF" class="post-tag">
+            # 阅读清单
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/hwang-reading-list-new-04" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-04.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi">
+        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-11-11
+        </span>
+        <span>
+          6 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
+            # Python
+          </a>
+        
+          <a href="https://hwang.top/tag/w0VIrv_ivr" class="post-tag">
+            # 数据Seminar
+          </a>
+        
+          <a href="https://hwang.top/tag/_SDeCkYG4" class="post-tag">
+            # 推文
+          </a>
+        
+          <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
+            # 长文
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
+        <h2 class="post-title">PySide2/PyQt 在 Windows 中添加对高分屏的支持</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-11-05
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
+            # qt for python
+          </a>
+        
+          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+            # python
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
+<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
+        <h2 class="post-title">为公众号撰稿—如何精准检索我们公众号的文章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-11-03
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/PtaUFx3_w" class="post-tag">
+            # 文献阅读与写作
+          </a>
+        
+          <a href="https://hwang.top/tag/YpqBw4qDP3" class="post-tag">
+            # 公众号
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <blockquote>
+<p>2019.11.03<br>
+为刘老师准备的一篇小教程</p>
+</blockquote>
+<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
+        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-11-03
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
+            # Python
+          </a>
+        
+          <a href="https://hwang.top/tag/w0VIrv_ivr" class="post-tag">
+            # 数据Seminar
+          </a>
+        
+          <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
+            # 长文
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/hwang-reading-list-new-03">
+        <h2 class="post-title">Hwang Reading List - New 03</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-10-30
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/hwang-reading-list-new-03" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-03.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
+        <h2 class="post-title">STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-10-30
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/TnrvUOUag" class="post-tag">
+            # oracle
+          </a>
+        
+          <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
+            # Python
+          </a>
+        
+          <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
+            # qt for python
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
+<p><code>pip install cx_Oracle</code> 即可安装。</p>
+<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
+
+      </di>
+    </article>
+  
+</div>
+
+    
+        <div class="pagination-container">
+  
+  
+    <a href="https://hwang.top/page/2" class="prev-page">下一页</a>
+  
+</div>
+
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>
