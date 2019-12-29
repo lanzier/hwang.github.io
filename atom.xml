@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-12-29T08:25:31.505Z</updated>
+    <updated>2019-12-29T09:38:21.973Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,69 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 06]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-06</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-06">
+        </link>
+        <updated>2019-12-29T09:37:24.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/2wAchiQ">真正提高效率：自定义你的 Touch Bar</a></p>
+<blockquote>
+<p>自 2016 年 Touch Bar 在 MacBook Pro 上问世以来，对其最大的争议就是它并不能很好地提高用户的工作效率：Touch Bar 提供的大多数功能很容易使用键盘快捷键来实现，并且有些时候使用快捷键更加方便、符合直觉。</p>
+</blockquote>
+<p><a href="https://ift.tt/2vu6nnM">聊聊 GFW 如何封杀 Resilio Sync（BTSync）？以及如何【免翻墙】继续使用？</a></p>
+<blockquote>
+<p>★引子    　　最近一个多月，有好些读者抱怨 Resilio Sync（原名叫做“BitTorrent Sync”，简称“BTsync”）无法正常使用。所以俺一直打算写一篇来谈谈这个事情。顺便也分享一下：如何继续【免翻墙】使用 Resilio Sync。</p>
+</blockquote>
+<p><a href="https://ift.tt/2shD7uP">第四范式戴文渊：机器写出1000万条以上规则，就超越了专家</a></p>
+<blockquote>
+<p>为你推送和解读最前沿、最有料的科技创投资讯</p>
+</blockquote>
+<p><a href="https://ift.tt/2vFF0pi">培养大脑记忆力的第二次机会：「记忆神器」Anki 使用详解</a></p>
+<blockquote>
+<p>阅读建议：本文基于 Anki for Mac，可以在 Anki 中国 上免费下载；本文涉及众多新概念，建议在 Anki 中国 下载一个共享的牌组，尝试文中提到的一些概念和操作。</p>
+</blockquote>
+<p><a href="https://ift.tt/2pe0Uxy">用 Ai Search 和 Drafts 实现 Alfred 的搜索体验</a></p>
+<blockquote>
+<p>这篇文章主要探讨的是一种结合 Ai Search 和 Drafts 进行快速网站搜索的方法。Ai Search 扮演的是一个搜索引擎库，而 Drafts 是提高调用搜索引擎效率的工具。文中方法的关键点在于键盘输入，搜索内容和选择搜索引擎的操作都可以</p>
+</blockquote>
+<p><a href="https://ift.tt/2mkTdDj">强大如怪物：顶级文本处理应用 Drafts 4 深度评测</a></p>
+<blockquote>
+<p>虽然此前购买过旧版本的 Drafts，但在拿到手上最新版本的 Drafts 4 前，其实我并没有怎么好好使用它。倒并不是因为它不好用，而是因为它和另外一款相似的应用 Editorial 在我心里一直是两款「怪物」一般的文本输入类应用。因</p>
+</blockquote>
+<p><a href="https://ift.tt/2OUQnnl">这个在线协作工具，什么都能画</a></p>
+<blockquote>
+<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
+</blockquote>
+<p><a href="https://ift.tt/2Qj3I80">企业微信3.0发布会，都讲了些什么？</a></p>
+<blockquote>
+<p>通过邹叔在现场拍的两张照片来看，企业微信最重要的改变就是：从拉新变成沉淀，从2B工具变成了帮助企业2C的工具。</p>
+</blockquote>
+<p><a href="https://ift.tt/2QiXkhb">克洛普的圣诞致辞：作为最幸运的红军人，这是骄傲难忘的一年</a></p>
+<blockquote>
+<p>编者按：如往年一样，克洛普在圣诞节当天于利物浦官方发表了他的圣诞致辞，让我们来看看渣叔如何向大家分享这一年的感受。</p>
+</blockquote>
+<p><a href="https://ift.tt/2PxUqpP">Mac Pro 2019 Teardown</a></p>
+<blockquote>
+<p>Teardown of the reinvented 2019 Mac Pro, which returns to a properly repairable design that happens to not grate cheese very well. Performed December 2019.</p>
+</blockquote>
+<p><a href="https://ift.tt/34AWiSX">2019：“暗黑”的一年</a></p>
+<blockquote>
+<p>昨天，微信开放了安卓平台 7.0.10 版本的内部测试。安装之后，可以看到的一些小变化是多选信息、查看图片、视频等界面的微调。</p>
+</blockquote>
+<p><a href="https://ift.tt/2S4U9fC">Flypig | 自媒体时代的 “非虚构” 人生</a></p>
+<blockquote>
+<p>微信号 DAZED_CHINA 功能介绍 《DAZED》杂志官方公众号。微博：@DazedChina 。 Hannah——舌尖后缩，轻触上颚然后落下，H-a-n-n-a-h，倒过来念也是如此。这是电影《降临》（Arrival, 2017）中语言学家Louise女儿的名字，故事的结尾又回到了</p>
+</blockquote>
+<p><a href="https://ift.tt/2LP8oB7">杭州</a></p>
+<blockquote>
+<p>杭州是上海边上的一座城，说它“美丽”不足以形容它的风貌，说它“最适合人居住”又会让人误以为它房价便宜，所以很难找出一个词来概括它。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 05]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-05</id>
@@ -503,43 +566,6 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <blockquote>
 <p>《威权式法治》 内容简介 本书指出，新加坡缔造了一种匪夷所思的威权式法治。作者展示了作为法治以及自由民主之基石的制度和程序，是通过何种方式成为了制约异己、保护当政者的工具，但同时又无损于政府在国内和国际</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项]]></title>
-        <id>https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang</id>
-        <link href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
-        </link>
-        <updated>2019-10-30T05:37:28.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
-<p><code>pip install cx_Oracle</code> 即可安装。</p>
-<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
-<p><code>pip install cx_Oracle</code> 即可安装。</p>
-<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
-<!-- more -->
-<p>下载驱动，注意版本号：</p>
-<ol>
-<li>下载地址：https://www.oracle.com/database/technologies/instant-client/downloads.html 需要下载与服务器端对应的 版本。 我这里下载的文件是：<code>instantclient-basic-windows.x64-11.2.0.4.0.zip</code></li>
-<li>解压，里面是一个 <code>instantclient_11_2</code> 文件夹。比如直接放在 C 盘下。</li>
-<li>添加这个文件到环境路径中 <code>C:\instantclient_11_2</code></li>
-<li>重启 Python 运行一遍。</li>
-</ol>
-<h2 id="3-连接如果环境变量并没有解决问题">3. 连接如果环境变量并没有解决问题：</h2>
-<p>尝试将 <code>.dll</code> 文件存放到 python 的 <code>Lib\site-packages</code> 路径中。</p>
-<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191028180549WzAo.jpg" alt="" loading="lazy"></figure>
-<p>一般来说这样就可以了。</p>
-<h2 id="4-一些错误记录">4. 一些错误记录</h2>
-<ol>
-<li>
-<p>错误代码 ORA-28547，应该是 <code>oci.dll</code> 文件版本错误。</p>
-</li>
-<li>
-<p>错误代码 ORA-03135，也可能是上面这个问题。</p>
-<p>出现以上错误，优先检查数据库版本号是不是正确的，或者是不是下来 <code>basiclite</code>之类的文件。</p>
-</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
