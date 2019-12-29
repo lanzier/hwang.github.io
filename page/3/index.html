@@ -1,105 +1,90 @@
+
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        
+        
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
         <h2 class="post-title">Python 的虚拟环境管理  virtualenv &amp; pyenv</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-09-29
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-            # qt for python
-          </a>
-        
-          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-            # python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv.png')">
-        </a>
-      
       <div class="post-abstract">
         <blockquote>
 <p>pyenv : 用于Python版本管理。<br>
@@ -107,115 +92,152 @@ virtualenv ：用于构建按项目的虚拟环境。<br>
 pyenv-virtualenv  ： pyenv 的插件，用于构建项目的虚拟环境。</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-09-29</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/GY_B5UX_b">
+                qt for python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/Zf-hLAESr">
+                python
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
         <h2 class="post-title">Hwang 的低质阅读单 New 1</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-09-27
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/lV404AuaF" class="post-tag">
-            # 阅读清单
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-1.png')">
-        </a>
-      
       <div class="post-abstract">
         
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-09-27</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/lV404AuaF">
+                阅读清单
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-1.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels">
         <h2 class="post-title"> 用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels </h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-07-16
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/w0VIrv_ivr" class="post-tag">
-            # 数据Seminar
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels.png')">
-        </a>
-      
       <div class="post-abstract">
         
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-07-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/oEltlpWF3">
+                Python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/w0VIrv_ivr">
+                数据Seminar
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/CjydnGrXlu">
+                长文
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao">
         <h2 class="post-title">如何 在 Windows 的共享文件夹中创建文件图标</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-07-11
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/j34-s4KVO" class="post-tag">
-            # windows sever
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao.png')">
-        </a>
-      
       <div class="post-abstract">
         <p>Windows 系统中可以通过右键文件夹属性的方式创建文件夹图标。然而，在共享文件夹中并不能直接创建。</p>
 <p>🎬 <a href="https://www.youtube.com/watch?v=oFHkWfXbxYo">Apply an Icon to a Folder on a NetWork Drive </a><br>
 视频中演示了一种相对曲折的方法在共享文件夹中，创建带有图标的文件夹。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-07-11</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/j34-s4KVO">
+                windows sever
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong">
         <h2 class="post-title">SQL 的一些内容</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-05-07
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/sql-de-yi-xie-nei-rong.png')">
-        </a>
-      
       <div class="post-abstract">
         <h2 id="mysql-累计求和">MySQL 累计求和</h2>
 <pre><code class="language-sql">SET @csum := 0;
@@ -223,30 +245,25 @@ SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
 FROM all_location_data LIMIT 20;
 </code></pre>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-07</span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/sql-de-yi-xie-nei-rong.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
         <h2 class="post-title">Python Pexpect 库的简单入门</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-03-26
-        </span>
-        <span>
-          12 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-            # python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png')">
-        </a>
-      
       <div class="post-abstract">
         <blockquote>
 <p>2019.03.26<br>
@@ -262,186 +279,220 @@ Hwang<br>
 例子：</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-03-26</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/Zf-hLAESr">
+                python
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
         <h2 class="post-title">去思考，去理解，去猜测，《xxx快速入门》指北 </h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-03-15
-        </span>
-        <span>
-          15 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
       <div class="post-abstract">
         
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-03-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/AMJH5xgec">
+                少数派
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/CjydnGrXlu">
+                长文
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu">
         <h2 class="post-title">Ubuntu 配置VNC服务</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-03-06
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/Y9CkN5Vmc" class="post-tag">
-            # 运维
-          </a>
-        
-          <a href="https://hwang.top/tag/z-knS_tQFQ" class="post-tag">
-            # ubuntu
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/ubuntu-pei-zhi-vnc-fu-wu.png')">
-        </a>
-      
       <div class="post-abstract">
         
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-03-06</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/Y9CkN5Vmc">
+                运维
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/z-knS_tQFQ">
+                ubuntu
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ubuntu-pei-zhi-vnc-fu-wu.png')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/2018-wo-de-zhu-ping">
         <h2 class="post-title">2018 - 我的主屏</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2019-01-17
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/12clIzX9i" class="post-tag">
-            # 我
-          </a>
-        
-      </div>
-      
       <div class="post-abstract">
-        <figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt=""></figure>
+        <figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt="" loading="lazy"></figure>
 <p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-01-17</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/12clIzX9i">
+                我
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu">
         <h2 class="post-title">Qt for Python 学习 —— 看看别人的项目</h2>
       </a>
-      <div class="post-info">
-        <span>
-          2018-12-07
-        </span>
-        <span>
-          16 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-            # qt for python
-          </a>
-        
-          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-            # python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png')">
-        </a>
-      
       <div class="post-abstract">
         <blockquote>
 <p>picpong 一个PyQt 写的图床应用；</p>
 <p>项目地址：https://github.com/shuoGG1239/PicPong</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-</div>
-
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2018-12-07</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://hwang.top/tag/GY_B5UX_b">
+                qt for python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://hwang.top/tag/Zf-hLAESr">
+                python
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
     
-        <div class="pagination-container">
-  
-    <a href="https://hwang.top/page/2/" class="prev-page">上一页</a>
-  
-  
-    <a href="https://hwang.top/page/4/" class="prev-page">下一页</a>
-  
-</div>
-
+      <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu">
+        <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png')">
+        </div>
+      </a>
     
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+  </section>
+
+
+<div class="pagination-container">
+  
+    <a href="https://hwang.top/page/2/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
+  
+  
+    <a href="https://hwang.top/page/4/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+  
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      </div>
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
 
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

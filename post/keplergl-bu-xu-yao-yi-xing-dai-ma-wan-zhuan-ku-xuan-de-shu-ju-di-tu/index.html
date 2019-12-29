@@ -1,111 +1,124 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Kepler.gl 不需要一行代码！玩转酷炫的数据地图 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Kepler.gl 不需要一行代码！玩转酷炫的数据地图
-            </h2>
-            <div class="post-info">
-              <span>
-                2018-07-23
-              </span>
-              <span>
-                10 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
-                  # 少数派
-                </a>
-              
-                <a href="https://hwang.top/tag/_SDeCkYG4" class="post-tag">
-                  # 推文
-                </a>
-              
-                <a href="https://hwang.top/tag/2sFfDcJmEB" class="post-tag">
-                  # 教程
-                </a>
-              
-                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-                  # 长文
-                </a>
-              
-            </div>
+          
+          <h2 class="post-title">Kepler.gl 不需要一行代码！玩转酷炫的数据地图</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2018-07-23</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>本文以及发布在 少数派：https://beta.sspai.com/post/55655</p>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/AMJH5xgec">
+                    少数派
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/_SDeCkYG4">
+                    推文
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/2sFfDcJmEB">
+                    教程
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/CjydnGrXlu">
+                    长文
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>本文以及发布在 少数派：https://beta.sspai.com/post/55655</p>
 <p>在处理数据的过程中，如何“优雅”的展示这些数据一直是一个重要的技巧。而为基于地理坐标为数据打点更是一个重要的技能。在过去，我们的常见的做法是通过诸如 Stata、R、或者是 Python 这些工具来进行这一步的。而这些方法无一例外，都需要对一定的编程技巧。此次我们介绍的数据可视化工具，<strong>可以让你不需要任何编程基础，即可实现数据地图的可视化！</strong></p>
 <h2 id="简介">简介</h2>
 <blockquote>
@@ -116,20 +129,20 @@
 <p>简单介绍了 Kepler.gl 的来历后，我们着重介绍一下，如何使用这个酷炫的开源工具。</p>
 <h3 id="一-访问-keplergl">一、访问 Kepler.gl</h3>
 <p>Kepler.gl 是一个网页应用，只要在浏览器中输入** Kepler.gl **即可开始使用这个工具。需要提醒的是，最好使用 Chrome 浏览器访问。</p>
-<p><img src="Image%20Copied%20on%202018-06-09%20at%2011.22.32%20%E4%B8%8A%E5%8D%88.png" alt=""><br>
+<p><img src="Image%20Copied%20on%202018-06-09%20at%2011.22.32%20%E4%B8%8A%E5%8D%88.png" alt="" loading="lazy"><br>
 （域名就是 Kepler.gl）</p>
 <p>点击 GET STARTED 即可开始使用_（如果点击后无法打开，请尝试切换到 Chrome 浏览器）_ 。</p>
 <h3 id="二-添加数据">二、添加数据</h3>
 <blockquote>
 <p>如果没有数据，想先学习一下这个工具，可以参考后面关于网站提供的 sample data 的内容。</p>
 </blockquote>
-<p><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-06-09%20%E4%B8%8A%E5%8D%8811.06.33.png" alt=""><br>
+<p><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-06-09%20%E4%B8%8A%E5%8D%8811.06.33.png" alt="" loading="lazy"><br>
 （选择准准备好的数据）</p>
 <h4 id="支持的数据类型">支持的数据类型</h4>
 <p>Kepler.gl 支持 3 种数据格式，分别是： csv、JSON、GeoJSON 。部分地图种类只支持 GeoJSON 格式的数据。</p>
 <h5 id="1-关于-csv-文件">1. 关于 CSV 文件</h5>
 <p>我们常用的 Excel 文件格式是 xlsx， 需要另存为 csv 文件。<br>
-<img src="DraggedImage-1.png" alt=""><br>
+<img src="DraggedImage-1.png" alt="" loading="lazy"><br>
 （另存为格式选为 csv）</p>
 <p>关于csv 文件，这里还需要说明一下：</p>
 <ul>
@@ -155,9 +168,9 @@
 	]
 }
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7_2018-06-21_%E4%B8%8B%E5%8D%885_04_28.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7_2018-06-21_%E4%B8%8B%E5%8D%885_04_28.png" alt="" loading="lazy"></figure>
 <p>这么看，大概有些人已经猜到了，其实这个数据列成表格就是这样的：</p>
-<figure data-type="image" tabindex="2"><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-06-21%20%E4%B8%8B%E5%8D%885.26.30.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-06-21%20%E4%B8%8B%E5%8D%885.26.30.png" alt="" loading="lazy"></figure>
 <p>这就是JSON 格式文件所实现的功能。可以简单的理解为将“一个表格的数据，用文字表述”。</p>
 <h5 id="2-关于-geojson-文件">2. 关于 GeoJSON 文件</h5>
 <p>而 GeoJSON 是常见的一种地理信息的文件格式，在原有的json格式基础上，添加了地理信息相关的内容。如何添加的呢？就是基于大家约定俗成的规范，然后声明地理位置信息。其实 GeoJSON 是 JSON 的一个子集。基本的语法结构上，两者其实是一样的，都是一个 Dictionary 对应一个 Value 。但是不同点在于，<strong>GeoJSON 通过特定的 Dictionary 来确定特定类型、特点功能的 Value。</strong></p>
@@ -208,20 +221,20 @@
 <p>更多信息可参考：</p>
 <h4 id="使用-sample-data-来学习">使用 sample data 来学习</h4>
 <p>如果没有数据怎么办？</p>
-<p><img src="DraggedImage-2.png" alt=""><br>
-<img src="DraggedImage-3.png" alt=""></p>
+<p><img src="DraggedImage-2.png" alt="" loading="lazy"><br>
+<img src="DraggedImage-3.png" alt="" loading="lazy"></p>
 <p>网站很贴心的提供了9个数据集，供大家学习上手。其中有诸如加利福尼亚地震数据、2017年美国失业率数据等内容，这些数据都提供下载。其中部分数据采用的是 GeoJSON  格式的数据，可供大家下载学习。</p>
 <h4 id="编辑数据地图">编辑数据地图</h4>
 <p>我们选择一了地震数据集来做演示。首先简单介绍一下这个数据：</p>
-<figure data-type="image" tabindex="3"><img src="DraggedImage-4.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="DraggedImage-4.png" alt="" loading="lazy"></figure>
 <p>这个数据集主要包括了时间信息（DataTime）、地理位置信息（Latitude 和 Longitude）、以及其他描述地震的信息。</p>
 <p><strong>所以，在数据地图中他是如何展示的呢？</strong></p>
 <p>Kepler.gl 根据地理位置信息和地震信息标注点的位置和大小颜色。然后更加下方的时间轴范围展示一张图里显示的数量。并且可以根据时间轴“动起来”，效果如下：</p>
-<figure data-type="image" tabindex="4"><img src="newgif.gif" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="newgif.gif" alt="" loading="lazy"></figure>
 <p>看完了效果，我们大致能够了解 Kepler.gl 能够将数据可视化实现到怎么样的程度。接着让我看看更为具体的编辑界面吧，这才是我们需要学习的内容：</p>
 <h4 id="工具栏">工具栏</h4>
 <p>Kepler.gl 设置项分为4个工具栏，左其分别是 Layers （图层）、Filters （过滤）、Interaction（交互）、Base map （底层地图）。<br>
-<img src="DraggedImage-5.png" alt=""><br>
+<img src="DraggedImage-5.png" alt="" loading="lazy"><br>
 四者的作用可以概括为：<br>
 Layers （图层）：数据展示的图层， 位于底层地图上面。就是我们导入的数据后，控制样式的图层。<br>
 Filters （过滤器）：用以过滤数据。例如，上图中时间轴就是一个过滤器，用以过滤时间段，显示相同时间段的数据。<br>
@@ -229,63 +242,63 @@ Interaction（交互）：即鼠标移动时显示的数据信息。<br>
 Base map （底层地图）：就是最底层地图样式。有4种样式可选。</p>
 <h4 id="layers-的设置">Layers 的设置</h4>
 <p>所以，我们需要着重注意的是 Layers 的设置。<br>
-<img src="DraggedImage-6.png" alt=""></p>
+<img src="DraggedImage-6.png" alt="" loading="lazy"></p>
 <p>图层可以设置多个，上面的图层会遮盖下面的图层。可以通过左边的眼睛按钮选择显示或者隐藏图层。<br>
-<img src="DraggedImage-7.png" alt=""></p>
+<img src="DraggedImage-7.png" alt="" loading="lazy"></p>
 <p>鼠标移动到图层横条后可以对其进行排序（按住左边几个小方格点，拖拽即可）、重命名或者删除等操作。</p>
-<figure data-type="image" tabindex="5"><img src="DraggedImage-8.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="DraggedImage-8.png" alt="" loading="lazy"></figure>
 <p><strong>1. 图层中的 Basic 设置。</strong></p>
 <p>这里可以选择需要地图类型：</p>
-<figure data-type="image" tabindex="6"><img src="DraggedImage-9.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="DraggedImage-9.png" alt="" loading="lazy"></figure>
 <p>一共有9种。每一种地图的类型对于数据要求也不同。例如 Arc 和 Line 图，就需要有两组经纬度坐标。 Polygon 就要求使用 geojson 格式的文件。具体设置大同小异，本文就以最基础的 Point 点图为例讲解。</p>
 <p>选择了 Point 后，如果没有自动匹配经纬度，那么需要手动选择经纬度变量：</p>
-<figure data-type="image" tabindex="7"><img src="DraggedImage_14c06b90229346f0a325d2ba96393834.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="DraggedImage_14c06b90229346f0a325d2ba96393834.png" alt="" loading="lazy"></figure>
 <ul>
 <li>lat：纬度  （加* 为必填项目）</li>
 <li>lng: 经度</li>
 <li>altitude ：海拔 （选填项）</li>
 </ul>
 <p><strong>2.图层中的 color 设置</strong></p>
-<figure data-type="image" tabindex="8"><img src="DraggedImage-10.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="DraggedImage-10.png" alt="" loading="lazy"></figure>
 <p>Kepler.gl 提供了丰富的色彩设置选项。首先是有多种组合完成的配色方案可供选择。我们还能够选择最高20种颜色的搭配。</p>
-<figure data-type="image" tabindex="9"><img src="DraggedImage-11.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="DraggedImage-11.png" alt="" loading="lazy"></figure>
 <ul>
 <li>color based on 的选项是决定色彩的变量。例如地震案例中选择 magnitude （级数）来确定颜色。</li>
 <li>color scale 选择颜色的分布形式。有 quantize （量化） 和 quantile （四分位数）两组分布</li>
 <li>opacity 透明度。控制点的透明度。</li>
 </ul>
 <p><strong>3. Radius 半径设置</strong></p>
-<figure data-type="image" tabindex="10"><img src="DraggedImage-12.png" alt=""></figure>
+<figure data-type="image" tabindex="10"><img src="DraggedImage-12.png" alt="" loading="lazy"></figure>
 <ul>
 <li>radius range 设置半径范围</li>
 <li>radius based on 半径依据。案例中依然是按照震级来的</li>
 <li>fixed radius to meter 确定到地图实际的米数。就是将点标记到实际地理位置上按比例设置半径。如下图：</li>
 </ul>
-<figure data-type="image" tabindex="11"><img src="DraggedImage-13.png" alt=""></figure>
+<figure data-type="image" tabindex="11"><img src="DraggedImage-13.png" alt="" loading="lazy"></figure>
 <p>**4.Draw Outline 描边 **<br>
 打开这个按钮会将实色圈变为空心的圈：<br>
-<img src="DraggedImage-14.png" alt=""><br>
-<img src="DraggedImage-15.png" alt=""></p>
+<img src="DraggedImage-14.png" alt="" loading="lazy"><br>
+<img src="DraggedImage-15.png" alt="" loading="lazy"></p>
 <p><strong>5. High Precision Rendering 高精度绘图</strong><br>
 打开按钮会使得绘图精度更高。</p>
 <p><strong>6. enable height 高度</strong><br>
-<img src="DraggedImage-16.png" alt=""><br>
+<img src="DraggedImage-16.png" alt="" loading="lazy"><br>
 部分种类的地图还提供高度选项，这样就能绘制出3D的数据地图了，如图：<br>
-<img src="DraggedImage-17.png" alt=""><br>
+<img src="DraggedImage-17.png" alt="" loading="lazy"><br>
 这是用震源深度最为作为高度的数据地图。</p>
 <h4 id="filters">Filters</h4>
 <p>Filters 除了为地图增加时间轴外，更为主要功能还是针对某一变量进行数据的过滤，例如过滤掉浅源的地震：<br>
-<img src="DraggedImage-18.png" alt=""></p>
+<img src="DraggedImage-18.png" alt="" loading="lazy"></p>
 <h4 id="interactions">Interactions</h4>
-<p><img src="DraggedImage-19.png" alt=""><img src="DraggedImage-20.png" alt=""></p>
+<p><img src="DraggedImage-19.png" alt="" loading="lazy"><img src="DraggedImage-20.png" alt="" loading="lazy"></p>
 <p>Interactions 其实就是设置鼠标点击时，显示的样式。通过 dataset 中的变量，选择添加显示的内容。</p>
 <h4 id="base-map">Base map</h4>
 <p>最后的 Base map 其实也很简单，选择深色或者浅色主题的底层地图：<br>
-<img src="DraggedImage-21.png" alt=""><br>
+<img src="DraggedImage-21.png" alt="" loading="lazy"><br>
 通过 map layers 选择要显示在地图上的内容：<br>
-<img src="DraggedImage-22.png" alt=""></p>
+<img src="DraggedImage-22.png" alt="" loading="lazy"></p>
 <p>当然高级玩家也可以自定义地图样式：</p>
-<figure data-type="image" tabindex="12"><img src="DraggedImage-23.png" alt=""></figure>
+<figure data-type="image" tabindex="12"><img src="DraggedImage-23.png" alt="" loading="lazy"></figure>
 <p>最后，如果还有其他问题，可以参考：<a href="https://github.com/uber/kepler.gl/blob/master/docs/a-introduction.md">https://github.com/uber/kepler.gl/blob/master/docs/a-introduction.md</a> Kepler.gl 的官方说明文档。</p>
 <h6 id="小tips-地图经纬度信息可以通过百度地图的这个网址查找httpapimapbaiducomlbsapigetpointindexhtml-也可通过百度地图api-获得相关信息">小tips： 地图经纬度信息，可以通过百度地图的这个网址查找：<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html">http://api.map.baidu.com/lbsapi/getpoint/index.html</a>。也可通过百度地图api 获得相关信息。</h6>
 <hr class="footnotes-sep">
@@ -296,110 +309,58 @@ Base map （底层地图）：就是最底层地图样式。有4种样式可选�
 </ol>
 </section>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8">使用</a>
-<ul>
-<li><a href="#%E4%B8%80-%E8%AE%BF%E9%97%AE-keplergl">一、访问 Kepler.gl</a></li>
-<li><a href="#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE">二、添加数据</a>
-<ul>
-<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">支持的数据类型</a>
-<ul>
-<li><a href="#1-%E5%85%B3%E4%BA%8E-csv-%E6%96%87%E4%BB%B6">1. 关于 CSV 文件</a></li>
-<li><a href="#2-%E5%85%B3%E4%BA%8E-json-%E6%96%87%E4%BB%B6">2. 关于 JSON 文件</a></li>
-<li><a href="#2-%E5%85%B3%E4%BA%8E-geojson-%E6%96%87%E4%BB%B6">2. 关于 GeoJSON 文件</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BD%BF%E7%94%A8-sample-data-%E6%9D%A5%E5%AD%A6%E4%B9%A0">使用 sample data 来学习</a></li>
-<li><a href="#%E7%BC%96%E8%BE%91%E6%95%B0%E6%8D%AE%E5%9C%B0%E5%9B%BE">编辑数据地图</a></li>
-<li><a href="#%E5%B7%A5%E5%85%B7%E6%A0%8F">工具栏</a></li>
-<li><a href="#layers-%E7%9A%84%E8%AE%BE%E7%BD%AE">Layers 的设置</a></li>
-<li><a href="#filters">Filters</a></li>
-<li><a href="#interactions">Interactions</a></li>
-<li><a href="#base-map">Base map</a><br>
-*
-<ul>
-<li><a href="#%E5%B0%8Ftips-%E5%9C%B0%E5%9B%BE%E7%BB%8F%E7%BA%AC%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E7%9A%84%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%E6%9F%A5%E6%89%BEhttpapimapbaiducomlbsapigetpointindexhtml-%E4%B9%9F%E5%8F%AF%E9%80%9A%E8%BF%87%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEapi-%E8%8E%B7%E5%BE%97%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF">小tips： 地图经纬度信息，可以通过百度地图的这个网址查找：http://api.map.baidu.com/lbsapi/getpoint/index.html。也可通过百度地图api 获得相关信息。</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong">
+            <a class="purple-link" href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong">
               <h3 class="post-title">
-                《会读才会写》的读书笔记——利用标签来整理阅读内容
+                下一篇：《会读才会写》的读书笔记——利用标签来整理阅读内容
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

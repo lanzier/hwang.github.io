@@ -1,109 +1,120 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Docker 的入门「指北」 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Docker 的入门「指北」
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-10-07
-              </span>
-              <span>
-                9 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/wJNvGSVZG" class="post-tag">
-                  # docker
-                </a>
-              
-                <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
-                  # 少数派
-                </a>
-              
-                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-                  # 长文
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png')">
             </div>
+          
+          <h2 class="post-title">Docker 的入门「指北」</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-10-07</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png" alt="">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/wJNvGSVZG">
+                    docker
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/AMJH5xgec">
+                    少数派
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/CjydnGrXlu">
+                    长文
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>本文以发布于少数派：https://beta.sspai.com/post/56893<br>
 推荐在少数派阅读</p>
 </blockquote>
@@ -190,90 +201,58 @@ $ docker kill &lt;容器名称/ID&gt; # 强制停止容器
 <p>就是说你可以通过这个命令，进入到 容器的 <code>bash</code> 中，对容器内进行一些修改。</p>
 <p>最后 docker 还有许多其他的命令和方法可供学习。作为当今最受欢迎的容器化解决方案，docker 在业界发光发亮的同时，也为一般用户，「一键」启用某些服务提供了契机。利用开源社区，你可以比以往任何时候都更为容易的实现许多互联网服务的「自给自足」。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E9%82%A3%E4%B9%88%E5%BC%80%E5%90%AF-docker-%E4%B9%8B%E6%97%85%E5%90%A7">那么开启 Docker 之旅吧！</a>
-<ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85%E6%88%96%E8%80%85%E5%90%AF%E7%94%A8-docker">第一步，安装或者启用 Docker</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%8B%89%E5%8F%96%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA-image">第二步，拉取你的第一个 Image</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%90%AF%E5%8A%A8%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1">第三步，启动你的服务</a></li>
-</ul>
-</li>
-<li><a href="#%E6%8E%A8%E8%8D%90%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84-docker-%E9%95%9C%E5%83%8F">推荐一些好用的 Docker 镜像</a></li>
-<li><a href="#%E9%83%A8%E7%BD%B2%E4%B8%80%E6%97%B6%E7%88%BD%E8%BF%90%E7%BB%B4%E7%81%AB%E8%91%AC%E5%8E%82">部署一时爽，运维「火葬厂」</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2">
+            <a class="purple-link" href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2">
               <h3 class="post-title">
-                Hwang 的低质阅读单 New 2
+                下一篇：Hwang 的低质阅读单 New 2
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

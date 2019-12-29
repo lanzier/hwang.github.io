@@ -1,62 +1,155 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>为公众号撰稿—如何精准检索我们公众号的文章 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang.png')">
+            </div>
+          
+          <h2 class="post-title">为公众号撰稿—如何精准检索我们公众号的文章</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-11-03</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/PtaUFx3_w">
+                    文献阅读与写作
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/YpqBw4qDP3">
+                    公众号
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <blockquote>
+<p>2019.11.03<br>
+为刘老师准备的一篇小教程</p>
+</blockquote>
+<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
+<!-- more -->
+<p>这位读者的意图其实很明显——希望查找我们公众平台关于「实证研究」的文章。但是由于我们精力和技术有限，以及微信公众平台本身的限制，并不能实时返还相关的内容。那么如何正确的检索我们公众号的文章呢？</p>
+<p>其实微信提供了定向搜索特定微信公众号推文的功能，具体操作如下：</p>
+<ol>
+<li>打开「刘西川文献阅读与写作」公众号，相信爱学习的你一定已经把我们置顶了（如果没有还不赶快星标我们的公众号）</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt="" loading="lazy"></figure>
+<ol start="2">
+<li>点击右上方 头像 按钮 ，即可查看详情</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt="" loading="lazy"></figure>
+<ol start="3">
+<li>点击搜索按钮，即可搜索「刘西川文献阅读与写作」下的所有推文啦。</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt="" loading="lazy"></figure>
+<p>如下图：</p>
+<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt="" loading="lazy"></figure>
+<p>甚至是正文内出现关键字都能找到哦。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
+              <h3 class="post-title">
+                下一篇：划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
   <div class="social-container">
     
       
@@ -70,128 +163,26 @@
       
     
   </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              为公众号撰稿—如何精准检索我们公众号的文章
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-11-03
-              </span>
-              <span>
-                1 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/PtaUFx3_w" class="post-tag">
-                  # 文献阅读与写作
-                </a>
-              
-                <a href="https://hwang.top/tag/YpqBw4qDP3" class="post-tag">
-                  # 公众号
-                </a>
-              
-            </div>
-            
-              <img class="post-feature-image" src="https://hwang.top/post-images/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang.png" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
-<p>2019.11.03<br>
-为刘老师准备的一篇小教程</p>
-</blockquote>
-<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
-<!-- more -->
-<p>这位读者的意图其实很明显——希望查找我们公众平台关于「实证研究」的文章。但是由于我们精力和技术有限，以及微信公众平台本身的限制，并不能实时返还相关的内容。那么如何正确的检索我们公众号的文章呢？</p>
-<p>其实微信提供了定向搜索特定微信公众号推文的功能，具体操作如下：</p>
-<ol>
-<li>打开「刘西川文献阅读与写作」公众号，相信爱学习的你一定已经把我们置顶了（如果没有还不赶快星标我们的公众号）</li>
-</ol>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt=""></figure>
-<ol start="2">
-<li>点击右上方 头像 按钮 ，即可查看详情</li>
-</ol>
-<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt=""></figure>
-<ol start="3">
-<li>点击搜索按钮，即可搜索「刘西川文献阅读与写作」下的所有推文啦。</li>
-</ol>
-<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt=""></figure>
-<p>如下图：</p>
-<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt=""></figure>
-<p>甚至是正文内出现关键字都能找到哦。</p>
 
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
-        </div>
+    </div>
+    <script type="application/javascript">
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian">
-              <h3 class="post-title">
-                划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
-              </h3>
-            </a>
-          </div>
-        
+hljs.initHighlightingOnLoad()
 
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

@@ -1,105 +1,113 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Qt for Python 学习 —— 看看别人的项目 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Qt for Python 学习 —— 看看别人的项目
-            </h2>
-            <div class="post-info">
-              <span>
-                2018-12-07
-              </span>
-              <span>
-                16 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-                  # qt for python
-                </a>
-              
-                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-                  # python
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png')">
             </div>
+          
+          <h2 class="post-title">Qt for Python 学习 —— 看看别人的项目</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2018-12-07</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png" alt="">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/GY_B5UX_b">
+                    qt for python
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/Zf-hLAESr">
+                    python
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>picpong 一个PyQt 写的图床应用；</p>
 <p>项目地址：https://github.com/shuoGG1239/PicPong</p>
 </blockquote>
@@ -706,106 +714,58 @@ if selected_rect.height() == 0:<br>
 selected_rect.setHeight(1)<br>
 return selected_rect</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95">文件目录</a></li>
-<li><a href="#%E6%96%87%E4%BB%B61-mainpy">文件1-main.py</a></li>
-<li><a href="#%E6%96%87%E4%BB%B62-picpongpy">文件2-PicPong.py</a>
-<ul>
-<li><a href="#0-%E5%AF%BC%E5%87%BA%E7%9A%84%E5%BA%93">0. 导出的库</a></li>
-<li><a href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96">1. 初始化：</a></li>
-<li><a href="#2%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3">2.美化相关：</a></li>
-<li><a href="#3%E6%8C%89%E9%92%AE%E5%8A%9F%E8%83%BD">3.按钮功能</a></li>
-<li><a href="#%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6">键盘事件</a></li>
-</ul>
-</li>
-<li><a href="#%E6%96%87%E4%BB%B63-uploadwidgetpy">文件3 UploadWidget.py</a>
-<ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
-<li><a href="#%E6%8C%89%E9%92%AE%E4%B8%8E%E4%BF%A1%E5%8F%B7">按钮与信号</a></li>
-</ul>
-</li>
-<li><a href="#%E6%96%87%E4%BB%B64-viewwidgetpy">文件4 ViewWidget.py</a>
-<ul>
-<li><a href="#0%E5%88%9D%E5%A7%8B%E5%8C%96">0.初始化</a></li>
-<li><a href="#1%E4%BF%A1%E5%8F%B7%E6%A7%BD%E5%87%BD%E6%95%B0">1.信号槽函数：</a></li>
-</ul>
-</li>
-<li><a href="#%E6%96%87%E4%BB%B65-configwidgetpy">文件5 ConfigWidget.py</a></li>
-<li><a href="#%E6%96%87%E4%BB%B66-screen_capturepy">文件6 screen_capture.py</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/ml-python-shi-xian-ols">
+            <a class="purple-link" href="https://hwang.top/post/ml-python-shi-xian-ols">
               <h3 class="post-title">
-                ML - Python 实现 OLS
+                下一篇：ML - Python 实现 OLS
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

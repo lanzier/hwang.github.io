@@ -1,97 +1,96 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Hwang Reading List - New 03 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Hwang Reading List - New 03
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-10-30
-              </span>
-              <span>
-                4 min read
-              </span>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-03.png')">
             </div>
+          
+          <h2 class="post-title">Hwang Reading List - New 03</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-10-30</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/hwang-reading-list-new-03.png" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
+          </div>
+          <div class="post-content">
+            <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
 <p><a href="https://ift.tt/2P8gyHv">High Schools to TikTok: We’re Catching Feelings</a></p>
 <blockquote>
 <p>Teens love the app, and now it’s getting the stamp of approval with teacher-approved clubs. Did school just get ... fun? WINTER GARDEN, Fla.</p>
@@ -131,98 +130,58 @@
 <p>《威权式法治》 内容简介 本书指出，新加坡缔造了一种匪夷所思的威权式法治。作者展示了作为法治以及自由民主之基石的制度和程序，是通过何种方式成为了制约异己、保护当政者的工具，但同时又无损于政府在国内和国际</p>
 </blockquote>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E8%BF%99%E4%BA%9B%E6%96%87%E7%AB%A0%E6%9D%A5%E8%87%AA-hwang-%E7%9A%84-instapaper-pocket-%E4%BB%8E-rss-%E5%BE%AE%E5%8D%9A-%E5%BE%AE%E4%BF%A1%E7%AD%89%E5%9C%B0%E6%96%B9%E7%9C%8B%E5%88%B0%E8%A7%89%E5%BE%97%E8%87%AA%E5%B7%B1%E5%BA%94%E8%AF%A5%E4%BB%94%E7%BB%86%E7%9C%8B%E7%9C%8B%E7%9A%84%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86%E8%BF%9B-instapaper-pocket%E5%BD%92%E6%A1%A3%E8%BF%99%E4%BA%9B%E6%96%87%E7%AB%A0%E5%90%8E%E6%89%8D%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%BF%99%E9%87%8C-%E6%95%85%E8%80%8C%E4%B8%BB%E8%A7%82%E5%8F%88%E7%BC%BA%E4%B9%8F%E6%97%B6%E6%95%88%E6%80%A7-%E5%BE%88%E9%81%97%E6%86%BE%E6%B2%A1%E6%9C%89%E5%B8%AE%E5%88%B0%E4%BD%A0%E4%BB%AC">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
+            <a class="purple-link" href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang">
               <h3 class="post-title">
-                STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
+                下一篇：STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

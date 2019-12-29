@@ -1,101 +1,106 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Python Pexpect 库的简单入门 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Python Pexpect 库的简单入门
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-03-26
-              </span>
-              <span>
-                12 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-                  # python
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png')">
             </div>
+          
+          <h2 class="post-title">Python Pexpect 库的简单入门</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-03-26</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png" alt="">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/Zf-hLAESr">
+                    python
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>2019.03.26<br>
 Hwang<br>
 参考：<br>
@@ -294,116 +299,58 @@ process.sendline('mypassword')
 </ol>
 </section>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#1-pexpect-%E6%98%AF%E4%BB%80%E4%B9%88">1. Pexpect  是什么</a></li>
-<li><a href="#2-%E7%94%A8%E6%B3%95">2. 用法</a>
-<ul>
-<li><a href="#21-spawn">2.1 spawn()</a>
-<ul>
-<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
-</ul>
-</li>
-<li><a href="#22-expect">2.2 expect()</a></li>
-<li><a href="#221-expect_exact">2.2.1 expect_exact()</a></li>
-<li><a href="#222expect_list">2.2.2expect_list()</a></li>
-<li><a href="#223-expect_loop">2.2.3 expect_loop()</a></li>
-<li><a href="#23-send">2.3 send()</a></li>
-<li><a href="#231-sendline">2.3.1 sendline()</a></li>
-<li><a href="#232-sendcontrol">2.3.2 sendcontrol()</a></li>
-<li><a href="#233-sendeof">2.3.3 sendeof()</a></li>
-<li><a href="#234-sendintr">2.3.4 sendintr()</a></li>
-<li><a href="#24-interact-%E5%B0%86%E6%8E%A7%E5%88%B6%E6%9D%83%E4%BA%A4%E7%BB%99%E7%94%A8%E6%88%B7">2.4 interact() - 将控制权交给用户</a></li>
-<li><a href="#25-close">2.5 close()</a></li>
-<li><a href="#26-terminate">2.6 terminate()</a></li>
-<li><a href="#27-kill">2.7 Kill()</a></li>
-<li><a href="#28-flush">2.8 flush()</a></li>
-<li><a href="#29-isalive">2.9 isalive()</a></li>
-<li><a href="#210-isatty">2.10 isatty()</a></li>
-<li><a href="#211-next">2.11 next()</a></li>
-<li><a href="#212-read">2.12 read()</a></li>
-<li><a href="#213-readlines-%E8%BF%94%E5%9B%9E%E5%88%97%E8%A1%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%89%80%E6%9C%89%E8%BE%93%E5%87%BA">2.13 readlines() - 返回列表模式的所有输出</a></li>
-<li><a href="#214-setecho-%E5%AD%90%E7%A8%8B%E5%BA%8F%E5%93%8D%E5%BA%94%E6%A8%A1%E5%BC%8F">2.14 setecho() - 子程序响应模式</a></li>
-<li><a href="#215-setwinsize-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F">2.15 setwinsize() - 控制台窗口大小</a></li>
-<li><a href="#216-wait-%E6%89%A7%E8%A1%8C%E7%AD%89%E5%BE%85">2.16 wait() - 执行等待</a></li>
-<li><a href="#217-waitnoecho">2.17 waitnoecho()</a></li>
-<li><a href="#218-write-%E5%8F%91%E9%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2">2.18  write() - 发送字符串</a></li>
-<li><a href="#219-writelines-%E5%8F%91%E9%80%81%E5%8C%85%E5%90%AB%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%97%E8%A1%A8">2.19 writelines() - 发送包含字符串的列表</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
+            <a class="purple-link" href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei">
               <h3 class="post-title">
-                去思考，去理解，去猜测，《xxx快速入门》指北 
+                下一篇：去思考，去理解，去猜测，《xxx快速入门》指北 
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

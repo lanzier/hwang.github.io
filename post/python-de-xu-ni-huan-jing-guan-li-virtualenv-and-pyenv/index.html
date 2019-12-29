@@ -1,105 +1,113 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Python 的虚拟环境管理  virtualenv &amp; pyenv | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Python 的虚拟环境管理  virtualenv &amp; pyenv
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-09-29
-              </span>
-              <span>
-                8 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-                  # qt for python
-                </a>
-              
-                <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
-                  # python
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv.png')">
             </div>
+          
+          <h2 class="post-title">Python 的虚拟环境管理  virtualenv &amp; pyenv</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-29</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv.png" alt="">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/GY_B5UX_b">
+                    qt for python
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/Zf-hLAESr">
+                    python
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>pyenv : 用于Python版本管理。<br>
 virtualenv ：用于构建按项目的虚拟环境。<br>
 pyenv-virtualenv  ： pyenv 的插件，用于构建项目的虚拟环境。</p>
@@ -154,7 +162,7 @@ venv # 虚拟环境的名称
 <h3 id="2-激活虚拟环境">2. 激活虚拟环境</h3>
 <pre><code class="language-bash">$ . venv/bin/activate
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="DraggedImage.png" alt="" loading="lazy"></figure>
 <p>前面出现<code>(venv)</code> 即可。</p>
 <h3 id="一些发现">一些发现</h3>
 <ul>
@@ -326,109 +334,58 @@ $ pyenv versions
 <li>参考：<a href="https://www.jianshu.com/p/60f361822a7e">https://www.jianshu.com/p/60f361822a7e</a></li>
 </ul>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#virtualenv">virtualenv</a>
-<ul>
-<li><a href="#1-%E5%AE%89%E8%A3%85virtualenv">1. 安装virtualenv</a></li>
-<li><a href="#2-%E6%BF%80%E6%B4%BB%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">2. 激活虚拟环境</a></li>
-<li><a href="#%E4%B8%80%E4%BA%9B%E5%8F%91%E7%8E%B0">一些发现</a></li>
-</ul>
-</li>
-<li><a href="#pyenv">pyenv</a>
-<ul>
-<li><a href="#1-%E5%AE%89%E8%A3%85">1. 安装</a></li>
-<li><a href="#2-pyenv-%E7%9A%84%E4%BD%BF%E7%94%A8">2. pyenv 的使用</a></li>
-<li><a href="#3-pyenv-virtualenv-%E7%9A%84%E4%BD%BF%E7%94%A8">3. Pyenv virtualenv 的使用</a>
-<ul>
-<li><a href="#31-%E5%88%9B%E5%BB%BA">3.1 创建：</a></li>
-<li><a href="#32-%E4%BD%BF%E7%94%A8">3.2 使用</a></li>
-</ul>
-</li>
-<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项：</a></li>
-<li><a href="#%E5%88%A0%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">删除虚拟环境</a></li>
-</ul>
-</li>
-<li><a href="#windows-%E4%B8%8A%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86">Windows 上的虚拟环境管理</a>
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85-virtualenvwrapper">安装  virtualenvwrapper</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">创建 虚拟环境</a></li>
-<li><a href="#%E6%BF%80%E6%B4%BB-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">激活 虚拟环境</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
+            <a class="purple-link" href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1">
               <h3 class="post-title">
-                Hwang 的低质阅读单 New 1
+                下一篇：Hwang 的低质阅读单 New 1
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

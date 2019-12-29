@@ -1,107 +1,117 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-10-28
-              </span>
-              <span>
-                6 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/PtaUFx3_w" class="post-tag">
-                  # 文献阅读与写作
-                </a>
-              
-                <a href="https://hwang.top/tag/YpqBw4qDP3" class="post-tag">
-                  # 公众号
-                </a>
-              
-                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-                  # 长文
-                </a>
-              
-            </div>
+          
+          <h2 class="post-title">所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-10-28</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <blockquote>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/PtaUFx3_w">
+                    文献阅读与写作
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/YpqBw4qDP3">
+                    公众号
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/CjydnGrXlu">
+                    长文
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>本文是应刘老师邀请写的。<br>
 属实是太久没写了，生疏了。<br>
 还好有刘老师修改，不然真是惨不忍睹了。<br>
@@ -119,77 +129,60 @@
 <p>说了这么多，“腹有诗书气自华”，多多阅读好的内容，总是能够让人在任何时候提笔撰文都更加有状态。无论是社科写作，还是程序员要写的各类技术文档，“多阅读”总是“写得好”的前提。刘老师常说，“己所不欲，勿施于人”，自己都不愿意看的东西，就不要放在公众号上。我的经历与体会分享给大家，只是想说，刘老师所选所作之内容，都有其价值所在，值得我们阅读和学习。</p>
 <p>最后，再次祝贺刘西川阅读写作课微信公众号，终于迈出了更坚实的一步，取得了关注者突破10000 名的可喜成绩，希望该号能够在社科领域继续发光发热，指引更多在社科领域努力的学子们前行，帮助更多对社科写作感到困惑的初学者和年轻朋友。同时，也希望“阅读写作课”能够在更广泛的领域产生更积极的影响，近期的 推文<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1572080468&amp;ver=1935&amp;signature=XNfF9b4Na6yg8syPbnHhnFp0maurfbLN12DJ6bNeqbvqPdSeao0pXSOey5PAJuBKRdsOFKizMhmkzUS15ekpHtOxToHp6TIIP*orb*tvVmTTQmazUZ8ZtjdkcFTrK9AE&amp;new=1">《会议纪要这样写，才专业！》</a>(#)推文就是一次积极的尝试。</p>
 <p>😹 结尾彩蛋：</p>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572235983560.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572235983560.png" alt="" loading="lazy"></figure>
 
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu">
+            <a class="purple-link" href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu">
               <h3 class="post-title">
-                 STQT 查询工具 Oracle 相关记录
+                下一篇： STQT 查询工具 Oracle 相关记录
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

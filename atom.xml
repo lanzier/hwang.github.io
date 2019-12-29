@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2019-12-22T12:49:31.077Z</updated>
+    <updated>2019-12-29T08:21:07.184Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -88,7 +88,7 @@
 <p>第三步，修改 SMB 的配置，这里使用 vim 进行编辑：</p>
 <pre><code class="language-bash">$ sudo vim /etc/samba/smb.conf
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt="" loading="lazy"></figure>
 <p>在配置文件的最后添加：</p>
 <pre><code class="language-bash">[pi]
 
@@ -114,40 +114,40 @@
 </code></pre>
 <h3 id="windows-上开启-smb-服务">Windows 上开启 SMB 服务</h3>
 <p>Windows 上做 Smb 共享会方便很多，首先在一个磁盘空间比较富裕的地方，创建一个文件夹，然后右键，属性，打开「共享」栏：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt=""><br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt="" loading="lazy"><br>
 然后点击共享，弹出用户设置界面：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt=""></p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt="" loading="lazy"></p>
 <p>设置共享的账户，以及权限设置为「读和写」，一般而言推荐在这里新建一个专门的共享账户，账户和密码就是届时需要在mac上输入的账户和密码：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt=""></p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt="" loading="lazy"></p>
 <p>账户设置完成后，点击「共享」即可：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt=""></p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt="" loading="lazy"></p>
 <p>点击完成，这个文件就已经能够在局域网访问了。这里做个简单的提醒，部分Windows设备的防火墙设置，会禁用共享，可以先通过关闭防火墙的方式来排除是不是防火墙的问题，再通过对应规则的设置，重新开启防火墙即可。</p>
 <h2 id="2-在-mac-上加载这个文件夹">2. 在 Mac 上加载这个文件夹</h2>
 <p>这个时候，打开你的 finder，应该能够在「位置这一栏」下看到树莓派，或者你的 Windows 设备的名字了。点击后，就能看到你共享的文件夹了。</p>
-<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt="" loading="lazy"></figure>
 <p>如果没有看到，那么通过右键 finder 图标，点击「连接服务器」，输入：<code>smb://设备的IP地址/共享的文件夹名称</code> 的方式连接，在输入账号密码后，也能够连接上这个文件夹。正确连接后，就说明，其他设备上的硬盘，已经能够为你的 Mac 所用了。</p>
 <p>接下来我们就要进行最后一个步骤，创建一个「时间机器」了！</p>
 <h2 id="3-利用这个文件夹创建备份">3. 利用这个文件夹创建备份</h2>
 <p>当你兴奋的打开你的 Time Machine 设置，点击「选择备份磁盘」时，看到却是：</p>
-<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt=""><br>
+<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt="" loading="lazy"><br>
 <em>是的，并没有你想要的那个文件夹</em></p>
 <p>接下来，我们要做的，其实是创建一个磁盘镜像文件，然后将这个磁盘镜像文件挂载到你的 Mac 上，作为一个「虚拟硬盘」，然后利用这个「虚拟硬盘」进行备份。具体的：</p>
 <h3 id="31-创建一个空白映像">3.1 创建一个空白映像：</h3>
 <p>打开「磁盘工具」，选择菜单栏中的 「新建映像」，选择「空白映像…」，然后如图所示，填入信息：<br>
-<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt=""><br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt="" loading="lazy"><br>
 其中「大小」可以根据你实际需求来填写<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
 <h3 id="32-将此这个空白映像拷贝到你的-smb-共享文件夹中">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</h3>
 <p>在 finder 中先推出这个磁盘，然后在保存的位置中，将这个磁盘文件拖入 SMB 共享文件夹的对应位置：</p>
 <h3 id="33-挂载这个磁盘">3.3 挂载这个磁盘</h3>
 <p>双击在 SMB 共享文件夹中的这个映像文件，然后他就会挂在在你的 Mac 上：</p>
-<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt="" loading="lazy"></figure>
 <p>最后，通过 terminal 将这个磁盘设置为 TimeMachine 的备份磁盘：</p>
 <pre><code class="language-bash">$sudo tmutil setdestination /Volumes/TimeMachine
 </code></pre>
 <p>这里的 <code>/Volumes/TimeMachine</code> 就是这个磁盘的挂载点，一般而言就是 <code>/Volumes/</code> + 磁盘的名称，如果你不是很确定，可以在磁盘工具中，选择这个磁盘，点击右键，选择「显示简介」，看到挂载信息：<br>
-<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt=""></p>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt="" loading="lazy"></p>
 <p>输入完命令后，再输入你的Mac密码，即可成功挂载。当你再次打开 TimeMachine 时，已经可以开始备份了。</p>
-<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt="" loading="lazy"></figure>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -228,7 +228,7 @@ services:
 <!-- more -->
 <p>利用 Python 获取网页中的信息，就是所谓的爬虫。而越来越多经济学专业的学生也被导师“要求”学习 Python 以及爬虫的技巧。那么对于经济学学生来说，学习 Python 来爬虫，到底需要学习哪些知识呢？</p>
 <h2 id="1-html-了解网页的基础知道爬取的对象是什么">1. HTML ：了解网页的基础，知道爬取的对象是什么</h2>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t44ozzm4j32700fyju2.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t44ozzm4j32700fyju2.jpg" alt="" loading="lazy"></figure>
 <p>现如今，我们已经习惯了打开浏览器查看各式各样的网络内容，而浏览器中所出现的所有内容，都可以简单概括为 HTML+ CSS+Javascript，其中 HTML 用于储存网页内容，CSS 用于储存网页的样式，Javascript 负责网页的交互。所以，要获取数据，就必须要对 HTML 下手。</p>
 <p>学习和了解 HTML 成为了必不可少的知识。当然，你也无需担心，抱怨“又要学一门新的语言”HTML 是一种标记型语言，所谓标记型语言就类似于：</p>
 <h1> Hello HTML </h1>
@@ -237,12 +237,12 @@ services:
 <p>学会了HTML，你还需要知道，去哪里看到这些代码。所以，这时候你就需要学习如何使用浏览器的开发者模式了。</p>
 <blockquote>
 <p>Chrome 浏览器是比较常用的一款能够较好显示网页源码的软件，你可以在界面右上角选择更多工具，然后打开开发者工具：<br>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45fen5sj30v00u0dit.jpg" alt=""><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45nt7j5j31820lgq5d.jpg" alt=""><br>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45fen5sj30v00u0dit.jpg" alt="" loading="lazy"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45nt7j5j31820lgq5d.jpg" alt="" loading="lazy"><br>
 打开以后，你就能够看到网页的源代码了。浏览器就是根据这些代码，显示出网页的。</p>
 </blockquote>
-<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t459mwl9j31iq0u0h3h.jpg" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t459mwl9j31iq0u0h3h.jpg" alt="" loading="lazy"></figure>
 <p>总的来说，Chrome 提供了这么几个板块的功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：<br>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45sfcbkj30rw0280sp.jpg" alt=""></p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45sfcbkj30rw0280sp.jpg" alt="" loading="lazy"></p>
 <ul>
 <li>Elements: 允许我们从浏览器的角度看页面，也就是说我们可以看到chrome渲染页面所需要的的HTML、CSS和DOM(Document Object Model)对象。也就是为我们显示源码。</li>
 <li>Network: 可以看到页面向服务器请求了哪些资源、资源的大小以及加载资源花费的时间，当然也能看到哪些资源不能成功加载。此外，还可以查看HTTP的请求头，返回内容等；</li>
@@ -383,17 +383,17 @@ if __name__ == '__main__':
 <ol>
 <li>打开「刘西川文献阅读与写作」公众号，相信爱学习的你一定已经把我们置顶了（如果没有还不赶快星标我们的公众号）</li>
 </ol>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt="" loading="lazy"></figure>
 <ol start="2">
 <li>点击右上方 头像 按钮 ，即可查看详情</li>
 </ol>
-<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt="" loading="lazy"></figure>
 <ol start="3">
 <li>点击搜索按钮，即可搜索「刘西川文献阅读与写作」下的所有推文啦。</li>
 </ol>
-<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt="" loading="lazy"></figure>
 <p>如下图：</p>
-<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt="" loading="lazy"></figure>
 <p>甚至是正文内出现关键字都能找到哦。</p>
 ]]></content>
     </entry>
@@ -414,7 +414,7 @@ Python的第三方包：Python 具有丰富的扩展性，成千上万的第三�
 </blockquote>
 <p>经济学使用 Stata 也好，Python 也好，根本目的是为了对于数据进行分析，从而了解到隐藏在数据背后的“经济解释”。所以数据分析是学完 Python 基础的第一课，也是最重要的一课。</p>
 <h3 id="1-pandas-数据操作的基石">1. Pandas ：数据操作的基石</h3>
-<p><img src="http://112.17.171.130:10080/FTPshare/20191103155953fnjC.png" alt=""><br>
+<p><img src="http://112.17.171.130:10080/FTPshare/20191103155953fnjC.png" alt="" loading="lazy"><br>
 毫不过分的说，学好 Pandas 甚至比学好 Python 更重要。可以说，正是因为 Pandas 的好用，奠定了 Python 在数据科学地位。</p>
 <p>那么，Pandas  是什么？ Pandas 是 Python 的第三方包，用于数据处理。 Python 默认的数据格式，无论是列表还是字典，都不能很好的用于操作在现实中常见的二维数据。Pandas 为此而生， Pandas 提供了一种名为 DataFrame 的数据格式，将数据储存为一个二维表的形式，再通过各种函数方法，对数据进行横向、纵向、亦或者按条件的切片来对数据进行处理，最终得到需要的数据结果。</p>
 <p>Pandas 提供了快速而高效的 DataFrame 对象，用于数据操作与综合索引（索引就是用来快速查找对象的，例如快速找到标示性别的一列）。通过 Pandas 你可以轻松的读取CSV和文本文件、Microsoft Excel、SQL数据库和快速HDF 5格式的数据。并且基于各种索引与标签，你可以轻松的创建数据切片（例如一个数据里标示年纪的切片），通过大数据集筛选特定子集（例如，筛选性别为男性、年龄大于18岁的成人男性样本）。</p>
@@ -424,7 +424,7 @@ Python的第三方包：Python 具有丰富的扩展性，成千上万的第三�
 <li>官方文档地址👉：<a href="https://pandas.pydata.org/pandas-docs/stable/">https://pandas.pydata.org/pandas-docs/stable/</a></li>
 </ul>
 <h3 id="2-numpy为python-提供强劲的运算支持">2. Numpy：为Python 提供强劲的运算支持</h3>
-<p><img src="http://112.17.171.130:10080/FTPshare/20191103170116W0Ld.png" alt=""><br>
+<p><img src="http://112.17.171.130:10080/FTPshare/20191103170116W0Ld.png" alt="" loading="lazy"><br>
 Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy），Pandas 的高效率一部分原因就是归功于 Numpy 的强大。</p>
 <p>简单理解就是 Numpy 提供了一个比 Python 自带的数组运算更加快速的 Numpy数据的数据格式。当你的分析涉及到数组运算，尤其是多维的数组运算时，那你应当考虑学习使用 Numpy。同时，Numpy也提供了强大的线性代数、傅立叶变换和随机数的功能。</p>
 <p>Numpy 是Python 数据处理的又一块基石，在机器学习和深度学习领域，Numpy 具有广泛的应用。所以学习 Numpy 到如何的深度，需要看你所研究的领域，是否需要用到较为高级的数学运算。</p>
@@ -437,7 +437,7 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <p>通过 Pandas 进行数据处理，我筛选到了需要的数据，接下来我们经济学的学生需要做什么呢？当然是开始计量之旅喽！</p>
 <p>那么我们还需要将数据从 Pandas 的 DataFrame 导出成 CSV，再导入到 Stata 中，进行计量运算嘛？ 大可不必，在 Python 你可以自己手写一个 OLS 函数，然后反复调用即可。(此时可能有读者冒出了大量的 「黑人问号.jpg」)</p>
 <p>其实关注本公众号的读者应该已经阅读过：<a href="https://mp.weixin.qq.com/s/Sr8MRQNN5beN9MzLjnZE8Q">工具&amp;方法 | 6行代码教你用python做OLS回归 </a></p>
-<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191103170130lVDP.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191103170130lVDP.png" alt="" loading="lazy"></figure>
 <p>是的 Python 当中也有计量库了：Statsmodels 。Statsmodels 是一个Python的第三方模块，他封装了许多计量模型，方便学者直接调用。所谓封装，就相当于 Stata 中一个 reg 命令，代表了最基础的 OLS 回归命令，在Statsmodels 中也有类似 reg 的语句，提供给 OLS 估计。详细的内容可以参考<a href="https://mp.weixin.qq.com/s/Sr8MRQNN5beN9MzLjnZE8Q">工具&amp;方法 | 6行代码教你用python做OLS回归 </a>，以及下面的官方链接。</p>
 <p>不得不说，通过 Statsmodels，Python 中做计量的成本大大降低，学习 Python 对于经济学学生来说，也能做到「全栈」式的使用体验。</p>
 <ul>
@@ -445,7 +445,7 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <li>官方示例👉：<a href="https://www.statsmodels.org/stable/examples/index.html">https://www.statsmodels.org/stable/examples/index.html</a></li>
 </ul>
 <h3 id="4-sqlachemy-or-pymysql-cx_oracle-进阶操作处理-sql-数据库">4 . sqlachemy ( or pymysql、cx_oracle) ：进阶操作，处理 SQL 数据库</h3>
-<figure data-type="image" tabindex="2"><img src="http://112.17.171.130:10080/FTPshare/20191103170148Ccue.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="http://112.17.171.130:10080/FTPshare/20191103170148Ccue.png" alt="" loading="lazy"></figure>
 <p>相比于 Stata ，Python 还可以通过很容易的方式，链接到数据库中，对数据库内的数据进行操作。与经济学关系更为密切的一般是 关系型数据库，即 MySQL、Oracle 为代表的数据库类型。 Python 当中提供了极其便利的方式链接到 以上类型的数据库。通过 pymysql 能够链接到 mysql 数据库，通过 cx_oracle 能够链接到 Oracle 数据库，并且，如果你对 SQL 语句不熟悉，你可以使用 sqlachemy 一类的ORM框架的方式，跳过原生 SQL 语句，通过类似 Pandas 的筛选语句的方式来操作数据库查询，获取需要的数据子集。</p>
 <p>经济学对于SQL 数据库的处理，更多时候是在总的大数据集中，筛选出自己需要子集，再进行操作。这个过程，你可以通过 sqlachemy 的方式筛选数据，也可以通过原生sql查询的方式获取数据，再将数据储存为 DataFrame 格式，利用 Pandas 进行精细化的二次处理，再通过上面提到的 Statsmodels 等第三方包进行计量处理。</p>
 <ul>
@@ -528,7 +528,7 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 </ol>
 <h2 id="3-连接如果环境变量并没有解决问题">3. 连接如果环境变量并没有解决问题：</h2>
 <p>尝试将 <code>.dll</code> 文件存放到 python 的 <code>Lib\site-packages</code> 路径中。</p>
-<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191028180549WzAo.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191028180549WzAo.jpg" alt="" loading="lazy"></figure>
 <p>一般来说这样就可以了。</p>
 <h2 id="4-一些错误记录">4. 一些错误记录</h2>
 <ol>

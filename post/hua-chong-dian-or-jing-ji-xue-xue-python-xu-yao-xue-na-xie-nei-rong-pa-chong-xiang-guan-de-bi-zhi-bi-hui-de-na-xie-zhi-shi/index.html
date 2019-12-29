@@ -1,117 +1,131 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577018968453">
+<meta name="description" content="欢迎来到 Hwang 的小博客 &lt;br&gt;
+这显然不是什么技术博客，也不会有太多值得期待的干货。&lt;br&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1577607663561">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577018968453" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hwang.top">
+        <img class="avatar" src="https://hwang.top/images/avatar.png?v=1577607663561" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hwang.top">
+        <h1 class="site-title">Hwang&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-11-11
-              </span>
-              <span>
-                6 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
-                  # Python
-                </a>
-              
-                <a href="https://hwang.top/tag/w0VIrv_ivr" class="post-tag">
-                  # 数据Seminar
-                </a>
-              
-                <a href="https://hwang.top/tag/_SDeCkYG4" class="post-tag">
-                  # 推文
-                </a>
-              
-                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-                  # 长文
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png')">
             </div>
+          
+          <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-11-11</span>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png" alt="">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://hwang.top/tag/oEltlpWF3">
+                    Python
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/w0VIrv_ivr">
+                    数据Seminar
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/_SDeCkYG4">
+                    推文
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://hwang.top/tag/CjydnGrXlu">
+                    长文
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
+          </div>
+          <div class="post-content">
+            <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
 <!-- more -->
 <p>利用 Python 获取网页中的信息，就是所谓的爬虫。而越来越多经济学专业的学生也被导师“要求”学习 Python 以及爬虫的技巧。那么对于经济学学生来说，学习 Python 来爬虫，到底需要学习哪些知识呢？</p>
 <h2 id="1-html-了解网页的基础知道爬取的对象是什么">1. HTML ：了解网页的基础，知道爬取的对象是什么</h2>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t44ozzm4j32700fyju2.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t44ozzm4j32700fyju2.jpg" alt="" loading="lazy"></figure>
 <p>现如今，我们已经习惯了打开浏览器查看各式各样的网络内容，而浏览器中所出现的所有内容，都可以简单概括为 HTML+ CSS+Javascript，其中 HTML 用于储存网页内容，CSS 用于储存网页的样式，Javascript 负责网页的交互。所以，要获取数据，就必须要对 HTML 下手。</p>
 <p>学习和了解 HTML 成为了必不可少的知识。当然，你也无需担心，抱怨“又要学一门新的语言”HTML 是一种标记型语言，所谓标记型语言就类似于：</p>
 <h1> Hello HTML </h1>
@@ -120,12 +134,12 @@
 <p>学会了HTML，你还需要知道，去哪里看到这些代码。所以，这时候你就需要学习如何使用浏览器的开发者模式了。</p>
 <blockquote>
 <p>Chrome 浏览器是比较常用的一款能够较好显示网页源码的软件，你可以在界面右上角选择更多工具，然后打开开发者工具：<br>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45fen5sj30v00u0dit.jpg" alt=""><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45nt7j5j31820lgq5d.jpg" alt=""><br>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45fen5sj30v00u0dit.jpg" alt="" loading="lazy"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45nt7j5j31820lgq5d.jpg" alt="" loading="lazy"><br>
 打开以后，你就能够看到网页的源代码了。浏览器就是根据这些代码，显示出网页的。</p>
 </blockquote>
-<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t459mwl9j31iq0u0h3h.jpg" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t459mwl9j31iq0u0h3h.jpg" alt="" loading="lazy"></figure>
 <p>总的来说，Chrome 提供了这么几个板块的功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：<br>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45sfcbkj30rw0280sp.jpg" alt=""></p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8t45sfcbkj30rw0280sp.jpg" alt="" loading="lazy"></p>
 <ul>
 <li>Elements: 允许我们从浏览器的角度看页面，也就是说我们可以看到chrome渲染页面所需要的的HTML、CSS和DOM(Document Object Model)对象。也就是为我们显示源码。</li>
 <li>Network: 可以看到页面向服务器请求了哪些资源、资源的大小以及加载资源花费的时间，当然也能看到哪些资源不能成功加载。此外，还可以查看HTTP的请求头，返回内容等；</li>
@@ -168,84 +182,58 @@
 </ol>
 </section>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#1-html-%E4%BA%86%E8%A7%A3%E7%BD%91%E9%A1%B5%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E9%81%93%E7%88%AC%E5%8F%96%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88">1. HTML ：了解网页的基础，知道爬取的对象是什么</a></li>
-<li><a href="#2-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%BC%80%E5%8F%91%E8%80%85%E7%95%8C%E9%9D%A2%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E8%83%8C%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81">2. 浏览器的开发者界面：获取网页背后的代码</a></li>
-<li><a href="#3-python-%E7%9A%84%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6">3. Python 的爬虫框架</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
+            <a class="purple-link" href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
               <h3 class="post-title">
-                PySide2/PyQt 在 Windows 中添加对高分屏的支持
+                下一篇：PySide2/PyQt 在 Windows 中添加对高分屏的支持
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+    </div>
+    <script type="application/javascript">
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>
