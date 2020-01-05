@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-01-04T13:38:07.571Z</updated>
+    <updated>2020-01-05T06:53:29.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,40 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Election 初试]]></title>
+        <id>https://hwang.top/post/election-chu-shi</id>
+        <link href="https://hwang.top/post/election-chu-shi">
+        </link>
+        <updated>2020-01-05T06:51:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>之前做的上传工具，打算用 election 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>之前做的上传工具，打算用 election 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
+<!-- more -->
+<p>选择前 election 主要是我司目前是有前端开发的，这样后续产品也能接上。</p>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosj37orj30qc0zcmz2.jpg" alt="" loading="lazy"></figure>
+<h2 id="试试-election-的样例">试试 election 的样例</h2>
+<p>clone了项目后，直接用：</p>
+<pre><code class="language-bash">$ npm install
+</code></pre>
+<p>结果中间就卡住了，没有继续下载；大概是卡在 core-js 这个包的安装时候。</p>
+<p>强制停止，然后删除 node-model 文件，再修改代理：</p>
+<pre><code class="language-bash">$ npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<p>然后在安装：</p>
+<pre><code class="language-bash">$ npm install
+</code></pre>
+<p>嘿，好家伙，直接显示两个包没下。看了下还是 core-js；所以就只能用 cnpm 了。<br>
+下载 cnpm：</p>
+<pre><code class="language-bash">$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>然后使用 cnpm：</p>
+<pre><code class="language-bash">$ cnpm install
+$ cnpm start
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosd3plcj312f0u0q87.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 06]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-06</id>
@@ -519,53 +553,6 @@ Numpy 是 Pandas 的一个依赖项（安装 Pandas 时会自动安装 Numpy）�
 <p>根据本文的阅读的阅读数量和点赞情况，我们会考虑基础推出数据获取（爬虫）、数据可视化的相关内容哦。</p>
 <pre><code class="language-sql">做一个投票，投一下希望先做数据获取（爬虫）还是先做数据可视化
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 03]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-03</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-03">
-        </link>
-        <updated>2019-10-30T10:57:39.000Z</updated>
-        <content type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
-<p><a href="https://ift.tt/2P8gyHv">High Schools to TikTok: We’re Catching Feelings</a></p>
-<blockquote>
-<p>Teens love the app, and now it’s getting the stamp of approval with teacher-approved clubs. Did school just get ... fun? WINTER GARDEN, Fla.</p>
-</blockquote>
-<p><a href="https://ift.tt/2xuZiQi">如何在印象笔记中巧用搜索？</a></p>
-<blockquote>
-<p>从我用手机开始就一直在用手机记录东西，大都是标签、随记之类的，在 2012 年时候我就开始寻找能在电脑和手机上同步的软件，然后发现了 Evernote，它强大的多台设备之间完整同步功能让我非常惊喜，由此我开始关注大象。</p>
-</blockquote>
-<p><a href="https://ift.tt/3657skN">使用 Dropbox 同步 Klib 数据库</a></p>
-<blockquote>
-<p>在 Klib 实现通过 iCloud 在不同 Mac 电脑同步前，可以借助 Dropbox 等第三方工具来同步。这里以 Dropbox 为例进行介绍，假定 Dropbox 本地同步目录位于：~/Sync/Dropbox/</p>
-</blockquote>
-<p><a href="https://ift.tt/2PqK4Z5">狄德罗效应下，小程序被“逼”向中心化</a></p>
-<blockquote>
-<p>文 | 陈小江 来源 | 螳螂财经（ID:TanglangFin） 话说，一直以“去中心化”自居的微信小程序正向“中心化”靠拢。 按照张小龙在2017微信公开课Pro上的最初设想，去中心化的微信小程序是这样的：小程序在微信没有入口，没有订阅</p>
-</blockquote>
-<p><a href="https://ift.tt/31U7Gb5">从这 10 个应用实例开始，打造一套 Things 自动化流程</a></p>
-<blockquote>
-<p>最近任务管理应用 Things 为我们带来了一次重磅更新：全面支持 URL Scheme，让用户能够通过 URL Scheme 完成链接到 Things、支持强大的快捷方式以及从其他应用程序切换，也正式宣告了其在自动化领域对于 Todoist 和 OmniFocus 等<br>
-<a href="https://ift.tt/2JxEhgC">创业的这三年</a></p>
-</blockquote>
-<blockquote>
-<p>我是 16 年来北京之后开始创业的，到现在已经满满三年了，但是我与创业这件事的渊源，在更早之前就已经开始了，我记得那是 15 年初的冬天，我在大学寝室吃完一顿火锅，纵横捭阖，向室友们大骂了一通当时的许多创业者，<br>
-<a href="https://ift.tt/2pnJoc9">最前线 | 苹果最贵原创剧诞生，想要复制Netflix的成功</a></p>
-</blockquote>
-<blockquote>
-<p>当视力被剥夺，人类凭借其他感官生存，世界会变成怎样？ 这一幕即将在Apple TV+的原创剧集《看见》中上演。在这部长达10集的科幻剧集中，故事设定在600年后的未来，一种致命的病毒使地球人口减少到只有200万，同时夺走了所<br>
-<a href="https://ift.tt/2JvFzIT">第四消费时代离你有多远？</a></p>
-</blockquote>
-<blockquote>
-<p>新消费时代，许多行业都被颠覆，并且变革的速度只会越来越快，打败企业的不是别人，而是自己陈旧的思维。企业只有不断进化，才能继续生存。<br>
-<a href="https://ift.tt/2WlNqOy">关于音乐早教</a><br>
-一、常见的音乐早教是一个规训的过程，我们应该对此做出反抗。胎儿在子宫内可以听到母亲血液流动的声音，出生后听到的是人类的说话声、其它婴儿的哭声、以及医院环境内的各种人工音声。这三者都属于被称作「实验音乐</p>
-</blockquote>
-<p><a href="https://ift.tt/2MUZhjc">实行威权式法治的新加坡，如何建构自身的正当性？_文化_好奇心日报</a></p>
-<blockquote>
-<p>《威权式法治》 内容简介 本书指出，新加坡缔造了一种匪夷所思的威权式法治。作者展示了作为法治以及自由民主之基石的制度和程序，是通过何种方式成为了制约异己、保护当政者的工具，但同时又无损于政府在国内和国际</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>

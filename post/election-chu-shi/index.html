@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>草稿 | Hwang&#39;s Blog</title>
+<title>Election 初试 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1578207205575">
@@ -72,46 +72,75 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# 草稿
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://hwang.top/post/2017-kai-shi-de-shu-zi-sheng-huo">
-        <h2 class="post-title"> 2017 开始的「数字生活」</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-02-14
-        </span>
-        <span>
-          9 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/vQatgkH8I" class="post-tag">
-            # 草稿
-          </a>
-        
-          <a href="https://hwang.top/tag/j1lxDfKfoY" class="post-tag">
-            # 未完成
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Election 初试
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-01-05
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>之前做的上传工具，打算用 election 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
+<!-- more -->
+<p>选择前 election 主要是我司目前是有前端开发的，这样后续产品也能接上。</p>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosj37orj30qc0zcmz2.jpg" alt="" loading="lazy"></figure>
+<h2 id="试试-election-的样例">试试 election 的样例</h2>
+<p>clone了项目后，直接用：</p>
+<pre><code class="language-bash">$ npm install
+</code></pre>
+<p>结果中间就卡住了，没有继续下载；大概是卡在 core-js 这个包的安装时候。</p>
+<p>强制停止，然后删除 node-model 文件，再修改代理：</p>
+<pre><code class="language-bash">$ npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<p>然后在安装：</p>
+<pre><code class="language-bash">$ npm install
+</code></pre>
+<p>嘿，好家伙，直接显示两个包没下。看了下还是 core-js；所以就只能用 cnpm 了。<br>
+下载 cnpm：</p>
+<pre><code class="language-bash">$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>然后使用 cnpm：</p>
+<pre><code class="language-bash">$ cnpm install
+$ cnpm start
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosd3plcj312f0u0q87.jpg" alt="" loading="lazy"></figure>
 
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%AF%95%E8%AF%95-election-%E7%9A%84%E6%A0%B7%E4%BE%8B">试试 election 的样例</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/hwang-reading-list-new-06">
+              <h3 class="post-title">
+                Hwang Reading List - New 06
+              </h3>
+            </a>
+          </div>
+        
+
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
