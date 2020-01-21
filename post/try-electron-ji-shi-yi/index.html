@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Qt for Python 的小Tips —— 外部加载 QSS | Hwang&#39;s Blog</title>
+<title>Try-Electron 记实（一） | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1579584793639">
@@ -75,51 +75,132 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Qt for Python 的小Tips —— 外部加载 QSS
+              Try-Electron 记实（一）
             </h2>
             <div class="post-info">
               <span>
-                2019-10-06
+                2020-01-21
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
-                <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
-                  # Python
+                <a href="https://hwang.top/tag/T7QZcYo5I" class="post-tag">
+                  # Electron
                 </a>
               
-                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-                  # qt for python
+                <a href="https://hwang.top/tag/GzNQWOV_0s" class="post-tag">
+                  # Vue.js
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="pyqt5pyside2-加载-qss-文件">PyQt5/PySide2 —— 加载 QSS 文件</h2>
-<pre><code class="language-python">class beautifyUI(object):
-    def __init__(self):
-        pass
-    def readQss(self, qssfile):
-        &quot;&quot;&quot;
-        加载 QSS 文件；
-        qssfile：qss文件路径；
-        &quot;&quot;&quot;
-        with open(qssfile, &quot;r&quot;) as f:
-            return f.read()   
+                <blockquote>
+<p>记录一下第一次正式开始写一个 Electron 应用；<br>
+基础比较差，几乎没什么基础...</p>
+</blockquote>
+<!-- more -->
+<h2 id="开始一个-electron-项目">开始一个 Electron 项目</h2>
+<ol>
+<li>使用 Vue-cli 3.0 以上，进行项目初始化；</li>
+</ol>
+<pre><code class="language-bash">vue add electron-builder 
+vue create .
 </code></pre>
-<p>定义一个函数，基本上就可以通过这个 读取 QSS 作为字符串，然后存为变量，读取进去就OK了。</p>
-<p>当然这个文件在打包时也要特殊处理：要么作为字符串储存于某个变量中，要么直接在特定目录下去读取这个文件。在mac的应用打包中，格外需要注意这点。请尽量使用绝对路径记录信息。</p>
+<ol start="2">
+<li>运行这个项目：</li>
+</ol>
+<pre><code class="language-bash">yarn electron:serve
+</code></pre>
+<p>Done</p>
+<h2 id="npm-常用参数记录">npm 常用参数记录</h2>
+<p>发现对 npm 的一些参数还不是很熟悉，记录一下；</p>
+<ul>
+<li>基本的安装/卸载：<pre><code class="language-bash">npm install/uninstall [packegename]
+</code></pre>
+其中安装这一部分，可选参数：
+<ul>
+<li><code>--save</code>or <code>-S</code>：添加到<strong>生产环境</strong>的依赖 ;</li>
+<li><code>--save-dev</code> or <code>-D</code>：添加到<strong>开发环境</strong>；</li>
+<li><code>--save-optional</code> or <code>-O</code>： 添加到可选环境配置 （好像不太常用）；</li>
+<li><code>--save-exact</code> or  <code>-E</code> ：指定版本安装模块；</li>
+</ul>
+</li>
+<li>开始项目时一次性安装依赖包<pre><code class="language-bash">npm install
+</code></pre>
+可选参数：
+<ul>
+<li><code>--global</code> or <code>-g</code> 全局安装；</li>
+</ul>
+</li>
+<li>卸载部分可选参数与安装时相同
+<ul>
+<li>卸载还可以使用：<code>npm remove</code> 、<code>npm rm</code>、<code>npm r</code> 、 <code>npm un</code> 、 <code>npm unlink</code>(unlink 与 link 好像是测试的)</li>
+</ul>
+</li>
+<li><code>npm list/ll/la/ls</code> 列出已安装的模块；</li>
+<li><code>npm outdated</code> 列出需要更新的模块；</li>
+<li><code>npm update</code> 更新依赖包，可选参数 <code>--global</code> or <code>-g</code></li>
+<li><code>npm root</code> 查看命令的绝对路径；</li>
+<li><code>npm config</code> npm 的配配置</li>
+</ul>
+<h2 id="yarn-常用参数记录">yarn 常用参数记录</h2>
+<p>顺便整理一下 yarn 的一些参数；yarn 用于固定开发中包的各种版本；</p>
+<ul>
+<li><code>yarn add</code><pre><code class="language-bash">	yarn add [package]@[version]
+	```
+	添加到生产环境中
+- `--dev` or `-D` 安装到生产环境中
+- 不常用的：`yarn global add &lt;package...&gt; ` 全局安装；
+</code></pre>
+</li>
+<li><code>yarn cache</code>
+<ul>
+<li><code>yarn cache dir</code>： 列出当前的 yarn 全局缓存在哪里</li>
+<li><code>yarn cache list --pattern &lt;pattern&gt;</code> 列出匹配指定模式的已缓存的包。</li>
+<li><code>yarn cache clean</code> 清除全局缓存。</li>
+</ul>
+</li>
+<li><code>yarn list</code>
+<ul>
+<li>默认情况下，所有包和它们的依赖会被显示。</li>
+<li><code>--depth</code> 深度参数</li>
+</ul>
+</li>
+<li><code>yarn remove</code>
+<ul>
+<li>默认移除依赖，并更新 package.json 和 yarn.lock</li>
+</ul>
+</li>
+<li><code>yarn run</code>
+<ul>
+<li>运行定义的动作</li>
+</ul>
+</li>
+<li><code>yarn upgrade</code>
+<ul>
+<li>更新升级包；</li>
+</ul>
+</li>
+<li><code>yarn global bin</code>
+<ul>
+<li>查看全局安装的目录</li>
+</ul>
+</li>
+</ul>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#pyqt5pyside2-%E5%8A%A0%E8%BD%BD-qss-%E6%96%87%E4%BB%B6">PyQt5/PySide2 —— 加载 QSS 文件</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E4%B8%80%E4%B8%AA-electron-%E9%A1%B9%E7%9B%AE">开始一个 Electron 项目</a></li>
+<li><a href="#npm-%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E8%AE%B0%E5%BD%95">npm 常用参数记录</a></li>
+<li><a href="#yarn-%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E8%AE%B0%E5%BD%95">yarn 常用参数记录</a></li>
 </ul>
 </li>
 </ul>
@@ -132,9 +213,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus">
+            <a href="https://hwang.top/post/election-chu-shi">
               <h3 class="post-title">
-                Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
+                Electron 初试
               </h3>
             </a>
           </div>
