@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-01-21T05:33:31.664Z</updated>
+    <updated>2020-02-02T05:49:15.500Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,16 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[疫情]]></title>
+        <id>https://hwang.top/post/yi-qing-ji-lu</id>
+        <link href="https://hwang.top/post/yi-qing-ji-lu">
+        </link>
+        <updated>2020-02-02T05:43:43.000Z</updated>
+        <content type="html"><![CDATA[<p>2020 这是一段比较难忘的记忆...</p>
+<p>这里不会记录更多，但是在我的 Google Photo 里，记录了一切。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try-Electron 记实（一）]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-yi</id>
@@ -561,43 +571,6 @@ if __name__ == '__main__':
 </ol>
 <h2 id="one-more-thing">One More Thing</h2>
 <p>这个设置在应用从高分屏切换到低分辨率的时候也能够自动适应。挺方便的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为公众号撰稿—如何精准检索我们公众号的文章]]></title>
-        <id>https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang</id>
-        <link href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang">
-        </link>
-        <updated>2019-11-03T10:14:06.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>2019.11.03<br>
-为刘老师准备的一篇小教程</p>
-</blockquote>
-<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>2019.11.03<br>
-为刘老师准备的一篇小教程</p>
-</blockquote>
-<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
-<!-- more -->
-<p>这位读者的意图其实很明显——希望查找我们公众平台关于「实证研究」的文章。但是由于我们精力和技术有限，以及微信公众平台本身的限制，并不能实时返还相关的内容。那么如何正确的检索我们公众号的文章呢？</p>
-<p>其实微信提供了定向搜索特定微信公众号推文的功能，具体操作如下：</p>
-<ol>
-<li>打开「刘西川文献阅读与写作」公众号，相信爱学习的你一定已经把我们置顶了（如果没有还不赶快星标我们的公众号）</li>
-</ol>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1572776107730.JPG" alt="" loading="lazy"></figure>
-<ol start="2">
-<li>点击右上方 头像 按钮 ，即可查看详情</li>
-</ol>
-<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1572776120039.JPG" alt="" loading="lazy"></figure>
-<ol start="3">
-<li>点击搜索按钮，即可搜索「刘西川文献阅读与写作」下的所有推文啦。</li>
-</ol>
-<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1572776127775.jpg" alt="" loading="lazy"></figure>
-<p>如下图：</p>
-<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1572776137449.PNG" alt="" loading="lazy"></figure>
-<p>甚至是正文内出现关键字都能找到哦。</p>
 ]]></content>
     </entry>
 </feed>
