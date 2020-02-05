@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-02T05:49:15.500Z</updated>
+    <updated>2020-02-05T08:21:30.074Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,37 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[figma 的一些快捷键]]></title>
+        <id>https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian</id>
+        <link href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian">
+        </link>
+        <updated>2020-02-05T08:20:53.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p>command + option +v 样式全部复制</p>
+</li>
+<li>
+<p>command + 1/2 切换图层和组件库</p>
+</li>
+<li>
+<p>shift + 1/2 放大当前 对象</p>
+</li>
+<li>
+<p>command + option + G 创建 frame //我比较常用的</p>
+</li>
+<li>
+<p>按住 option 从组件库中拖拽出组件，替换组件 / 按住 option + command 保持原有大小</p>
+</li>
+<li>
+<p>option + L 合并图层 （为选中时，收起所有的</p>
+</li>
+<li>
+<p>command+shift+K 批量添加图片</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[疫情]]></title>
         <id>https://hwang.top/post/yi-qing-ji-lu</id>
@@ -497,80 +528,6 @@ services:
 </li>
 </ol>
 </section>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PySide2/PyQt 在 Windows 中添加对高分屏的支持]]></title>
-        <id>https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi</id>
-        <link href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi">
-        </link>
-        <updated>2019-11-05T12:24:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
-<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
-<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
-<!-- more -->
-<p>直到在<a href="https://doc.qt.io/qtforpython/PySide2/QtCore/Qt.html?highlight=applicationattribute#PySide2.QtCore.PySide2.QtCore.Qt.ApplicationAttribute">QtCore</a>下面找到了：</p>
-<table>
-<thead>
-<tr>
-<th>Qt.AA_UseHighDpiPixmaps</th>
-<th>Make <code>pixmap()</code> generate high-dpi pixmaps that can be larger than the requested size. Such pixmaps will have <code>devicePixelRatio()</code> set to a value higher than 1. After setting this attribute, application code that uses pixmap sizes in layout geometry calculations should typically divide by <code>devicePixelRatio()</code> to get device-independent layout geometry.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Qt.AA_EnableHighDpiScaling</td>
-<td>Enables high-DPI scaling in Qt on supported platforms (see also High DPI Displays). Supported platforms are X11, Windows and Android. Enabling makes Qt scale the main (device independent) coordinate system according to display scale factors provided by the operating system. This corresponds to setting the QT_AUTO_SCREEN_SCALE_FACTOR environment variable to 1. This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</td>
-</tr>
-<tr>
-<td>Qt.AA_DisableHighDpiScaling</td>
-<td>Disables high-DPI scaling in Qt, exposing window system coordinates. Note that the window system may do its own scaling, so this does not guarantee that <code>devicePixelRatio()</code> will be equal to 1. In addition, scale factors set by QT_SCALE_FACTOR will not be affected. This corresponds to setting the QT_AUTO_SCREEN_SCALE_FACTOR environment variable to 0. This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</td>
-</tr>
-</tbody>
-</table>
-<p><code>AA_</code> 前缀表示，是ApplicationAttribute。</p>
-<p>其中的<code>Qt.AA_EnableHighDpiScaling</code> 里面明确写了：</p>
-<blockquote>
-<p>support platforms are x11, Windows , Android</p>
-</blockquote>
-<p>并且说明了这个设置项必须在 <code>QGuiApplication</code>创建前：</p>
-<blockquote>
-<p>This attribute must be set before <a href="https://doc.qt.io/qtforpython/PySide2/QtGui/QGuiApplication.html#PySide2.QtGui.QGuiApplication"><code>QGuiApplication</code></a> is constructed. This value was added in Qt 5.6.</p>
-</blockquote>
-<p>所以接下来就好做了，只需要一行代码即可实现对高分屏的适配：</p>
-<p><code>QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)</code></p>
-<p>例如：</p>
-<pre><code class="language-python"># -*- coding:utf-8 -*-
-import sys
-from UI import styleBook
-from PySide2 import QtCore
-from PySide2.QtCore import Qt
-from PySide2.QtWidgets import QApplication
-from PySide2.QtGui import QIcon
-from stqt import mainWindows
-
-if __name__ == '__main__':
-    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    app = QApplication(sys.argv)
-    mainWindow = mainWindows()
-    mainWindow.setWindowTitle('Single Table Query Tools')
-    mainWindow.setWindowIcon(QIcon('./LOGO.ico'))
-    main_qss = styleBook.get_main_style()
-    mainWindow.setStyleSheet(main_qss)
-    mainWindow.show()
-    sys.exit(app.exec_())
-
-</code></pre>
-<p>在 app = QApplication 创建前添加即可。</p>
-<h2 id="其他建议">其他建议：</h2>
-<ol>
-<li>推荐图标直接使用 SVG 文件，这样在拉伸中不会导致分辨率问题。</li>
-<li>样式写在单独的 QSS 文件中，每一个 Widget 组件都用 <code>px</code> 标示尺寸，这样在放大缩小中都能够很好的按倍数支持。同样文字内容也用 font-size 标注，能够很好的支持。</li>
-</ol>
-<h2 id="one-more-thing">One More Thing</h2>
-<p>这个设置在应用从高分屏切换到低分辨率的时候也能够自动适应。挺方便的。</p>
 ]]></content>
     </entry>
 </feed>
