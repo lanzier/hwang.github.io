@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-05T08:28:14.610Z</updated>
+    <updated>2020-02-07T10:50:11.231Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,53 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Try-Electron记实（二）— ant-design 的引入、font-awesome 的引入]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru">
+        </link>
+        <updated>2020-02-07T10:47:45.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>简单记录一下；<br>
+有一点点的坑是引入 less 的事情，其他都挺顺利的；</p>
+</blockquote>
+<p>ant-design 和 font-awesome 的引入</p>
+<ol>
+<li>引入，在 <code>src/main.js</code> 文件内引入：</li>
+</ol>
+<pre><code class="language-bash">import Vue from 'vue';
+import App from './App.vue';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.less';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {
+	【需要的包】
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(
+	【需要的包】
+)
+ 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.config.productionTip = false;
+Vue.use(Antd);
+
+
+new Vue({
+  render: h =&gt; h(App),
+}).$mount('#app')
+
+</code></pre>
+<ol start="2">
+<li>其中，如果需要配置 ant 的主题</li>
+</ol>
+<pre><code class="language-bash">	import 'ant-design-vue/dist/antd.less';
+	```
+	使用 less 配置主题。</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于团队协作工具的理想形态，这是我从飞书上得到的思考]]></title>
         <id>https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao</id>
@@ -471,24 +518,6 @@ services:
 <pre><code class="language-yaml">$ docker-compose restart web
 </code></pre>
 <p>这里的<code>web</code> 就是 services 的名称。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 04]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-04</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-04">
-        </link>
-        <updated>2019-11-17T05:27:34.000Z</updated>
-        <summary type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
-]]></summary>
-        <content type="html"><![CDATA[<h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
-<!-- more -->
-<p><a href="https://ift.tt/2PGVIPs">“肉腿”是怎么火起来的？ | 机核 GCORES</a> &gt; 本文系用户投稿，不代表机核网观点 文/沉迷真扎的白 相信这几天不少胖友们的微博首页和我一样，被拥有着一双肉腿的可爱女孩子形象刷屏了。这名女孩子就是9月26日发售的游戏《莱莎的炼金工房》中的女主角莱莎 。作为光<br>
-<a href="https://ift.tt/2J4d7xJ">Windows Terminal 食用指南</a> &gt; 自今年微软开发者大会 Build 2019 中首次亮相以来，经历了近半年的发展，万众瞩目的 Windows Terminal 已经日趋成熟。从十月份开始，我将其作为主力终端使用了一段时间，暂时还没遇到什么严重的问题。<br>
-<a href="https://ift.tt/2PbJcHp">浅谈 Python 中的闭包与中间件封装</a> &gt; 这两天看了一些中间件框架相关的代码，发现闭包的应用很多，由于之前对闭包这个概念似懂非懂，所以我借此机会学习了一番，然后把成果在此总结记录一下。<br>
-<a href="https://ift.tt/2rDa08n">Editorial：除了写作，我还兼职 Workflow</a> &gt; 当今 iOS 端 Markdown 写作软件基本由 Ulysses、Bear、Drafts 等明星软件把持，有的功能纯粹，有的界面优雅，但要说到功能强大、扩展强就要数今天的主角 Editorial 了，这是一款被严重低估的软件。当深度使用过后，不禁感叹，这货<br>
-<a href="https://ift.tt/2CGrvsn">DataWorks高级功能场景化案例分享</a> &gt; 自2009年DataWorks立项，伴随着阿里巴巴集团登月计划、公共云和专有云的发布，直到2018年V2.<br>
-<a href="https://ift.tt/2JS2gXQ">GQ报道 | 幸存者李佳琦：一个人变成算法，又想回到人</a> &gt; 功能介绍 记录人物的浮沉和时代价值的变迁。全面、真实、深入、准确的非虚构故事，每周为您送上。</p>
 ]]></content>
     </entry>
 </feed>

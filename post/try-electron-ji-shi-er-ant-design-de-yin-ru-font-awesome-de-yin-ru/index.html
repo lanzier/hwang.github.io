@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于团队协作工具的理想形态，这是我从飞书上得到的思考 | Hwang&#39;s Blog</title>
+<title>Try-Electron记实（二）— ant-design 的引入、font-awesome 的引入 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581072606159">
@@ -75,46 +75,69 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于团队协作工具的理想形态，这是我从飞书上得到的思考
+              Try-Electron记实（二）— ant-design 的引入、font-awesome 的引入
             </h2>
             <div class="post-info">
               <span>
-                2020-02-05
+                2020-02-07
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://hwang.top/tag/AMJH5xgec" class="post-tag">
-                  # 少数派
+                <a href="https://hwang.top/tag/T7QZcYo5I" class="post-tag">
+                  # Electron
                 </a>
               
-                <a href="https://hwang.top/tag/CjydnGrXlu" class="post-tag">
-                  # 长文
+                <a href="https://hwang.top/tag/GzNQWOV_0s" class="post-tag">
+                  # Vue.js
                 </a>
               
             </div>
             
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
+                <blockquote>
+<p>简单记录一下；<br>
+有一点点的坑是引入 less 的事情，其他都挺顺利的；</p>
+</blockquote>
+<p>ant-design 和 font-awesome 的引入</p>
 <ol>
-<li>沟通记录混乱：用过微信的大家都懂。</li>
+<li>引入，在 <code>src/main.js</code> 文件内引入：</li>
 </ol>
-<!-- more -->
+<pre><code class="language-bash">import Vue from 'vue';
+import App from './App.vue';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.less';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {
+	【需要的包】
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(
+	【需要的包】
+)
+ 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.config.productionTip = false;
+Vue.use(Antd);
+
+
+new Vue({
+  render: h =&gt; h(App),
+}).$mount('#app')
+
+</code></pre>
 <ol start="2">
-<li>
-<p>文件丢失，文件版本混乱：微信并不会负责你的文件存储。</p>
-</li>
-<li>
-<p>共享信息沟通不畅：每当有新人入职时，许多问题需要重复解答。</p>
-</li>
-<li>
-<p>项目管理不畅：各种任务环节很难被监控到。</p>
-</li>
+<li>其中，如果需要配置 ant 的主题</li>
 </ol>
-<p>这些问题频繁出现在前几个月，解决这些问题的任务被安排在了我身上，当时市面上能够选择的产品，主要可以分为「国内系」以及「海外系」。一家企业在日常业务中，普遍需要的，其实就是三大功能，团队沟通、信息资源管理、项目管理。无论是生产、研发还是销售环节，这三大基础需求都是存在的。一家企业根据他所处的领域的不同，企业的组织形式千差万别，对于这「三大基础需求」也是有显著的差异的。</p>
-<p>更多内容前往少数派阅读：https://sspai.com/post/58385</p>
+<pre><code class="language-bash">	import 'ant-design-vue/dist/antd.less';
+	```
+	使用 less 配置主题。</code></pre>
 
               </div>
               <div class="toc-container">
@@ -127,9 +150,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian">
+            <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao">
               <h3 class="post-title">
-                figma 的一些快捷键
+                关于团队协作工具的理想形态，这是我从飞书上得到的思考
               </h3>
             </a>
           </div>
