@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项 | Hwang&#39;s Blog</title>
+<title>Try-Electron记实（三）— ant-design-vue 主题的修改 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581323060255">
@@ -75,69 +75,63 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
+              Try-Electron记实（三）— ant-design-vue 主题的修改
             </h2>
             <div class="post-info">
               <span>
-                2019-10-30
+                2020-02-10
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://hwang.top/tag/TnrvUOUag" class="post-tag">
-                  # oracle
-                </a>
-              
-                <a href="https://hwang.top/tag/oEltlpWF3" class="post-tag">
-                  # Python
-                </a>
-              
-                <a href="https://hwang.top/tag/GY_B5UX_b" class="post-tag">
-                  # qt for python
-                </a>
-              
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
-<p><code>pip install cx_Oracle</code> 即可安装。</p>
-<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
-<!-- more -->
-<p>下载驱动，注意版本号：</p>
-<ol>
-<li>下载地址：https://www.oracle.com/database/technologies/instant-client/downloads.html 需要下载与服务器端对应的 版本。 我这里下载的文件是：<code>instantclient-basic-windows.x64-11.2.0.4.0.zip</code></li>
-<li>解压，里面是一个 <code>instantclient_11_2</code> 文件夹。比如直接放在 C 盘下。</li>
-<li>添加这个文件到环境路径中 <code>C:\instantclient_11_2</code></li>
-<li>重启 Python 运行一遍。</li>
-</ol>
-<h2 id="3-连接如果环境变量并没有解决问题">3. 连接如果环境变量并没有解决问题：</h2>
-<p>尝试将 <code>.dll</code> 文件存放到 python 的 <code>Lib\site-packages</code> 路径中。</p>
-<figure data-type="image" tabindex="1"><img src="http://112.17.171.130:10080/FTPshare/20191028180549WzAo.jpg" alt="" loading="lazy"></figure>
-<p>一般来说这样就可以了。</p>
-<h2 id="4-一些错误记录">4. 一些错误记录</h2>
-<ol>
-<li>
-<p>错误代码 ORA-28547，应该是 <code>oci.dll</code> 文件版本错误。</p>
-</li>
-<li>
-<p>错误代码 ORA-03135，也可能是上面这个问题。</p>
-<p>出现以上错误，优先检查数据库版本号是不是正确的，或者是不是下来 <code>basiclite</code>之类的文件。</p>
-</li>
-</ol>
+                <p>官方文档描述：</p>
+<blockquote>
+<p>在 vue cli 3 中定制主题<br>
+项目根目录下新建文件vue.config.js</p>
+<pre><code>// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          'primary-color': '#1DA57A',
+          'link-color': '#1DA57A',
+          'border-radius-base': '2px',
+        },
+        javascriptEnabled: true
+      }
+    }
+  }
+}
+</code></pre>
+</blockquote>
+<h3 id="关于-vueconfigjs">关于- vue.config.js :</h3>
+<blockquote>
+<p>每次在终端运行 vue-cli-service 时，都会先找到对应的 vue.config.js，获取到相关配置，才继续执行其它操作</p>
+</blockquote>
+<h3 id="动手试试">动手试试</h3>
+<p>直接在项目跟目录添加这么一个配置文件即可。<br>
+因为 vue.config.js 是在 vue-cli-service 运行时检查的，所以在使用 electron-builder 构建的项目中，并不能热更新。<br>
+我的理解是，这个 vue-cli-service 启动后，才可以热更新 electron 的窗体程序和Vue写的前端页面的，热更新并不会重新启动一遍 vue-cli-service。</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#1-sqlalchemy-%E9%9C%80%E8%A6%81%E9%80%9A%E8%BF%87-cx_oracle-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</a></li>
-<li><a href="#2-cx_oracle-%E5%B9%B6%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E8%BF%9E%E6%8E%A5-oracle-%E8%BF%98%E9%9C%80%E8%A6%81%E9%A9%B1%E5%8A%A8">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</a></li>
-<li><a href="#3-%E8%BF%9E%E6%8E%A5%E5%A6%82%E6%9E%9C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%B9%B6%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">3. 连接如果环境变量并没有解决问题：</a></li>
-<li><a href="#4-%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95">4. 一些错误记录</a></li>
+<li>
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E-vueconfigjs">关于- vue.config.js :</a></li>
+<li><a href="#%E5%8A%A8%E6%89%8B%E8%AF%95%E8%AF%95">动手试试</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -150,9 +144,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren">
+            <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru">
               <h3 class="post-title">
-                所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
+                Try-Electron记实（二）— ant-design 的引入、font-awesome 的引入
               </h3>
             </a>
           </div>
