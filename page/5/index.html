@@ -5,7 +5,7 @@
 <title>Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581323060255">
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581413443213">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
@@ -21,7 +21,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1581323060255" alt="">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1581413443213" alt="">
   </a>
   <h1 class="site-title">
     Hwang&#39;s Blog
@@ -74,6 +74,75 @@
 
     
         <div class="post-container">
+  
+    <article class="post">
+      <a href="https://hwang.top/post/ml-python-shi-xian-ols">
+        <h2 class="post-title">ML - Python 实现 OLS</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-10
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
+            # ML
+          </a>
+        
+          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+            # python
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/ml-python-shi-xian-ols" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/ml-python-shi-xian-ols.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://hwang.top/post/ml-python-ling-hui-gui">
+        <h2 class="post-title">ML- Python 岭回归</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-07-24
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://hwang.top/tag/LgCVVhtVr" class="post-tag">
+            # ML
+          </a>
+        
+          <a href="https://hwang.top/tag/Zf-hLAESr" class="post-tag">
+            # python
+          </a>
+        
+      </div>
+      
+        <a href="https://hwang.top/post/ml-python-ling-hui-gui" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/ml-python-ling-hui-gui.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+
+      </di>
+    </article>
   
     <article class="post">
       <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu">

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Procreate 练习 | Hwang&#39;s Blog</title>
+<title>Try-Electron记实（五）— 异步的一些东西 ：Promise 对象 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581413443213">
@@ -75,37 +75,65 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Procreate 练习
+              Try-Electron记实（五）— 异步的一些东西 ：Promise 对象
             </h2>
             <div class="post-info">
               <span>
-                2019-10-01
+                2020-02-11
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
-              
-                <a href="https://hwang.top/tag/g2adRFEWZ" class="post-tag">
-                  # Procreate
-                </a>
-              
-                <a href="https://hwang.top/tag/BLN0D-FhXX" class="post-tag">
-                  # 手绘
-                </a>
-              
-                <a href="https://hwang.top/tag/TtJ7rX0oHB" class="post-tag">
-                  # 设计
-                </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://hwang.top/post-images/procreate-lian-xi.PNG" alt="">
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>画图，画图。</p>
-<p>好久没有动笔了。线条画的一点都不流畅了。</p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/01/xwQ8BVtOInGfvW7.png" alt="IMG_0404.PNG" loading="lazy"></figure>
+                <blockquote>
+<p>参考资料：<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544">https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544</a></p>
+</blockquote>
+<p>先吐槽，从来没有接触过 Promise 对象相关的东西，只知道 JS 的世界里，异步是一个非常重要的概念。今天写逻辑代码，第一次接触到了，因为 function 异步执行，想当然的以为 return 的就是给赋值的结果，结果因为异步并没有拿到最后的结果。</p>
+<p>首先，关于 Promise 和 async/await ：<a href="https://zhuanlan.zhihu.com/p/23249103">https://zhuanlan.zhihu.com/p/23249103</a>：</p>
+<blockquote>
+<p>可以很明显的看到，callback 来控制异步的方式虽然非常简单，但也过于原始。在实际的使用中代码的逻辑顺序和业务的顺序是不相同的，错误控制基本靠手动检查err参数。<br>
+而到了 Promise 中这种情况好了很多，通过链式调用，Promise 可以直接在 then 中返回一个新的 Promise 来将异步操作串联起来，也有了统一的 catch 来做错误处理。美中不足的是，你仍然需要传递一个回调函数给 then，通过 then 来串联虽然保证了至少代码顺序上和真正的逻辑顺序一致，但和同步代码的差别仍然很大。<br>
+async/await 则直接将其变成了同步的写法，心智负担大大降低。</p>
+</blockquote>
+<p>具体的：</p>
+<blockquote>
+<p>Promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。<br>
+resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。<br>
+Promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数。</p>
+</blockquote>
+<blockquote>
+<p>then方法可以接受两个回调函数作为参数。<br>
+第一个回调函数是Promise对象的状态变为resolved时调用，<br>
+第二个回调函数是Promise对象的状态变为rejected时调用。<br>
+其中，第二个函数是可选的，不一定要提供。<br>
+这两个函数都接受Promise对象传出的值作为参数。</p>
+</blockquote>
+<p>用法：</p>
+<pre><code class="language-js">const promise = new Promise(function(resolve, reject) {
+  // ... some code
+
+  if (/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error);
+  }
+});
+
+
+promise.then(function(value) {
+  // success
+}, function(error) {
+  // failure
+});
+
+</code></pre>
+<hr>
 
               </div>
               <div class="toc-container">
@@ -118,9 +146,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian">
+            <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you">
               <h3 class="post-title">
-                Update 了一下 figma 的封面
+                Try-Electron记实（四）— 项目中添加路由
               </h3>
             </a>
           </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-10T08:24:40.565Z</updated>
+    <updated>2020-02-11T09:30:47.101Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,97 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Try-Electron记实（五）— 异步的一些东西 ：Promise 对象]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang">
+        </link>
+        <updated>2020-02-11T09:29:46.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>参考资料：<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544">https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544</a></p>
+</blockquote>
+<p>先吐槽，从来没有接触过 Promise 对象相关的东西，只知道 JS 的世界里，异步是一个非常重要的概念。今天写逻辑代码，第一次接触到了，因为 function 异步执行，想当然的以为 return 的就是给赋值的结果，结果因为异步并没有拿到最后的结果。</p>
+<p>首先，关于 Promise 和 async/await ：<a href="https://zhuanlan.zhihu.com/p/23249103">https://zhuanlan.zhihu.com/p/23249103</a>：</p>
+<blockquote>
+<p>可以很明显的看到，callback 来控制异步的方式虽然非常简单，但也过于原始。在实际的使用中代码的逻辑顺序和业务的顺序是不相同的，错误控制基本靠手动检查err参数。<br>
+而到了 Promise 中这种情况好了很多，通过链式调用，Promise 可以直接在 then 中返回一个新的 Promise 来将异步操作串联起来，也有了统一的 catch 来做错误处理。美中不足的是，你仍然需要传递一个回调函数给 then，通过 then 来串联虽然保证了至少代码顺序上和真正的逻辑顺序一致，但和同步代码的差别仍然很大。<br>
+async/await 则直接将其变成了同步的写法，心智负担大大降低。</p>
+</blockquote>
+<p>具体的：</p>
+<blockquote>
+<p>Promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。<br>
+resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。<br>
+Promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数。</p>
+</blockquote>
+<blockquote>
+<p>then方法可以接受两个回调函数作为参数。<br>
+第一个回调函数是Promise对象的状态变为resolved时调用，<br>
+第二个回调函数是Promise对象的状态变为rejected时调用。<br>
+其中，第二个函数是可选的，不一定要提供。<br>
+这两个函数都接受Promise对象传出的值作为参数。</p>
+</blockquote>
+<p>用法：</p>
+<pre><code class="language-js">const promise = new Promise(function(resolve, reject) {
+  // ... some code
+
+  if (/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error);
+  }
+});
+
+
+promise.then(function(value) {
+  // success
+}, function(error) {
+  // failure
+});
+
+</code></pre>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Try-Electron记实（四）— 项目中添加路由]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you">
+        </link>
+        <updated>2020-02-11T09:29:32.000Z</updated>
+        <content type="html"><![CDATA[<p>通过路由的方式进行侧边导航栏的切换：</p>
+<ol>
+<li>安装 vue-router，并添加到项目中；</li>
+<li>在 main.js 中引入 vue-router 插件；</li>
+</ol>
+<pre><code class="language-bash">...
+... //省略其他
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+</code></pre>
+<ol start="3">
+<li>引入路由文件，并在 Vue 实例中添加配置</li>
+</ol>
+<pre><code>import router from '.'router/index'
+...//省略其他
+new Vue({
+  router: router, //添加配置
+  render: h =&gt; h(App),
+}).$mount('#app')
+
+</code></pre>
+<ol start="4">
+<li>
+<p>编辑路由文件<code>router/index.js</code> 中添加需要的路由路径</p>
+</li>
+<li>
+<p><code>&lt;router-link to=&quot;&quot;&gt;</code> 和 <code>&lt;router-view&gt;</code> 标签 一个是用来跳转的，一个是用来显示调整页面的。</p>
+</li>
+</ol>
+<p>Done！ 基础的路由添加步骤就是这样了。在其他具体的事情，具体在看吧。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try-Electron记实（三）— ant-design-vue 主题的修改]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai</id>
@@ -368,151 +459,6 @@ $ cnpm start
 <blockquote>
 <p>杭州是上海边上的一座城，说它“美丽”不足以形容它的风貌，说它“最适合人居住”又会让人误以为它房价便宜，所以很难找出一个词来概括它。</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 05]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-05</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-05">
-        </link>
-        <updated>2019-12-22T12:31:36.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>最近真就没怎么更新博客...<br>
-注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>最近真就没怎么更新博客...<br>
-注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<!-- more -->
-<p><a href="https://ift.tt/2qsSNzG">基于QTdesigner的PyQt编程</a> \</p>
-<blockquote>
-<p>前面的教程中有讲过对于python自带的Tk模块的使用，实际上个人感觉Tk的使用不仅繁琐，而且做出来的界面并不美观，这里向大家推荐pyqt。 qyqt这个模块的最大优势在于界面可以使用qtdesigner直观的制作，然后代码直接读取就可以</p>
-</blockquote>
-<p><a href="https://ift.tt/2Na0inF">Kindle 十二岁</a> \</p>
-<blockquote>
-<p>两个多星期后的十一月十九日，就是 Kindle 的正式十二岁生日。正版电子书发展至今，对于我这种不住在英语国家但要看英文书的人带来了许多便利，但它在排版上依然远远劣于盗版 PDF（即远未达到平面出版的排版水平）。</p>
-</blockquote>
-<p><a href="https://ift.tt/2rBrG5D">知料 | 越薄越好？噼里啪啦的键盘是怎么成为苹果绊脚石的</a> \</p>
-<blockquote>
-<p>蝶形键盘失败了，这一苹果曾力推的全新设计，在短暂四年后便狼狈退场。</p>
-</blockquote>
-<p><a href="https://ift.tt/34tr155">极圈化</a> \</p>
-<blockquote>
-<p>不知道从什么时候开始，阶层固化、鄙视链定序、圈内刻奇成了舆论热点的源头，这一部分是商业社会价格歧视的结果，一部分是分工后专业化的信息壁垒，另一部分则是本质上人群价值观割裂后产生的信息不对称与隔离。</p>
-</blockquote>
-<p><a href="https://ift.tt/36l1prv">我推荐的 RSS 订阅列表</a> \</p>
-<blockquote>
-<p>每次推荐 RSS 阅读器，总有人条件反射地说「现在谁还用那个！」，令人生厌。但另一个条件反射式的反应非常合理：就算我装了 RSS 阅读器，里面一片空白，我该订什么呢？</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份]]></title>
-        <id>https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen</id>
-        <link href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen">
-        </link>
-        <updated>2019-12-02T13:56:12.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>本文以发布于少数派：https://sspai.com/post/57539<br>
-推荐在少数派阅读</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文以发布于少数派：https://sspai.com/post/57539<br>
-推荐在少数派阅读</p>
-</blockquote>
-<!-- more -->
-<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
-<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
-<!-- more -->
-<p>首先，SMB 协议是一种能够将本机电脑上的文件夹分享到局域网内其他设备上的一种协议。你可以简单的理解为是一种文件共享的协议。我们要做的就是通过这个协议，将主机上的某个文件共享到你的 Mac 上，然后在那上面创建备份。所以，我们需要的具体步骤就是：1. 通过 SMB 分享一个文件夹； 2. 在 Mac 上加载这个文件夹；3. 利用这个文件夹创建备份。</p>
-<h2 id="1-通过-smb-分享一个文件夹">1. 通过 SMB 分享一个文件夹</h2>
-<p>这一步，我们需要做的事，具体而言就是：</p>
-<ol>
-<li>开启 SMB 服务；</li>
-<li>配置一个文件夹进行共享；<br>
-所以，正如标题里写的，无论是树莓派这种 Linux 设备，还是 Windows 设备，你都可以开启 SMB 服务，进行局域网内的文件的共享。所以，如果你有一台 Linux 设备，你可以参考下面的树莓派的步骤，如果你有一台 Windows 设备，可以参考 Windows 的步骤。</li>
-</ol>
-<h3 id="树莓派上开启-smb-服务">树莓派上开启 SMB 服务</h3>
-<p>详细内容，同样可以参考我派的文章：<a href="https://sspai.com/post/40721">利用 Samba - 像管理本地文件一样处理树莓派文件</a>。<br>
-首先，更新源：</p>
-<pre><code class="language-bash">$ sudo apt-get update
-</code></pre>
-<p>第二步，安装 samba 服务：</p>
-<pre><code class="language-bash">$ sudo apt-get install samba samba-common-bin
-</code></pre>
-<p>第三步，修改 SMB 的配置，这里使用 vim 进行编辑：</p>
-<pre><code class="language-bash">$ sudo vim /etc/samba/smb.conf
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt="" loading="lazy"></figure>
-<p>在配置文件的最后添加：</p>
-<pre><code class="language-bash">[pi]
-
-    path = /home/pi/
-
-    valid users = pi
-
-    browseable = Yes
-
-    writeable = Yes
-
-    writelist = pi
-
-    create mask = 0777
-
-    directory mask = 0777
-</code></pre>
-<p>保存退出后，重启一下 samba 服务</p>
-<pre><code class="language-bash">$ sudo /etc/init.d/samba restart
-</code></pre>
-<p>最后一步，就是添加 <code>pi</code> 用户为 <code>Samba</code>用户，这一步，会让你设置共享时的密码。</p>
-<pre><code class="language-bash">$ sudo smbpasswd -a pi
-</code></pre>
-<h3 id="windows-上开启-smb-服务">Windows 上开启 SMB 服务</h3>
-<p>Windows 上做 Smb 共享会方便很多，首先在一个磁盘空间比较富裕的地方，创建一个文件夹，然后右键，属性，打开「共享」栏：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt="" loading="lazy"><br>
-然后点击共享，弹出用户设置界面：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt="" loading="lazy"></p>
-<p>设置共享的账户，以及权限设置为「读和写」，一般而言推荐在这里新建一个专门的共享账户，账户和密码就是届时需要在mac上输入的账户和密码：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt="" loading="lazy"></p>
-<p>账户设置完成后，点击「共享」即可：<br>
-<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt="" loading="lazy"></p>
-<p>点击完成，这个文件就已经能够在局域网访问了。这里做个简单的提醒，部分Windows设备的防火墙设置，会禁用共享，可以先通过关闭防火墙的方式来排除是不是防火墙的问题，再通过对应规则的设置，重新开启防火墙即可。</p>
-<h2 id="2-在-mac-上加载这个文件夹">2. 在 Mac 上加载这个文件夹</h2>
-<p>这个时候，打开你的 finder，应该能够在「位置这一栏」下看到树莓派，或者你的 Windows 设备的名字了。点击后，就能看到你共享的文件夹了。</p>
-<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt="" loading="lazy"></figure>
-<p>如果没有看到，那么通过右键 finder 图标，点击「连接服务器」，输入：<code>smb://设备的IP地址/共享的文件夹名称</code> 的方式连接，在输入账号密码后，也能够连接上这个文件夹。正确连接后，就说明，其他设备上的硬盘，已经能够为你的 Mac 所用了。</p>
-<p>接下来我们就要进行最后一个步骤，创建一个「时间机器」了！</p>
-<h2 id="3-利用这个文件夹创建备份">3. 利用这个文件夹创建备份</h2>
-<p>当你兴奋的打开你的 Time Machine 设置，点击「选择备份磁盘」时，看到却是：</p>
-<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt="" loading="lazy"><br>
-<em>是的，并没有你想要的那个文件夹</em></p>
-<p>接下来，我们要做的，其实是创建一个磁盘镜像文件，然后将这个磁盘镜像文件挂载到你的 Mac 上，作为一个「虚拟硬盘」，然后利用这个「虚拟硬盘」进行备份。具体的：</p>
-<h3 id="31-创建一个空白映像">3.1 创建一个空白映像：</h3>
-<p>打开「磁盘工具」，选择菜单栏中的 「新建映像」，选择「空白映像…」，然后如图所示，填入信息：<br>
-<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt="" loading="lazy"><br>
-其中「大小」可以根据你实际需求来填写<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
-<h3 id="32-将此这个空白映像拷贝到你的-smb-共享文件夹中">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</h3>
-<p>在 finder 中先推出这个磁盘，然后在保存的位置中，将这个磁盘文件拖入 SMB 共享文件夹的对应位置：</p>
-<h3 id="33-挂载这个磁盘">3.3 挂载这个磁盘</h3>
-<p>双击在 SMB 共享文件夹中的这个映像文件，然后他就会挂在在你的 Mac 上：</p>
-<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt="" loading="lazy"></figure>
-<p>最后，通过 terminal 将这个磁盘设置为 TimeMachine 的备份磁盘：</p>
-<pre><code class="language-bash">$sudo tmutil setdestination /Volumes/TimeMachine
-</code></pre>
-<p>这里的 <code>/Volumes/TimeMachine</code> 就是这个磁盘的挂载点，一般而言就是 <code>/Volumes/</code> + 磁盘的名称，如果你不是很确定，可以在磁盘工具中，选择这个磁盘，点击右键，选择「显示简介」，看到挂载信息：<br>
-<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt="" loading="lazy"></p>
-<p>输入完命令后，再输入你的Mac密码，即可成功挂载。当你再次打开 TimeMachine 时，已经可以开始备份了。</p>
-<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt="" loading="lazy"></figure>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>一个400GB的空白磁盘映像，大概有400MB <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
     </entry>
 </feed>
