@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-11T09:30:47.101Z</updated>
+    <updated>2020-02-11T09:35:42.500Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,61 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 07]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-07</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-07">
+        </link>
+        <updated>2020-02-11T09:33:54.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/2QCCQ3e">中国企业获设计“剽窃奖”被质疑</a></p>
+<blockquote>
+<p>近日，一则中国制造商包揽德国“金鼻子剽窃奖”前十名的消息引发关注。中国设计是否存在山寨外国设计再次引发热议。</p>
+</blockquote>
+<p><a href="https://ift.tt/2tm6vG7">为什么DevOps很好，但却很难落地，大家对DevOps是怎么理解的？</a></p>
+<blockquote>
+<p>关于 DevOps 为什么难落地，与其我们在这里闭门造车，倒不如看看来自专家的看法</p>
+</blockquote>
+<p><a href="https://ift.tt/3a4CZW0">为什么进度条永远卡在 99%？</a></p>
+<blockquote>
+<p>机密处万籁俱寂，防守严格，他一路破解密码，悄声潜入，没料到 U 盘一插电脑，警报就开始厉声鸣叫，门外死神般的脚步纷至沓来，踩得他浑身汗如雨下。</p>
+</blockquote>
+<p><a href="https://ift.tt/2Rop4Bl">阿里巴巴发布全新奥运组合LOGO！仅用9根线“托”起五环！</a></p>
+<blockquote>
+<p>微信号 AlibabaDesign 功能介绍 这是一个充满魅力的组织，是一群疯狂热爱用户体验的家伙；这里有国际音乐家、有舞者、游戏玩家、摄影师以及各个领域的爱好者；我们坚信，创新、设计、技术和客户第一的价值观粘合在一起，</p>
+</blockquote>
+<p><a href="https://ift.tt/2QWZzXW">2020，我想如何讲述自己的故事——2019总结</a></p>
+<blockquote>
+<p>12月的 Monthly Review 已经做了2019年终总结的播客有声版，加上2019半年总结也写了，总感觉下半年应该没什么值得记录。而且一直没有想清楚2020年的目标和展望，想通过整理成文字版的过程给自己一些灵感。</p>
+</blockquote>
+<p><a href="https://ift.tt/2NapoT0">2019，小程序又给了谁机会？</a></p>
+<blockquote>
+<p>以上是宏观的生态数据，透过这些数据，我们不免会有一个疑惑：是谁承担起了这些流量？</p>
+</blockquote>
+<p><a href="https://ift.tt/39k6GRO">iPhone 可有设计哲学？</a></p>
+<blockquote>
+<p>iPhone 4G 出来之前，注定会有更多强大，快速，激动人心的新设备来挑战智能手机的巅峰 : 3GS 。</p>
+</blockquote>
+<p><a href="https://ift.tt/2tpSyH7">2019 创业回顾</a></p>
+<blockquote>
+<p>2019 公司人数 +1 -1，最后是四个人。还是蛮多人知道会惊讶一下，你们只有四个人？两个运营，加一个全能工程师，加我（还有两只猫）。</p>
+</blockquote>
+<p><a href="https://diygod.me/2019/">2019 我做了什么</a></p>
+<blockquote>
+<p>虽然维护的项目有保持健康的成长，但没有做什么新东西 2020 打算投入更多的时间在开源项目上，不再怠惰于现有项目的日常维护，而是做一些新东西，（可能）有 DPlayer 重构、Telegram Bot 平台、RSS 客户端等</p>
+</blockquote>
+<p><a href="https://ift.tt/30fNiC1">刘慈欣：中国变成民主体制会是人间地狱</a></p>
+<blockquote>
+<p>断章取义通常有危险。但刘慈欣在接受《纽约客》采访时的这几段话已经刻板八股到了 caricature 的程度，断章与否其实没有任何区别了。采访是樊嘉扬做的，所以说的应该是普通话。</p>
+</blockquote>
+<p><a href="https://ift.tt/39jANbM">钉钉 Dark Mode 设计</a></p>
+<blockquote>
+<p>微信号 AlibabaDesign 功能介绍 这是一个充满魅力的组织，是一群疯狂热爱用户体验的家伙；这里有国际音乐家、有舞者、游戏玩家、摄影师以及各个领域的爱好者；我们坚信，创新、设计、技术和客户第一的价值观粘合在一起，</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try-Electron记实（五）— 异步的一些东西 ：Promise 对象]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang</id>
@@ -396,69 +451,6 @@ vue create .
 $ cnpm start
 </code></pre>
 <figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosd3plcj312f0u0q87.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 06]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-06</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-06">
-        </link>
-        <updated>2019-12-29T09:37:24.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2wAchiQ">真正提高效率：自定义你的 Touch Bar</a></p>
-<blockquote>
-<p>自 2016 年 Touch Bar 在 MacBook Pro 上问世以来，对其最大的争议就是它并不能很好地提高用户的工作效率：Touch Bar 提供的大多数功能很容易使用键盘快捷键来实现，并且有些时候使用快捷键更加方便、符合直觉。</p>
-</blockquote>
-<p><a href="https://ift.tt/2vu6nnM">聊聊 GFW 如何封杀 Resilio Sync（BTSync）？以及如何【免翻墙】继续使用？</a></p>
-<blockquote>
-<p>★引子    　　最近一个多月，有好些读者抱怨 Resilio Sync（原名叫做“BitTorrent Sync”，简称“BTsync”）无法正常使用。所以俺一直打算写一篇来谈谈这个事情。顺便也分享一下：如何继续【免翻墙】使用 Resilio Sync。</p>
-</blockquote>
-<p><a href="https://ift.tt/2shD7uP">第四范式戴文渊：机器写出1000万条以上规则，就超越了专家</a></p>
-<blockquote>
-<p>为你推送和解读最前沿、最有料的科技创投资讯</p>
-</blockquote>
-<p><a href="https://ift.tt/2vFF0pi">培养大脑记忆力的第二次机会：「记忆神器」Anki 使用详解</a></p>
-<blockquote>
-<p>阅读建议：本文基于 Anki for Mac，可以在 Anki 中国 上免费下载；本文涉及众多新概念，建议在 Anki 中国 下载一个共享的牌组，尝试文中提到的一些概念和操作。</p>
-</blockquote>
-<p><a href="https://ift.tt/2pe0Uxy">用 Ai Search 和 Drafts 实现 Alfred 的搜索体验</a></p>
-<blockquote>
-<p>这篇文章主要探讨的是一种结合 Ai Search 和 Drafts 进行快速网站搜索的方法。Ai Search 扮演的是一个搜索引擎库，而 Drafts 是提高调用搜索引擎效率的工具。文中方法的关键点在于键盘输入，搜索内容和选择搜索引擎的操作都可以</p>
-</blockquote>
-<p><a href="https://ift.tt/2mkTdDj">强大如怪物：顶级文本处理应用 Drafts 4 深度评测</a></p>
-<blockquote>
-<p>虽然此前购买过旧版本的 Drafts，但在拿到手上最新版本的 Drafts 4 前，其实我并没有怎么好好使用它。倒并不是因为它不好用，而是因为它和另外一款相似的应用 Editorial 在我心里一直是两款「怪物」一般的文本输入类应用。因</p>
-</blockquote>
-<p><a href="https://ift.tt/2OUQnnl">这个在线协作工具，什么都能画</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/2Qj3I80">企业微信3.0发布会，都讲了些什么？</a></p>
-<blockquote>
-<p>通过邹叔在现场拍的两张照片来看，企业微信最重要的改变就是：从拉新变成沉淀，从2B工具变成了帮助企业2C的工具。</p>
-</blockquote>
-<p><a href="https://ift.tt/2QiXkhb">克洛普的圣诞致辞：作为最幸运的红军人，这是骄傲难忘的一年</a></p>
-<blockquote>
-<p>编者按：如往年一样，克洛普在圣诞节当天于利物浦官方发表了他的圣诞致辞，让我们来看看渣叔如何向大家分享这一年的感受。</p>
-</blockquote>
-<p><a href="https://ift.tt/2PxUqpP">Mac Pro 2019 Teardown</a></p>
-<blockquote>
-<p>Teardown of the reinvented 2019 Mac Pro, which returns to a properly repairable design that happens to not grate cheese very well. Performed December 2019.</p>
-</blockquote>
-<p><a href="https://ift.tt/34AWiSX">2019：“暗黑”的一年</a></p>
-<blockquote>
-<p>昨天，微信开放了安卓平台 7.0.10 版本的内部测试。安装之后，可以看到的一些小变化是多选信息、查看图片、视频等界面的微调。</p>
-</blockquote>
-<p><a href="https://ift.tt/2S4U9fC">Flypig | 自媒体时代的 “非虚构” 人生</a></p>
-<blockquote>
-<p>微信号 DAZED_CHINA 功能介绍 《DAZED》杂志官方公众号。微博：@DazedChina 。 Hannah——舌尖后缩，轻触上颚然后落下，H-a-n-n-a-h，倒过来念也是如此。这是电影《降临》（Arrival, 2017）中语言学家Louise女儿的名字，故事的结尾又回到了</p>
-</blockquote>
-<p><a href="https://ift.tt/2LP8oB7">杭州</a></p>
-<blockquote>
-<p>杭州是上海边上的一座城，说它“美丽”不足以形容它的风貌，说它“最适合人居住”又会让人误以为它房价便宜，所以很难找出一个词来概括它。</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
