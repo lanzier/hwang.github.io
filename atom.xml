@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-17T05:32:31.222Z</updated>
+    <updated>2020-02-17T05:34:40.762Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -12,7 +12,7 @@
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
+        <title type="html"><![CDATA[Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong">
         </link>
@@ -70,7 +70,7 @@ dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`]]></title>
+        <title type="html"><![CDATA[Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import">
         </link>
@@ -174,7 +174,7 @@ var component = new Component() // =&gt; &quot;hello from mixin!&quot;
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（五）— 异步的一些东西 ：Promise 对象]]></title>
+        <title type="html"><![CDATA[Try Electron记实（五）— 异步的一些东西 ：Promise 对象]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang">
         </link>
@@ -225,7 +225,7 @@ promise.then(function(value) {
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（四）— 项目中添加路由]]></title>
+        <title type="html"><![CDATA[Try Electron记实（四）— 项目中添加路由]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you">
         </link>
@@ -265,7 +265,7 @@ new Vue({
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（三）— ant-design-vue 主题的修改]]></title>
+        <title type="html"><![CDATA[Try Electron记实（三）— ant-design-vue 主题的修改]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai">
         </link>
@@ -302,7 +302,7 @@ module.exports = {
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Try-Electron记实（二）— ant-design 的引入、font-awesome 的引入]]></title>
+        <title type="html"><![CDATA[Try Electron记实（二）— ant-design 的引入、font-awesome 的引入]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru</id>
         <link href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru">
         </link>
