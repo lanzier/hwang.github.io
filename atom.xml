@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-17T05:34:40.762Z</updated>
+    <updated>2020-02-17T13:13:36.983Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,50 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 ]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti">
+        </link>
+        <updated>2020-02-17T13:11:50.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>是的，用的啥学啥系列。</p>
+</blockquote>
+<h2 id="传参这是基础了复习复习">传参，这是基础了，复习复习</h2>
+<ul>
+<li>父组件和子组件可以通过 props 获取，父组件发送的形式是用bind(用缩写:)绑定值到子组件身上。然后子组件用属性props接收。</li>
+<li>子组件传值父组件，首先是子组件发送 this.$emit，父组件on监听的方法，然后父组件通过@事件名=获取值的方法。</li>
+<li>兄弟组件一般通过 bus 进行传递，就是建立一个公共区域的组件。</li>
+</ul>
+<h2 id="使用-electron-rebuild-来重新编译-node-模块">使用 electron-rebuild 来重新编译 Node 模块</h2>
+<p>官方文档：<a href="https://www.electronjs.org/docs/tutorial/using-native-node-modules">https://www.electronjs.org/docs/tutorial/using-native-node-modules</a></p>
+<pre><code class="language-js">// 安装electron-rebuild，不需要全局安装
+npm install --save-dev electron-rebuild
+
+//执行命令
+./node_modules/.bin/electron-rebuild
+
+// 在windows下如果上述命令遇到了问题，尝试：
+./node_modules/.bin/electron-rebuild.cmd
+
+</code></pre>
+<h2 id="用-node-的path读到的文件路径在electron-原来是不一样的">用 node 的path，读到的文件路径在electron 原来是不一样的...</h2>
+<p>今天在渲染进程中使用 <code>fs.readSync()</code> ，显然是不正确的。渲染进程的前端开发，项目文件会被webpack打包，自然不能这样用。</p>
+<h3 id="静态资源的引入">静态资源的引入：</h3>
+<blockquote>
+<p>1.静态资源如css,img，js,请放在根目录的static文件夹里，<br>
+因为electron打包后会复制一份static文件夹到dist文件夹中，这样项目引入的静态资源就不会报路径错误了。</p>
+</blockquote>
+<h2 id="electron-获取打包后-可执行文件-的文件路径">electron 获取打包后 可执行文件 的文件路径</h2>
+<p>参考链接：<a href="https://stackoverflow.com/questions/46307797/how-to-get-the-original-path-of-a-portable-electron-app">https://stackoverflow.com/questions/46307797/how-to-get-the-original-path-of-a-portable-electron-app</a></p>
+<ol>
+<li><code>app.getAppPath()</code> 获取文件的路径，例如 <code>c:\desktop\win-ia32-unpacked\resources\app.asar</code></li>
+<li>Node.js 的<code>__dirname</code>，获取的路径： <code>c:\desktop\win-ia32-unpacked\resources\app.asar\dist\electron</code></li>
+<li><code>process.execPath</code> ，获取的路径<code>c:\desktop\win-ia32-unpacked\xxx.exe</code></li>
+<li><code>process.cwd()</code> ， 获取的路径<code>c:\desktop\win-ia32-unpacked</code></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong</id>
@@ -408,16 +452,6 @@ new Vue({
 <p>command+shift+K 批量添加图片</p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[疫情]]></title>
-        <id>https://hwang.top/post/yi-qing-ji-lu</id>
-        <link href="https://hwang.top/post/yi-qing-ji-lu">
-        </link>
-        <updated>2020-02-02T05:43:43.000Z</updated>
-        <content type="html"><![CDATA[<p>2020 这是一段比较难忘的记忆...</p>
-<p>这里不会记录更多，但是在我的 Google Photo 里，记录了一切。</p>
 ]]></content>
     </entry>
 </feed>

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Try Electron记实（二）— ant-design 的引入、font-awesome 的引入 | Hwang&#39;s Blog</title>
+<title>Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题  | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581945194747">
@@ -75,14 +75,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Try Electron记实（二）— ant-design 的引入、font-awesome 的引入
+              Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 
             </h2>
             <div class="post-info">
               <span>
-                2020-02-07
+                2020-02-17
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
                 <a href="https://hwang.top/tag/T7QZcYo5I" class="post-tag">
@@ -100,48 +100,59 @@
             <div class="post-content-wrapper">
               <div class="post-content">
                 <blockquote>
-<p>简单记录一下；<br>
-有一点点的坑是引入 less 的事情，其他都挺顺利的；</p>
+<p>是的，用的啥学啥系列。</p>
 </blockquote>
-<p>ant-design 和 font-awesome 的引入</p>
-<ol>
-<li>引入，在 <code>src/main.js</code> 文件内引入：</li>
-</ol>
-<pre><code class="language-bash">import Vue from 'vue';
-import App from './App.vue';
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.less';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-	【需要的包】
-} from '@fortawesome/free-solid-svg-icons'
+<h2 id="传参这是基础了复习复习">传参，这是基础了，复习复习</h2>
+<ul>
+<li>父组件和子组件可以通过 props 获取，父组件发送的形式是用bind(用缩写:)绑定值到子组件身上。然后子组件用属性props接收。</li>
+<li>子组件传值父组件，首先是子组件发送 this.$emit，父组件on监听的方法，然后父组件通过@事件名=获取值的方法。</li>
+<li>兄弟组件一般通过 bus 进行传递，就是建立一个公共区域的组件。</li>
+</ul>
+<h2 id="使用-electron-rebuild-来重新编译-node-模块">使用 electron-rebuild 来重新编译 Node 模块</h2>
+<p>官方文档：<a href="https://www.electronjs.org/docs/tutorial/using-native-node-modules">https://www.electronjs.org/docs/tutorial/using-native-node-modules</a></p>
+<pre><code class="language-js">// 安装electron-rebuild，不需要全局安装
+npm install --save-dev electron-rebuild
 
-library.add(
-	【需要的包】
-)
- 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+//执行命令
+./node_modules/.bin/electron-rebuild
 
-Vue.config.productionTip = false;
-Vue.use(Antd);
-
-
-new Vue({
-  render: h =&gt; h(App),
-}).$mount('#app')
+// 在windows下如果上述命令遇到了问题，尝试：
+./node_modules/.bin/electron-rebuild.cmd
 
 </code></pre>
-<ol start="2">
-<li>其中，如果需要配置 ant 的主题</li>
+<h2 id="用-node-的path读到的文件路径在electron-原来是不一样的">用 node 的path，读到的文件路径在electron 原来是不一样的...</h2>
+<p>今天在渲染进程中使用 <code>fs.readSync()</code> ，显然是不正确的。渲染进程的前端开发，项目文件会被webpack打包，自然不能这样用。</p>
+<h3 id="静态资源的引入">静态资源的引入：</h3>
+<blockquote>
+<p>1.静态资源如css,img，js,请放在根目录的static文件夹里，<br>
+因为electron打包后会复制一份static文件夹到dist文件夹中，这样项目引入的静态资源就不会报路径错误了。</p>
+</blockquote>
+<h2 id="electron-获取打包后-可执行文件-的文件路径">electron 获取打包后 可执行文件 的文件路径</h2>
+<p>参考链接：<a href="https://stackoverflow.com/questions/46307797/how-to-get-the-original-path-of-a-portable-electron-app">https://stackoverflow.com/questions/46307797/how-to-get-the-original-path-of-a-portable-electron-app</a></p>
+<ol>
+<li><code>app.getAppPath()</code> 获取文件的路径，例如 <code>c:\desktop\win-ia32-unpacked\resources\app.asar</code></li>
+<li>Node.js 的<code>__dirname</code>，获取的路径： <code>c:\desktop\win-ia32-unpacked\resources\app.asar\dist\electron</code></li>
+<li><code>process.execPath</code> ，获取的路径<code>c:\desktop\win-ia32-unpacked\xxx.exe</code></li>
+<li><code>process.cwd()</code> ， 获取的路径<code>c:\desktop\win-ia32-unpacked</code></li>
 </ol>
-<pre><code class="language-bash">	import 'ant-design-vue/dist/antd.less';
-	```
-	使用 less 配置主题。</code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BC%A0%E5%8F%82%E8%BF%99%E6%98%AF%E5%9F%BA%E7%A1%80%E4%BA%86%E5%A4%8D%E4%B9%A0%E5%A4%8D%E4%B9%A0">传参，这是基础了，复习复习</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-electron-rebuild-%E6%9D%A5%E9%87%8D%E6%96%B0%E7%BC%96%E8%AF%91-node-%E6%A8%A1%E5%9D%97">使用 electron-rebuild 来重新编译 Node 模块</a></li>
+<li><a href="#%E7%94%A8-node-%E7%9A%84path%E8%AF%BB%E5%88%B0%E7%9A%84%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E5%9C%A8electron-%E5%8E%9F%E6%9D%A5%E6%98%AF%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84">用 node 的path，读到的文件路径在electron 原来是不一样的...</a>
+<ul>
+<li><a href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%95%E5%85%A5">静态资源的引入：</a></li>
+</ul>
+</li>
+<li><a href="#electron-%E8%8E%B7%E5%8F%96%E6%89%93%E5%8C%85%E5%90%8E-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6-%E7%9A%84%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84">electron 获取打包后 可执行文件 的文件路径</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -150,9 +161,9 @@ new Vue({
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao">
+            <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong">
               <h3 class="post-title">
-                关于团队协作工具的理想形态，这是我从飞书上得到的思考
+                Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中
               </h3>
             </a>
           </div>
