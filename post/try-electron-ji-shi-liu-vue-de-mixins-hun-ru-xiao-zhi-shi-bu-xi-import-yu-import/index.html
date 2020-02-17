@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>疫情 | Hwang&#39;s Blog</title>
+<title>Try-Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}` | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581917537815">
@@ -75,26 +75,83 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              疫情
+              Try-Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`
             </h2>
             <div class="post-info">
               <span>
-                2020-02-02
+                2020-02-17
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
+              
+                <a href="https://hwang.top/tag/T7QZcYo5I" class="post-tag">
+                  # Electron
+                </a>
+              
+                <a href="https://hwang.top/tag/GzNQWOV_0s" class="post-tag">
+                  # Vue.js
+                </a>
               
             </div>
             
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>2020 这是一段比较难忘的记忆...</p>
-<p>这里不会记录更多，但是在我的 Google Photo 里，记录了一切。</p>
+                <h2 id="mixins-混用">Mixins 混用</h2>
+<p>**用途：**用于Vue组件中，可复用的功能；一个 Mixins 对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混入”该组件中。</p>
+<p><strong>理解：</strong> 利用 Vue 的方式实现组件的功能的自由服用与组合。</p>
+<p>官方示例，一看就懂：</p>
+<pre><code class="language-js">// 定义一个混入对象
+var myMixin = {
+  created: function () {
+    this.hello()
+  },
+  methods: {
+    hello: function () {
+      console.log('hello from mixin!')
+    }
+  }
+}
+
+// 定义一个使用混入对象的组件
+var Component = Vue.extend({
+  mixins: [myMixin]
+})
+
+var component = new Component() // =&gt; &quot;hello from mixin!&quot;
+</code></pre>
+<p>**一些特性： **</p>
+<ul>
+<li>同名的情况：
+<ul>
+<li>同名的钩子函数将被合并为一个数组，因此会被一起调用。Mixins 的钩子将先被执行；</li>
+<li>值为对象的选项，例如 methods、components 和 directives，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。<br>
+更多信息：<a href="https://cn.vuejs.org/v2/guide/mixins.html">https://cn.vuejs.org/v2/guide/mixins.html</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="小知识补习import-与-import">小知识补习：<code>import</code> 与 <code>import {}</code></h2>
+<p>一般情况下，其实是需要 <code>import {} from xxx</code>，但是一般的模块都会设置：</p>
+<blockquote>
+<p>至于为什么能 <code>import lodash from 'lodash'</code><br>
+是因为，为了给用户提供方便，<code>lodash</code> 用到<code>export default</code> 命令，为模块指定了默认输出，让<code>lodash</code> 的使用者不用阅读文档就能用任意自定义模块名加载 <code>lodash</code>。<br>
+所以，<code>import lodash from 'lodash'</code> 这句，你喜欢的话也能写成<code>import _ from 'lodash'</code><br>
+其次，<code>from` 后面的</code> 'lodash' 为什么不是 <code>node_modules</code>里 <code>lodash</code>的完整路径呢<code>（ / node_modules / .bin / lodash ）</code>，是因为你的项目里 npm 帮忙做了配置呀，自动帮它加了前缀，一般补全模块路径是这事是npm帮做的。</p>
+</blockquote>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#mixins-%E6%B7%B7%E7%94%A8">Mixins 混用</a></li>
+<li><a href="#%E5%B0%8F%E7%9F%A5%E8%AF%86%E8%A1%A5%E4%B9%A0import-%E4%B8%8E-import">小知识补习：<code>import</code> 与 <code>import {}</code></a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -103,9 +160,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/try-electron-ji-shi-yi">
+            <a href="https://hwang.top/post/hwang-reading-list-new-07">
               <h3 class="post-title">
-                Try-Electron 记实（一）
+                Hwang Reading List - New 07
               </h3>
             </a>
           </div>

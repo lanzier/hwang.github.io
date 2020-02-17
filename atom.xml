@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-11T09:35:53.915Z</updated>
+    <updated>2020-02-17T05:32:31.222Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -11,6 +11,113 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Try-Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong">
+        </link>
+        <updated>2020-02-17T05:31:27.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>是的，用的啥学啥系列。<br>
+参考：<a href="https://www.jianshu.com/p/873512cdbd0f">https://www.jianshu.com/p/873512cdbd0f</a></p>
+</blockquote>
+<p>首先，ant-design 是提供了 <code>a-upload</code> 组件，用于上传的，但是不幸的是，前端一般是拿不到真实的本机路径的。所以简单考虑后，决定直接写一个通过 Electron API 的方法的上传框。</p>
+<h2 id="vuejs-里面怎么做">Vue.js 里面怎么做</h2>
+<h3 id="1-涉及的时间-dragenter-dragover-drop-事件">1. 涉及的时间 dragenter、dragover、drop 事件</h3>
+<blockquote>
+<p>当把文件拖动到浏览器的拖动区域时，会触发三种事件：<br>
+文件第一次进入拖动区时，触发 dragenter 事件<br>
+文件在拖动区来回拖拽时，不断触发 dragover 事件<br>
+文件已经在拖动区，并松开鼠标时，触发 drop 事件<br>
+实现拖动上传，我们只需要关心 drop 事件。不过另外两个事件也需要监听，目的是阻止浏览器默认行为。如果不阻止，那么把文件拖到浏览器时，浏览器就会自动下载这个文件（默认行为），drop 事件触发不出来。<br>
+所以要做的就是阻止默认的事件。需要再 mounted 挂载后处理。（有点不懂，mounted 不是加载完了吗？ Vue 不推荐直接操作 DOM 元素，是不是可以直接用 v-on 绑定到 methods 里面。）</p>
+</blockquote>
+<p>接着就是再 methods 对象中写函数。具体参见文章，写的比较清楚，包括进度条如何实现都有的。</p>
+<h3 id="2-具体到-electron-中">2. 具体到 Electron 中</h3>
+<p>在electron 中：</p>
+<blockquote>
+<p>为了让用户能够通过HTML5的file API直接操作本地文件，DOM的File接口提供了对本地文件的抽象。Electron在File接口中增加了一个path属性，它是文件在系统中的真实路径。</p>
+</blockquote>
+<p>而这个 path 属性就是我需要的。<br>
+其中，methods：</p>
+<pre><code class="language-js">  methods: {
+    onDrag: function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    },
+    onDrop: function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      let file = e.dataTransfer.files[0];
+      console.log('path-&gt;', file.path);
+
+    }
+  }
+</code></pre>
+<p>这里，使用   e.stopPropagation()、e.preventDefault()来阻止默认的行为。<br>
+我也直接在<code>&lt;div&gt;</code> 标签上使用 v-on 进行绑定，并没有什么问题。</p>
+<h3 id="3-利用-ipcrenderer-模块打开文件选择框">3. 利用 ipcRenderer  模块，打开文件选择框</h3>
+<p>我选择的方式是使用 remote 模块直接打开文件夹，代码片段如下：</p>
+<pre><code class="language-js">const dialog = require('electron').remote.dialog;
+dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
+	if (file.filePaths.length === 1) {
+		this.fileSelected = file.filePaths[0];
+		console.log(this.fileSelected);
+	} 
+})
+</code></pre>
+<p>使用 <code>remote.dialog</code>，调用主进程内的 electron 模块，获取文件路径即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Try-Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import">
+        </link>
+        <updated>2020-02-17T05:29:03.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="mixins-混用">Mixins 混用</h2>
+<p>**用途：**用于Vue组件中，可复用的功能；一个 Mixins 对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混入”该组件中。</p>
+<p><strong>理解：</strong> 利用 Vue 的方式实现组件的功能的自由服用与组合。</p>
+<p>官方示例，一看就懂：</p>
+<pre><code class="language-js">// 定义一个混入对象
+var myMixin = {
+  created: function () {
+    this.hello()
+  },
+  methods: {
+    hello: function () {
+      console.log('hello from mixin!')
+    }
+  }
+}
+
+// 定义一个使用混入对象的组件
+var Component = Vue.extend({
+  mixins: [myMixin]
+})
+
+var component = new Component() // =&gt; &quot;hello from mixin!&quot;
+</code></pre>
+<p>**一些特性： **</p>
+<ul>
+<li>同名的情况：
+<ul>
+<li>同名的钩子函数将被合并为一个数组，因此会被一起调用。Mixins 的钩子将先被执行；</li>
+<li>值为对象的选项，例如 methods、components 和 directives，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。<br>
+更多信息：<a href="https://cn.vuejs.org/v2/guide/mixins.html">https://cn.vuejs.org/v2/guide/mixins.html</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="小知识补习import-与-import">小知识补习：<code>import</code> 与 <code>import {}</code></h2>
+<p>一般情况下，其实是需要 <code>import {} from xxx</code>，但是一般的模块都会设置：</p>
+<blockquote>
+<p>至于为什么能 <code>import lodash from 'lodash'</code><br>
+是因为，为了给用户提供方便，<code>lodash</code> 用到<code>export default</code> 命令，为模块指定了默认输出，让<code>lodash</code> 的使用者不用阅读文档就能用任意自定义模块名加载 <code>lodash</code>。<br>
+所以，<code>import lodash from 'lodash'</code> 这句，你喜欢的话也能写成<code>import _ from 'lodash'</code><br>
+其次，<code>from` 后面的</code> 'lodash' 为什么不是 <code>node_modules</code>里 <code>lodash</code>的完整路径呢<code>（ / node_modules / .bin / lodash ）</code>，是因为你的项目里 npm 帮忙做了配置呀，自动帮它加了前缀，一般补全模块路径是这事是npm帮做的。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 07]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-07</id>
@@ -311,146 +418,6 @@ new Vue({
         <updated>2020-02-02T05:43:43.000Z</updated>
         <content type="html"><![CDATA[<p>2020 这是一段比较难忘的记忆...</p>
 <p>这里不会记录更多，但是在我的 Google Photo 里，记录了一切。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try-Electron 记实（一）]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-yi</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-yi">
-        </link>
-        <updated>2020-01-21T05:24:27.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>记录一下第一次正式开始写一个 Electron 应用；<br>
-基础比较差，几乎没什么基础...</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>记录一下第一次正式开始写一个 Electron 应用；<br>
-基础比较差，几乎没什么基础...</p>
-</blockquote>
-<!-- more -->
-<h2 id="开始一个-electron-项目">开始一个 Electron 项目</h2>
-<ol>
-<li>使用 Vue-cli 3.0 以上，进行项目初始化；</li>
-</ol>
-<pre><code class="language-bash">vue add electron-builder 
-vue create .
-</code></pre>
-<ol start="2">
-<li>运行这个项目：</li>
-</ol>
-<pre><code class="language-bash">yarn electron:serve
-</code></pre>
-<p>Done</p>
-<h2 id="npm-常用参数记录">npm 常用参数记录</h2>
-<p>发现对 npm 的一些参数还不是很熟悉，记录一下；</p>
-<ul>
-<li>基本的安装/卸载：<pre><code class="language-bash">npm install/uninstall [packegename]
-</code></pre>
-其中安装这一部分，可选参数：
-<ul>
-<li><code>--save</code>or <code>-S</code>：添加到<strong>生产环境</strong>的依赖 ;</li>
-<li><code>--save-dev</code> or <code>-D</code>：添加到<strong>开发环境</strong>；</li>
-<li><code>--save-optional</code> or <code>-O</code>： 添加到可选环境配置 （好像不太常用）；</li>
-<li><code>--save-exact</code> or  <code>-E</code> ：指定版本安装模块；</li>
-</ul>
-</li>
-<li>开始项目时一次性安装依赖包<pre><code class="language-bash">npm install
-</code></pre>
-可选参数：
-<ul>
-<li><code>--global</code> or <code>-g</code> 全局安装；</li>
-</ul>
-</li>
-<li>卸载部分可选参数与安装时相同
-<ul>
-<li>卸载还可以使用：<code>npm remove</code> 、<code>npm rm</code>、<code>npm r</code> 、 <code>npm un</code> 、 <code>npm unlink</code>(unlink 与 link 好像是测试的)</li>
-</ul>
-</li>
-<li><code>npm list/ll/la/ls</code> 列出已安装的模块；</li>
-<li><code>npm outdated</code> 列出需要更新的模块；</li>
-<li><code>npm update</code> 更新依赖包，可选参数 <code>--global</code> or <code>-g</code></li>
-<li><code>npm root</code> 查看命令的绝对路径；</li>
-<li><code>npm config</code> npm 的配配置</li>
-</ul>
-<h2 id="yarn-常用参数记录">yarn 常用参数记录</h2>
-<p>顺便整理一下 yarn 的一些参数；yarn 用于固定开发中包的各种版本；</p>
-<ul>
-<li><code>yarn add</code><pre><code class="language-bash">	yarn add [package]@[version]
-	```
-	添加到生产环境中
-- `--dev` or `-D` 安装到生产环境中
-- 不常用的：`yarn global add &lt;package...&gt; ` 全局安装；
-</code></pre>
-</li>
-<li><code>yarn cache</code>
-<ul>
-<li><code>yarn cache dir</code>： 列出当前的 yarn 全局缓存在哪里</li>
-<li><code>yarn cache list --pattern &lt;pattern&gt;</code> 列出匹配指定模式的已缓存的包。</li>
-<li><code>yarn cache clean</code> 清除全局缓存。</li>
-</ul>
-</li>
-<li><code>yarn list</code>
-<ul>
-<li>默认情况下，所有包和它们的依赖会被显示。</li>
-<li><code>--depth</code> 深度参数</li>
-</ul>
-</li>
-<li><code>yarn remove</code>
-<ul>
-<li>默认移除依赖，并更新 package.json 和 yarn.lock</li>
-</ul>
-</li>
-<li><code>yarn run</code>
-<ul>
-<li>运行定义的动作</li>
-</ul>
-</li>
-<li><code>yarn upgrade</code>
-<ul>
-<li>更新升级包；</li>
-</ul>
-</li>
-<li><code>yarn global bin</code>
-<ul>
-<li>查看全局安装的目录</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Electron 初试]]></title>
-        <id>https://hwang.top/post/election-chu-shi</id>
-        <link href="https://hwang.top/post/election-chu-shi">
-        </link>
-        <updated>2020-01-05T06:51:33.000Z</updated>
-        <summary type="html"><![CDATA[<p>之前做的上传工具，打算用 electron 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>之前做的上传工具，打算用 electron 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
-<!-- more -->
-<p>选择前 electron 主要是我司目前是有前端开发的，这样后续产品也能接上。</p>
-<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosj37orj30qc0zcmz2.jpg" alt="" loading="lazy"></figure>
-<h2 id="试试-election-的样例">试试 election 的样例</h2>
-<p>clone了项目后，直接用：</p>
-<pre><code class="language-bash">$ npm install
-</code></pre>
-<p>结果中间就卡住了，没有继续下载；大概是卡在 core-js 这个包的安装时候。</p>
-<p>强制停止，然后删除 node-model 文件，再修改代理：</p>
-<pre><code class="language-bash">$ npm config set registry https://registry.npm.taobao.org
-</code></pre>
-<p>然后在安装：</p>
-<pre><code class="language-bash">$ npm install
-</code></pre>
-<p>嘿，好家伙，直接显示两个包没下。看了下还是 core-js；所以就只能用 cnpm 了。<br>
-下载 cnpm：</p>
-<pre><code class="language-bash">$ npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre>
-<p>然后使用 cnpm：</p>
-<pre><code class="language-bash">$ cnpm install
-$ cnpm start
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1galosd3plcj312f0u0q87.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>

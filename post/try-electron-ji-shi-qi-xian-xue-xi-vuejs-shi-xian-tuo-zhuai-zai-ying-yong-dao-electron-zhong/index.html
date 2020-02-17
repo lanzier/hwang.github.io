@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Try-Electron 记实（一） | Hwang&#39;s Blog</title>
+<title>Try-Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中 | Hwang&#39;s Blog</title>
 <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
 这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1581917537815">
@@ -75,14 +75,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Try-Electron 记实（一）
+              Try-Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中
             </h2>
             <div class="post-info">
               <span>
-                2020-01-21
+                2020-02-17
               </span>
               <span>
-                2 min read
+                3 min read
               </span>
               
                 <a href="https://hwang.top/tag/T7QZcYo5I" class="post-tag">
@@ -100,107 +100,68 @@
             <div class="post-content-wrapper">
               <div class="post-content">
                 <blockquote>
-<p>记录一下第一次正式开始写一个 Electron 应用；<br>
-基础比较差，几乎没什么基础...</p>
+<p>是的，用的啥学啥系列。<br>
+参考：<a href="https://www.jianshu.com/p/873512cdbd0f">https://www.jianshu.com/p/873512cdbd0f</a></p>
 </blockquote>
-<!-- more -->
-<h2 id="开始一个-electron-项目">开始一个 Electron 项目</h2>
-<ol>
-<li>使用 Vue-cli 3.0 以上，进行项目初始化；</li>
-</ol>
-<pre><code class="language-bash">vue add electron-builder 
-vue create .
+<p>首先，ant-design 是提供了 <code>a-upload</code> 组件，用于上传的，但是不幸的是，前端一般是拿不到真实的本机路径的。所以简单考虑后，决定直接写一个通过 Electron API 的方法的上传框。</p>
+<h2 id="vuejs-里面怎么做">Vue.js 里面怎么做</h2>
+<h3 id="1-涉及的时间-dragenter-dragover-drop-事件">1. 涉及的时间 dragenter、dragover、drop 事件</h3>
+<blockquote>
+<p>当把文件拖动到浏览器的拖动区域时，会触发三种事件：<br>
+文件第一次进入拖动区时，触发 dragenter 事件<br>
+文件在拖动区来回拖拽时，不断触发 dragover 事件<br>
+文件已经在拖动区，并松开鼠标时，触发 drop 事件<br>
+实现拖动上传，我们只需要关心 drop 事件。不过另外两个事件也需要监听，目的是阻止浏览器默认行为。如果不阻止，那么把文件拖到浏览器时，浏览器就会自动下载这个文件（默认行为），drop 事件触发不出来。<br>
+所以要做的就是阻止默认的事件。需要再 mounted 挂载后处理。（有点不懂，mounted 不是加载完了吗？ Vue 不推荐直接操作 DOM 元素，是不是可以直接用 v-on 绑定到 methods 里面。）</p>
+</blockquote>
+<p>接着就是再 methods 对象中写函数。具体参见文章，写的比较清楚，包括进度条如何实现都有的。</p>
+<h3 id="2-具体到-electron-中">2. 具体到 Electron 中</h3>
+<p>在electron 中：</p>
+<blockquote>
+<p>为了让用户能够通过HTML5的file API直接操作本地文件，DOM的File接口提供了对本地文件的抽象。Electron在File接口中增加了一个path属性，它是文件在系统中的真实路径。</p>
+</blockquote>
+<p>而这个 path 属性就是我需要的。<br>
+其中，methods：</p>
+<pre><code class="language-js">  methods: {
+    onDrag: function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    },
+    onDrop: function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      let file = e.dataTransfer.files[0];
+      console.log('path-&gt;', file.path);
+
+    }
+  }
 </code></pre>
-<ol start="2">
-<li>运行这个项目：</li>
-</ol>
-<pre><code class="language-bash">yarn electron:serve
+<p>这里，使用   e.stopPropagation()、e.preventDefault()来阻止默认的行为。<br>
+我也直接在<code>&lt;div&gt;</code> 标签上使用 v-on 进行绑定，并没有什么问题。</p>
+<h3 id="3-利用-ipcrenderer-模块打开文件选择框">3. 利用 ipcRenderer  模块，打开文件选择框</h3>
+<p>我选择的方式是使用 remote 模块直接打开文件夹，代码片段如下：</p>
+<pre><code class="language-js">const dialog = require('electron').remote.dialog;
+dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
+	if (file.filePaths.length === 1) {
+		this.fileSelected = file.filePaths[0];
+		console.log(this.fileSelected);
+	} 
+})
 </code></pre>
-<p>Done</p>
-<h2 id="npm-常用参数记录">npm 常用参数记录</h2>
-<p>发现对 npm 的一些参数还不是很熟悉，记录一下；</p>
-<ul>
-<li>基本的安装/卸载：<pre><code class="language-bash">npm install/uninstall [packegename]
-</code></pre>
-其中安装这一部分，可选参数：
-<ul>
-<li><code>--save</code>or <code>-S</code>：添加到<strong>生产环境</strong>的依赖 ;</li>
-<li><code>--save-dev</code> or <code>-D</code>：添加到<strong>开发环境</strong>；</li>
-<li><code>--save-optional</code> or <code>-O</code>： 添加到可选环境配置 （好像不太常用）；</li>
-<li><code>--save-exact</code> or  <code>-E</code> ：指定版本安装模块；</li>
-</ul>
-</li>
-<li>开始项目时一次性安装依赖包<pre><code class="language-bash">npm install
-</code></pre>
-可选参数：
-<ul>
-<li><code>--global</code> or <code>-g</code> 全局安装；</li>
-</ul>
-</li>
-<li>卸载部分可选参数与安装时相同
-<ul>
-<li>卸载还可以使用：<code>npm remove</code> 、<code>npm rm</code>、<code>npm r</code> 、 <code>npm un</code> 、 <code>npm unlink</code>(unlink 与 link 好像是测试的)</li>
-</ul>
-</li>
-<li><code>npm list/ll/la/ls</code> 列出已安装的模块；</li>
-<li><code>npm outdated</code> 列出需要更新的模块；</li>
-<li><code>npm update</code> 更新依赖包，可选参数 <code>--global</code> or <code>-g</code></li>
-<li><code>npm root</code> 查看命令的绝对路径；</li>
-<li><code>npm config</code> npm 的配配置</li>
-</ul>
-<h2 id="yarn-常用参数记录">yarn 常用参数记录</h2>
-<p>顺便整理一下 yarn 的一些参数；yarn 用于固定开发中包的各种版本；</p>
-<ul>
-<li><code>yarn add</code><pre><code class="language-bash">	yarn add [package]@[version]
-	```
-	添加到生产环境中
-- `--dev` or `-D` 安装到生产环境中
-- 不常用的：`yarn global add &lt;package...&gt; ` 全局安装；
-</code></pre>
-</li>
-<li><code>yarn cache</code>
-<ul>
-<li><code>yarn cache dir</code>： 列出当前的 yarn 全局缓存在哪里</li>
-<li><code>yarn cache list --pattern &lt;pattern&gt;</code> 列出匹配指定模式的已缓存的包。</li>
-<li><code>yarn cache clean</code> 清除全局缓存。</li>
-</ul>
-</li>
-<li><code>yarn list</code>
-<ul>
-<li>默认情况下，所有包和它们的依赖会被显示。</li>
-<li><code>--depth</code> 深度参数</li>
-</ul>
-</li>
-<li><code>yarn remove</code>
-<ul>
-<li>默认移除依赖，并更新 package.json 和 yarn.lock</li>
-</ul>
-</li>
-<li><code>yarn run</code>
-<ul>
-<li>运行定义的动作</li>
-</ul>
-</li>
-<li><code>yarn upgrade</code>
-<ul>
-<li>更新升级包；</li>
-</ul>
-</li>
-<li><code>yarn global bin</code>
-<ul>
-<li>查看全局安装的目录</li>
-</ul>
-</li>
-</ul>
+<p>使用 <code>remote.dialog</code>，调用主进程内的 electron 模块，获取文件路径即可。</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%BC%80%E5%A7%8B%E4%B8%80%E4%B8%AA-electron-%E9%A1%B9%E7%9B%AE">开始一个 Electron 项目</a></li>
-<li><a href="#npm-%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E8%AE%B0%E5%BD%95">npm 常用参数记录</a></li>
-<li><a href="#yarn-%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E8%AE%B0%E5%BD%95">yarn 常用参数记录</a></li>
+<li><a href="#vuejs-%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E5%81%9A">Vue.js 里面怎么做</a>
+<ul>
+<li><a href="#1-%E6%B6%89%E5%8F%8A%E7%9A%84%E6%97%B6%E9%97%B4-dragenter-dragover-drop-%E4%BA%8B%E4%BB%B6">1. 涉及的时间 dragenter、dragover、drop 事件</a></li>
+<li><a href="#2-%E5%85%B7%E4%BD%93%E5%88%B0-electron-%E4%B8%AD">2. 具体到 Electron 中</a></li>
+<li><a href="#3-%E5%88%A9%E7%94%A8-ipcrenderer-%E6%A8%A1%E5%9D%97%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9%E6%A1%86">3. 利用 ipcRenderer  模块，打开文件选择框</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -213,9 +174,9 @@ vue create .
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/election-chu-shi">
+            <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import">
               <h3 class="post-title">
-                Electron 初试
+                Try-Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`
               </h3>
             </a>
           </div>
