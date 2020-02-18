@@ -1,0 +1,345 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Try Nest.js —— 学习笔记 | Hwang&#39;s Blog</title>
+<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582024358668">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582024358668" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    欢迎来到 Hwang 的小博客 <br>
+这显然不是什么技术博客，也不会有太多值得期待的干货。<br>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Try Nest.js —— 学习笔记
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-18
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/3mZUDuta5" class="post-tag">
+                  # nest.js
+                </a>
+              
+                <a href="https://hwang.top/tag/1N18kZg6K_" class="post-tag">
+                  # Node.js
+                </a>
+              
+                <a href="https://hwang.top/tag/L-iS2h6gS" class="post-tag">
+                  # javaScript
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/try-nestjs-xue-xi-bi-ji.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>用到啥学啥系列<br>
+其实也是为了另一个小项目写一个小后端。<br>
+推荐参考 -&gt; 去这看吧，非常清楚： <a href="https://tc9011.com/2019/07/14/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/">https://tc9011.com/2019/07/14/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/</a></p>
+</blockquote>
+<!-- more -->
+<h2 id="1-什么是-nestjs">1. 什么是 Nest.js</h2>
+<blockquote>
+<p>Nestjs 是 Node 渐进式框架，底层默认使用 express（可以通过 Adapter 转换到 fastify），可以使用 express 或者 fastify 所有中间件，完美支持 TypeScript。熟悉 Spring 和 Angular 的同学可以很快上手 Nestjs，它大量借鉴了 Spring 和 Angular 中的设计思想</p>
+</blockquote>
+<h2 id="2-核心理念">2. 核心理念</h2>
+<ul>
+<li>
+<p>Dependency Injection (DI)，一般翻译为 依赖注入；</p>
+</li>
+<li>
+<p>Inversion of Control （loC），控制反转：主要用降低代码耦合度；相当于是用一个中转的函数来抽象原来类里面需要的变量，这样就实现了耦合度的降低。</p>
+<ul>
+<li>在 nest.js中，通过 <code>@Injectable()</code> 装饰器来像 loC 容易注册。</li>
+</ul>
+</li>
+<li>
+<p>模块化：Module 把controller、service和pipe等打包成内聚的功能块，每个模块聚焦于一个特性区域、业务领域、工作流或通用工具。</p>
+<ul>
+<li>每个属于这个模块的controller、service等都需要在这个模块中注册，如果需要引入其他模块或者第三方模块，需要将它注册到imports，通过exports可以将相应的service、module等共享出去。</li>
+<li>在 nest.js中，通过 <code>@Module()</code> 装饰器来像声明一个模块；</li>
+</ul>
+</li>
+<li>
+<p>AOP, 面向切片编程（Aspect Oriented Programming），主要有这么几个切片：</p>
+<ul>
+<li>Middlewares：中间键</li>
+<li>Guards：Guards 和前端路由中的路由守卫一样，主要确定请求是否应该由路由处理程序处理。通过守卫可以知道将要执行的上下文信息，所以和 middleware 相比，守卫可以确切知道将要执行什么。</li>
+<li>Interceptors (在流被操纵之前)：可以给每一个需要执行的函数绑定，拦截器将在该函数执行前或者执行后运行。可以转换函数执行后返回的结果，扩展基本函数行为等。</li>
+<li>Pipes：是具有 @Injectable() 装饰器的类，并实现了 PipeTransform 接口。通常 pipe 用来将输入数据转换为所需的输出或者处理验证。
+<ul>
+<li>参数验证等内容</li>
+</ul>
+</li>
+<li>Interceptors (在流被操纵之后)</li>
+<li>Exception filters (如果发现任何异常)：内置的 Exception filters 负责处理整个应用程序中的所有抛出的异常，也是 Nestjs 中在 response 前，最后能捕获异常的机会。</li>
+</ul>
+</li>
+<li>
+<p>DTO：数据访问对象简称DTO（Data Transfer Object）， 是一组需要跨进程或网络边界传输的聚合数据的简单容器。它不应该包含业务逻辑，并将其行为限制为诸如内部一致性检查和基本验证之类的活动。</p>
+</li>
+<li>
+<p>ORM ：是”对象-关系映射”（Object/Relational Mapping） 的缩写，通过实例对象的语法，完成关系型数据库的操作。通过 ORM 就可以用面向对象编程的方式去操作关系型数据库。</p>
+<ul>
+<li>在 Java 中，常用 DAO （Data Access Object， 数据访问对象）层来进行各种数据库的操作。DAO 主要作用是分离业务层与数据层，避免业务层与数据层耦合。</li>
+<li>Nest.js 中可以使用 typeORM 为 DAO 层，支持MySQL / MariaDB / Postgres / CockroachDB / SQLite / Microsoft SQL Server / Oracle / MongoDB / NoSQL。在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表（或使用 MongoDB 时的集合）的类，通过@Entity()来标记，具体的：</li>
+</ul>
+<pre><code class="language-js">import {Entity, PrimaryGeneratedColumn, Column} from &quot;typeorm&quot;;
+
+@Entity()
+export class User {
+
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    firstName: string;
+
+    @Column()
+    lastName: string;
+
+    @Column()
+    age: number;
+
+}
+//上面代码将创建以下数据库表：
+
+//+-------------+--------------+----------------------------+
+//|                          user                           |
+//+-------------+--------------+----------------------------+
+//| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+//| firstName   | varchar(255) |                            |
+//| lastName    | varchar(255) |                            |
+//| isActive    | boolean      |                            |
+//+-------------+--------------+----------------------------+
+//	使用 @InjectRepository() 修饰器注入 对应的Repository，就可以在这个Repository对象上进行数据库的一些操作。
+
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from './user.entity';
+
+@Injectable()
+export class UserService {
+  constructor(
+	@InjectRepository(User)
+	private readonly userRepository: Repository&lt;User&gt;,
+  ) {}
+
+  async findAll(): Promise&lt;User[]&gt; {
+	return await this.userRepository.find();
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="3-上手-hello-world">3. 上手 hello world ！</h2>
+<p>安装：</p>
+<pre><code class="language-js">$ npm install -g @nestjs/cli
+$ nest new my-awesome-app 
+</code></pre>
+<p>启动</p>
+<pre><code class="language-js">$ npm start
+</code></pre>
+<p>自此，通过<code>http://loaclhost:3000</code> 就可以看到 Hello World 了。</p>
+<h2 id="4-controller">4. Controller</h2>
+<p>在 Nest.js 中 Contraller 负责处理传入的请求，并调用对应的 service 完成处理，返回对客户端的响应，可以通过 CLI 来创建 controller：</p>
+<pre><code>$nest g co [your-cintroller]
+</code></pre>
+<p>这时候，CLI 会自动生成 controller 文件，并且把 controller 注册到对应的 module 中。<br>
+并且和其他一些 node 框架不一样，Nestjs 路由不是集中式管理，而是分散在 controller 中，通过@controller()中声明的（可选）前缀和请求装饰器中指定的任何路由来确定的。</p>
+<pre><code class="language-js">import { Controller, Get } from '@nestjs/common';
+
+import { CatsService } from './cats.service';
+
+@Controller('cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string): string {
+    return this.catsService.getCat();
+  }
+}
+</code></pre>
+<p>上面这段代码中，通过 Get 请求去请求http://localhost:3000/cats/1就会调用findOne方法。如果需要调整，添加前缀，可以在 main.ts 中使用 GlobalPrefix 设置：</p>
+<pre><code class="language-js">import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.setGlobalPrefix('api/v1');
+  await app.listen(3000);
+}
+bootstrap();
+</code></pre>
+<h2 id="5-service">5. Service</h2>
+<p>在 Nest.js 中，controller 就像是调用 service 的指挥者，把对应的请求分发到相应的 service 中去处理。在 controller 中，我们注意到，在构造函数中注入了<strong>CatsService</strong>实例，来调用对应 service 中的方法。这就是 Nest.js 中依赖注入的注入方式 — 构造函数注入。service 可以看做夹在 controller 和 model 之间的一层，在 service 调用 DAO （在 Nestjs 中是各种 ORM 工具或者自己封装的 DAO 层）实现数据库的访问，进行数据的处理整合。</p>
+<pre><code>import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class CatsService {
+  getCat(id: string): string {
+    return `This action returns ${id} cats`;
+  }
+}
+</code></pre>
+<p>上面代码中通过@Injectable()定义了一个 service，这样你就可以在其他 controller 或者 service 中注入这个 service。</p>
+<hr>
+<p>参考：<a href="https://tc9011.com/2019/07/22/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%BA%8C%EF%BC%89/">https://tc9011.com/2019/07/22/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%BA%8C%EF%BC%89/</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-nestjs">1. 什么是 Nest.js</a></li>
+<li><a href="#2-%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5">2. 核心理念</a></li>
+<li><a href="#3-%E4%B8%8A%E6%89%8B-hello-world">3. 上手 hello world ！</a></li>
+<li><a href="#4-controller">4. Controller</a></li>
+<li><a href="#5-service">5. Service</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti">
+              <h3 class="post-title">
+                Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
