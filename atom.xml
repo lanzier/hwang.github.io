@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-26T07:22:48.232Z</updated>
+    <updated>2020-02-26T07:27:16.334Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
     <subtitle>&lt;div&gt;
-欢迎来到 Hwang 的小博客 &lt;br&gt;
-&lt;p style=&quot;font-size:10px&quot;&gt;
+欢迎来到 Hwang 的小博客 
+&lt;div style=&quot;font-size:10px&quot;&gt;
 📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  &lt;br&gt;
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝&lt;br&gt;
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 &lt;br&gt;
 这里显然不是什么技术博客，也不会有太多值得期待的干货。
-&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;</subtitle>
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Oracle 的 循环实例]]></title>
-        <id>https://hwang.top/post/oracle-de-xun-huan-shi-li</id>
-        <link href="https://hwang.top/post/oracle-de-xun-huan-shi-li">
+        <id>https://hwang.top/post/oracle-de-xun-huan-shi-li/</id>
+        <link href="https://hwang.top/post/oracle-de-xun-huan-shi-li/">
         </link>
         <updated>2020-02-26T07:15:53.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -95,8 +95,8 @@ END
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Nest.js —— 学习笔记]]></title>
-        <id>https://hwang.top/post/try-nestjs-xue-xi-bi-ji</id>
-        <link href="https://hwang.top/post/try-nestjs-xue-xi-bi-ji">
+        <id>https://hwang.top/post/try-nestjs-xue-xi-bi-ji/</id>
+        <link href="https://hwang.top/post/try-nestjs-xue-xi-bi-ji/">
         </link>
         <updated>2020-02-18T11:11:49.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -265,8 +265,8 @@ export class CatsService {
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 ]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti">
+        <id>https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/">
         </link>
         <updated>2020-02-17T13:11:50.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -309,8 +309,8 @@ npm install --save-dev electron-rebuild
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong">
+        <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/">
         </link>
         <updated>2020-02-17T05:31:27.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -367,8 +367,8 @@ dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import">
+        <id>https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/">
         </link>
         <updated>2020-02-17T05:29:03.000Z</updated>
         <content type="html"><![CDATA[<h2 id="mixins-混用">Mixins 混用</h2>
@@ -416,8 +416,8 @@ var component = new Component() // =&gt; &quot;hello from mixin!&quot;
     </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 07]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-07</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-07">
+        <id>https://hwang.top/post/hwang-reading-list-new-07/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-07/">
         </link>
         <updated>2020-02-11T09:33:54.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -471,8 +471,8 @@ var component = new Component() // =&gt; &quot;hello from mixin!&quot;
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（五）— 异步的一些东西 ：Promise 对象]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang">
+        <id>https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/">
         </link>
         <updated>2020-02-11T09:29:46.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -522,8 +522,8 @@ promise.then(function(value) {
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（四）— 项目中添加路由]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you">
+        <id>https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/">
         </link>
         <updated>2020-02-11T09:29:32.000Z</updated>
         <content type="html"><![CDATA[<p>通过路由的方式进行侧边导航栏的切换：</p>
@@ -562,8 +562,8 @@ new Vue({
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（三）— ant-design-vue 主题的修改]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai">
+        <id>https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/">
         </link>
         <updated>2020-02-10T08:07:32.000Z</updated>
         <content type="html"><![CDATA[<p>官方文档描述：</p>
@@ -599,8 +599,8 @@ module.exports = {
     </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（二）— ant-design 的引入、font-awesome 的引入]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru">
+        <id>https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/">
         </link>
         <updated>2020-02-07T10:47:45.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
