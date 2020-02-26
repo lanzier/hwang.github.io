@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    
+                <meta charset="utf-8" />
+<title>
+    Posts | Hwang&#39;s Blog
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<link rel="stylesheet" href="https://hwang.top/styles/main.css" />
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/atelier-estuary-dark.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+
+                    
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://hwang.top">
+                    Hwang&#39;s Blog
+                </a>
+            </div>
+
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">
+                        首页
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        归档
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        标签
+                    </a>
+                    
+                    <a class="menu-item" href="/post/about">
+                        关于
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+            <form id="gridea-search-form" data-update="1582703957220" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+            </form>
+        </div>
+    </nav>
+
+    
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://hwang.top">
+                            Hwang&#39;s Blog
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1582703957220" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
+
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="/">
+                            首页
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            归档
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            标签
+                        </a>
+                        
+                        <a class="menu-item" href="/post/about">
+                            关于
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
+
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
+
+    }
+</script>
+            <div class="post-main">
+                <div class="post-list">
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+    
+        
+                
+                    
+                        
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/oracle-de-xun-huan-shi-li/">
+                                                <h2 class="post-title">
+                                                    Oracle 的 循环实例
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-26</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/TnrvUOUag/">
+          oracle
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/oracle-de-xun-huan-shi-li/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-nestjs-xue-xi-bi-ji/">
+                                                <h2 class="post-title">
+                                                    Try Nest.js —— 学习笔记
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>用到啥学啥系列<br>
+其实也是为了另一个小项目写一个小后端。<br>
+推荐参考 -&gt; 去这看吧，非常清楚： <a href="https://tc9011.com/2019/07/14/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/">https://tc9011.com/2019/07/14/nestjs%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/</a></p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-18</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/3mZUDuta5/">
+          nest.js
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/1N18kZg6K_/">
+          Node.js
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/L-iS2h6gS/">
+          javaScript
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-nestjs-xue-xi-bi-ji/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-nestjs-xue-xi-bi-ji.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-17</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-17</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-17</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-07/">
+                                                <h2 class="post-title">
+                                                    Hwang Reading List - New 07
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-11</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-07/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-06.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（五）— 异步的一些东西 ：Promise 对象
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-11</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（四）— 项目中添加路由
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-11</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（三）— ant-design-vue 主题的修改
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-10</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/">
+                                                <h2 class="post-title">
+                                                    Try Electron记实（二）— ant-design 的引入、font-awesome 的引入
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-07</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/">
+                                                <h2 class="post-title">
+                                                    关于团队协作工具的理想形态，这是我从飞书上得到的思考
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
+<ol>
+<li>沟通记录混乱：用过微信的大家都懂。</li>
+</ol>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-05</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian/">
+                                                <h2 class="post-title">
+                                                    figma 的一些快捷键
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-05</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/yi-qing-ji-lu/">
+                                                <h2 class="post-title">
+                                                    疫情
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-02</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-yi/">
+                                                <h2 class="post-title">
+                                                    Try Electron 记实（一）
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>记录一下第一次正式开始写一个 Electron 应用；<br>
+基础比较差，几乎没什么基础...</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-01-21</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/T7QZcYo5I/">
+          Electron
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/try-electron-ji-shi-yi/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/election-chu-shi/">
+                                                <h2 class="post-title">
+                                                    Electron 初试
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>之前做的上传工具，打算用 electron 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-01-05</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/election-chu-shi/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-06/">
+                                                <h2 class="post-title">
+                                                    Hwang Reading List - New 06
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-29</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/lV404AuaF/">
+          阅读清单
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-06/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-06.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-05/">
+                                                <h2 class="post-title">
+                                                    Hwang Reading List - New 05
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>最近真就没怎么更新博客...<br>
+注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-22</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/lV404AuaF/">
+          阅读清单
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-05/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-05.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/">
+                                                <h2 class="post-title">
+                                                    树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-02</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi/">
+                                                <h2 class="post-title">
+                                                    Docker-compose 的使用（一）
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-02</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/wJNvGSVZG/">
+          docker
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-04/">
+                                                <h2 class="post-title">
+                                                    Hwang Reading List - New 04
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-17</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/lV404AuaF/">
+          阅读清单
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-04/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-04.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/">
+                                                <h2 class="post-title">
+                                                    划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-11</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/w0VIrv_ivr/">
+          数据Seminar
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/_SDeCkYG4/">
+          推文
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi/">
+                                                <h2 class="post-title">
+                                                    PySide2/PyQt 在 Windows 中添加对高分屏的支持
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>Qt 当中有一个类是 QSize，用于标识组件的尺寸，那么是不是应该能够做到自适应高分屏呢？</p>
+<p>本着大胆猜测小心求证的心态，去网上看来一圈。许多教程都是让你获取当前分辨率，然后再设置界面缩放的。这么做也不是不行，但是总感觉不应该是这样的。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-05</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/pyside2pyqt-zai-windows-zhong-tian-jia-dui-gao-fen-ping-de-zhi-chi.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang/">
+                                                <h2 class="post-title">
+                                                    为公众号撰稿—如何精准检索我们公众号的文章
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>2019.11.03<br>
+为刘老师准备的一篇小教程</p>
+</blockquote>
+<p>在「刘西川文献阅读与写作」的运营中，我们常常在后台收到这样的留言：</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-03</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/PtaUFx3_w/">
+          文献阅读与写作
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/YpqBw4qDP3/">
+          公众号
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/wei-gong-zhong-hao-zhuan-gao-ru-he-jing-zhun-jian-suo-wo-men-gong-zhong-hao-de-wen-zhang.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/">
+                                                <h2 class="post-title">
+                                                    划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-03</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/w0VIrv_ivr/">
+          数据Seminar
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-03/">
+                                                <h2 class="post-title">
+                                                    Hwang Reading List - New 03
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-30</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-reading-list-new-03/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-03.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/">
+                                                <h2 class="post-title">
+                                                    STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
+<p><code>pip install cx_Oracle</code> 即可安装。</p>
+<h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-30</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/TnrvUOUag/">
+          oracle
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/suo-xue-jie-hui-you-suo-yong-yi-ge-hou-tai-yun-ying-xiao-bian-ji-de-he-ci-zhu-he-liu-xi-chuan-yue-du-xie-zuo-ke-gong-zhong-hao-guan-zhu-ren-shu-tu-po-10000-ren/">
+                                                <h2 class="post-title">
+                                                    所学皆会有所用，一个后台运营小编辑的贺词———祝贺「刘西川阅读写作课」公众号关注人数突破 10000 人
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>本文是应刘老师邀请写的。<br>
+属实是太久没写了，生疏了。<br>
+还好有刘老师修改，不然真是惨不忍睹了。<br>
+刚写完，给女朋友改，她都破口大骂 “写的什么垃圾”。 🌚</p>
+</blockquote>
+<p>从零到一（万）经历了不平凡的过程，零是开始，10000是被初步的认可。祝贺“刘西川阅读写作课”微信公众号关注人数，突破10000人，完成了从零到一（万）的重要一步。二零一八年 四月，该号正式上线，开启了它的不易之旅。我也有幸参与到这个“旅程”之中，作为一名后台人员，我负责将刘西川老师的文章排布到公众号上，并制作推送给大家。各位阅读的早期文章，都是由我这个小编排版的。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-28</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/PtaUFx3_w/">
+          文献阅读与写作
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/YpqBw4qDP3/">
+          公众号
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/">
+                                                <h2 class="post-title">
+                                                     STQT 查询工具 Oracle 相关记录
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-25</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/TnrvUOUag/">
+          oracle
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/IH3pegZIE4/">
+          数据库
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/">
+                                                <h2 class="post-title">
+                                                    在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-23</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/c9N8A6XHq/">
+          Vscode
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/">
+                                                <h2 class="post-title">
+                                                    Docker 的入门「指北」
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>本文以发布于少数派：https://beta.sspai.com/post/56893<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新世界。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-07</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/wJNvGSVZG/">
+          docker
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2/">
+                                                <h2 class="post-title">
+                                                    Hwang 的低质阅读单 New 2
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-06</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/lV404AuaF/">
+          阅读清单
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-2.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/">
+                                                <h2 class="post-title">
+                                                    Qt for Python 的小Tips —— 外部加载 QSS
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-06</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/">
+                                                <h2 class="post-title">
+                                                    Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-06</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/procreate-lian-xi/">
+                                                <h2 class="post-title">
+                                                    Procreate 练习
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-01</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/g2adRFEWZ/">
+          Procreate
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/BLN0D-FhXX/">
+          手绘
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/TtJ7rX0oHB/">
+          设计
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/procreate-lian-xi/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/procreate-lian-xi.PNG')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/update-liao-yi-xia-figma-de-feng-mian/">
+                                                <h2 class="post-title">
+                                                    Update 了一下 figma 的封面
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-09-30</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/jr-IKFXF3/">
+          figma
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu/">
+                                                <h2 class="post-title">
+                                                    一个用了 3 个月 PyQt 的人，在学 Vue.js 基础
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-09-30</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/L-iS2h6gS/">
+          javaScript
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/GzNQWOV_0s/">
+          Vue.js
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/yi-ge-yong-liao-3-ge-yue-pyqt-de-ren-zai-xue-vuejs-ji-chu.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv/">
+                                                <h2 class="post-title">
+                                                    Python 的虚拟环境管理  virtualenv &amp; pyenv
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>pyenv : 用于Python版本管理。<br>
+virtualenv ：用于构建按项目的虚拟环境。<br>
+pyenv-virtualenv  ： pyenv 的插件，用于构建项目的虚拟环境。</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-09-29</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-de-xu-ni-huan-jing-guan-li-virtualenv-and-pyenv.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1/">
+                                                <h2 class="post-title">
+                                                    Hwang 的低质阅读单 New 1
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-09-27</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/lV404AuaF/">
+          阅读清单
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-1.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/">
+                                                <h2 class="post-title">
+                                                     用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels 
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-07-16</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/oEltlpWF3/">
+          Python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/w0VIrv_ivr/">
+          数据Seminar
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao/">
+                                                <h2 class="post-title">
+                                                    如何 在 Windows 的共享文件夹中创建文件图标
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <p>Windows 系统中可以通过右键文件夹属性的方式创建文件夹图标。然而，在共享文件夹中并不能直接创建。</p>
+<p>🎬 <a href="https://www.youtube.com/watch?v=oFHkWfXbxYo">Apply an Icon to a Folder on a NetWork Drive </a><br>
+视频中演示了一种相对曲折的方法在共享文件夹中，创建带有图标的文件夹。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-07-11</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/j34-s4KVO/">
+          windows sever
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong/">
+                                                <h2 class="post-title">
+                                                    SQL 的一些内容
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <h2 id="mysql-累计求和">MySQL 累计求和</h2>
+<pre><code class="language-sql">SET @csum := 0;
+SELECT ADCODE, NAME, (@csum := @csum + ADCODE) AS CUMSUM
+FROM all_location_data LIMIT 20;
+</code></pre>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-07</span>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/sql-de-yi-xie-nei-rong/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/sql-de-yi-xie-nei-rong.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men/">
+                                                <h2 class="post-title">
+                                                    Python Pexpect 库的简单入门
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>2019.03.26<br>
+Hwang<br>
+参考：<br>
+1.<a href="https://www.jianshu.com/p/cfd163200d12">https://www.jianshu.com/p/cfd163200d12</a><br>
+2.<a href="https://blog.csdn.net/Cloud_Strife0/article/details/82217494">https://blog.csdn.net/Cloud_Strife0/article/details/82217494</a></p>
+</blockquote>
+<h2 id="1-pexpect-是什么">1. Pexpect  是什么</h2>
+<blockquote>
+<p>pexpect 是 Python 语言的类 Expect 实现。<br>
+而 expect 主要用于模拟人机对话，简单地说就是可以使用正则匹配捕捉系统的提问（ssh登录需要输入密码等），并且根据捕捉到的提问进行不同的操作。<br>
+例子：</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-26</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/">
+                                                <h2 class="post-title">
+                                                    去思考，去理解，去猜测，《xxx快速入门》指北 
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-15</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu/">
+                                                <h2 class="post-title">
+                                                    Ubuntu 配置VNC服务
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-06</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/Y9CkN5Vmc/">
+          运维
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/z-knS_tQFQ/">
+          ubuntu
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/ubuntu-pei-zhi-vnc-fu-wu/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ubuntu-pei-zhi-vnc-fu-wu.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/2018-wo-de-zhu-ping/">
+                                                <h2 class="post-title">
+                                                    2018 - 我的主屏
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <figure data-type="image" tabindex="1"><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyja5mmnd3j30u01no4fr.jpg" alt="" loading="lazy"></figure>
+<p>2018年，对我来说变化太多了。首先总结一下自己手机的软件使用。</p>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-17</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/12clIzX9i/">
+          我
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu/">
+                                                <h2 class="post-title">
+                                                    Qt for Python 学习 —— 看看别人的项目
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <blockquote>
+<p>picpong 一个PyQt 写的图床应用；</p>
+<p>项目地址：https://github.com/shuoGG1239/PicPong</p>
+</blockquote>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-07</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/GY_B5UX_b/">
+          qt for python
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/qt-for-python-xue-xi-kan-kan-bie-ren-de-xiang-mu.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/ml-python-shi-xian-ols/">
+                                                <h2 class="post-title">
+                                                    ML - Python 实现 OLS
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-10</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/LgCVVhtVr/">
+          ML
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/ml-python-shi-xian-ols/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ml-python-shi-xian-ols.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/ml-python-ling-hui-gui/">
+                                                <h2 class="post-title">
+                                                    ML- Python 岭回归
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-24</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/LgCVVhtVr/">
+          ML
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/ml-python-ling-hui-gui/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ml-python-ling-hui-gui.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/">
+                                                <h2 class="post-title">
+                                                    Kepler.gl 不需要一行代码！玩转酷炫的数据地图
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-23</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/_SDeCkYG4/">
+          推文
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/2sFfDcJmEB/">
+          教程
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/">
+                                                <h2 class="post-title">
+                                                    《会读才会写》的读书笔记——利用标签来整理阅读内容
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-20</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/U5JBc5Fg2/">
+          读书笔记
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/AMJH5xgec/">
+          少数派
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/CjydnGrXlu/">
+          长文
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian/">
+                                                <h2 class="post-title">
+                                                    ML - Python LASSO 算法实现
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                <pre><code class="language-python">import itertools
+from math import exp
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy import *</code></pre>
+
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-13</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/LgCVVhtVr/">
+          ML
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/Zf-hLAESr/">
+          python
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                            <a href="https://hwang.top/post/ml-python-lasso-suan-fa-shi-xian/">
+    <div class="feature-container" style="background-image: url('https://hwang.top/post-images/ml-python-lasso-suan-fa-shi-xian.png')">
+    </div>
+  </a>
+                                            
+                                    </section>
+                                    
+                                        
+                                            
+                            
+                                
+                                    <section class="post-item">
+                                        <div class="content">
+                                            <a href="https://hwang.top/post/2017-kai-shi-de-shu-zi-sheng-huo/">
+                                                <h2 class="post-title">
+                                                     2017 开始的「数字生活」
+                                                </h2>
+                                            </a>
+                                            <div class="post-abstract">
+                                                
+                                            </div>
+                                            <div class="post-info">
+                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2018-02-14</span>
+                                                
+                                                    <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        <a href="https://hwang.top/tag/vQatgkH8I/">
+          草稿
+          
+          ,
+          
+        </a>
+        
+        <a href="https://hwang.top/tag/j1lxDfKfoY/">
+          未完成
+          
+        </a>
+        
+      </span>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+                                    </section>
+                                    
+                                        
+                                            
+                </div>
+            </div>
+    </div>
+    
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                
+                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+                            
+                                    <div style="width:300px;margin:0 auto; padding:0px 0;">
+                                        <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                                            <img src="https://yanxuan.nosdn.127.net/b610ced5ac6a0e25cf6edf5606c69775.png" style="float:left;">
+                                            <p id="icpinfo" style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p>
+                                        </a>
+                                    </div>
+                                    
+                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+                                        Hwang&#39;s Blog &copy;Copyright
+                                            <script>
+                                                var date = new Date();
+                                                document.write("" + date.getFullYear());
+                                            </script>
+                                            | Powered by
+                                            <a href="" target="_blank">
+                                                
+                                            </a>
+            </div>
+            <div id="update" style="display:none;">
+                
+            </div>
+            
+                    <script>
+                        var pat = '';
+                        
+                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
+                    </script>
+        </footer>
+        
+                <script>
+                    
+                    
+                    
+                    var icp = document.getElementById('icpinfo');
+                    icp.innerText = "";
+                    
+                    getStar();
+                    hljs.initHighlighting();
+                    console.clear();
+                    
+                    var newDate = new Date();
+                    newDate.setTime(1582703957220);
+                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
+                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+                </script>
+                
+</body>
+
+</html>

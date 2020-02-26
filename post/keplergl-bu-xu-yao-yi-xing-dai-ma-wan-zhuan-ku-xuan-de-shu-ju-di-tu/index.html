@@ -1,117 +1,178 @@
+<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kepler.gl 不需要一行代码！玩转酷炫的数据地图 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582702496166">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://hwang.top/styles/main.css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582702496166" alt="">
-  </a>
-  <h1 class="site-title">
+<title>
     Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<link rel="stylesheet" href="https://hwang.top/styles/main.css" />
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/atelier-estuary-dark.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Kepler.gl 不需要一行代码！玩转酷炫的数据地图
-            </h2>
-            <div class="post-info">
-              <span>
-                2018-07-23
-              </span>
-              <span>
-                10 min read
-              </span>
-              
-                <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-                  # 少数派
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://hwang.top">
+                    Hwang&#39;s Blog
                 </a>
-              
-                <a href="https://hwang.top/tag/_SDeCkYG4/" class="post-tag">
-                  # 推文
-                </a>
-              
-                <a href="https://hwang.top/tag/2sFfDcJmEB/" class="post-tag">
-                  # 教程
-                </a>
-              
-                <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-                  # 长文
-                </a>
-              
             </div>
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>本文以及发布在 少数派：https://beta.sspai.com/post/55655</p>
+
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">
+                        首页
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        归档
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        标签
+                    </a>
+                    
+                    <a class="menu-item" href="/post/about">
+                        关于
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+            <form id="gridea-search-form" data-update="1582703957220" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+            </form>
+        </div>
+    </nav>
+
+    
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://hwang.top">
+                            Hwang&#39;s Blog
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1582703957220" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
+
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="/">
+                            首页
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            归档
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            标签
+                        </a>
+                        
+                        <a class="menu-item" href="/post/about">
+                            关于
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
+
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
+
+    }
+</script>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                Kepler.gl 不需要一行代码！玩转酷炫的数据地图
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            Hwang's Blog
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2018-07-23</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">9.9
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">2636</a></span>
+                                        
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://hwang.top/tag/AMJH5xgec/">少数派</a>
+                                
+                                <a href="https://hwang.top/tag/_SDeCkYG4/">推文</a>
+                                
+                                <a href="https://hwang.top/tag/2sFfDcJmEB/">教程</a>
+                                
+                                <a href="https://hwang.top/tag/CjydnGrXlu/">长文</a>
+                                
+                            </span>
+                                            
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <p>本文以及发布在 少数派：https://beta.sspai.com/post/55655</p>
 <p>在处理数据的过程中，如何“优雅”的展示这些数据一直是一个重要的技巧。而为基于地理坐标为数据打点更是一个重要的技能。在过去，我们的常见的做法是通过诸如 Stata、R、或者是 Python 这些工具来进行这一步的。而这些方法无一例外，都需要对一定的编程技巧。此次我们介绍的数据可视化工具，<strong>可以让你不需要任何编程基础，即可实现数据地图的可视化！</strong></p>
 <h2 id="简介">简介</h2>
 <blockquote>
@@ -302,110 +363,135 @@ Base map （底层地图）：就是最底层地图样式。有4种样式可选�
 </ol>
 </section>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8">使用</a>
-<ul>
-<li><a href="#%E4%B8%80-%E8%AE%BF%E9%97%AE-keplergl">一、访问 Kepler.gl</a></li>
-<li><a href="#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE">二、添加数据</a>
-<ul>
-<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">支持的数据类型</a>
-<ul>
-<li><a href="#1-%E5%85%B3%E4%BA%8E-csv-%E6%96%87%E4%BB%B6">1. 关于 CSV 文件</a></li>
-<li><a href="#2-%E5%85%B3%E4%BA%8E-json-%E6%96%87%E4%BB%B6">2. 关于 JSON 文件</a></li>
-<li><a href="#2-%E5%85%B3%E4%BA%8E-geojson-%E6%96%87%E4%BB%B6">2. 关于 GeoJSON 文件</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BD%BF%E7%94%A8-sample-data-%E6%9D%A5%E5%AD%A6%E4%B9%A0">使用 sample data 来学习</a></li>
-<li><a href="#%E7%BC%96%E8%BE%91%E6%95%B0%E6%8D%AE%E5%9C%B0%E5%9B%BE">编辑数据地图</a></li>
-<li><a href="#%E5%B7%A5%E5%85%B7%E6%A0%8F">工具栏</a></li>
-<li><a href="#layers-%E7%9A%84%E8%AE%BE%E7%BD%AE">Layers 的设置</a></li>
-<li><a href="#filters">Filters</a></li>
-<li><a href="#interactions">Interactions</a></li>
-<li><a href="#base-map">Base map</a><br>
-*
-<ul>
-<li><a href="#%E5%B0%8Ftips-%E5%9C%B0%E5%9B%BE%E7%BB%8F%E7%BA%AC%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E7%9A%84%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%E6%9F%A5%E6%89%BEhttpapimapbaiducomlbsapigetpointindexhtml-%E4%B9%9F%E5%8F%AF%E9%80%9A%E8%BF%87%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEapi-%E8%8E%B7%E5%BE%97%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF">小tips： 地图经纬度信息，可以通过百度地图的这个网址查找：http://api.map.baidu.com/lbsapi/getpoint/index.html。也可通过百度地图api 获得相关信息。</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                        </div>
+                        
+                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/&sharesource=qzone&title=Kepler.gl 不需要一行代码！玩转酷炫的数据地图&pics=https://hwang.top/images/avatar.png?v=1582703957220&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/&sharesource=weibo&title=Kepler.gl 不需要一行代码！玩转酷炫的数据地图 + " - " + &pic="https://hwang.top/images/avatar.png?v=1582703957220 "><i class="fa fa-weibo "></i></a>
 
-              </div>
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://hwang.top/tag/AMJH5xgec/">#
+                    少数派
+                        </a>
+                        
+                        <a href="https://hwang.top/tag/_SDeCkYG4/">#
+                    推文
+                        </a>
+                        
+                        <a href="https://hwang.top/tag/2sFfDcJmEB/">#
+                    教程
+                        </a>
+                        
+                        <a href="https://hwang.top/tag/CjydnGrXlu/">#
+                    长文
+                        </a>
+                        
+                            
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                        <a class="prev" rel="prev" href="https://hwang.top/post/ml-python-ling-hui-gui/">
+                                                                                            ML- Python 岭回归
+                                                                                        </a>
+                                                                                        
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/">
+                                                                                                    《会读才会写》的读书笔记——利用标签来整理阅读内容
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
+                </div>
+                
             </div>
-          </article>
+    </div>
+    </div>
+    </div>
+    
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                
+                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+                            
+                                    <div style="width:300px;margin:0 auto; padding:0px 0;">
+                                        <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                                            <img src="https://yanxuan.nosdn.127.net/b610ced5ac6a0e25cf6edf5606c69775.png" style="float:left;">
+                                            <p id="icpinfo" style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p>
+                                        </a>
+                                    </div>
+                                    
+                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+                                        Hwang&#39;s Blog &copy;Copyright
+                                            <script>
+                                                var date = new Date();
+                                                document.write("" + date.getFullYear());
+                                            </script>
+                                            | Powered by
+                                            <a href="" target="_blank">
+                                                
+                                            </a>
+            </div>
+            <div id="update" style="display:none;">
+                
+            </div>
+            
+                    <script>
+                        var pat = '';
+                        
+                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
+                    </script>
+        </footer>
+        
+                <script>
+                    
+                    
+                    
+                    var icp = document.getElementById('icpinfo');
+                    icp.innerText = "";
+                    
+                    getStar();
+                    hljs.initHighlighting();
+                    console.clear();
+                    
+                    var newDate = new Date();
+                    newDate.setTime(1582703957220);
+                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
+                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+                </script>
+                
         </div>
-
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/">
-              <h3 class="post-title">
-                《会读才会写》的读书笔记——利用标签来整理阅读内容
-              </h3>
-            </a>
-          </div>
-        
-
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
+</body>
 <script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
+    scroll();
 </script>
 
-      </div>
-    </div>
-  </body>
 </html>
