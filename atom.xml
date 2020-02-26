@@ -2,20 +2,97 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-19T06:02:28.954Z</updated>
+    <updated>2020-02-26T07:22:48.232Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
-    <subtitle>欢迎来到 Hwang 的小博客 &lt;br&gt;
+    <subtitle>&lt;div&gt;
+欢迎来到 Hwang 的小博客 &lt;br&gt;
 &lt;p style=&quot;font-size:10px&quot;&gt;
 📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  &lt;br&gt;
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝&lt;br&gt;
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 &lt;br&gt;
 这里显然不是什么技术博客，也不会有太多值得期待的干货。
-&lt;/p&gt;</subtitle>
+&lt;/p&gt;
+&lt;/div&gt;</subtitle>
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Oracle 的 循环实例]]></title>
+        <id>https://hwang.top/post/oracle-de-xun-huan-shi-li</id>
+        <link href="https://hwang.top/post/oracle-de-xun-huan-shi-li">
+        </link>
+        <updated>2020-02-26T07:15:53.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>好久没有整 Oracle 了，最近因为数据库服务器需要腾挪空间，所以这个本来DBA干的事情，又落到了我这个万金油的头上🤦‍♂️。<br>
+折腾了几天，终算是有些明白了... 各种工具链也相对有些熟悉了，还算顺利的把备份做了，用户表删了。数据泵导出、表空间压缩、表空间扩容，都做了一遍，算是有点基础的 DBA 能力了🤦‍♂️...<br>
+本文是写给同事看的 Oracle 循环；</p>
+</blockquote>
+<p>在开始学习循环之前，有以下几个概念，可以先了解：</p>
+<h2 id="1-字符串拼接">1. 字符串拼接</h2>
+<p>我们使用循环，是为了节省我们的代码数量，提高编写SQL的效率，所以首先我们就需要把 SQL 语句作为字符串进行拼接处理。在oracle中，用<code>'字符串'</code>，来表示这是一个字符串，而 拼接字符串：</p>
+<pre><code class="language-sql">'select column '||变量a||' from table;'
+</code></pre>
+<p>通过<code>||</code>（英文输入下，按住shift + 回车键上面那个键打出）来连接变量与字符串，如果变量的值是 <code>column2</code> 那么这个字符串就会是：</p>
+<pre><code class="language-sql">'select column colmn2 from table;'
+</code></pre>
+<p>所以我只需要将一列数据传入，这个字符串就会动态的变化：</p>
+<pre><code class="language-sql">'select column colmn3 from table;'
+'select column colmn4 from table;'
+'select column colmn5 from table;'
+</code></pre>
+<ul>
+<li>注意事项1 ⚠️: 在<code>'</code> 和 <code>||</code> 之间要注意空格的使用，字符串中的空格是有效的，字符串外的空格可能是无效的；</li>
+<li>注意事项2 ⚠️：在字符串内如果想要使用<code>'</code>，那么是通过<code>''</code> 两个单引号表示；</li>
+</ul>
+<h2 id="2显示自己循环的代码以及-执行字符串内的sql代码">2.显示自己循环的代码以及 执行字符串内的sql代码</h2>
+<h3 id="21-显示循环的效果">2.1 显示循环的效果：</h3>
+<p>Oracle 中可以使用 <code>sys.dbms_output.put_line()</code> （括内填入需要显示的内容）的方式来查看代码，<strong>这样方便在编写循环时，更加具体的查看到自己的循环结构。</strong></p>
+<p>在Navicat 中，可以通过 「DBMS 导出」标签看到输出的内容。</p>
+<h3 id="22-执行这个字符串">2.2 执行这个字符串</h3>
+<p>通过<code>EXECUTE IMMEDIATE</code>执行语句</p>
+<ul>
+<li>注意事项3⚠️： 是没有<code>()</code> 的哦。</li>
+</ul>
+<p>具体的关于 <code>EXECUTE IMMEDIATE</code>的用法参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/wang_zhong_cheng/article/details/81202086?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">EXECUTE IMMEDIATE用法小结</a></li>
+</ul>
+<h2 id="3-具体的-for-循环语句">3. 具体的 for 循环语句</h2>
+<p>基本的结构：</p>
+<pre><code class="language-sql">BEGIN
+	for i in 1 .. 10 
+	loop
+		sys.dbms_output_line('循环到数字' || i)
+	end loop;
+END
+</code></pre>
+<p><code>BEGIN ... END</code> : 包裹住这么个 SQL 语句块，说明这段代码按照块来执行；<br>
+<code>for i in 1 .. 10 loop ... end loop</code>: <code>foor</code> 到第一个 <code>loop</code> ,  表示 <code>i</code> 是1开始，一直取到10（<code>..</code> 表示范围），这个区间是闭合的，1和10都能取到，所以这个 i 会以次变成 1、2、3、4、5… 带入到下面的代码中； <code>loop</code> 到 <code>end loop</code> 表示具体的对循环执行的代码；</p>
+<h3 id="实例循环添加数字-依次添加column_201到column_-304的的变量">实例：循环添加数字 —— 依次添加column_201到column_ 304的的变量</h3>
+<pre><code class="language-sql">BEGIN
+	for i in 201 .. 304 
+	loop
+		execute immediate 'select column_|| i || 'form table'
+	end loop;
+END
+</code></pre>
+<p>这样就可以动态的选取了选区了，不过这个语句会有 100 多个结果，实际中肯定不会这种使用：<br>
+下例，为表空间添加237-274的<code>dbf</code>文件：<br>
+<img src="DraggedImage-1.png" alt="" loading="lazy"></p>
+<h3 id="实例循环某个查询到临时表其中的一列">实例：循环某个查询到临时表其中的一列</h3>
+<p>这应该是更加实用的：</p>
+<pre><code class="language-sql">BEGIN
+	for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') 
+	loop
+		execute immediate 'drop table' ||v_cur.user_name|| ' purge';
+	end loop;
+END
+</code></pre>
+<p>首先：<code>for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') loop</code> 表示，<code>v_cur</code> 是后面这个语句的结果，虽然只有一个变量，但它还是一张表，所以在执行语句时 <code>v_cur.user_name</code> 就表示 <code>user_name</code> 这一列，所以会依次去执行<code>drop table</code> 操作。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try Nest.js —— 学习笔记]]></title>
         <id>https://hwang.top/post/try-nestjs-xue-xi-bi-ji</id>
@@ -565,37 +642,6 @@ new Vue({
 <pre><code class="language-bash">	import 'ant-design-vue/dist/antd.less';
 	```
 	使用 less 配置主题。</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于团队协作工具的理想形态，这是我从飞书上得到的思考]]></title>
-        <id>https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao</id>
-        <link href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao">
-        </link>
-        <updated>2020-02-05T08:26:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
-<ol>
-<li>沟通记录混乱：用过微信的大家都懂。</li>
-</ol>
-]]></summary>
-        <content type="html"><![CDATA[<p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
-<ol>
-<li>沟通记录混乱：用过微信的大家都懂。</li>
-</ol>
-<!-- more -->
-<ol start="2">
-<li>
-<p>文件丢失，文件版本混乱：微信并不会负责你的文件存储。</p>
-</li>
-<li>
-<p>共享信息沟通不畅：每当有新人入职时，许多问题需要重复解答。</p>
-</li>
-<li>
-<p>项目管理不畅：各种任务环节很难被监控到。</p>
-</li>
-</ol>
-<p>这些问题频繁出现在前几个月，解决这些问题的任务被安排在了我身上，当时市面上能够选择的产品，主要可以分为「国内系」以及「海外系」。一家企业在日常业务中，普遍需要的，其实就是三大功能，团队沟通、信息资源管理、项目管理。无论是生产、研发还是销售环节，这三大基础需求都是存在的。一家企业根据他所处的领域的不同，企业的组织形式千差万别，对于这「三大基础需求」也是有显著的差异的。</p>
-<p>更多内容前往少数派阅读：https://sspai.com/post/58385</p>
 ]]></content>
     </entry>
 </feed>

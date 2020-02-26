@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oracle 的 循环实例 | Hwang&#39;s Blog</title>
+<meta name="description" content="<div>
+欢迎来到 Hwang 的小博客 <br>
+<p style="font-size:10px">
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。
+</p>
+</div>" />
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582701758690">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hwang.top">
+  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582701758690" alt="">
+  </a>
+  <h1 class="site-title">
+    Hwang&#39;s Blog
+  </h1>
+  <p class="site-description">
+    <div>
+欢迎来到 Hwang 的小博客 <br>
+<p style="font-size:10px">
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。
+</p>
+</div>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Oracle 的 循环实例
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-26
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://hwang.top/tag/TnrvUOUag" class="post-tag">
+                  # oracle
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>好久没有整 Oracle 了，最近因为数据库服务器需要腾挪空间，所以这个本来DBA干的事情，又落到了我这个万金油的头上🤦‍♂️。<br>
+折腾了几天，终算是有些明白了... 各种工具链也相对有些熟悉了，还算顺利的把备份做了，用户表删了。数据泵导出、表空间压缩、表空间扩容，都做了一遍，算是有点基础的 DBA 能力了🤦‍♂️...<br>
+本文是写给同事看的 Oracle 循环；</p>
+</blockquote>
+<p>在开始学习循环之前，有以下几个概念，可以先了解：</p>
+<h2 id="1-字符串拼接">1. 字符串拼接</h2>
+<p>我们使用循环，是为了节省我们的代码数量，提高编写SQL的效率，所以首先我们就需要把 SQL 语句作为字符串进行拼接处理。在oracle中，用<code>'字符串'</code>，来表示这是一个字符串，而 拼接字符串：</p>
+<pre><code class="language-sql">'select column '||变量a||' from table;'
+</code></pre>
+<p>通过<code>||</code>（英文输入下，按住shift + 回车键上面那个键打出）来连接变量与字符串，如果变量的值是 <code>column2</code> 那么这个字符串就会是：</p>
+<pre><code class="language-sql">'select column colmn2 from table;'
+</code></pre>
+<p>所以我只需要将一列数据传入，这个字符串就会动态的变化：</p>
+<pre><code class="language-sql">'select column colmn3 from table;'
+'select column colmn4 from table;'
+'select column colmn5 from table;'
+</code></pre>
+<ul>
+<li>注意事项1 ⚠️: 在<code>'</code> 和 <code>||</code> 之间要注意空格的使用，字符串中的空格是有效的，字符串外的空格可能是无效的；</li>
+<li>注意事项2 ⚠️：在字符串内如果想要使用<code>'</code>，那么是通过<code>''</code> 两个单引号表示；</li>
+</ul>
+<h2 id="2显示自己循环的代码以及-执行字符串内的sql代码">2.显示自己循环的代码以及 执行字符串内的sql代码</h2>
+<h3 id="21-显示循环的效果">2.1 显示循环的效果：</h3>
+<p>Oracle 中可以使用 <code>sys.dbms_output.put_line()</code> （括内填入需要显示的内容）的方式来查看代码，<strong>这样方便在编写循环时，更加具体的查看到自己的循环结构。</strong></p>
+<p>在Navicat 中，可以通过 「DBMS 导出」标签看到输出的内容。</p>
+<h3 id="22-执行这个字符串">2.2 执行这个字符串</h3>
+<p>通过<code>EXECUTE IMMEDIATE</code>执行语句</p>
+<ul>
+<li>注意事项3⚠️： 是没有<code>()</code> 的哦。</li>
+</ul>
+<p>具体的关于 <code>EXECUTE IMMEDIATE</code>的用法参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/wang_zhong_cheng/article/details/81202086?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">EXECUTE IMMEDIATE用法小结</a></li>
+</ul>
+<h2 id="3-具体的-for-循环语句">3. 具体的 for 循环语句</h2>
+<p>基本的结构：</p>
+<pre><code class="language-sql">BEGIN
+	for i in 1 .. 10 
+	loop
+		sys.dbms_output_line('循环到数字' || i)
+	end loop;
+END
+</code></pre>
+<p><code>BEGIN ... END</code> : 包裹住这么个 SQL 语句块，说明这段代码按照块来执行；<br>
+<code>for i in 1 .. 10 loop ... end loop</code>: <code>foor</code> 到第一个 <code>loop</code> ,  表示 <code>i</code> 是1开始，一直取到10（<code>..</code> 表示范围），这个区间是闭合的，1和10都能取到，所以这个 i 会以次变成 1、2、3、4、5… 带入到下面的代码中； <code>loop</code> 到 <code>end loop</code> 表示具体的对循环执行的代码；</p>
+<h3 id="实例循环添加数字-依次添加column_201到column_-304的的变量">实例：循环添加数字 —— 依次添加column_201到column_ 304的的变量</h3>
+<pre><code class="language-sql">BEGIN
+	for i in 201 .. 304 
+	loop
+		execute immediate 'select column_|| i || 'form table'
+	end loop;
+END
+</code></pre>
+<p>这样就可以动态的选取了选区了，不过这个语句会有 100 多个结果，实际中肯定不会这种使用：<br>
+下例，为表空间添加237-274的<code>dbf</code>文件：<br>
+<img src="DraggedImage-1.png" alt="" loading="lazy"></p>
+<h3 id="实例循环某个查询到临时表其中的一列">实例：循环某个查询到临时表其中的一列</h3>
+<p>这应该是更加实用的：</p>
+<pre><code class="language-sql">BEGIN
+	for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') 
+	loop
+		execute immediate 'drop table' ||v_cur.user_name|| ' purge';
+	end loop;
+END
+</code></pre>
+<p>首先：<code>for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') loop</code> 表示，<code>v_cur</code> 是后面这个语句的结果，虽然只有一个变量，但它还是一张表，所以在执行语句时 <code>v_cur.user_name</code> 就表示 <code>user_name</code> 这一列，所以会依次去执行<code>drop table</code> 操作。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">1. 字符串拼接</a></li>
+<li><a href="#2%E6%98%BE%E7%A4%BA%E8%87%AA%E5%B7%B1%E5%BE%AA%E7%8E%AF%E7%9A%84%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%8F%8A-%E6%89%A7%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E7%9A%84sql%E4%BB%A3%E7%A0%81">2.显示自己循环的代码以及 执行字符串内的sql代码</a>
+<ul>
+<li><a href="#21-%E6%98%BE%E7%A4%BA%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%95%88%E6%9E%9C">2.1 显示循环的效果：</a></li>
+<li><a href="#22-%E6%89%A7%E8%A1%8C%E8%BF%99%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2">2.2 执行这个字符串</a></li>
+</ul>
+</li>
+<li><a href="#3-%E5%85%B7%E4%BD%93%E7%9A%84-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">3. 具体的 for 循环语句</a>
+<ul>
+<li><a href="#%E5%AE%9E%E4%BE%8B%E5%BE%AA%E7%8E%AF%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%97-%E4%BE%9D%E6%AC%A1%E6%B7%BB%E5%8A%A0column_201%E5%88%B0column_-304%E7%9A%84%E7%9A%84%E5%8F%98%E9%87%8F">实例：循环添加数字 —— 依次添加column_201到column_ 304的的变量</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B%E5%BE%AA%E7%8E%AF%E6%9F%90%E4%B8%AA%E6%9F%A5%E8%AF%A2%E5%88%B0%E4%B8%B4%E6%97%B6%E8%A1%A8%E5%85%B6%E4%B8%AD%E7%9A%84%E4%B8%80%E5%88%97">实例：循环某个查询到临时表其中的一列</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hwang.top/post/try-nestjs-xue-xi-bi-ji">
+              <h3 class="post-title">
+                Try Nest.js —— 学习笔记
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
