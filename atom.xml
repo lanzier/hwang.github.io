@@ -2,10 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-26T07:28:57.179Z</updated>
+    <updated>2020-02-26T07:30:35.428Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
+    <subtitle>&lt;div&gt;
+欢迎来到 Hwang 的小博客 
+&lt;div style=&quot;font-size:10px&quot;&gt;
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  &lt;br&gt;
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝&lt;br&gt;
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 &lt;br&gt;
+这里显然不是什么技术博客，也不会有太多值得期待的干货。
+&lt;/div&gt;
+&lt;/div&gt;</subtitle>
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
