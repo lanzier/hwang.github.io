@@ -1,389 +1,289 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Electron | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
 这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582704149660">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582704149660" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-    
-  </div>
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Electron
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/">
-        <h2 class="post-title">Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 </h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-17
-        </span>
-        <span>
-          2 min read
-        </span>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Electron
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/">
-        <h2 class="post-title">Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-17
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
+是的，用的啥学啥系列。
+
+传参，这是基础了，复习复习
+
+父组件和子组件可以通过 props 获取，父组件发送的形式是用bind(用缩写:)绑定值到子组件身上。然后子组件用属性props接收。
+子组件传值父组件，首先是子组件发送 this....
       </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/">
-        <h2 class="post-title">Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`</h2>
+      <a href="https://hwang.top/post/try-electron-ji-shi-ba-zu-jian-chuan-can-electron-node-mo-kuai-zhi-chi-wen-ti-wen-jian-lu-jing-wen-ti/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-17
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（八）— 组件传参\ Electron Node 模块支持问题 \文件路径问题 ">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/">
-        <h2 class="post-title">Try Electron记实（五）— 异步的一些东西 ：Promise 对象</h2>
+是的，用的啥学啥系列。
+参考：https://www.jianshu.com/p/873512cdbd0f
+
+首先，ant-design 是提供了 a-upload 组件，用于上传的，但是不幸的是，前端一般是拿不到真实的本机路径的。所以简...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-11
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`
         </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/">
-        <h2 class="post-title">Try Electron记实（四）— 项目中添加路由</h2>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Mixins 混用
+**用途：**用于Vue组件中，可复用的功能；一个 Mixins 对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混入”该组件中。
+理解： 利用 Vue 的方式实现组件的功能的自由服用与组合。
+官...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-11
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（五）— 异步的一些东西 ：Promise 对象
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/">
-        <h2 class="post-title">Try Electron记实（三）— ant-design-vue 主题的修改</h2>
+参考资料：https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
+
+先吐槽，从来没有接触过 Promise 对象相关的东西，只知道 JS 的世界里，异步是一个非...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-wu-yi-bu-de-yi-xie-dong-xi-promise-dui-xiang/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-10
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（五）— 异步的一些东西 ：Promise 对象">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（四）— 项目中添加路由
         </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/">
-        <h2 class="post-title">Try Electron记实（二）— ant-design 的引入、font-awesome 的引入</h2>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        通过路由的方式进行侧边导航栏的切换：
+
+安装 vue-router，并添加到项目中；
+在 main.js 中引入 vue-router 插件；
+
+...
+... //省略其他
+import Router from 'vue-router'
+...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-07
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（四）— 项目中添加路由">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（三）— ant-design-vue 主题的修改
         </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-yi/">
-        <h2 class="post-title">Try Electron 记实（一）</h2>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-10</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        官方文档描述：
+
+在 vue cli 3 中定制主题
+项目根目录下新建文件vue.config.js
+// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+   ...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-san-ant-design-vue-zhu-ti-de-xiu-gai/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-01-21
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（三）— ant-design-vue 主题的修改">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron记实（二）— ant-design 的引入、font-awesome 的引入
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+简单记录一下；
+有一点点的坑是引入 less 的事情，其他都挺顺利的；
+
+ant-design 和 font-awesome 的引入
+
+引入，在 src/main.js 文件内引入：
+
+import Vue from 'vue';
+imp...
+      </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron记实（二）— ant-design 的引入、font-awesome 的引入">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron 记实（一）
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>记录一下第一次正式开始写一个 Electron 应用；<br>
 基础比较差，几乎没什么基础...</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
       </div>
+      <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron 记实（一）">
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
 </html>

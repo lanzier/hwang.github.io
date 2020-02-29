@@ -1,418 +1,263 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Python | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
 这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582704149660">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582704149660" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-    
-  </div>
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Python
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/">
-        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-11-11
-        </span>
-        <span>
-          6 min read
-        </span>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Python
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/w0VIrv_ivr/" class="post-tag">
-            # 数据Seminar
-          </a>
-        
-          <a href="https://hwang.top/tag/_SDeCkYG4/" class="post-tag">
-            # 推文
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png')">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-11-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>经济学的数据来源，一直都是以调查数据和统计数据为主，Python 这门易学易用的语言的出现拓宽了数据来源的边界。 Python  能够通过几行代码就能获取在网络中存在的各种数据，再利用前文《划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点》提到的数据处理的相关知识，能够便捷的结构化数据，为实证分析提供强有力的支持。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/">
-        <h2 class="post-title">划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-11-03
-        </span>
-        <span>
-          7 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/w0VIrv_ivr/" class="post-tag">
-            # 数据Seminar
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian.png')">
+      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-pa-chong-xiang-guan-de-bi-zhi-bi-hui-de-na-xie-zhi-shi.png" alt="划重点 ｜ 经济学，学Python 需要学哪些内容？—— 爬虫相关的必知必会的那些知识">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-11-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>也许会有专业软件工程师可以认为 Python 的火热，有些“过誉”了，但是在经济学乃至数据科学领域，Python的火热绝对是能够理解的。任何一个经济学届的「有志青年」，都应该抓住这把火。对于那些还没有上手，有准备上手的「有志青年」们，本文将为大家梳理经济学类学子，学习 Python ，在数据分析处理环节需要用到哪些内容。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/">
-        <h2 class="post-title">STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-10-30
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/TnrvUOUag/" class="post-tag">
-            # oracle
-          </a>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b/" class="post-tag">
-            # qt for python
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png')">
+      <a href="https://hwang.top/post/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hua-chong-dian-or-jing-ji-xue-xue-python-xu-yao-xue-na-xie-nei-rong-shu-ju-fen-xi-chu-li-hua-bi-zhi-bi-hui-de-zhi-shi-dian.png" alt="划重点 ｜ 经济学，学Python 需要学哪些内容？——数据分析处理 化必知必会的知识点">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <h2 id="1-sqlalchemy-需要通过-cx_oracle-连接数据库">1. sqlalchemy 需要通过 cx_Oracle 连接数据库</h2>
 <p><code>pip install cx_Oracle</code> 即可安装。</p>
 <h2 id="2-cx_oracle-并不能直接连接-oracle-还需要驱动">2. cx_Oracle 并不能直接连接 Oracle ，还需要驱动</h2>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/">
-        <h2 class="post-title"> STQT 查询工具 Oracle 相关记录</h2>
+      </div>
+      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2019-10-25
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/TnrvUOUag/" class="post-tag">
-            # oracle
-          </a>
-        
-          <a href="https://hwang.top/tag/IH3pegZIE4/" class="post-tag">
-            # 数据库
-          </a>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/">
-        <h2 class="post-title">在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-10-23
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/c9N8A6XHq/" class="post-tag">
-            # Vscode
-          </a>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b/" class="post-tag">
-            # qt for python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/">
-        <h2 class="post-title">Qt for Python 的小Tips —— 外部加载 QSS</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-10-06
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b/" class="post-tag">
-            # qt for python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/">
-        <h2 class="post-title">Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-10-06
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/GY_B5UX_b/" class="post-tag">
-            # qt for python
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/">
-        <h2 class="post-title"> 用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels </h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-07-16
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/oEltlpWF3/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://hwang.top/tag/w0VIrv_ivr/" class="post-tag">
-            # 数据Seminar
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu-2sqlalchemy-lian-jie-oracle-zhong-de-yi-xie-zhu-yi-shi-xiang.png" alt="STQT 查询工具 Oracle 相关记录 （2）sqlalchemy 连接 oracle 中的一些注意事项">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+           STQT 查询工具 Oracle 相关记录
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-25</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+一、SQL - Oracle 中的表名、字段名、字段类型等信息
+表 ALL_TAB_COLUMNS
+表 all_tab_columns 的内容包含了所有表的字段信息，可以通过查询语句获取需要的内容。
+SELECT * FROM ALL_T...
+      </div>
+      <a href="https://hwang.top/post/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/stqt-cha-xun-gong-ju-oracle-xiang-guan-ji-lu.png" alt=" STQT 查询工具 Oracle 相关记录">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-23</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        基本信息可以参考：https://blog.csdn.net/gongjianbo1992/article/details/100654638
+pyside2-rcc  : 将 资源文件专为 Python 可以用的文件
+pyside2-ui...
+      </div>
+      <a href="https://hwang.top/post/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/zai-mac-os-de-vs-code-zhong-pei-zhi-pyside2-de-huan-jing-de-zhu-yi-shi-xiang.png" alt="在 mac OS 的 VS code 中配置  PySide2 的环境的注意事项">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Qt for Python 的小Tips —— 外部加载 QSS
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        PyQt5/PySide2 —— 加载 QSS 文件
+class beautifyUI(object):
+    def __init__(self):
+        pass
+    def readQss(self, qssfile)...
+      </div>
+      <a href="https://hwang.top/post/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/qt-for-python-de-xiao-tips-wai-bu-jia-zai-qss.png" alt="Qt for Python 的小Tips —— 外部加载 QSS">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        这里设置 软件的底部信息栏，PySide 中称为 QStatusbar。
+利用 QT Creator 生成的 mainWindows 软件会自动添加该部件。如果不需要底部状态栏，注释掉就可以了。
+
+...
+      </div>
+      <a href="https://hwang.top/post/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/qt-for-python-bu-xian-shi-ruan-jian-de-da-xia-ba-qstatus.png" alt="Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+           用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels 
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-07-16</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文发布于 「 数据Seminar 」公众号：https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569839526&amp;ver=1884&amp;signature=hxZrP-JJKR...
+      </div>
+      <a href="https://hwang.top/post/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/yong-python-zuo-ji-liang-yi-chu-shi-python-de-ji-liang-mo-kuai-statsmodels.png" alt=" 用 Python 做计量 （一）—— 初识Python 的计量模块： Statsmodels ">
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
 </html>

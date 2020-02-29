@@ -1,413 +1,338 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
 这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582704149660">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582704149660" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-    
-  </div>
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/">
-        <h2 class="post-title">关于团队协作工具的理想形态，这是我从飞书上得到的思考</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-05
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
       
-      <div class="post-abstract">
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于团队协作工具的理想形态，这是我从飞书上得到的思考
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
 <ol>
 <li>沟通记录混乱：用过微信的大家都懂。</li>
 </ol>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian/">
-        <h2 class="post-title">figma 的一些快捷键</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-05
-        </span>
-        <span>
-          1 min read
-        </span>
-        
       </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/yi-qing-ji-lu/">
-        <h2 class="post-title">疫情</h2>
+      <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2020-02-02
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/try-electron-ji-shi-yi/">
-        <h2 class="post-title">Try Electron 记实（一）</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-01-21
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/T7QZcYo5I/" class="post-tag">
-            # Electron
-          </a>
-        
-          <a href="https://hwang.top/tag/GzNQWOV_0s/" class="post-tag">
-            # Vue.js
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          figma 的一些快捷键
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+
+command + option +v 样式全部复制
+
+
+command + 1/2 切换图层和组件库
+
+
+shift + 1/2 放大当前 对象
+
+
+command + option + G 创建 frame //我比较常用的
+
+
+按...
+      </div>
+      <a href="https://hwang.top/post/figma-de-yi-xie-kuai-jie-jian/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/yi-qing-ji-lu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          疫情
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-02</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        2020 这是一段比较难忘的记忆...
+这里不会记录更多，但是在我的 Google Photo 里，记录了一切。
+
+      </div>
+      <a href="https://hwang.top/post/yi-qing-ji-lu/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Try Electron 记实（一）
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>记录一下第一次正式开始写一个 Electron 应用；<br>
 基础比较差，几乎没什么基础...</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/election-chu-shi/">
-        <h2 class="post-title">Electron 初试</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-01-05
-        </span>
-        <span>
-          1 min read
-        </span>
-        
       </div>
-      
-        <a href="https://hwang.top/post/election-chu-shi/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/try-electron-ji-shi-yi.png')">
+      <a href="https://hwang.top/post/try-electron-ji-shi-yi/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Try Electron 记实（一）">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/election-chu-shi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Electron 初试
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>之前做的上传工具，打算用 electron 改做了。原先的使用 Pyside2 写的，软件写起来没什么问题，用起来也很舒服，但是打包的话就相对比较麻烦了，各种坑，Windows 可能还勉强能够应付一下，但是mac 版的资料属实能够找到的资料也不够多。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/hwang-reading-list-new-06/">
-        <h2 class="post-title">Hwang Reading List - New 06</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-12-29
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/lV404AuaF/" class="post-tag">
-            # 阅读清单
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/hwang-reading-list-new-06/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-06.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/hwang-reading-list-new-05/">
-        <h2 class="post-title">Hwang Reading List - New 05</h2>
+      <a href="https://hwang.top/post/election-chu-shi/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2019-12-22
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/lV404AuaF/" class="post-tag">
-            # 阅读清单
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/hwang-reading-list-new-05/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-05.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/try-electron-ji-shi-yi.png" alt="Electron 初试">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-06/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang Reading List - New 06
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+真正提高效率：自定义你的 Touch Bar
+
+自 2016 年 Touch Bar 在 MacBook Pro 上问世以来，对其最大的争议就是它并不能很好地提高用户的...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-06/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang Reading List - New 06">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-05/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang Reading List - New 05
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>最近真就没怎么更新博客...<br>
 注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/">
-        <h2 class="post-title">树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-12-02
-        </span>
-        <span>
-          6 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png')">
+      <a href="https://hwang.top/post/hwang-reading-list-new-05/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-05.png" alt="Hwang Reading List - New 05">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-02</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>本文以发布于少数派：https://sspai.com/post/57539<br>
 推荐在少数派阅读</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi/">
-        <h2 class="post-title">Docker-compose 的使用（一）</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-12-02
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/wJNvGSVZG/" class="post-tag">
-            # docker
-          </a>
-        
       </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/hwang-reading-list-new-04/">
-        <h2 class="post-title">Hwang Reading List - New 04</h2>
+      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2019-11-17
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/lV404AuaF/" class="post-tag">
-            # 阅读清单
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/hwang-reading-list-new-04/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/hwang-reading-list-new-04.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png" alt="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Docker-compose 的使用（一）
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-02</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        文件目录
+在一个 文件夹下，我这里是 Docker
+├── docker-compose.yml
+├── gitlab
+└── nginx
+    └── conf.d
+
+其中 gitlab，是直接在shell脚本中运行的，不是使用 doc...
+      </div>
+      <a href="https://hwang.top/post/docker-compose-de-shi-yong-yi/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-04/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang Reading List - New 04
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-11-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
 
-      </di>
-    </article>
-  
-</div>
-
-    
-        <div class="pagination-container">
-  
-    <a href="https://hwang.top/" class="prev-page">上一页</a>
-  
-  
-    <a href="https://hwang.top/page/3/" class="prev-page">下一页</a>
-  
-</div>
-
-    
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
       </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-04/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-04.png" alt="Hwang Reading List - New 04">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://hwang.top/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://hwang.top/page/3/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
+
 </html>

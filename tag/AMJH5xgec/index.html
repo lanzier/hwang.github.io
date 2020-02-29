@@ -1,345 +1,217 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>少数派 | Hwang&#39;s Blog</title>
-<meta name="description" content="欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
 ✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
 👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
 这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
-<link rel="shortcut icon" href="https://hwang.top/favicon.ico?v=1582704149660">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://hwang.top">
-  <img class="avatar" src="https://hwang.top/images/avatar.png?v=1582704149660" alt="">
-  </a>
-  <h1 class="site-title">
-    Hwang&#39;s Blog
-  </h1>
-  <p class="site-description">
-    欢迎来到 Hwang 的小博客 <br>
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；蹭在 Github，感谢 Github.com 提供的服务器资源  <br>
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
-这里显然不是什么技术博客，也不会有太多值得期待的干货。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-    
-  </div>
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# 少数派
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/">
-        <h2 class="post-title">关于团队协作工具的理想形态，这是我从飞书上得到的思考</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-05
-        </span>
-        <span>
-          2 min read
-        </span>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        少数派
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于团队协作工具的理想形态，这是我从飞书上得到的思考
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>2017 年底，我加入我们导师的团队，开始创业。当我们人数达到 10 人时，我们也发现了，在微信上沟通工作时，总会出现：</p>
 <ol>
 <li>沟通记录混乱：用过微信的大家都懂。</li>
 </ol>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/">
-        <h2 class="post-title">树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-12-02
-        </span>
-        <span>
-          6 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png')">
+      <a href="https://hwang.top/post/guan-yu-tuan-dui-xie-zuo-gong-ju-de-li-xiang-xing-tai-zhe-shi-wo-cong-fei-shu-shang-de-dao-de-si-kao/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-02</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>本文以发布于少数派：https://sspai.com/post/57539<br>
 推荐在少数派阅读</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/">
-        <h2 class="post-title">Docker 的入门「指北」</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-10-07
-        </span>
-        <span>
-          9 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/wJNvGSVZG/" class="post-tag">
-            # docker
-          </a>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
       </div>
-      
-        <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png')">
+      <a href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png" alt="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Docker 的入门「指北」
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <blockquote>
 <p>本文以发布于少数派：https://beta.sspai.com/post/56893<br>
 推荐在少数派阅读</p>
 </blockquote>
 <p>如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新世界。</p>
 
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/">
-        <h2 class="post-title">去思考，去理解，去猜测，《xxx快速入门》指北 </h2>
+      </div>
+      <a href="https://hwang.top/post/docker-de-ru-men-zhi-bei/" class="btn">
+        阅读更多
       </a>
-      <div class="post-info">
-        <span>
-          2019-03-15
-        </span>
-        <span>
-          15 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-        <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/" class="post-feature-image" style="background-image: url('https://hwang.top/post-images/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/">
-        <h2 class="post-title">Kepler.gl 不需要一行代码！玩转酷炫的数据地图</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-07-23
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/_SDeCkYG4/" class="post-tag">
-            # 推文
-          </a>
-        
-          <a href="https://hwang.top/tag/2sFfDcJmEB/" class="post-tag">
-            # 教程
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/">
-        <h2 class="post-title">《会读才会写》的读书笔记——利用标签来整理阅读内容</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-07-20
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://hwang.top/tag/U5JBc5Fg2/" class="post-tag">
-            # 读书笔记
-          </a>
-        
-          <a href="https://hwang.top/tag/AMJH5xgec/" class="post-tag">
-            # 少数派
-          </a>
-        
-          <a href="https://hwang.top/tag/CjydnGrXlu/" class="post-tag">
-            # 长文
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://hwang.top/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png" alt="Docker 的入门「指北」">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          去思考，去理解，去猜测，《xxx快速入门》指北 
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文发布于少数派：https://beta.sspai.com/post/52935
+
+2018年，于我而言是人生中最非同一般的一年，我从大三升到了大四，更为重要的是我从「学习」的状态转变为了「工作」状态。说出来我自己也不信，2018年初...
+      </div>
+      <a href="https://hwang.top/post/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/qu-si-kao-qu-li-jie-qu-cai-ce-lesslessxxx-kuai-su-ru-men-greatergreater-zhi-bei.png" alt="去思考，去理解，去猜测，《xxx快速入门》指北 ">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Kepler.gl 不需要一行代码！玩转酷炫的数据地图
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-07-23</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        本文以及发布在 少数派：https://beta.sspai.com/post/55655
+在处理数据的过程中，如何“优雅”的展示这些数据一直是一个重要的技巧。而为基于地理坐标为数据打点更是一个重要的技能。在过去，我们的常见的做法是通过诸如...
+      </div>
+      <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          《会读才会写》的读书笔记——利用标签来整理阅读内容
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-07-20</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文以及发布于少数派：https://beta.sspai.com/post/45883
+
+引子
+社会科学的写作，一直都有相对固定的「范式」。彭玉生在《“洋八股”与社会科学规范》中将其划分为：问题、文献、假设、测量、数据、方法、分析、结论...
+      </div>
+      <a href="https://hwang.top/post/lesslesshui-du-cai-hui-xie-greatergreater-de-du-shu-bi-ji-li-yong-biao-qian-lai-zheng-li-yue-du-nei-rong/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
 </html>
