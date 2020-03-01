@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-02-29T08:56:15.225Z</updated>
+    <updated>2020-03-01T05:54:11.738Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,83 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 08]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-08/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-08/">
+        </link>
+        <updated>2020-03-01T05:49:01.000Z</updated>
+        <content type="html"><![CDATA[<h5 id="注链接是-ifttt-生成的可能需要科学的上网方式才能够访问">注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</h5>
+<p><a href="https://ift.tt/2vxlSYr">现在,以编程方式在 Electron 中上传文件,是非常简单的!</a></p>
+<blockquote>
+<p>这段讨论,其实本来是讨论如何自动设置 input 标签的值来实现自动选择文件的.前一段有个 Electon 中自动上传文件的需求,被 Google 带到了这个讨论地址.</p>
+</blockquote>
+<h3 id="微信未完成"><a href="https://ift.tt/37QG0Hm">微信「未完成」</a></h3>
+<blockquote>
+<p>在这个一年一度的公开课上，一些人期待微信之父张小龙再多谈一些微信的产品哲学，即使今年张小龙并为亲赴现场，但还是有许多听众坚持举着手机，录完了他 12 分钟的演讲视频；</p>
+</blockquote>
+<p><a href="http://weixin.sogou.com/weixin?type=2&amp;query=keso%E6%80%8E%E4%B9%88%E7%9C%8B+%E5%86%8D%E8%A7%81%EF%BC%8C2010%E5%B9%B4%E4%BB%A3">keso怎么看 再见，2010年代的相关微信公众号文章 – 搜狗微信搜索</a></p>
+<blockquote>
+<p>我们不得不在这样的背景下,跟2010年代说再见,同时去迎接一个更加艰苦的2020年代.这可能会成为新十年的新常态,我们得去适... 2010“Some of us get dipped in flat, some in satin, some in gloss. But every once in a while youfind someone who's iridescent, and .</p>
+</blockquote>
+<p><a href="https://ift.tt/37hRBi6">macOS 下 Electron 程序的签名及公证</a></p>
+<blockquote>
+<p>自 macOS 10.14.5 开始，应用程序必须要经过签名以及公证（notarize），否则默认情况下便无法直接运行，会弹出类似下面的警告： “Appname.dmg” can’t be opened because Apple cannot check it for malicious software. This software needs to be updated.</p>
+</blockquote>
+<p><a href="https://ift.tt/39pY6AM">经历了这次疫情的考验，这些健康、生活、效率习惯值得你长期坚守</a></p>
+<blockquote>
+<p>出乎所有人的预料，一场由新型冠状病毒引发的疫潮迅速侵袭全国。这场疫病的爆发阶段正逢春节假期，面对突如其来的疫况，大家只能待在家中，尽可能一边做好防护工作，一边习惯在家工作和学习。</p>
+</blockquote>
+<p><a href="https://ift.tt/2HdH0Ku">需求方法论（1）：需求的理解/来源/挖掘/记录</a></p>
+<blockquote>
+<p>对于产品经理来说，大多数的日常都是围绕需求展开的——沟通需求、实现需求等。那么对于需求这一内容，如果做好正确理解，相信会对后续实现提供很大帮助。</p>
+</blockquote>
+<p>###<a href="https://ift.tt/31Z5hfk">现代 Web 开发的现状与未来（JSDC 2019 演讲全文）</a></p>
+<blockquote>
+<p>本文是我受邀在台北的 JSDC 2019 活动中做的一次分享，从内容上来说已经可以算的上我的 2019 跨年演讲 XD</p>
+</blockquote>
+<p><a href="https://ift.tt/31IsDqY">对突然而来的远程办公无所适从？搞定这两个最重要的问题就好了</a></p>
+<blockquote>
+<p>「疫情结束后，你最想做什么？」 这个简单的问题引发的话题在微博上有过亿的阅读量，回答里有一线医务人员誓要夺取胜利、把酒言欢的豪迈，也有家属们想要早日见到亲人的心愿，当然，最多的还是普通人对过去习以为常</p>
+</blockquote>
+<p><a href="https://ift.tt/39qeh1c">写作新人初长成，我有这些心得想与你分享</a></p>
+<blockquote>
+<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：效率有心得。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
+</blockquote>
+<p><a href="https://ift.tt/2T69uez">译文 | Uber 的出行数据可视化设计</a></p>
+<blockquote>
+<p>微信号 Glosion 功能介绍 用户体验 · 影视影像 · 文化探索⎢@F.</p>
+</blockquote>
+<p><a href="https://ift.tt/2TjwtDl">依赖注入手册</a></p>
+<blockquote>
+<p>Midway 中使用了非常多的依赖注入的特性，通过装饰器的轻量特性，让依赖注入变的优雅，从而让开发过程变的便捷有趣。</p>
+</blockquote>
+<p><a href="https://ift.tt/2omjy6p">react闲谈——JavaScript同步、异步、回调执行顺序之经典闭包setTimeout面试题分析</a></p>
+<blockquote>
+<p>同步、异步、回调？傻傻分不清楚。 大家注意了，教大家一道口诀： 同步优先、异步靠边、回调垫底（读起来不顺） 用公式表达就是： 同步 =&gt; 异步 =&gt; 回调 这口诀有什么用呢？用来对付面试的。 有一道经典的面试题：  for (va</p>
+</blockquote>
+<p><a href="https://ift.tt/2VfyQcW">专访回形针吴松磊 | 一条疫情科普视频全网播放 1.5 亿，他们是如何炼成的</a></p>
+<blockquote>
+<p>微信号 coolbuy 功能介绍 挖掘不一样的品质生活 文章开始之前，先来听听吴松磊的经典问候👇2 月 2 日，一条名为《关于新冠肺炎的一切》的视频刷屏各大社交网络，短短两天时间，全网播放量达到</p>
+</blockquote>
+<p><a href="https://ift.tt/37N9eGU">我们扒了5000家创业公司的“死因”，手把手教你烧光投资人的钱 | DT数说</a></p>
+<blockquote>
+<p>功能介绍 第一财经旗下数据研究型新媒体，用大数据解读消费社会和商业图景，连接数据、机构和人群。</p>
+</blockquote>
+<p><a href="https://ift.tt/394GmLB">如何评判Logo的好坏</a></p>
+<blockquote>
+<p>微信号 Zaowuchangjing 功能介绍 一个商业顾问的思维精进日记 110/3652020.2.</p>
+</blockquote>
+<p><a href="https://ift.tt/2wmbW95">2019 我的写作桌面清单推荐</a></p>
+<blockquote>
+<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：看完就想买。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
+</blockquote>
+<p>###<a href="https://telegra.ph/%E7%98%9F%E7%96%AB%E8%AF%AD%E8%A8%80%E5%92%8C%E5%85%B7%E4%BD%93%E7%9A%84%E4%BA%BA%E4%B8%8E%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E7%BD%97%E6%96%B0%E7%9A%84%E8%81%8A%E5%A4%A9-02-26-2">瘟疫、语言和具体的人：与历史学家罗新的聊天</a></p>
+<blockquote>
+<p>按：二零二零年二月，《剩余价值》播客播出了和罗新的访谈后被中国全面封杀。以下是二月廿六日拷贝自 bbs.pku.edu.cn/v2/post-read.php?bid=251&amp;threadid=17548174 的文稿。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Oracle 的 循环实例]]></title>
         <id>https://hwang.top/post/oracle-de-xun-huan-shi-li/</id>
@@ -592,53 +669,6 @@ module.exports = {
 <p>直接在项目跟目录添加这么一个配置文件即可。<br>
 因为 vue.config.js 是在 vue-cli-service 运行时检查的，所以在使用 electron-builder 构建的项目中，并不能热更新。<br>
 我的理解是，这个 vue-cli-service 启动后，才可以热更新 electron 的窗体程序和Vue写的前端页面的，热更新并不会重新启动一遍 vue-cli-service。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（二）— ant-design 的引入、font-awesome 的引入]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-er-ant-design-de-yin-ru-font-awesome-de-yin-ru/">
-        </link>
-        <updated>2020-02-07T10:47:45.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>简单记录一下；<br>
-有一点点的坑是引入 less 的事情，其他都挺顺利的；</p>
-</blockquote>
-<p>ant-design 和 font-awesome 的引入</p>
-<ol>
-<li>引入，在 <code>src/main.js</code> 文件内引入：</li>
-</ol>
-<pre><code class="language-bash">import Vue from 'vue';
-import App from './App.vue';
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.less';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-	【需要的包】
-} from '@fortawesome/free-solid-svg-icons'
-
-library.add(
-	【需要的包】
-)
- 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-
-Vue.config.productionTip = false;
-Vue.use(Antd);
-
-
-new Vue({
-  render: h =&gt; h(App),
-}).$mount('#app')
-
-</code></pre>
-<ol start="2">
-<li>其中，如果需要配置 ant 的主题</li>
-</ol>
-<pre><code class="language-bash">	import 'ant-design-vue/dist/antd.less';
-	```
-	使用 less 配置主题。</code></pre>
 ]]></content>
     </entry>
 </feed>
