@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-03-04T04:10:24.266Z</updated>
+    <updated>2020-03-11T02:00:50.043Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,18 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[被阉割的体验｜ 杂记]]></title>
+        <id>https://hwang.top/post/bei-yan-ge-de-ti-yan-or-za-ji/</id>
+        <link href="https://hwang.top/post/bei-yan-ge-de-ti-yan-or-za-ji/">
+        </link>
+        <updated>2020-03-11T01:56:32.000Z</updated>
+        <content type="html"><![CDATA[<p>今天兴起，拿着 iPad ，想用 Netflix 给投影仪投屏看电影。</p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1583891885092.png" alt="本地显示已经在 AirPlay 了，但实际上..." loading="lazy"></figure>
+<p>However... 试了 N 次，点击投屏后，加载2 s（梯子真快）后，直接退出。当时就有一种被阉了的感觉。国内 fake 了  AirPlay  ，然后阉割了它。就好像下了盗版，然后发现他是打码的。</p>
+<p>所以，还是好好挣钱，准备买一个 【New】Apple TV 吧。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（九）— localStorage 储存变量/Electron 的生命周期]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-jiu-localstorage-chu-cun-bian-liang-electron-de-sheng-ming-zhou-qi/</id>
@@ -650,46 +662,6 @@ promise.then(function(value) {
 
 </code></pre>
 <hr>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（四）— 项目中添加路由]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-si-xiang-mu-zhong-tian-jia-lu-you/">
-        </link>
-        <updated>2020-02-11T09:29:32.000Z</updated>
-        <content type="html"><![CDATA[<p>通过路由的方式进行侧边导航栏的切换：</p>
-<ol>
-<li>安装 vue-router，并添加到项目中；</li>
-<li>在 main.js 中引入 vue-router 插件；</li>
-</ol>
-<pre><code class="language-bash">...
-... //省略其他
-import Router from 'vue-router'
-
-Vue.use(Router)
-
-</code></pre>
-<ol start="3">
-<li>引入路由文件，并在 Vue 实例中添加配置</li>
-</ol>
-<pre><code>import router from '.'router/index'
-...//省略其他
-new Vue({
-  router: router, //添加配置
-  render: h =&gt; h(App),
-}).$mount('#app')
-
-</code></pre>
-<ol start="4">
-<li>
-<p>编辑路由文件<code>router/index.js</code> 中添加需要的路由路径</p>
-</li>
-<li>
-<p><code>&lt;router-link to=&quot;&quot;&gt;</code> 和 <code>&lt;router-view&gt;</code> 标签 一个是用来跳转的，一个是用来显示调整页面的。</p>
-</li>
-</ol>
-<p>Done！ 基础的路由添加步骤就是这样了。在其他具体的事情，具体在看吧。</p>
 ]]></content>
     </entry>
 </feed>
