@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-03-13T08:57:51.160Z</updated>
+    <updated>2020-03-14T08:42:27.927Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,199 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[ axios 的学习]]></title>
+        <id>https://hwang.top/post/axios-de-xue-xi/</id>
+        <link href="https://hwang.top/post/axios-de-xue-xi/">
+        </link>
+        <updated>2020-03-14T08:33:47.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="https://juejin.im/post/5c99860ce51d452db858d93d">https://juejin.im/post/5c99860ce51d452db858d93d</a></li>
+<li><a href="https://juejin.im/post/5db11ad751882576063d5237">https://juejin.im/post/5db11ad751882576063d5237</a></li>
+</ul>
+</blockquote>
+<h2 id="执行get请求">执行get请求</h2>
+<h3 id="写法1">写法1</h3>
+<pre><code class="language-js">axios.get('api/user?ID=xxx')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+</code></pre>
+<h3 id="写法2">写法2</h3>
+<pre><code class="language-js">axios.get('api/user', {
+	params: {
+		ID: 'xxx'
+		}
+	})
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+</code></pre>
+<h2 id="执-post-请求">执 post 请求</h2>
+<pre><code class="language-js">axios.post('/user', {
+    firstName: 'xxx',
+    lastName: 'xxx'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+</code></pre>
+<h2 id="基于-promise-顺序执行请求">基于 Promise 顺序执行请求：</h2>
+<pre><code class="language-js">function getUserAccount() {
+  return axios.get('/user/12345');
+}
+
+function getUserPermissions() {
+  return axios.get('/user/12345/permissions');
+}
+
+axios.all([getUserAccount(), getUserPermissions()])
+  .then(axios.spread(function (acct, perms) {
+    // 请求现在都执行完成时
+  }));
+</code></pre>
+<h2 id="基于-config-的方式执行-post-请求">基于 Config 的方式执行 Post 请求</h2>
+<pre><code class="language-js">// 发送 POST 请求
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+})
+	.then(function(res) {
+	console.log(res)
+	});
+</code></pre>
+<p>一般业务中，会写在诸如<code>util.js</code> 中，方便进行调用</p>
+<pre><code class="language-js">//util.js
+const instance = axios.create({
+	baseURL: 'http://some-domain.com/api',
+	timeout: 1000,
+	header: {
+	'Content-Type': 'application/x-www-form-urlencoded'
+	}
+}) 
+
+export default instance
+</code></pre>
+<p>其中，请求的配置项：</p>
+<pre><code class="language-js">{
+  //`url`是请求的服务器地址
+  url:'/user',
+  //`method`是请求资源的方式
+  method:'get'//default
+  //如果`url`不是绝对地址，那么`baseURL`将会加到`url`的前面
+  //当`url`是相对地址的时候，设置`baseURL`会非常的方便
+  baseURL:'https://some-domain.com/api/',
+  //`transformRequest`选项允许我们在请求发送到服务器之前对请求的数据做出一些改动
+  //该选项只适用于以下请求方式：`put/post/patch`
+  //数组里面的最后一个函数必须返回一个字符串、-一个`ArrayBuffer`或者`Stream`
+  transformRequest:[function(data){
+    //在这里根据自己的需求改变数据
+    return data;
+  }],
+  //`transformResponse`选项允许我们在数据传送到`then/catch`方法之前对数据进行改动
+  transformResponse:[function(data){
+    //在这里根据自己的需求改变数据
+    return data;
+  }],
+  //`headers`选项是需要被发送的自定义请求头信息
+  headers: {'X-Requested-With':'XMLHttpRequest'},
+  //`params`选项是要随请求一起发送的请求参数----一般链接在URL后面
+  //他的类型必须是一个纯对象或者是URLSearchParams对象
+  params: {
+    ID:12345
+  },
+  //`paramsSerializer`是一个可选的函数，起作用是让参数（params）序列化
+  //例如(https://www.npmjs.com/package/qs,http://api.jquery.com/jquery.param)
+  paramsSerializer: function(params){
+    return Qs.stringify(params,{arrayFormat:'brackets'})
+  },
+  //`data`选项是作为一个请求体而需要被发送的数据
+  //该选项只适用于方法：`put/post/patch`
+  //当没有设置`transformRequest`选项时dada必须是以下几种类型之一
+  //string/plain/object/ArrayBuffer/ArrayBufferView/URLSearchParams
+  //仅仅浏览器：FormData/File/Bold
+  //仅node:Stream
+  data {
+    firstName:&quot;Fred&quot;
+  },
+  //`timeout`选项定义了请求发出的延迟毫秒数
+  //如果请求花费的时间超过延迟的时间，那么请求会被终止
+
+  timeout:1000,
+  //`withCredentails`选项表明了是否是跨域请求
+  
+  withCredentials:false,//default
+  //`adapter`适配器选项允许自定义处理请求，这会使得测试变得方便
+  //返回一个promise,并提供验证返回
+  adapter: function(config){
+    /*..........*/
+  },
+  //`auth`表明HTTP基础的认证应该被使用，并提供证书
+  //这会设置一个authorization头（header）,并覆盖你在header设置的Authorization头信息
+  auth: {
+    username:&quot;zhangsan&quot;,
+    password: &quot;s00sdkf&quot;
+  },
+  //返回数据的格式
+  //其可选项是arraybuffer,blob,document,json,text,stream
+  responseType:'json',//default
+  //
+  xsrfCookieName: 'XSRF-TOKEN',//default
+  xsrfHeaderName:'X-XSRF-TOKEN',//default
+  //`onUploadProgress`上传进度事件
+  onUploadProgress:function(progressEvent){
+    //下载进度的事件
+onDownloadProgress:function(progressEvent){
+}
+  },
+  //相应内容的最大值
+  maxContentLength:2000,
+  //`validateStatus`定义了是否根据http相应状态码，来resolve或者reject promise
+  //如果`validateStatus`返回true(或者设置为`null`或者`undefined`),那么promise的状态将会是resolved,否则其状态就是rejected
+  validateStatus:function(status){
+    return status &gt;= 200 &amp;&amp; status &lt;300;//default
+  },
+  //`maxRedirects`定义了在nodejs中重定向的最大数量
+  maxRedirects: 5,//default
+  //`httpAgent/httpsAgent`定义了当发送http/https请求要用到的自定义代理
+  //keeyAlive在选项中没有被默认激活
+  httpAgent: new http.Agent({keeyAlive:true}),
+  httpsAgent: new https.Agent({keeyAlive:true}),
+  //proxy定义了主机名字和端口号，
+  //`auth`表明http基本认证应该与proxy代理链接，并提供证书
+  //这将会设置一个`Proxy-Authorization` header,并且会覆盖掉已经存在的`Proxy-Authorization`  header
+  proxy: {
+    host:'127.0.0.1',
+    port: 9000,
+    auth: {
+      username:'skda',
+      password:'radsd'
+    }
+  },
+  //`cancelToken`定义了一个用于取消请求的cancel token
+  //详见cancelation部分
+  cancelToken: new cancelToken(function(cancel){
+
+  })
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（十）— Windows 上配置 Electron 环境的一些坑Windows 上配置 Electron 环境的一些坑]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-shi-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng/</id>
@@ -599,61 +792,6 @@ var component = new Component() // =&gt; &quot;hello from mixin!&quot;
 是因为，为了给用户提供方便，<code>lodash</code> 用到<code>export default</code> 命令，为模块指定了默认输出，让<code>lodash</code> 的使用者不用阅读文档就能用任意自定义模块名加载 <code>lodash</code>。<br>
 所以，<code>import lodash from 'lodash'</code> 这句，你喜欢的话也能写成<code>import _ from 'lodash'</code><br>
 其次，<code>from` 后面的</code> 'lodash' 为什么不是 <code>node_modules</code>里 <code>lodash</code>的完整路径呢<code>（ / node_modules / .bin / lodash ）</code>，是因为你的项目里 npm 帮忙做了配置呀，自动帮它加了前缀，一般补全模块路径是这事是npm帮做的。</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 07]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-07/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-07/">
-        </link>
-        <updated>2020-02-11T09:33:54.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2QCCQ3e">中国企业获设计“剽窃奖”被质疑</a></p>
-<blockquote>
-<p>近日，一则中国制造商包揽德国“金鼻子剽窃奖”前十名的消息引发关注。中国设计是否存在山寨外国设计再次引发热议。</p>
-</blockquote>
-<p><a href="https://ift.tt/2tm6vG7">为什么DevOps很好，但却很难落地，大家对DevOps是怎么理解的？</a></p>
-<blockquote>
-<p>关于 DevOps 为什么难落地，与其我们在这里闭门造车，倒不如看看来自专家的看法</p>
-</blockquote>
-<p><a href="https://ift.tt/3a4CZW0">为什么进度条永远卡在 99%？</a></p>
-<blockquote>
-<p>机密处万籁俱寂，防守严格，他一路破解密码，悄声潜入，没料到 U 盘一插电脑，警报就开始厉声鸣叫，门外死神般的脚步纷至沓来，踩得他浑身汗如雨下。</p>
-</blockquote>
-<p><a href="https://ift.tt/2Rop4Bl">阿里巴巴发布全新奥运组合LOGO！仅用9根线“托”起五环！</a></p>
-<blockquote>
-<p>微信号 AlibabaDesign 功能介绍 这是一个充满魅力的组织，是一群疯狂热爱用户体验的家伙；这里有国际音乐家、有舞者、游戏玩家、摄影师以及各个领域的爱好者；我们坚信，创新、设计、技术和客户第一的价值观粘合在一起，</p>
-</blockquote>
-<p><a href="https://ift.tt/2QWZzXW">2020，我想如何讲述自己的故事——2019总结</a></p>
-<blockquote>
-<p>12月的 Monthly Review 已经做了2019年终总结的播客有声版，加上2019半年总结也写了，总感觉下半年应该没什么值得记录。而且一直没有想清楚2020年的目标和展望，想通过整理成文字版的过程给自己一些灵感。</p>
-</blockquote>
-<p><a href="https://ift.tt/2NapoT0">2019，小程序又给了谁机会？</a></p>
-<blockquote>
-<p>以上是宏观的生态数据，透过这些数据，我们不免会有一个疑惑：是谁承担起了这些流量？</p>
-</blockquote>
-<p><a href="https://ift.tt/39k6GRO">iPhone 可有设计哲学？</a></p>
-<blockquote>
-<p>iPhone 4G 出来之前，注定会有更多强大，快速，激动人心的新设备来挑战智能手机的巅峰 : 3GS 。</p>
-</blockquote>
-<p><a href="https://ift.tt/2tpSyH7">2019 创业回顾</a></p>
-<blockquote>
-<p>2019 公司人数 +1 -1，最后是四个人。还是蛮多人知道会惊讶一下，你们只有四个人？两个运营，加一个全能工程师，加我（还有两只猫）。</p>
-</blockquote>
-<p><a href="https://diygod.me/2019/">2019 我做了什么</a></p>
-<blockquote>
-<p>虽然维护的项目有保持健康的成长，但没有做什么新东西 2020 打算投入更多的时间在开源项目上，不再怠惰于现有项目的日常维护，而是做一些新东西，（可能）有 DPlayer 重构、Telegram Bot 平台、RSS 客户端等</p>
-</blockquote>
-<p><a href="https://ift.tt/30fNiC1">刘慈欣：中国变成民主体制会是人间地狱</a></p>
-<blockquote>
-<p>断章取义通常有危险。但刘慈欣在接受《纽约客》采访时的这几段话已经刻板八股到了 caricature 的程度，断章与否其实没有任何区别了。采访是樊嘉扬做的，所以说的应该是普通话。</p>
-</blockquote>
-<p><a href="https://ift.tt/39jANbM">钉钉 Dark Mode 设计</a></p>
-<blockquote>
-<p>微信号 AlibabaDesign 功能介绍 这是一个充满魅力的组织，是一群疯狂热爱用户体验的家伙；这里有国际音乐家、有舞者、游戏玩家、摄影师以及各个领域的爱好者；我们坚信，创新、设计、技术和客户第一的价值观粘合在一起，</p>
 </blockquote>
 ]]></content>
     </entry>
