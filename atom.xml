@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-03-23T09:20:57.302Z</updated>
+    <updated>2020-03-24T03:06:23.523Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,19 +15,6 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
-    <entry>
-        <title type="html"><![CDATA[111]]></title>
-        <id>https://hwang.top/post/111/</id>
-        <link href="https://hwang.top/post/111/">
-        </link>
-        <updated>2020-03-23T09:13:11.000Z</updated>
-        <content type="html"><![CDATA[<p>dasdad<br>
-dsadsadasuiw<br>
-dadasdkas<br>
-dajk</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><mn>9</mn><msub><mn>9</mn><mn>1</mn></msub><mn>2</mn></mrow><annotation encoding="application/x-tex">x^2+3^2+99_12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">9</span><span class="mord"><span class="mord">9</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">2</span></span></span></span></p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[ axios 的学习]]></title>
         <id>https://hwang.top/post/axios-de-xue-xi/</id>
@@ -757,6 +744,55 @@ dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
 })
 </code></pre>
 <p>使用 <code>remote.dialog</code>，调用主进程内的 electron 模块，获取文件路径即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Try Electron记实（六）— Vue 的 Mixins 混入  / 小知识补习：` import ` 与 `import {}`]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-liu-vue-de-mixins-hun-ru-xiao-zhi-shi-bu-xi-import-yu-import/">
+        </link>
+        <updated>2020-02-17T05:29:03.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="mixins-混用">Mixins 混用</h2>
+<p>**用途：**用于Vue组件中，可复用的功能；一个 Mixins 对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混入”该组件中。</p>
+<p><strong>理解：</strong> 利用 Vue 的方式实现组件的功能的自由服用与组合。</p>
+<p>官方示例，一看就懂：</p>
+<pre><code class="language-js">// 定义一个混入对象
+var myMixin = {
+  created: function () {
+    this.hello()
+  },
+  methods: {
+    hello: function () {
+      console.log('hello from mixin!')
+    }
+  }
+}
+
+// 定义一个使用混入对象的组件
+var Component = Vue.extend({
+  mixins: [myMixin]
+})
+
+var component = new Component() // =&gt; &quot;hello from mixin!&quot;
+</code></pre>
+<p>**一些特性： **</p>
+<ul>
+<li>同名的情况：
+<ul>
+<li>同名的钩子函数将被合并为一个数组，因此会被一起调用。Mixins 的钩子将先被执行；</li>
+<li>值为对象的选项，例如 methods、components 和 directives，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。<br>
+更多信息：<a href="https://cn.vuejs.org/v2/guide/mixins.html">https://cn.vuejs.org/v2/guide/mixins.html</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="小知识补习import-与-import">小知识补习：<code>import</code> 与 <code>import {}</code></h2>
+<p>一般情况下，其实是需要 <code>import {} from xxx</code>，但是一般的模块都会设置：</p>
+<blockquote>
+<p>至于为什么能 <code>import lodash from 'lodash'</code><br>
+是因为，为了给用户提供方便，<code>lodash</code> 用到<code>export default</code> 命令，为模块指定了默认输出，让<code>lodash</code> 的使用者不用阅读文档就能用任意自定义模块名加载 <code>lodash</code>。<br>
+所以，<code>import lodash from 'lodash'</code> 这句，你喜欢的话也能写成<code>import _ from 'lodash'</code><br>
+其次，<code>from` 后面的</code> 'lodash' 为什么不是 <code>node_modules</code>里 <code>lodash</code>的完整路径呢<code>（ / node_modules / .bin / lodash ）</code>，是因为你的项目里 npm 帮忙做了配置呀，自动帮它加了前缀，一般补全模块路径是这事是npm帮做的。</p>
+</blockquote>
 ]]></content>
     </entry>
 </feed>
