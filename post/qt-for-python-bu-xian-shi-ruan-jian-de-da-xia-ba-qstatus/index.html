@@ -7,7 +7,7 @@
 <title>Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus - Hwang&#39;s Blog</title>
 <link rel="shortcut icon" href="https://hwang.top/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
 <link rel="stylesheet" href="https://hwang.top/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Qt for Python 的小 Tips - 不显示软件的「大下巴」— QStatus - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
@@ -107,7 +107,9 @@
 
       
 
-      <div id="vlaine-comment"></div>
+      
+        <div id="vlaine-comment"></div>
+      
 
       <footer class="py-12 text-center px-4 md:px-0" v-pre>
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
@@ -288,35 +290,25 @@
     //初始化
     initImg();
   </script>
-  <script type="application/javascript" src="https://hwang.top/media/scripts/valine.min.js"></script>
-  <script type="application/javascript">
   
-    // var valine = new Valine();
-    // valine.init({
-    //   el: '#vlaine-comment',
-    //   appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
-    //   appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
-    //   notify: true,
-    //   avatar: 'mp',
-    //   verify: true,
-    //   placeholder: '来都来了，不妨评论一下',
-    //   visitor: true,
-    //   highlight: true,
-    //   recordIP: true,
-    // })
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
   
-    var valine = new Valine();
-    valine.init({
-      el: '#vlaine-comment',
-      appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
-      appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
-      notify: false,
-      verify: false,
-      visitor: true,
-      avatar: 'mp',
-      placeholder: '加入讨论...'
-    })
-  </script>
+  
 </body>
 
 </html>
