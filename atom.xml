@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-03-30T05:10:15.029Z</updated>
+    <updated>2020-03-31T10:41:13.172Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,25 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Try Electron记实（十二） 在 Windows 上尝试打包]]></title>
+        <id>https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/</id>
+        <link href="https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/">
+        </link>
+        <updated>2020-03-31T09:55:33.000Z</updated>
+        <content type="html"><![CDATA[<p>使用 electron-builder 构建项目，所以打包同样依赖：</p>
+<ol>
+<li>winCodeSign；</li>
+<li>nsis</li>
+<li>nsis-resources<br>
+这三个依赖是从 github 下载的，国内的环境并不能很好的下载，所以可以手动下载，然后手动移动到 electron-builder 中。</li>
+</ol>
+<p>目录：<code>C:\Users\your-user-name\AppData\Local\electron-builder\Cache\</code><br>
+在该目录下创建<code>winCodeSign</code> 和 <code>nsis</code> 文件夹，把对应的内容解压进去即可。</p>
+<p>大致的目录结构：<br>
+<img src="https://hwang.top/post-images/1585648613243.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Try Electron记实（十一） 通过 electron-release-server 部署更新服务]]></title>
         <id>https://hwang.top/post/try-electron-ji-shi-shi-yi-tong-guo-electron-release-server-bu-shu-geng-xin-fu-wu/</id>
@@ -729,64 +748,6 @@ npm install --save-dev electron-rebuild
 <li><code>process.execPath</code> ，获取的路径<code>c:\desktop\win-ia32-unpacked\xxx.exe</code></li>
 <li><code>process.cwd()</code> ， 获取的路径<code>c:\desktop\win-ia32-unpacked</code></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（七）— 先学习 Vue.js 实现拖拽再应用到 electron 中]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-qi-xian-xue-xi-vuejs-shi-xian-tuo-zhuai-zai-ying-yong-dao-electron-zhong/">
-        </link>
-        <updated>2020-02-17T05:31:27.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>是的，用的啥学啥系列。<br>
-参考：<a href="https://www.jianshu.com/p/873512cdbd0f">https://www.jianshu.com/p/873512cdbd0f</a></p>
-</blockquote>
-<p>首先，ant-design 是提供了 <code>a-upload</code> 组件，用于上传的，但是不幸的是，前端一般是拿不到真实的本机路径的。所以简单考虑后，决定直接写一个通过 Electron API 的方法的上传框。</p>
-<h2 id="vuejs-里面怎么做">Vue.js 里面怎么做</h2>
-<h3 id="1-涉及的时间-dragenter-dragover-drop-事件">1. 涉及的时间 dragenter、dragover、drop 事件</h3>
-<blockquote>
-<p>当把文件拖动到浏览器的拖动区域时，会触发三种事件：<br>
-文件第一次进入拖动区时，触发 dragenter 事件<br>
-文件在拖动区来回拖拽时，不断触发 dragover 事件<br>
-文件已经在拖动区，并松开鼠标时，触发 drop 事件<br>
-实现拖动上传，我们只需要关心 drop 事件。不过另外两个事件也需要监听，目的是阻止浏览器默认行为。如果不阻止，那么把文件拖到浏览器时，浏览器就会自动下载这个文件（默认行为），drop 事件触发不出来。<br>
-所以要做的就是阻止默认的事件。需要再 mounted 挂载后处理。（有点不懂，mounted 不是加载完了吗？ Vue 不推荐直接操作 DOM 元素，是不是可以直接用 v-on 绑定到 methods 里面。）</p>
-</blockquote>
-<p>接着就是再 methods 对象中写函数。具体参见文章，写的比较清楚，包括进度条如何实现都有的。</p>
-<h3 id="2-具体到-electron-中">2. 具体到 Electron 中</h3>
-<p>在electron 中：</p>
-<blockquote>
-<p>为了让用户能够通过HTML5的file API直接操作本地文件，DOM的File接口提供了对本地文件的抽象。Electron在File接口中增加了一个path属性，它是文件在系统中的真实路径。</p>
-</blockquote>
-<p>而这个 path 属性就是我需要的。<br>
-其中，methods：</p>
-<pre><code class="language-js">  methods: {
-    onDrag: function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-    },
-    onDrop: function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      let file = e.dataTransfer.files[0];
-      console.log('path-&gt;', file.path);
-
-    }
-  }
-</code></pre>
-<p>这里，使用   e.stopPropagation()、e.preventDefault()来阻止默认的行为。<br>
-我也直接在<code>&lt;div&gt;</code> 标签上使用 v-on 进行绑定，并没有什么问题。</p>
-<h3 id="3-利用-ipcrenderer-模块打开文件选择框">3. 利用 ipcRenderer  模块，打开文件选择框</h3>
-<p>我选择的方式是使用 remote 模块直接打开文件夹，代码片段如下：</p>
-<pre><code class="language-js">const dialog = require('electron').remote.dialog;
-dialog.showOpenDialog({ properties: ['openFile']}).then((file) =&gt;{
-	if (file.filePaths.length === 1) {
-		this.fileSelected = file.filePaths[0];
-		console.log(this.fileSelected);
-	} 
-})
-</code></pre>
-<p>使用 <code>remote.dialog</code>，调用主进程内的 electron 模块，获取文件路径即可。</p>
 ]]></content>
     </entry>
 </feed>
