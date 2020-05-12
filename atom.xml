@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-04-19T06:31:43.660Z</updated>
+    <updated>2020-05-12T14:33:17.515Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,64 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[2020 - 我的主屏]]></title>
+        <id>https://hwang.top/post/2020-wo-de-zhu-ping/</id>
+        <link href="https://hwang.top/post/2020-wo-de-zhu-ping/">
+        </link>
+        <updated>2020-05-12T14:31:41.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1589293943135.PNG" alt="" loading="lazy"></figure>
+<h2 id="第一排-文件夹">第一排 文件夹</h2>
+<ul>
+<li>📦：工具类 App</li>
+<li>🎴：家庭、生活记录类 App</li>
+<li>🌍：不存在的 App</li>
+<li>🚪：闭门学习类 App</li>
+</ul>
+<h2 id="第二排-黑色">第二排 黑色</h2>
+<ul>
+<li>figma：我爱 Figma， Figma 牛逼！知道的都知道，工作用。</li>
+<li>极光字典：查字典的咯。</li>
+<li>Ulysses：包括本文，就是在这个 App 里面写的。</li>
+<li>NOMO：网红相机，并没有订阅</li>
+</ul>
+<h2 id="第三排-白色-一">第三排 白色 一</h2>
+<ul>
+<li>Notion： 知识管理、项目管理、团队协同。</li>
+<li>MoneyWiz 3： 记账的。</li>
+<li>PPHub：别问，问就交友。</li>
+<li>Pocket： Read it later，not NEVER。</li>
+</ul>
+<h2 id="第四排-白色-二">第四排 白色 二</h2>
+<ul>
+<li>轻芒杂志： 王俊昱团队的新产品，内测中。</li>
+<li>Tg：xxx。</li>
+<li>飞书：头条牛逼！我爱飞书！</li>
+<li>Outlook：微软苏州团队出品，非常棒。</li>
+</ul>
+<h2 id="第五排-蓝色">第五排 蓝色</h2>
+<ul>
+<li>快捷指令：效率工具， iPhone、iPad上处理许多流程的重要工具。</li>
+<li>App Store：没啥</li>
+<li>Tweetbot：没啥</li>
+<li>JSbox：脚本啥的，很好写</li>
+</ul>
+<h2 id="第六排-绿色">第六排 绿色</h2>
+<ol>
+<li>Castro：一个高效便捷好看的播客应用。已订阅。💰</li>
+<li>微信：糟糕的高墙。</li>
+<li>Spotify： 听歌的。</li>
+<li>Timepage： iOS 上最好看（没有之一，不是广告，不违反广告法） 的日历App。老用户，免费送了 iPad 版，相比（其他转订阅的厂商）而言，尽然有些不好意思。用以查看各种日程，离开学校后，明显还没有找到使用日历的节奏。需求并没有那么强了。</li>
+</ol>
+<h2 id="dock-栏">Dock 栏</h2>
+<ol>
+<li>Todoist ：任务管理，GTD。</li>
+<li>Drafts ：碎片收集与整理。</li>
+<li>Launch ：启动器。</li>
+<li>Reeder ：RSS阅读器。</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ Oracle 日常 01：用户创建、表空间创建、表空间扩容/想让用户 A 能够在 B 的 schema 下创建表/错误：ORA-01950:]]></title>
         <id>https://hwang.top/post/oracle-ri-chang-01yong-hu-chuang-jian-biao-kong-jian-chuang-jian-biao-kong-jian-kuo-rong-xiang-rang-yong-hu-a-neng-gou-zai-b-de-schema-xia-chuang-jian-biao-cuo-wu-ora-01950/</id>
@@ -634,81 +692,6 @@ localStorage 与 sessionStorage 的唯一一点区别就是 localStorage 属于�
 <blockquote>
 <p>按：二零二零年二月，《剩余价值》播客播出了和罗新的访谈后被中国全面封杀。以下是二月廿六日拷贝自 bbs.pku.edu.cn/v2/post-read.php?bid=251&amp;threadid=17548174 的文稿。</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Oracle 的 循环实例]]></title>
-        <id>https://hwang.top/post/oracle-de-xun-huan-shi-li/</id>
-        <link href="https://hwang.top/post/oracle-de-xun-huan-shi-li/">
-        </link>
-        <updated>2020-02-26T07:15:53.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>好久没有整 Oracle 了，最近因为数据库服务器需要腾挪空间，所以这个本来DBA干的事情，又落到了我这个万金油的头上🤦‍♂️。<br>
-折腾了几天，终算是有些明白了... 各种工具链也相对有些熟悉了，还算顺利的把备份做了，用户表删了。数据泵导出、表空间压缩、表空间扩容，都做了一遍，算是有点基础的 DBA 能力了🤦‍♂️...<br>
-本文是写给同事看的 Oracle 循环；</p>
-</blockquote>
-<p>在开始学习循环之前，有以下几个概念，可以先了解：</p>
-<h2 id="1-字符串拼接">1. 字符串拼接</h2>
-<p>我们使用循环，是为了节省我们的代码数量，提高编写SQL的效率，所以首先我们就需要把 SQL 语句作为字符串进行拼接处理。在oracle中，用<code>'字符串'</code>，来表示这是一个字符串，而 拼接字符串：</p>
-<pre><code class="language-sql">'select column '||变量a||' from table;'
-</code></pre>
-<p>通过<code>||</code>（英文输入下，按住shift + 回车键上面那个键打出）来连接变量与字符串，如果变量的值是 <code>column2</code> 那么这个字符串就会是：</p>
-<pre><code class="language-sql">'select column colmn2 from table;'
-</code></pre>
-<p>所以我只需要将一列数据传入，这个字符串就会动态的变化：</p>
-<pre><code class="language-sql">'select column colmn3 from table;'
-'select column colmn4 from table;'
-'select column colmn5 from table;'
-</code></pre>
-<ul>
-<li>注意事项1 ⚠️: 在<code>'</code> 和 <code>||</code> 之间要注意空格的使用，字符串中的空格是有效的，字符串外的空格可能是无效的；</li>
-<li>注意事项2 ⚠️：在字符串内如果想要使用<code>'</code>，那么是通过<code>''</code> 两个单引号表示；</li>
-</ul>
-<h2 id="2显示自己循环的代码以及-执行字符串内的sql代码">2.显示自己循环的代码以及 执行字符串内的sql代码</h2>
-<h3 id="21-显示循环的效果">2.1 显示循环的效果：</h3>
-<p>Oracle 中可以使用 <code>sys.dbms_output.put_line()</code> （括内填入需要显示的内容）的方式来查看代码，<strong>这样方便在编写循环时，更加具体的查看到自己的循环结构。</strong></p>
-<p>在Navicat 中，可以通过 「DBMS 导出」标签看到输出的内容。</p>
-<h3 id="22-执行这个字符串">2.2 执行这个字符串</h3>
-<p>通过<code>EXECUTE IMMEDIATE</code>执行语句</p>
-<ul>
-<li>注意事项3⚠️： 是没有<code>()</code> 的哦。</li>
-</ul>
-<p>具体的关于 <code>EXECUTE IMMEDIATE</code>的用法参考：</p>
-<ul>
-<li><a href="https://blog.csdn.net/wang_zhong_cheng/article/details/81202086?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">EXECUTE IMMEDIATE用法小结</a></li>
-</ul>
-<h2 id="3-具体的-for-循环语句">3. 具体的 for 循环语句</h2>
-<p>基本的结构：</p>
-<pre><code class="language-sql">BEGIN
-	for i in 1 .. 10 
-	loop
-		sys.dbms_output_line('循环到数字' || i)
-	end loop;
-END
-</code></pre>
-<p><code>BEGIN ... END</code> : 包裹住这么个 SQL 语句块，说明这段代码按照块来执行；<br>
-<code>for i in 1 .. 10 loop ... end loop</code>: <code>foor</code> 到第一个 <code>loop</code> ,  表示 <code>i</code> 是1开始，一直取到10（<code>..</code> 表示范围），这个区间是闭合的，1和10都能取到，所以这个 i 会以次变成 1、2、3、4、5… 带入到下面的代码中； <code>loop</code> 到 <code>end loop</code> 表示具体的对循环执行的代码；</p>
-<h3 id="实例循环添加数字-依次添加column_201到column_-304的的变量">实例：循环添加数字 —— 依次添加column_201到column_ 304的的变量</h3>
-<pre><code class="language-sql">BEGIN
-	for i in 201 .. 304 
-	loop
-		execute immediate 'select column_|| i || 'form table'
-	end loop;
-END
-</code></pre>
-<p>这样就可以动态的选取了选区了，不过这个语句会有 100 多个结果，实际中肯定不会这种使用：<br>
-下例，为表空间添加237-274的<code>dbf</code>文件：<br>
-<img src="DraggedImage-1.png" alt="" loading="lazy"></p>
-<h3 id="实例循环某个查询到临时表其中的一列">实例：循环某个查询到临时表其中的一列</h3>
-<p>这应该是更加实用的：</p>
-<pre><code class="language-sql">BEGIN
-	for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') 
-	loop
-		execute immediate 'drop table' ||v_cur.user_name|| ' purge';
-	end loop;
-END
-</code></pre>
-<p>首先：<code>for v_cur in (select t.user_name from user_table_qy t where group_id ='qy') loop</code> 表示，<code>v_cur</code> 是后面这个语句的结果，虽然只有一个变量，但它还是一张表，所以在执行语句时 <code>v_cur.user_name</code> 就表示 <code>user_name</code> 这一列，所以会依次去执行<code>drop table</code> 操作。</p>
 ]]></content>
     </entry>
 </feed>
