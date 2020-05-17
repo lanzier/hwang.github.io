@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-05-12T14:33:17.515Z</updated>
+    <updated>2020-05-17T14:55:20.637Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,167 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[iOS 开发学习笔记01 （基于DesignCode.io）]]></title>
+        <id>https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/</id>
+        <link href="https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/">
+        </link>
+        <updated>2020-05-17T14:53:55.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-xcode">1. Xcode</h2>
+<h3 id="项目">项目</h3>
+<figure data-type="image" tabindex="1"><img src="https://cleanshot-cloud-fra.s3.eu-central-1.amazonaws.com/media/1722/UqH39Tul0e7TWEVtae4za9i94EjYPVjx10gBJcMY.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5MF2VVMNBYBOTT5A%2F20200517%2Feu-central-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200517T085111Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=78bd42f194d56c826ce86d82b21f03ba78605e96ecb66832abf16cf739cf0768" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>点击项目名称： 根目录填写相关的内容，其实类似了前端开发的 package.json，Xcode 以GUI的方式呈现了各个设置项。</p>
+</li>
+<li>
+<p>swift 大致等于 Javascript</p>
+</li>
+<li>
+<p>AppDelegate.swift 文件： （<code>Delegate： verb 委托、委派 noun 代表</code>）启动时的一些动作：</p>
+<ol>
+<li>应用程序第一次运行时执行：</li>
+</ol>
+<blockquote>
+<p>这个方法只有在App第一次运行的时候被执行过一次，每次App从后台激活时都不会再执行该方法。<br>
+（注：所有一般我们都在这里获取用户许可，比如本地消息推送的许可等）</p>
+</blockquote>
+<ol start="2">
+<li>应用程序挂起时执行</li>
+</ol>
+<blockquote>
+<p>当有电话进来或者锁屏时，应用程序便会挂起。</p>
+</blockquote>
+<ol start="3">
+<li>应用程序进入后台时执行</li>
+<li>应用程序将要重新回到前台时执行</li>
+<li>应用程序重新进入活动状态时执行</li>
+<li>应用程序将要退出时执行</li>
+</ol>
+</li>
+<li>
+<p>ViewController.swift 文件：制定初始化的ViewController 类</p>
+</li>
+<li>
+<p>Main.storyboard 文件：可以理解为 UI 文件，在这里可以通过 GUI的方式编辑 UI；</p>
+</li>
+<li>
+<p>Assets.xcassets 文件夹：存放图片资源；</p>
+</li>
+<li>
+<p>LaunchScreeen.storyboard 文件：启动屏的UI。</p>
+</li>
+</ul>
+<h2 id="storyboard">Storyboard</h2>
+<figure data-type="image" tabindex="2"><img src="CleanShot%202020-05-17%20at%2022.00.00@2x.png" alt="" loading="lazy"></figure>
+<h3 id="view-controller">View Controller</h3>
+<ul>
+<li>view： background
+<ul>
+<li>Safe Area</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="swift-基础">Swift 基础</h1>
+<pre><code class="language-swift">import UIKit
+// let 不可变的变量声明
+// var 可变的变量声明
+
+let myName = &quot;hwang&quot;
+var myAge = 23
+myAge = 24
+
+let myJob = &quot;Coder&quot;
+let myYear = 1997
+let isLearning = true
+let myTwitter: String = &quot;@hwang&quot;
+let label = &quot;the width is&quot;
+let width = 100
+let widthLable1 = label + String(width)
+
+var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
+colors[0]
+colors.append(&quot;orange&quot;)
+colors.remove(at: 1)
+
+if myAge &gt; 30 {
+    print(&quot;I am old&quot;)
+} else {
+    print(&quot;I am not old&quot;)
+}
+
+myAge &gt; 30 ? &quot;I am old&quot; : &quot;I am not old&quot; //支持三元表达式
+
+switch myAge {
+case 30...100:print(&quot;I am old&quot;)
+case 18...29: print(&quot;aaa&quot;)
+case 0...17:print(&quot;ssss&quot;)
+default:print(&quot;dsadsa&quot;)
+}
+
+for color in colors {
+    print(&quot;this color is \(color)&quot;)
+}
+
+func pointToRetina(point: Int) -&gt; Int {
+    return point * 2
+}
+
+pointToRetina(point: 200)
+
+struct UserStruct {
+    var name: String
+    var age: Int
+    var job: String
+}
+
+var user = UserStruct(name: &quot;hwang&quot;, age: 12, job: &quot;Some one &quot;)
+
+//struct 为所有属性定义了默认值
+
+
+class UserClass {
+    var name: String
+    var age: Int
+    var job: String
+    
+    init(name: String, age: Int, job:String) {
+        self.name = name
+        self.age = age
+        self.job = job
+    }
+}
+
+//class 需要出示化
+
+var userA = UserStruct(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
+var userB = userA
+userB.name = &quot;mmmeeee&quot;
+print(userA, userB)
+
+//class 是浅拷贝
+
+var userC = UserClass(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
+var userD = userC
+userD.name = &quot;mmmeeee&quot;// 修改了userC 的name
+print(userC.name, userD.name)
+
+
+var answer: String? // ? 标记不一定会有返回值
+
+var answerString: String! // 必定是由返回值
+
+if let sureAnswer = answer {
+    UILabel().text = sureAnswer
+}
+// 等价于下面
+
+UILabel().text = answer ?? &quot;&quot;
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020 - 我的主屏]]></title>
         <id>https://hwang.top/post/2020-wo-de-zhu-ping/</id>
@@ -615,83 +776,6 @@ localStorage 与 sessionStorage 的唯一一点区别就是 localStorage 属于�
 <li>browser-window-focus事件：当一个 BrowserWindow 获得焦点的时候触发。</li>
 <li>browser-window-created事件：当一个 BrowserWindow 被创建的时候触发。</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 08]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-08/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-08/">
-        </link>
-        <updated>2020-03-01T05:49:01.000Z</updated>
-        <content type="html"><![CDATA[<h5 id="注链接是-ifttt-生成的可能需要科学的上网方式才能够访问">注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</h5>
-<p><a href="https://ift.tt/2vxlSYr">现在,以编程方式在 Electron 中上传文件,是非常简单的!</a></p>
-<blockquote>
-<p>这段讨论,其实本来是讨论如何自动设置 input 标签的值来实现自动选择文件的.前一段有个 Electon 中自动上传文件的需求,被 Google 带到了这个讨论地址.</p>
-</blockquote>
-<h3 id="微信未完成"><a href="https://ift.tt/37QG0Hm">微信「未完成」</a></h3>
-<blockquote>
-<p>在这个一年一度的公开课上，<strong>一些人期待微信之父张小龙再多谈一些微信的产品哲学</strong>，即使今年张小龙并为亲赴现场，但还是有许多听众坚持举着手机，录完了他 12 分钟的演讲视频；</p>
-</blockquote>
-<p><a href="http://weixin.sogou.com/weixin?type=2&amp;query=keso%E6%80%8E%E4%B9%88%E7%9C%8B+%E5%86%8D%E8%A7%81%EF%BC%8C2010%E5%B9%B4%E4%BB%A3">keso怎么看 再见，2010年代的相关微信公众号文章 – 搜狗微信搜索</a></p>
-<blockquote>
-<p>我们不得不在这样的背景下,跟2010年代说再见,同时去迎接一个更加艰苦的2020年代.这可能会成为新十年的新常态,我们得去适... 2010“Some of us get dipped in flat, some in satin, some in gloss. But every once in a while youfind someone who's iridescent, and .</p>
-</blockquote>
-<p><a href="https://ift.tt/37hRBi6">macOS 下 Electron 程序的签名及公证</a></p>
-<blockquote>
-<p>自 macOS 10.14.5 开始，应用程序必须要经过签名以及公证（notarize），否则默认情况下便无法直接运行，会弹出类似下面的警告： “Appname.dmg” can’t be opened because Apple cannot check it for malicious software. This software needs to be updated.</p>
-</blockquote>
-<p><a href="https://ift.tt/39pY6AM">经历了这次疫情的考验，这些健康、生活、效率习惯值得你长期坚守</a></p>
-<blockquote>
-<p>出乎所有人的预料，一场由新型冠状病毒引发的疫潮迅速侵袭全国。这场疫病的爆发阶段正逢春节假期，面对突如其来的疫况，大家只能待在家中，尽可能一边做好防护工作，一边习惯在家工作和学习。</p>
-</blockquote>
-<p><a href="https://ift.tt/2HdH0Ku">需求方法论（1）：需求的理解/来源/挖掘/记录</a></p>
-<blockquote>
-<p>对于产品经理来说，大多数的日常都是围绕需求展开的——沟通需求、实现需求等。那么对于需求这一内容，如果做好正确理解，相信会对后续实现提供很大帮助。</p>
-</blockquote>
-<h3 id="现代-web-开发的现状与未来jsdc-2019-演讲全文"><a href="https://ift.tt/31Z5hfk">现代 Web 开发的现状与未来（JSDC 2019 演讲全文）</a></h3>
-<blockquote>
-<p>本文是我受邀在台北的 JSDC 2019 活动中做的一次分享，从内容上来说已经可以算的上我的 2019 跨年演讲 XD</p>
-</blockquote>
-<p><a href="https://ift.tt/31IsDqY">对突然而来的远程办公无所适从？搞定这两个最重要的问题就好了</a></p>
-<blockquote>
-<p>「疫情结束后，你最想做什么？」 这个简单的问题引发的话题在微博上有过亿的阅读量，回答里有一线医务人员誓要夺取胜利、把酒言欢的豪迈，也有家属们想要早日见到亲人的心愿，当然，最多的还是普通人对过去习以为常</p>
-</blockquote>
-<p><a href="https://ift.tt/39qeh1c">写作新人初长成，我有这些心得想与你分享</a></p>
-<blockquote>
-<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：效率有心得。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
-</blockquote>
-<p><a href="https://ift.tt/2T69uez">译文 | Uber 的出行数据可视化设计</a></p>
-<blockquote>
-<p>微信号 Glosion 功能介绍 用户体验 · 影视影像 · 文化探索⎢@F.</p>
-</blockquote>
-<p><a href="https://ift.tt/2TjwtDl">依赖注入手册</a></p>
-<blockquote>
-<p>Midway 中使用了非常多的依赖注入的特性，通过装饰器的轻量特性，让依赖注入变的优雅，从而让开发过程变的便捷有趣。</p>
-</blockquote>
-<p><a href="https://ift.tt/2omjy6p">react闲谈——JavaScript同步、异步、回调执行顺序之经典闭包setTimeout面试题分析</a></p>
-<blockquote>
-<p>同步、异步、回调？傻傻分不清楚。 大家注意了，教大家一道口诀： 同步优先、异步靠边、回调垫底（读起来不顺） 用公式表达就是： 同步 =&gt; 异步 =&gt; 回调 这口诀有什么用呢？用来对付面试的。 有一道经典的面试题：  for (va</p>
-</blockquote>
-<p><a href="https://ift.tt/2VfyQcW">专访回形针吴松磊 | 一条疫情科普视频全网播放 1.5 亿，他们是如何炼成的</a></p>
-<blockquote>
-<p>微信号 coolbuy 功能介绍 挖掘不一样的品质生活 文章开始之前，先来听听吴松磊的经典问候👇2 月 2 日，一条名为《关于新冠肺炎的一切》的视频刷屏各大社交网络，短短两天时间，全网播放量达到</p>
-</blockquote>
-<p><a href="https://ift.tt/37N9eGU">我们扒了5000家创业公司的“死因”，手把手教你烧光投资人的钱 | DT数说</a></p>
-<blockquote>
-<p>功能介绍 第一财经旗下数据研究型新媒体，用大数据解读消费社会和商业图景，连接数据、机构和人群。</p>
-</blockquote>
-<p><a href="https://ift.tt/394GmLB">如何评判Logo的好坏</a></p>
-<blockquote>
-<p>微信号 Zaowuchangjing 功能介绍 一个商业顾问的思维精进日记 110/3652020.2.</p>
-</blockquote>
-<p><a href="https://ift.tt/2wmbW95">2019 我的写作桌面清单推荐</a></p>
-<blockquote>
-<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：看完就想买。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
-</blockquote>
-<h3 id="瘟疫-语言和具体的人与历史学家罗新的聊天"><a href="https://telegra.ph/%E7%98%9F%E7%96%AB%E8%AF%AD%E8%A8%80%E5%92%8C%E5%85%B7%E4%BD%93%E7%9A%84%E4%BA%BA%E4%B8%8E%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E7%BD%97%E6%96%B0%E7%9A%84%E8%81%8A%E5%A4%A9-02-26-2">瘟疫、语言和具体的人：与历史学家罗新的聊天</a></h3>
-<blockquote>
-<p>按：二零二零年二月，《剩余价值》播客播出了和罗新的访谈后被中国全面封杀。以下是二月廿六日拷贝自 bbs.pku.edu.cn/v2/post-read.php?bid=251&amp;threadid=17548174 的文稿。</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
