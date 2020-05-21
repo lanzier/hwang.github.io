@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-05-17T14:55:20.637Z</updated>
+    <updated>2020-05-21T10:21:53.521Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,58 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[ Hwang Reading List - New 010]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-010/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-010/">
+        </link>
+        <updated>2020-05-21T10:21:07.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/2Rz3pHO">这场疫情，如果西方输了怎么办？</a></p>
+<blockquote>
+<p>[欢迎点击此处订阅新冠病毒疫情每日中文简报，或发送邮件至cn.letters@nytimes.<br>
+<a href="https://ift.tt/2Vge24F">最详尽的 JS 原型与原型链终极详解，没有「可能是」。（一）</a></p>
+</blockquote>
+<blockquote>
+<p>三篇文章都更新完毕，完整的剖析了 JS 原型与原型链，希望通过这些教程能让你对 Javascript 这门语言理解的更透彻！</p>
+</blockquote>
+<p><a href="https://ift.tt/39uPkB6">从邮件通讯的流行谈起</a></p>
+<blockquote>
+<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
+</blockquote>
+<p><a href="https://ift.tt/1WVBhwt">继承与原型链</a></p>
+<blockquote>
+<p>对于有基于类的语言经验 (如 Java 或 C++) 的开发人员来说，JavaScript 有点令人困惑，因为它是动态的，并且本身不提供一个class实现。（在 ES2015/ES6 中引入了class关键字，但只是语法糖，JavaScript 仍然是基于原型的）。</p>
+</blockquote>
+<p><a href="https://ift.tt/2VgUVY8">特别推荐丨克拉克奖得主苏珊·阿西：科技公司中的经济学家和经济学</a></p>
+<blockquote>
+<p>微信号 功能介绍 本号致力于为中国经管及其他社科学者提供可用于学术研究的大数据资源、数据可视化技术、因果识别、机器学习以及大数据学术前沿应用的相关资讯。 以下文章来源于比较 ，作者比较 比较 “以比较传递理念</p>
+</blockquote>
+<p><a href="https://ift.tt/3emyQyV">中港台 iPhone SE (2020) 文案对比</a></p>
+<blockquote>
+<p>英: Lots to love. Less to spend. 中：称心称手，超值入手。 港：精彩多多，付出不多。 台：精彩不少，付出不多。 英: iPhone 11 Pro called. It wants its chip back.</p>
+</blockquote>
+<p><a href="https://ift.tt/2SVh7W6">头条文章</a></p>
+<p><a href="https://ift.tt/2WmZa4X">公众号投放：我踩过的坑和换来的思考</a></p>
+<blockquote>
+<p>这篇文章，作者主要分享了自己在公众号投放上遇到的问题和思考，希望能对你有所帮助，避免踩坑。 最近在团队里，也在做一些投放的工作，从去年12月份到现在已经连续做了4期的训练营了，每期都做公众号投放。</p>
+</blockquote>
+<p><a href="https://ift.tt/2LhpaZ2">高可用用户中心设计</a></p>
+<blockquote>
+<p>概述 我们公司现在的账户体系比较混乱，每个系统都有一套自己的账户体系，没有办法进行统一的账户管理，比如统计一个人在哪个系统有账号，这样操作是比较麻烦的，还有就是我们如何进行用户行为分析，最终综合用户的</p>
+</blockquote>
+<p><a href="https://ift.tt/3blhEqB">图解新冠病毒：为什么单张图表根本不能说明新冠疫情的发展情况？</a></p>
+<blockquote>
+<p>微信号 BigDataDigest 功能介绍 普及数据思维，传播数据文化 大数据文摘出品来源：fivethirtyeight编译：青柠、Andy外国友人表示，这些天来，只要你在Twitter上浏览视频，几乎都会碰到COVID-19图表。人们试图用这些图表来判断疫情是否</p>
+</blockquote>
+<p><a href="https://ift.tt/35X5u6f">【图文】用曲线和 HSL 为自己制作一个专属滤镜</a></p>
+<blockquote>
+<p>微信号 zycai_house 功能介绍 这是一个学摄影的设计师哼哼唧唧的地方。 Hello，大家好！我是振原。这是照片调色入门完全指南第三支视频的图文，如果你之前对于调色并没有一个比较基础的了解，建议先看看前面两期。一、秒懂</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[iOS 开发学习笔记01 （基于DesignCode.io）]]></title>
         <id>https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/</id>
@@ -718,64 +770,6 @@ onDownloadProgress:function(progressEvent){
 <figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1583891885092.png" alt="本地显示已经在 AirPlay 了，但实际上..." loading="lazy"></figure>
 <p>However... 试了 N 次，点击投屏后，加载2 s（梯子真快）后，直接退出。当时就有一种被阉了的感觉。国内 fake 了  AirPlay  ，然后阉割了它。就好像下了盗版，然后发现他是打码的。</p>
 <p>所以，还是好好挣钱，准备买一个 【New】Apple TV 吧。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（九）— localStorage 储存变量/Electron 的生命周期]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-jiu-localstorage-chu-cun-bian-liang-electron-de-sheng-ming-zhou-qi/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-jiu-localstorage-chu-cun-bian-liang-electron-de-sheng-ming-zhou-qi/">
-        </link>
-        <updated>2020-03-03T02:18:54.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-localstorage">1. localStorage</h2>
-<ul>
-<li>localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。</li>
-<li>localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。</li>
-<li>localStorage** 属性是只读的**。</li>
-</ul>
-<h3 id="一些注意事项">一些注意事项：</h3>
-<blockquote>
-<p>localStorage 的局限<br>
-1、浏览器的大小不统一，并且在 IE8 以上的 IE 版本才支持 localStorage 这个属性。<br>
-2、<strong>目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换。</strong><br>
-3、localStorage在浏览器的隐私模式下面是不可读取的。<br>
-4、<strong>localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡。</strong><br>
-5、<strong>localStorage不能被爬虫抓取到。</strong><br>
-localStorage 与 sessionStorage 的唯一一点区别就是 localStorage 属于永久性存储，而 sessionStorage 属于当会话结束的时候，sessionStorage 中的键值对会被清空。<br>
-如上，这里面，需要处理 localStorage 拿到的值，尤其是 boolean ，因为<code>if(&quot;false&quot;)</code> 再 js 里面的返回值是 <code>true</code>，正确处理的做法，其实可以用<code>JSON.parse(localStorage.checked)</code> 其中 <code>localStorage.checked</code> 返回的是 <code>true</code>或者<code>false</code>的字符串。通过<code>JSON.parse()</code>，可以转为合理的布尔值。</p>
-</blockquote>
-<h2 id="2-electron-的生命周期">2. Electron 的生命周期</h2>
-<h3 id="基础生命周期">基础生命周期</h3>
-<ol>
-<li>创建过程</li>
-</ol>
-<ul>
-<li>ready 事件</li>
-</ul>
-<ol start="2">
-<li>关闭过程</li>
-</ol>
-<ul>
-<li>window-all-closed 事件</li>
-<li>before-quit事件</li>
-<li>will-quit事件</li>
-<li>quit事件<br>
-这里的过程是：<br>
-<code>before-quit	=&gt;	will-quit	=&gt;	quit</code><br>
-其中，监听了 window-all-closed 后，其他的 quit 就不会监听了。</li>
-</ul>
-<ol start="3">
-<li>macOS 的监听事件</li>
-</ol>
-<ul>
-<li>open-file 事件</li>
-<li>open-url 事件</li>
-<li>activate 事件： 应用点击 dock 图标的时候</li>
-</ul>
-<ol>
-<li>browser-window-blur事件：当一个 BrowserWindow 失去焦点的时候触发。</li>
-<li>browser-window-focus事件：当一个 BrowserWindow 获得焦点的时候触发。</li>
-<li>browser-window-created事件：当一个 BrowserWindow 被创建的时候触发。</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
