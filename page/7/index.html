@@ -72,6 +72,36 @@
     
     <div class="flex-1 order-2 md:order-1">
       <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/ml-python-ling-hui-gui/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          ML- Python 岭回归
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-07-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <pre><code class="language-python">def ridgeRegres(xMat,yMat,lam=0.2):
+	xTx = xMat.T*xMat
+	denom = xTx + eye(shape(xMat)[1])*lam
+	if linalg.det(denom) == 0.0:
+		print &quot;This matrix is singular, cannot do inverse&quot;
+		return
+	ws = denom.I * (xMat.T*yMat)
+	return ws
+</code></pre>
+
+      </div>
+      <a href="https://hwang.top/post/ml-python-ling-hui-gui/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/ml-python-ling-hui-gui.png" alt="ML- Python 岭回归">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
         <a href="https://hwang.top/post/keplergl-bu-xu-yao-yi-xing-dai-ma-wan-zhuan-ku-xuan-de-shu-ju-di-tu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
           Kepler.gl 不需要一行代码！玩转酷炫的数据地图
         </a>

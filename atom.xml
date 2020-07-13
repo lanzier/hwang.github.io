@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-06-05T04:58:06.042Z</updated>
+    <updated>2020-07-13T02:32:32.455Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,34 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Python2  macOS 安装 m2crypto]]></title>
+        <id>https://hwang.top/post/python2-macos-an-zhuang-m2crypto/</id>
+        <link href="https://hwang.top/post/python2-macos-an-zhuang-m2crypto/">
+        </link>
+        <updated>2020-06-05T05:47:04.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装工具">安装工具</h2>
+<pre><code class="language-bash">brew install openssl
+brew install swig
+</code></pre>
+<h2 id="修改-python-27">修改 (python 2.7)</h2>
+<pre><code class="language-bash">export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+</code></pre>
+<h2 id="安装">安装</h2>
+<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
+CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
+SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
+pip install m2crypto
+</code></pre>
+<p>OR  pipenv</p>
+<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
+CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
+SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
+pipenv install m2crypto
+</code></pre>
+<p>最后，有一说一，pipenv 确实方便的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ Hwang Reading List - New 010]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-010/</id>
@@ -758,18 +786,6 @@ onDownloadProgress:function(progressEvent){
 所以你可以参考：<a href="https://segmentfault.com/a/1190000021424025">https://segmentfault.com/a/1190000021424025</a> 进行修改，也可以直接使用 cnpm 进行安装。</li>
 </ul>
 <figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1583905408546.png" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[被阉割的体验｜ 杂记]]></title>
-        <id>https://hwang.top/post/bei-yan-ge-de-ti-yan-or-za-ji/</id>
-        <link href="https://hwang.top/post/bei-yan-ge-de-ti-yan-or-za-ji/">
-        </link>
-        <updated>2020-03-11T01:56:32.000Z</updated>
-        <content type="html"><![CDATA[<p>今天兴起，拿着 iPad ，想用 Netflix 给投影仪投屏看电影。</p>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1583891885092.png" alt="本地显示已经在 AirPlay 了，但实际上..." loading="lazy"></figure>
-<p>However... 试了 N 次，点击投屏后，加载2 s（梯子真快）后，直接退出。当时就有一种被阉了的感觉。国内 fake 了  AirPlay  ，然后阉割了它。就好像下了盗版，然后发现他是打码的。</p>
-<p>所以，还是好好挣钱，准备买一个 【New】Apple TV 吧。</p>
 ]]></content>
     </entry>
 </feed>
