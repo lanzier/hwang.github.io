@@ -1,27 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://hwang.top</id>
-    <title>Hwang&apos;s Blog</title>
-    <updated>2020-07-14T02:55:07.011Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://hwang.top"/>
-    <link rel="self" href="https://hwang.top/atom.xml"/>
-    <subtitle>欢迎来到 Hwang 的小博客 &lt;br&gt;
-📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；&lt;br&gt;
-🌍 托管于 Github，感谢 Github.com 提供的服务器资源  &lt;br&gt;
-✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝&lt;br&gt;
-👨‍🎨 封面由 Hwang，在 Figma 上完成创作 &lt;br&gt;
-这里显然不是什么技术博客，也不会有太多值得期待的干货。</subtitle>
-    <logo>https://hwang.top/images/avatar.png</logo>
-    <icon>https://hwang.top/favicon.ico</icon>
-    <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
-    <entry>
-        <title type="html"><![CDATA[证明高斯-马尔科夫定理：教科书中很少见的三种方法]]></title>
-        <id>https://hwang.top/post/zheng-ming-gao-si-ma-er-ke-fu-ding-li-jiao-ke-shu-zhong-hen-shao-jian-de-san-chong-fang-fa/</id>
-        <link href="https://hwang.top/post/zheng-ming-gao-si-ma-er-ke-fu-ding-li-jiao-ke-shu-zhong-hen-shao-jian-de-san-chong-fang-fa/">
-        </link>
-        <updated>2020-07-14T02:50:34.000Z</updated>
-        <content type="html"><![CDATA[<p>证明高斯-马尔科夫定理：教科书中很少见的三种方法</p>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>证明高斯-马尔科夫定理：教科书中很少见的三种方法 - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="证明高斯-马尔科夫定理：教科书中很少见的三种方法 - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="证明高斯-马尔科夫定理：教科书中很少见的三种方法
+作者：姚耀军
+\qquadOLS估计是计量经济学的Benchmark，而高斯-马尔科夫定理对此提供了理论支持。在初级计量经济学中，唯一的定理或许就是高斯-马尔科夫定理。该定理的具体内容是：当..." />
+  <meta property="og:title" content="证明高斯-马尔科夫定理：教科书中很少见的三种方法 - Hwang&#39;s Blog">
+  <meta property="og:description" content="证明高斯-马尔科夫定理：教科书中很少见的三种方法
+作者：姚耀军
+\qquadOLS估计是计量经济学的Benchmark，而高斯-马尔科夫定理对此提供了理论支持。在初级计量经济学中，唯一的定理或许就是高斯-马尔科夫定理。该定理的具体内容是：当..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/zheng-ming-gao-si-ma-er-ke-fu-ding-li-jiao-ke-shu-zhong-hen-shao-jian-de-san-chong-fang-fa/" />
+  <meta property="og:image" content="https://hwang.top/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="证明高斯-马尔科夫定理：教科书中很少见的三种方法 - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="证明高斯-马尔科夫定理：教科书中很少见的三种方法
+作者：姚耀军
+\qquadOLS估计是计量经济学的Benchmark，而高斯-马尔科夫定理对此提供了理论支持。在初级计量经济学中，唯一的定理或许就是高斯-马尔科夫定理。该定理的具体内容是：当...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/zheng-ming-gao-si-ma-er-ke-fu-ding-li-jiao-ke-shu-zhong-hen-shao-jian-de-san-chong-fang-fa/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-github.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          证明高斯-马尔科夫定理：教科书中很少见的三种方法
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2020-07-14 · 12 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <p>证明高斯-马尔科夫定理：教科书中很少见的三种方法</p>
 <p><font face="黑体" size=3>作者：姚耀军</font></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="2em"/></mrow><annotation encoding="application/x-tex">\qquad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:2em;"></span></span></span></span>OLS估计是计量经济学的Benchmark，而高斯-马尔科夫定理对此提供了理论支持。在初级计量经济学中，唯一的定理或许就是高斯-马尔科夫定理。该定理的具体内容是：当高斯-马尔科夫假定成立时，OLS估计量是最优线性无偏估计量(Best Linear Unbiased Estimator，BLUE)，亦即在所有线性无偏估计量中,OLS估计量最有效或者说方差最小。</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="2em"/></mrow><annotation encoding="application/x-tex">\qquad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:2em;"></span></span></span></span>为简化数学上的复杂性，初级计量经济学通常假定线性回归模型中的解释变量具有非随机性。此时，对于一元线性回归模型，高斯-马尔科夫假定包括六大假定——</p>
@@ -151,735 +198,233 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z'/></svg><
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="2em"/></mrow><annotation encoding="application/x-tex">\qquad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:2em;"></span></span></span></span>本文是关于初级计量经济学的一份技术笔记，就笔者曾阅读过的教科书而言，本文所提供的关于高斯-马尔科夫定理的三种证明方法是很少见的。</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="2em"/></mrow><annotation encoding="application/x-tex">\qquad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:2em;"></span></span></span></span>一位年轻的学子对此文进行了评论：“对于那些有志于学术的学生来说，这类技术笔记十分有助于厘清计量经济学的本质。但是，当前大部分学生秉承的都是工具主义，就是敲Stata代码，而此类技术笔记对此就帮助不大了。”这位年轻学子十分有见地，但笔者在此想以自己的一段经历来回应他的评论，并以此作为结语：</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="2em"/></mrow><annotation encoding="application/x-tex">\qquad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:2em;"></span></span></span></span>笔者多年前曾经听过北京大学平新乔老师的高级微观经济学课程。由于该课程涉及复杂高深的的数学证明，平老师有时要花上三节课时间才推导完一个定理。这些定理通常具有明显的经济学直觉，但平老师坚持认为对定理进行严格证明十分重要。笔者依稀记得，平老师讲过一句很有启发性的话，其大意是：<strong><strong>“军人练习踢正步、立正与稍息，表面看来缺乏实战价值，但这种基本功可以区分正规军与民兵。”</strong></strong></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python2  macOS 安装 m2crypto]]></title>
-        <id>https://hwang.top/post/python2-macos-an-zhuang-m2crypto/</id>
-        <link href="https://hwang.top/post/python2-macos-an-zhuang-m2crypto/">
-        </link>
-        <updated>2020-06-05T05:47:04.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="安装工具">安装工具</h2>
-<pre><code class="language-bash">brew install openssl
-brew install swig
-</code></pre>
-<h2 id="修改-python-27">修改 (python 2.7)</h2>
-<pre><code class="language-bash">export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-</code></pre>
-<h2 id="安装">安装</h2>
-<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
-CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
-SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
-pip install m2crypto
-</code></pre>
-<p>OR  pipenv</p>
-<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
-CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
-SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
-pipenv install m2crypto
-</code></pre>
-<p>最后，有一说一，pipenv 确实方便的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Hwang Reading List - New 010]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-010/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-010/">
-        </link>
-        <updated>2020-05-21T10:21:07.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2Rz3pHO">这场疫情，如果西方输了怎么办？</a></p>
-<blockquote>
-<p>[欢迎点击此处订阅新冠病毒疫情每日中文简报，或发送邮件至cn.letters@nytimes.<br>
-<a href="https://ift.tt/2Vge24F">最详尽的 JS 原型与原型链终极详解，没有「可能是」。（一）</a></p>
-</blockquote>
-<blockquote>
-<p>三篇文章都更新完毕，完整的剖析了 JS 原型与原型链，希望通过这些教程能让你对 Javascript 这门语言理解的更透彻！</p>
-</blockquote>
-<p><a href="https://ift.tt/39uPkB6">从邮件通讯的流行谈起</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/1WVBhwt">继承与原型链</a></p>
-<blockquote>
-<p>对于有基于类的语言经验 (如 Java 或 C++) 的开发人员来说，JavaScript 有点令人困惑，因为它是动态的，并且本身不提供一个class实现。（在 ES2015/ES6 中引入了class关键字，但只是语法糖，JavaScript 仍然是基于原型的）。</p>
-</blockquote>
-<p><a href="https://ift.tt/2VgUVY8">特别推荐丨克拉克奖得主苏珊·阿西：科技公司中的经济学家和经济学</a></p>
-<blockquote>
-<p>微信号 功能介绍 本号致力于为中国经管及其他社科学者提供可用于学术研究的大数据资源、数据可视化技术、因果识别、机器学习以及大数据学术前沿应用的相关资讯。 以下文章来源于比较 ，作者比较 比较 “以比较传递理念</p>
-</blockquote>
-<p><a href="https://ift.tt/3emyQyV">中港台 iPhone SE (2020) 文案对比</a></p>
-<blockquote>
-<p>英: Lots to love. Less to spend. 中：称心称手，超值入手。 港：精彩多多，付出不多。 台：精彩不少，付出不多。 英: iPhone 11 Pro called. It wants its chip back.</p>
-</blockquote>
-<p><a href="https://ift.tt/2SVh7W6">头条文章</a></p>
-<p><a href="https://ift.tt/2WmZa4X">公众号投放：我踩过的坑和换来的思考</a></p>
-<blockquote>
-<p>这篇文章，作者主要分享了自己在公众号投放上遇到的问题和思考，希望能对你有所帮助，避免踩坑。 最近在团队里，也在做一些投放的工作，从去年12月份到现在已经连续做了4期的训练营了，每期都做公众号投放。</p>
-</blockquote>
-<p><a href="https://ift.tt/2LhpaZ2">高可用用户中心设计</a></p>
-<blockquote>
-<p>概述 我们公司现在的账户体系比较混乱，每个系统都有一套自己的账户体系，没有办法进行统一的账户管理，比如统计一个人在哪个系统有账号，这样操作是比较麻烦的，还有就是我们如何进行用户行为分析，最终综合用户的</p>
-</blockquote>
-<p><a href="https://ift.tt/3blhEqB">图解新冠病毒：为什么单张图表根本不能说明新冠疫情的发展情况？</a></p>
-<blockquote>
-<p>微信号 BigDataDigest 功能介绍 普及数据思维，传播数据文化 大数据文摘出品来源：fivethirtyeight编译：青柠、Andy外国友人表示，这些天来，只要你在Twitter上浏览视频，几乎都会碰到COVID-19图表。人们试图用这些图表来判断疫情是否</p>
-</blockquote>
-<p><a href="https://ift.tt/35X5u6f">【图文】用曲线和 HSL 为自己制作一个专属滤镜</a></p>
-<blockquote>
-<p>微信号 zycai_house 功能介绍 这是一个学摄影的设计师哼哼唧唧的地方。 Hello，大家好！我是振原。这是照片调色入门完全指南第三支视频的图文，如果你之前对于调色并没有一个比较基础的了解，建议先看看前面两期。一、秒懂</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[iOS 开发学习笔记01 （基于DesignCode.io）]]></title>
-        <id>https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/</id>
-        <link href="https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/">
-        </link>
-        <updated>2020-05-17T14:53:55.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-xcode">1. Xcode</h2>
-<h3 id="项目">项目</h3>
-<figure data-type="image" tabindex="1"><img src="https://cleanshot-cloud-fra.s3.eu-central-1.amazonaws.com/media/1722/UqH39Tul0e7TWEVtae4za9i94EjYPVjx10gBJcMY.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5MF2VVMNBYBOTT5A%2F20200517%2Feu-central-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200517T085111Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=78bd42f194d56c826ce86d82b21f03ba78605e96ecb66832abf16cf739cf0768" alt="" loading="lazy"></figure>
-<ul>
-<li>
-<p>点击项目名称： 根目录填写相关的内容，其实类似了前端开发的 package.json，Xcode 以GUI的方式呈现了各个设置项。</p>
-</li>
-<li>
-<p>swift 大致等于 Javascript</p>
-</li>
-<li>
-<p>AppDelegate.swift 文件： （<code>Delegate： verb 委托、委派 noun 代表</code>）启动时的一些动作：</p>
-<ol>
-<li>应用程序第一次运行时执行：</li>
-</ol>
-<blockquote>
-<p>这个方法只有在App第一次运行的时候被执行过一次，每次App从后台激活时都不会再执行该方法。<br>
-（注：所有一般我们都在这里获取用户许可，比如本地消息推送的许可等）</p>
-</blockquote>
-<ol start="2">
-<li>应用程序挂起时执行</li>
-</ol>
-<blockquote>
-<p>当有电话进来或者锁屏时，应用程序便会挂起。</p>
-</blockquote>
-<ol start="3">
-<li>应用程序进入后台时执行</li>
-<li>应用程序将要重新回到前台时执行</li>
-<li>应用程序重新进入活动状态时执行</li>
-<li>应用程序将要退出时执行</li>
-</ol>
-</li>
-<li>
-<p>ViewController.swift 文件：制定初始化的ViewController 类</p>
-</li>
-<li>
-<p>Main.storyboard 文件：可以理解为 UI 文件，在这里可以通过 GUI的方式编辑 UI；</p>
-</li>
-<li>
-<p>Assets.xcassets 文件夹：存放图片资源；</p>
-</li>
-<li>
-<p>LaunchScreeen.storyboard 文件：启动屏的UI。</p>
-</li>
-</ul>
-<h2 id="storyboard">Storyboard</h2>
-<figure data-type="image" tabindex="2"><img src="CleanShot%202020-05-17%20at%2022.00.00@2x.png" alt="" loading="lazy"></figure>
-<h3 id="view-controller">View Controller</h3>
-<ul>
-<li>view： background
-<ul>
-<li>Safe Area</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="swift-基础">Swift 基础</h1>
-<pre><code class="language-swift">import UIKit
-// let 不可变的变量声明
-// var 可变的变量声明
 
-let myName = &quot;hwang&quot;
-var myAge = 23
-myAge = 24
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
 
-let myJob = &quot;Coder&quot;
-let myYear = 1997
-let isLearning = true
-let myTwitter: String = &quot;@hwang&quot;
-let label = &quot;the width is&quot;
-let width = 100
-let widthLable1 = label + String(width)
+      
 
-var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
-colors[0]
-colors.append(&quot;orange&quot;)
-colors.remove(at: 1)
+      
+        <div id="vlaine-comment"></div>
+      
 
-if myAge &gt; 30 {
-    print(&quot;I am old&quot;)
-} else {
-    print(&quot;I am not old&quot;)
-}
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、下达命令、合作、独行、解决方程式、分析新问题、清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。专业分工是给昆虫准备的。
+<br>
+Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 
-myAge &gt; 30 ? &quot;I am old&quot; : &quot;I am not old&quot; //支持三元表达式
+<br>
 
-switch myAge {
-case 30...100:print(&quot;I am old&quot;)
-case 18...29: print(&quot;aaa&quot;)
-case 0...17:print(&quot;ssss&quot;)
-default:print(&quot;dsadsa&quot;)
-}
+<center> <img src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" /> </center>
+</footer>
+    </div>
 
-for color in colors {
-    print(&quot;this color is \(color)&quot;)
-}
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
 
-func pointToRetina(point: Int) -&gt; Int {
-    return point * 2
-}
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        
+      </div>
+    </div>
 
-pointToRetina(point: 200)
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
 
-struct UserStruct {
-    var name: String
-    var age: Int
-    var job: String
-}
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-var user = UserStruct(name: &quot;hwang&quot;, age: 12, job: &quot;Some one &quot;)
-
-//struct 为所有属性定义了默认值
-
-
-class UserClass {
-    var name: String
-    var age: Int
-    var job: String
-    
-    init(name: String, age: Int, job:String) {
-        self.name = name
-        self.age = age
-        self.job = job
-    }
-}
-
-//class 需要出示化
-
-var userA = UserStruct(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
-var userB = userA
-userB.name = &quot;mmmeeee&quot;
-print(userA, userB)
-
-//class 是浅拷贝
-
-var userC = UserClass(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
-var userD = userC
-userD.name = &quot;mmmeeee&quot;// 修改了userC 的name
-print(userC.name, userD.name)
-
-
-var answer: String? // ? 标记不一定会有返回值
-
-var answerString: String! // 必定是由返回值
-
-if let sureAnswer = answer {
-    UILabel().text = sureAnswer
-}
-// 等价于下面
-
-UILabel().text = answer ?? &quot;&quot;
-
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2020 - 我的主屏]]></title>
-        <id>https://hwang.top/post/2020-wo-de-zhu-ping/</id>
-        <link href="https://hwang.top/post/2020-wo-de-zhu-ping/">
-        </link>
-        <updated>2020-05-12T14:31:41.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1589293943135.PNG" alt="" loading="lazy"></figure>
-<h2 id="第一排-文件夹">第一排 文件夹</h2>
-<ul>
-<li>📦：工具类 App</li>
-<li>🎴：家庭、生活记录类 App</li>
-<li>🌍：不存在的 App</li>
-<li>🚪：闭门学习类 App</li>
-</ul>
-<h2 id="第二排-黑色">第二排 黑色</h2>
-<ul>
-<li>figma：我爱 Figma， Figma 牛逼！知道的都知道，工作用。</li>
-<li>极光字典：查字典的咯。</li>
-<li>Ulysses：包括本文，就是在这个 App 里面写的。</li>
-<li>NOMO：网红相机，并没有订阅</li>
-</ul>
-<h2 id="第三排-白色-一">第三排 白色 一</h2>
-<ul>
-<li>Notion： 知识管理、项目管理、团队协同。</li>
-<li>MoneyWiz 3： 记账的。</li>
-<li>PPHub：别问，问就交友。</li>
-<li>Pocket： Read it later，not NEVER。</li>
-</ul>
-<h2 id="第四排-白色-二">第四排 白色 二</h2>
-<ul>
-<li>轻芒杂志： 王俊昱团队的新产品，内测中。</li>
-<li>Tg：xxx。</li>
-<li>飞书：头条牛逼！我爱飞书！</li>
-<li>Outlook：微软苏州团队出品，非常棒。</li>
-</ul>
-<h2 id="第五排-蓝色">第五排 蓝色</h2>
-<ul>
-<li>快捷指令：效率工具， iPhone、iPad上处理许多流程的重要工具。</li>
-<li>App Store：没啥</li>
-<li>Tweetbot：没啥</li>
-<li>JSbox：脚本啥的，很好写</li>
-</ul>
-<h2 id="第六排-绿色">第六排 绿色</h2>
-<ol>
-<li>Castro：一个高效便捷好看的播客应用。已订阅。💰</li>
-<li>微信：糟糕的高墙。</li>
-<li>Spotify： 听歌的。</li>
-<li>Timepage： iOS 上最好看（没有之一，不是广告，不违反广告法） 的日历App。老用户，免费送了 iPad 版，相比（其他转订阅的厂商）而言，尽然有些不好意思。用以查看各种日程，离开学校后，明显还没有找到使用日历的节奏。需求并没有那么强了。</li>
-</ol>
-<h2 id="dock-栏">Dock 栏</h2>
-<ol>
-<li>Todoist ：任务管理，GTD。</li>
-<li>Drafts ：碎片收集与整理。</li>
-<li>Launch ：启动器。</li>
-<li>Reeder ：RSS阅读器。</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Oracle 日常 01：用户创建、表空间创建、表空间扩容/想让用户 A 能够在 B 的 schema 下创建表/错误：ORA-01950:]]></title>
-        <id>https://hwang.top/post/oracle-ri-chang-01yong-hu-chuang-jian-biao-kong-jian-chuang-jian-biao-kong-jian-kuo-rong-xiang-rang-yong-hu-a-neng-gou-zai-b-de-schema-xia-chuang-jian-biao-cuo-wu-ora-01950/</id>
-        <link href="https://hwang.top/post/oracle-ri-chang-01yong-hu-chuang-jian-biao-kong-jian-chuang-jian-biao-kong-jian-kuo-rong-xiang-rang-yong-hu-a-neng-gou-zai-b-de-schema-xia-chuang-jian-biao-cuo-wu-ora-01950/">
-        </link>
-        <updated>2020-04-19T06:28:00.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="oracle-用户创建-表空间创建-表空间扩容">Oracle 用户创建、表空间创建、表空间扩容</h1>
-<h2 id="具体思路">具体思路</h2>
-<ol>
-<li>先建一个表空间，然后循环添加表空间，31G一个 dbf 文件，循环增加到目标大小</li>
-<li>创建用户</li>
-<li>给用户授权</li>
-</ol>
-<h2 id="具体代码">具体代码</h2>
-<pre><code class="language-sql">/* 创建表空间 */
-create tablespace VW_NOV_GUEST_SSD_DATA datafile '/data/oradata/vw_nov_guest_ssd_01.dbf' size 31G;
-
-/*创建用户*/
-create user VW_NOV_GUEST_SSD
-IDENTIFIED BY XoHuq__6Vu
-default tablespace VW_NOV_GUEST_SSD_DATA;
-
-/* 扩容表空间 */
-alter tablespace test_tbs add datafile '/data/oradata/vw_nov_guest_ssd_01.dbf' size 31G;
-/* 循环进行 */
-BEGIN
-	FOR i IN 2..16
-	LOOP
-	EXECUTE IMMEDIATE 'alter tablespace VW_NOV_GUEST_SSD_DATA add datafile ''/data/oradata/vw_nov_guest_ssd_0' || i || '.dbf'' size 31G';
-END LOOP;
-END;
-
-
-</code></pre>
-<p>单用户 oracle用户查看用户所属的默认表空间</p>
-<pre><code class="language-sql">select username,default-tablespace from user_users;
-</code></pre>
-<p>Dba 查看oracle用户默认表空间</p>
-<pre><code class="language-sql">select username, default_tablespace defspace from dba_users
-</code></pre>
-<h1 id="oracle-想让用户-a-能够在-b-的-schema-下创建表">Oracle  想让用户 A 能够在 B 的 schema 下创建表</h1>
-<p>Oracle 的表权限中，有一个 <code>create table</code> 权限，也有一个<code>create any table</code>的权限，<a href="http://blog.itpub.net/27713675/viewspace-1130838/">具体来说：</a></p>
-<blockquote>
-<p>假如我们数据库里面有A和B两个用户，我们给A用户赋create any table权限，那么A用户就可以建立A.table和B.table等，如果我们给A用户赋create table ,那么A用户就只能建A.table表了。</p>
-</blockquote>
-<p>所以，对于 oracle 来说，似乎是没有库的概念，也就无法授权一个库给别人。而我们公司的研发同事，主要使用 Navicat 进行数据库的相关操作。 Navicat 的 oracle 基于 schema 组织的，所以没有好像是（我也不是那么确定）没有办法就与让用户 A 能够在 B 的 schema 下创建表，并且不能在其他 schema 下建表。</p>
-<p>所以可以做的只是，授权所有 schema 下建表的权限：</p>
-<pre><code class="language-sql">GRANT CREATE ANY TABLE TO VW_NOV07;
-</code></pre>
-<h1 id="错误ora-01950-no-privileges-on-tablespace-xxxx">错误：ORA-01950: no privileges on tablespace xxxx</h1>
-<p>新建了一个表空间后，希望将归档的数据放置在这个表空间，使用 Navicat 的数据传输工具时，遇到了这个问题。</p>
-<p>解决方案：</p>
-<ol>
-<li>授予用户对该表空间的UNLIMITED配额<pre><code class="language-sql">ALTER USER [YOUR_USER_NAME] QUOTA UNLIMITED ON [YOUR_TABLESPACE_NAME];
-</code></pre>
-</li>
-<li>重新授权resource角色给用户之后，便可以创建表格<pre><code class="language-sql">GRANT RESOURCE TO ETLg
-</code></pre>
-</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Hwang Reading List - New 09]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-09/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-09/">
-        </link>
-        <updated>2020-04-01T01:19:46.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2vEEzhS">为了买一个完美的雷电 3 扩展坞，我累计花掉了一台 iPhone 11 的钱</a></p>
-<blockquote>
-<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：看完就想买 。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
-</blockquote>
-<p><a href="https://ift.tt/38IXNAr">AO3 事件：举报之后……谁赢了这场斗争？</a></p>
-<blockquote>
-<p>微信号 D-Labo 功能介绍 由《第一财经》杂志推出的一个面向年轻人的生活方式项目，团队主要设立在东京，关注建筑与设计，店铺与零售，城市与商业，媒体与文化等领域，以独立客观视角观察日本乃至全球的新鲜事，希望与你</p>
-</blockquote>
-<p><a href="https://ift.tt/38eMYG2">我的 2010 年代清单 | 一位设计师的十本好书</a></p>
-<blockquote>
-<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，投稿赛道为：我的 2010 年代清单。本文仅代表作者观点，少数派对标题和排版略作调整。</p>
-</blockquote>
-<p><a href="https://ift.tt/31JPWAN">2019 年度总结 — 当数字生活与工作相遇</a></p>
-<blockquote>
-<p>编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：多一度思考。本文仅代表作者本人观点，少数派对标题和排版略作调整。</p>
-</blockquote>
-<p><a href="https://ift.tt/38oxJeH">产品配色 2.0：使用 HCL 色彩空间替代 HSL 生成配色</a></p>
-<blockquote>
-<p>关于 HCL HCL (Hue-Chroma-Luminance) 与 RGB 一样同属色彩空间的一种，因为最早由国际照明协会CIE提出，又被称作 CIELch(uv)。HCL 最普遍应用于程序生成的配色表 (color swatch) 或可视化数据图表配色。在 HCL 色彩空间中，当色相改变而 L 通</p>
-</blockquote>
-<p><a href="https://ift.tt/3b0c2T9">“网红柱状图”的前世今生</a></p>
-<blockquote>
-<p>微信号 pwords 功能介绍 写给100年后的考古学家 链接：https://www.bilibili.</p>
-</blockquote>
-<p><a href="https://ift.tt/2AeQTlw">工业 4.0 时代，“预测性维护”可以有效降低机器成本</a></p>
-<blockquote>
-<p>为你推送和解读最前沿、最有料的科技创投资讯</p>
-</blockquote>
-<p><a href="https://ift.tt/2CZCG1M">在 Node 的帮助下，横跨多平台的 JavaScript 已经赢了</a></p>
-<blockquote>
-<p>为你推送和解读最前沿、最有料的科技创投资讯</p>
-</blockquote>
-<p><a href="https://ift.tt/2qJ6t9q">看起来更“科学”的经济学模型，为什么也是一种“寓言”？_商业_好奇心日报</a></p>
-<blockquote>
-<p>《经济学寓言》 内容简介 这是经济学家阿里尔·鲁宾斯坦以个人视角书写的经济学普及读物。书中采用简洁又充满历史、场景感的写作手法，以及理论与现实各占一节的平行结构。在介绍经济学的重要概念时，他回忆起他的童</p>
-</blockquote>
-<p><a href="https://ift.tt/2rZlNzC">AirPods Pro：数字声音进化论</a></p>
-<blockquote>
-<p>从 4 年前开始，我尝试了市面上所有的主流蓝牙耳机。它们有着各种各样的缺陷，「不支持降噪」、「佩戴不够舒适」、「不够便携」、「通话质量不行」，我经常需要带两款以上耳机出门，以应对不同场景下的不同需求。</p>
-</blockquote>
-<p><a href="https://ift.tt/2U368ti">《新共和》前主编，如何看待科技巨头对独立思考的威胁？_智能_好奇心日报</a></p>
-<blockquote>
-<p>《没有思想的世界》 内容简介 如果思想消失了，世界将会怎样？富兰克林·福尔用亲身经历，演绎了今天的数据革命如何威胁新思想的诞生与创造性的表达。福尔指出，在三大垄断企业——亚马逊、谷歌和脸书——的控制下，</p>
-</blockquote>
-<p><a href="https://ift.tt/2tSupt0">在工具应用选择上，为什么我开始相信 Unix 哲学？</a></p>
-<blockquote>
-<p>「本文参与少数派2019年度征文 | 多一度思考」Unix 是……「独角兽」还是「日料」？ 也许很多小伙伴已经非常清楚 Unix 是什么，不过这里请允许我略提一下身边关于Unix 名称的有趣经历。 我向一些朋友提起 Unix 时，有时会产生<br>
-<a href="https://ift.tt/2TPSJGk">网易游戏遭下架，脸萌又出新滤镜，10月App Store闹剧多</a> \<br>
-这是产品猎人第九期 App Store 榜单报告，请各位读者查收。在数据维度和和分析深度方面，我们的报告还有待完善，请大家在评论区给我们多多提出意见，我们会不断改进，期待一起成长。</p>
-</blockquote>
-<p><a href="https://ift.tt/38VM95u">要像宇芽一样勇敢 | 正午</a> \</p>
-<blockquote>
-<p>微信号 noon-story 功能介绍 用故事凝视时代 要像宇芽一样勇敢 采访、文｜罗洁琪 11月25日，在消除对妇女的暴力行为国际日（注：是反对一切针对妇女的暴力，而不仅仅是反家暴日，这是一个误解），网红仿妆博主宇芽（真名何</p>
-</blockquote>
-<p><a href="https://ift.tt/35ooFo6">33 Ways to Remember the 2010s</a> \</p>
-<blockquote>
-<p>Try me! There’s more inside. Spandex ruled everything around us.</p>
-</blockquote>
-<p><a href="https://ift.tt/2O7lfQE">Stadia 体验</a> \</p>
-<blockquote>
-<p>今天晚上拿到了 Stadia Founder Edition 的激活码，回家装 Chrome，玩了大约十分钟的游戏。因为在别的城市实习，住的是学生公寓，网络是向当地的大学租借的，并没有无限流量可以用。用的网线连接的电脑，理论上网络带宽是 100Mb/s</p>
-</blockquote>
-<p><a href="https://ift.tt/2Wfqu5i">RSS二十年</a> \</p>
-<blockquote>
-<p>今天写一下关于RSS的理解，其实是快两年前的一句承诺，后来有个同事催了两年，干脆写一下吧。文中提到了即刻，如果有兴趣来即刻公司一起做些有趣带劲的事情，无论你是做什么的，可以发邮件到 kyth@iftech.</p>
-</blockquote>
-<p><a href="https://ift.tt/2IRxjSZ">Manico 2.7 更新说明（暨谈谈 App 的维护成本）</a></p>
-<blockquote>
-<p>今天我更新了 Manico 2.7，解决了一个在 Catalina 下无法切换至 Emacs 等多窗口 App 的问题。本来这只是一个常规的维护版本，没什么值得一提的。想到 Manico 作为一款 7 岁的 App，这么些年维护下来，也是有点感触，于是随意聊点。</p>
-</blockquote>
-<p><a href="https://ift.tt/340DLRm">点击进入数据新闻聊天室 | 澎湃美数课的疫情报道分享实录</a></p>
-<blockquote>
-<p>微信号 rendaxinwenxi 功能介绍 中国人民大学新闻学院新闻系运营的新闻采写编评及摄影业务教学与实践的平台。 3月12日晚6:30“2020特殊时期学点数据新闻”微信课程群主题澎湃美数课的疫情报道分享实录分享嘉宾　吕 妍：澎湃新</p>
-</blockquote>
-<p><a href="https://ift.tt/3aDk0kO">いらっしゃいませ！Figma 豆技巧专场 I</a></p>
-<blockquote>
-<p>各位好，本 Blog 今日开始不文艺复兴。 收听过 Anyway.</p>
-</blockquote>
-<p><a href="https://ift.tt/2VBdczP">想成长为优秀产品leader，这10大心法你要收好了</a></p>
-<blockquote>
-<p>这篇文章主要针对的人群是想要成为优秀产品leader且有着三年以上，五年以上经验的产品经理，讲述了10大关于如何成为优秀产品leader的心法，客观的分析了其中的缘由，相信这对于想成长为优秀产品leader会有所帮助。</p>
-</blockquote>
-<p><a href="https://ift.tt/2QXWuH4">如何通过 Github 找到一个人？</a></p>
-<blockquote>
-<p>很多时候，我们都需要找到一个人的联系方式。但是，并不是每一次我们都可以很好的拿到他的联系方式，这个时候，我们就需要借助一些奇技淫巧来找到一个人的联系方式。</p>
-</blockquote>
-<p><a href="https://ift.tt/2R1UGxA">「晒桌面」小徐的桌面 2.0 计划</a></p>
-<blockquote>
-<p>大学毕业后回到家乡工作，暂时还和父母一起居住，没有自己的房子可以折腾就只能照着自己的桌子下手了。于是毕业不到三年在这张小桌面上的设备已经换了好几茬了，花的钱也照着大几万去了，心疼啊😂。</p>
-</blockquote>
-<p><a href="https://ift.tt/2UofAZE">《龍漫少年星期天》为什么会停刊？</a></p>
-<blockquote>
-<p>看到这个问题真是百感交集，可以说龙漫是就是我的整个漫画编辑职业生涯。作为亲历者，在认真回答这个问题同时，也是顺便澄清一些大家误会的细节，同时对自己过去10多年工作经历做个回顾。</p>
-</blockquote>
-<p><a href="https://ift.tt/2X7cV4N">9 Web Components UI Libraries You Should Know in 2020</a></p>
-<blockquote>
-<p>When I began searching for web components libraries to compose this post, I initially thought “Where can I find a cool lit-html lib?” This is because I’ve yet to grok the full potential of web components. This is a framework/library way of thinking.</p>
-</blockquote>
-<p><a href="https://ift.tt/2Mk5SUV">Checkbox vs Toggle Switch</a></p>
-<blockquote>
-<p>Forms provide several controls that make it easier to collect input from users. Using the right control at right place is a challenge while designing forms. A checkbox control has three states: unselected, selected, and indeterminate.</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（十二） 在 Windows 上尝试打包]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/">
-        </link>
-        <updated>2020-03-31T09:55:33.000Z</updated>
-        <content type="html"><![CDATA[<p>使用 electron-builder 构建项目，所以打包同样依赖：</p>
-<ol>
-<li>winCodeSign；</li>
-<li>nsis</li>
-<li>nsis-resources<br>
-这三个依赖是从 github 下载的，国内的环境并不能很好的下载，所以可以手动下载，然后手动移动到 electron-builder 中。</li>
-</ol>
-<p>目录：<code>C:\Users\your-user-name\AppData\Local\electron-builder\Cache\</code><br>
-在该目录下创建<code>winCodeSign</code> 和 <code>nsis</code> 文件夹，把对应的内容解压进去即可。</p>
-<p>大致的目录结构：<br>
-<img src="https://hwang.top/post-images/1585648613243.png" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（十一） 通过 electron-release-server 部署更新服务]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-shi-yi-tong-guo-electron-release-server-bu-shu-geng-xin-fu-wu/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-shi-yi-tong-guo-electron-release-server-bu-shu-geng-xin-fu-wu/">
-        </link>
-        <updated>2020-03-30T05:09:18.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>官方文档：<a href="https://www.electronjs.org/docs/tutorial/updates#deploying-an-update-server">https://www.electronjs.org/docs/tutorial/updates#deploying-an-update-server</a></li>
-<li>可参考：<a href="https://juejin.im/post/5caf0e5a6fb9a0688144edae">https://juejin.im/post/5caf0e5a6fb9a0688144edae</a><br>
-由于 electron 服务需要私有部署，所以选择部署 electron-release-server ：</li>
-</ul>
-<blockquote>
-<p><a href="https://github.com/ArekSredzki/electron-release-server">electron-release-server</a> – 提供一个用于处理发布的仪表板，并且不需要在GitHub上发布发布。</p>
-</blockquote>
-<p>electron-release-server 提供了开箱即用的 docker 支持：</p>
-<ol>
-<li>克隆项目：</li>
-</ol>
-<pre><code class="language-js">$ git clone https://github.com/ArekSredzki/electron-release-server.git
-</code></pre>
-<ol start="2">
-<li>在你的机器上安装 docker、docker-compose。具体可以自行参见docker的相关文档。并添加当前用户到 docker 组，然后重新登录，刷新一下组的权限。</li>
-</ol>
-<pre><code class="language-js">$ sudo apt install docker
-$ sudo apt install docker-compose
-$ sudo gpasswd -a ${USER} docker // 添加当前用户到docker组中，没有docker 组的话，可以手动创建，具体可参考文档。
-</code></pre>
-<ol start="3">
-<li>运行 docker-compose 命令，build 容器，并启动服务。<br>
-先直接启动，看看正不正常吧，然后可以修改 docker-compose.yml 内的密码信息等内容。<br>
-<code>$ docker-compose up</code>如果正常，那么就会创建 docker image，并且启动服务，默认通过 <code>http://localhost:5000</code> 即可访问。</li>
-</ol>
-<p>当然，一般是不会那么顺利的，主要容易遇到的问题：</p>
-<ol>
-<li>npm 下载</li>
-</ol>
-<p>可以修改npm的源，在 Dockerfile 中修改，在  <code>npm install</code> 前面添加 一句，修改源的命令：</p>
-<pre><code class="language-js">RUM npm config set registry https://registry.npm.taobao.org \
-	&amp;&amp; npm install \
-....
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ axios 的学习]]></title>
-        <id>https://hwang.top/post/axios-de-xue-xi/</id>
-        <link href="https://hwang.top/post/axios-de-xue-xi/">
-        </link>
-        <updated>2020-03-14T08:33:47.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>参考：</p>
-<ul>
-<li><a href="https://juejin.im/post/5c99860ce51d452db858d93d">https://juejin.im/post/5c99860ce51d452db858d93d</a></li>
-<li><a href="https://juejin.im/post/5db11ad751882576063d5237">https://juejin.im/post/5db11ad751882576063d5237</a></li>
-</ul>
-</blockquote>
-<h2 id="执行get请求">执行get请求</h2>
-<h3 id="写法1">写法1</h3>
-<pre><code class="language-js">axios.get('api/user?ID=xxx')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h3 id="写法2">写法2</h3>
-<pre><code class="language-js">axios.get('api/user', {
-	params: {
-		ID: 'xxx'
-		}
-	})
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h2 id="执-post-请求">执 post 请求</h2>
-<pre><code class="language-js">axios.post('/user', {
-    firstName: 'xxx',
-    lastName: 'xxx'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h2 id="基于-promise-顺序执行请求">基于 Promise 顺序执行请求：</h2>
-<pre><code class="language-js">function getUserAccount() {
-  return axios.get('/user/12345');
-}
-
-function getUserPermissions() {
-  return axios.get('/user/12345/permissions');
-}
-
-axios.all([getUserAccount(), getUserPermissions()])
-  .then(axios.spread(function (acct, perms) {
-    // 请求现在都执行完成时
-  }));
-</code></pre>
-<h2 id="基于-config-的方式执行-post-请求">基于 Config 的方式执行 Post 请求</h2>
-<pre><code class="language-js">// 发送 POST 请求
-axios({
-  method: 'post',
-  url: '/user/12345',
-  data: {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  }
-})
-	.then(function(res) {
-	console.log(res)
-	});
-</code></pre>
-<p>一般业务中，会写在诸如<code>util.js</code> 中，方便进行调用</p>
-<pre><code class="language-js">//util.js
-const instance = axios.create({
-	baseURL: 'http://some-domain.com/api',
-	timeout: 1000,
-	header: {
-	'Content-Type': 'application/x-www-form-urlencoded'
-	}
-}) 
-
-export default instance
-</code></pre>
-<p>其中，请求的配置项：</p>
-<pre><code class="language-js">{
-  //`url`是请求的服务器地址
-  url:'/user',
-  //`method`是请求资源的方式
-  method:'get'//default
-  //如果`url`不是绝对地址，那么`baseURL`将会加到`url`的前面
-  //当`url`是相对地址的时候，设置`baseURL`会非常的方便
-  baseURL:'https://some-domain.com/api/',
-  //`transformRequest`选项允许我们在请求发送到服务器之前对请求的数据做出一些改动
-  //该选项只适用于以下请求方式：`put/post/patch`
-  //数组里面的最后一个函数必须返回一个字符串、-一个`ArrayBuffer`或者`Stream`
-  transformRequest:[function(data){
-    //在这里根据自己的需求改变数据
-    return data;
-  }],
-  //`transformResponse`选项允许我们在数据传送到`then/catch`方法之前对数据进行改动
-  transformResponse:[function(data){
-    //在这里根据自己的需求改变数据
-    return data;
-  }],
-  //`headers`选项是需要被发送的自定义请求头信息
-  headers: {'X-Requested-With':'XMLHttpRequest'},
-  //`params`选项是要随请求一起发送的请求参数----一般链接在URL后面
-  //他的类型必须是一个纯对象或者是URLSearchParams对象
-  params: {
-    ID:12345
-  },
-  //`paramsSerializer`是一个可选的函数，起作用是让参数（params）序列化
-  //例如(https://www.npmjs.com/package/qs,http://api.jquery.com/jquery.param)
-  paramsSerializer: function(params){
-    return Qs.stringify(params,{arrayFormat:'brackets'})
-  },
-  //`data`选项是作为一个请求体而需要被发送的数据
-  //该选项只适用于方法：`put/post/patch`
-  //当没有设置`transformRequest`选项时dada必须是以下几种类型之一
-  //string/plain/object/ArrayBuffer/ArrayBufferView/URLSearchParams
-  //仅仅浏览器：FormData/File/Bold
-  //仅node:Stream
-  data {
-    firstName:&quot;Fred&quot;
-  },
-  //`timeout`选项定义了请求发出的延迟毫秒数
-  //如果请求花费的时间超过延迟的时间，那么请求会被终止
-
-  timeout:1000,
-  //`withCredentails`选项表明了是否是跨域请求
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
   
-  withCredentials:false,//default
-  //`adapter`适配器选项允许自定义处理请求，这会使得测试变得方便
-  //返回一个promise,并提供验证返回
-  adapter: function(config){
-    /*..........*/
-  },
-  //`auth`表明HTTP基础的认证应该被使用，并提供证书
-  //这会设置一个authorization头（header）,并覆盖你在header设置的Authorization头信息
-  auth: {
-    username:&quot;zhangsan&quot;,
-    password: &quot;s00sdkf&quot;
-  },
-  //返回数据的格式
-  //其可选项是arraybuffer,blob,document,json,text,stream
-  responseType:'json',//default
-  //
-  xsrfCookieName: 'XSRF-TOKEN',//default
-  xsrfHeaderName:'X-XSRF-TOKEN',//default
-  //`onUploadProgress`上传进度事件
-  onUploadProgress:function(progressEvent){
-    //下载进度的事件
-onDownloadProgress:function(progressEvent){
-}
-  },
-  //相应内容的最大值
-  maxContentLength:2000,
-  //`validateStatus`定义了是否根据http相应状态码，来resolve或者reject promise
-  //如果`validateStatus`返回true(或者设置为`null`或者`undefined`),那么promise的状态将会是resolved,否则其状态就是rejected
-  validateStatus:function(status){
-    return status &gt;= 200 &amp;&amp; status &lt;300;//default
-  },
-  //`maxRedirects`定义了在nodejs中重定向的最大数量
-  maxRedirects: 5,//default
-  //`httpAgent/httpsAgent`定义了当发送http/https请求要用到的自定义代理
-  //keeyAlive在选项中没有被默认激活
-  httpAgent: new http.Agent({keeyAlive:true}),
-  httpsAgent: new https.Agent({keeyAlive:true}),
-  //proxy定义了主机名字和端口号，
-  //`auth`表明http基本认证应该与proxy代理链接，并提供证书
-  //这将会设置一个`Proxy-Authorization` header,并且会覆盖掉已经存在的`Proxy-Authorization`  header
-  proxy: {
-    host:'127.0.0.1',
-    port: 9000,
-    auth: {
-      username:'skda',
-      password:'radsd'
-    }
-  },
-  //`cancelToken`定义了一个用于取消请求的cancel token
-  //详见cancelation部分
-  cancelToken: new cancelToken(function(cancel){
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
 
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
   })
-}
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+</script>
+  
+  
+</body>
+
+</html>
