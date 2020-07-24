@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-07-24T05:51:10.794Z</updated>
+    <updated>2020-07-24T05:55:33.834Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,22 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Dropzone 也许能成为你 Mac 上的 Launch Center Pro]]></title>
+        <id>https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/</id>
+        <link href="https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/">
+        </link>
+        <updated>2020-07-24T05:51:59.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文发布于少数派，推荐前往少数派阅读<br>
+https://sspai.com/post/61257</p>
+</blockquote>
+<p>Launch Center Pro（以下简称LCP）作为 iOS 上享有盛誉的效率应用，其卖点之一就是类似按钮的设计利于肌肉记忆形成。就是拥有极其符合触屏设备上操作直觉的按钮样式，这样利用点按的设计让许多操作得以成为肌肉记忆。在桌面端，人们的肌肉记忆，总是与键盘操作挂钩，绝大多数的效率应用也是围绕着键盘操作展开的，如果说要成为桌面端的 LCP，那么支持键盘快捷操作必然是必要条件之一。</p>
+<p>其次，桌面端的操作其实除了键盘，还有非常重要的一环——鼠标操作：鼠标这独特的中间介质让桌面端的操作变得丰富起来。鼠标操作能够成为肌肉记忆吗？当然可以，Chrome 上鼠标手势插件就是一例。所以在桌面端，键盘操作是一种肌肉记忆，鼠标同样也能成为一种肌肉记忆。</p>
+<p>Dropzone 就是这样一款，既能给你带来键盘上如同 Launch Center Pro 体验同时，也提供了通过鼠标拖拽这样的操作，实现鼠标操作的肌肉记忆的应用。</p>
+<p><a href="https://sspai.com/post/61257">前往少数派 👉 阅读全文</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python2  macOS 安装 m2crypto]]></title>
         <id>https://hwang.top/post/python2-macos-an-zhuang-m2crypto/</id>
@@ -742,50 +758,6 @@ onDownloadProgress:function(progressEvent){
   })
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（十）— Windows 上配置 Electron 环境的一些坑Windows 上配置 Electron 环境的一些坑]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-shi-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-shi-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng-windows-shang-pei-zhi-electron-huan-jing-de-yi-xie-keng/">
-        </link>
-        <updated>2020-03-11T05:41:42.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="基础的运行环境">基础的运行环境</h2>
-<ul>
-<li>Node.js 请使用 <code>.msi</code> 安装文件进行安装</li>
-<li>yarn 请使用 <code>.msi</code> 安装文件进行安装</li>
-<li>⚠️ 安装完成后，需要重启终端，才能加载新的环境路径。</li>
-</ul>
-<h2 id="安装项目依赖">安装项目依赖：</h2>
-<ul>
-<li>
-<p>直接进行，如果你的网络环境不够科学，可能1天都不会完成：</p>
-</li>
-<li>
-<p>修改源：</p>
-<pre><code class="language-sql">	$ yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
-	$ yarn config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-	$ npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
-	$ npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-	```
-
-</code></pre>
-</li>
-<li>
-<p>执行一遍<code>yarn</code></p>
-</li>
-</ul>
-<h3 id="注意">注意：</h3>
-<ul>
-<li>可以用 <code>cnpm</code> 安装 Electron；</li>
-<li>如果直接使用 npm 进行安装，那么可能会遇到：<br>
-软件搜索目录地址，注意是 <code>v8.1.1</code><br>
-<img src="https://hwang.top/post-images/1583905374706.png" alt="" loading="lazy"><br>
-而淘宝的地址是 <code>/8.1.1/</code><br>
-<img src="https://hwang.top/post-images/1583905393691.png" alt="" loading="lazy"><br>
-所以你可以参考：<a href="https://segmentfault.com/a/1190000021424025">https://segmentfault.com/a/1190000021424025</a> 进行修改，也可以直接使用 cnpm 进行安装。</li>
-</ul>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1583905408546.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
