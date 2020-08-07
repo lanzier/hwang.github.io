@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-07-24T06:00:43.150Z</updated>
+    <updated>2020-08-07T10:29:13.818Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,26 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows Server 域控——域下计算机管理员之间的文件隔离方案。]]></title>
+        <id>https://hwang.top/post/windows-server-yu-kong-yu-xia-ji-suan-ji-guan-li-yuan-zhi-jian-de-wen-jian-ge-chi-fang-an/</id>
+        <link href="https://hwang.top/post/windows-server-yu-kong-yu-xia-ji-suan-ji-guan-li-yuan-zhi-jian-de-wen-jian-ge-chi-fang-an/">
+        </link>
+        <updated>2020-08-07T10:26:49.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="情况">情况：</h2>
+<p>域内有一批 Windows server 操作系统的计算机，Windows sever 可以保障两个用户同时登录使用。</p>
+<ul>
+<li>为保障用户体验，两个用户均为管理员。</li>
+<li>为保障用户隐私需要在 D 盘做文件夹隔离。<br>
+一般情况下，这种需求，通过挂载共享文件夹就可以做到隔离。此次的需求是在 D 盘创建分隔。</li>
+</ul>
+<h2 id="解决思路">解决思路：</h2>
+<p>通过参照文件夹管理权限，然后禁用「安全」选项卡，实现相关功能。</p>
+<p><a href="https://blog.51cto.com/91xueit/1133999">https://blog.51cto.com/91xueit/1133999</a><br>
+<a href="https://jingyan.baidu.com/article/ea24bc395e32f8da62b331c3.html">https://jingyan.baidu.com/article/ea24bc395e32f8da62b331c3.html</a></p>
+<p>有了思路，参考上面的内容，做起来就相对容易了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Dropzone 也许能成为你 Mac 上的 Launch Center Pro]]></title>
         <id>https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/</id>
@@ -564,199 +584,6 @@ $ sudo gpasswd -a ${USER} docker // 添加当前用户到docker组中，没有do
 <pre><code class="language-js">RUM npm config set registry https://registry.npm.taobao.org \
 	&amp;&amp; npm install \
 ....
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ axios 的学习]]></title>
-        <id>https://hwang.top/post/axios-de-xue-xi/</id>
-        <link href="https://hwang.top/post/axios-de-xue-xi/">
-        </link>
-        <updated>2020-03-14T08:33:47.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>参考：</p>
-<ul>
-<li><a href="https://juejin.im/post/5c99860ce51d452db858d93d">https://juejin.im/post/5c99860ce51d452db858d93d</a></li>
-<li><a href="https://juejin.im/post/5db11ad751882576063d5237">https://juejin.im/post/5db11ad751882576063d5237</a></li>
-</ul>
-</blockquote>
-<h2 id="执行get请求">执行get请求</h2>
-<h3 id="写法1">写法1</h3>
-<pre><code class="language-js">axios.get('api/user?ID=xxx')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h3 id="写法2">写法2</h3>
-<pre><code class="language-js">axios.get('api/user', {
-	params: {
-		ID: 'xxx'
-		}
-	})
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h2 id="执-post-请求">执 post 请求</h2>
-<pre><code class="language-js">axios.post('/user', {
-    firstName: 'xxx',
-    lastName: 'xxx'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</code></pre>
-<h2 id="基于-promise-顺序执行请求">基于 Promise 顺序执行请求：</h2>
-<pre><code class="language-js">function getUserAccount() {
-  return axios.get('/user/12345');
-}
-
-function getUserPermissions() {
-  return axios.get('/user/12345/permissions');
-}
-
-axios.all([getUserAccount(), getUserPermissions()])
-  .then(axios.spread(function (acct, perms) {
-    // 请求现在都执行完成时
-  }));
-</code></pre>
-<h2 id="基于-config-的方式执行-post-请求">基于 Config 的方式执行 Post 请求</h2>
-<pre><code class="language-js">// 发送 POST 请求
-axios({
-  method: 'post',
-  url: '/user/12345',
-  data: {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  }
-})
-	.then(function(res) {
-	console.log(res)
-	});
-</code></pre>
-<p>一般业务中，会写在诸如<code>util.js</code> 中，方便进行调用</p>
-<pre><code class="language-js">//util.js
-const instance = axios.create({
-	baseURL: 'http://some-domain.com/api',
-	timeout: 1000,
-	header: {
-	'Content-Type': 'application/x-www-form-urlencoded'
-	}
-}) 
-
-export default instance
-</code></pre>
-<p>其中，请求的配置项：</p>
-<pre><code class="language-js">{
-  //`url`是请求的服务器地址
-  url:'/user',
-  //`method`是请求资源的方式
-  method:'get'//default
-  //如果`url`不是绝对地址，那么`baseURL`将会加到`url`的前面
-  //当`url`是相对地址的时候，设置`baseURL`会非常的方便
-  baseURL:'https://some-domain.com/api/',
-  //`transformRequest`选项允许我们在请求发送到服务器之前对请求的数据做出一些改动
-  //该选项只适用于以下请求方式：`put/post/patch`
-  //数组里面的最后一个函数必须返回一个字符串、-一个`ArrayBuffer`或者`Stream`
-  transformRequest:[function(data){
-    //在这里根据自己的需求改变数据
-    return data;
-  }],
-  //`transformResponse`选项允许我们在数据传送到`then/catch`方法之前对数据进行改动
-  transformResponse:[function(data){
-    //在这里根据自己的需求改变数据
-    return data;
-  }],
-  //`headers`选项是需要被发送的自定义请求头信息
-  headers: {'X-Requested-With':'XMLHttpRequest'},
-  //`params`选项是要随请求一起发送的请求参数----一般链接在URL后面
-  //他的类型必须是一个纯对象或者是URLSearchParams对象
-  params: {
-    ID:12345
-  },
-  //`paramsSerializer`是一个可选的函数，起作用是让参数（params）序列化
-  //例如(https://www.npmjs.com/package/qs,http://api.jquery.com/jquery.param)
-  paramsSerializer: function(params){
-    return Qs.stringify(params,{arrayFormat:'brackets'})
-  },
-  //`data`选项是作为一个请求体而需要被发送的数据
-  //该选项只适用于方法：`put/post/patch`
-  //当没有设置`transformRequest`选项时dada必须是以下几种类型之一
-  //string/plain/object/ArrayBuffer/ArrayBufferView/URLSearchParams
-  //仅仅浏览器：FormData/File/Bold
-  //仅node:Stream
-  data {
-    firstName:&quot;Fred&quot;
-  },
-  //`timeout`选项定义了请求发出的延迟毫秒数
-  //如果请求花费的时间超过延迟的时间，那么请求会被终止
-
-  timeout:1000,
-  //`withCredentails`选项表明了是否是跨域请求
-  
-  withCredentials:false,//default
-  //`adapter`适配器选项允许自定义处理请求，这会使得测试变得方便
-  //返回一个promise,并提供验证返回
-  adapter: function(config){
-    /*..........*/
-  },
-  //`auth`表明HTTP基础的认证应该被使用，并提供证书
-  //这会设置一个authorization头（header）,并覆盖你在header设置的Authorization头信息
-  auth: {
-    username:&quot;zhangsan&quot;,
-    password: &quot;s00sdkf&quot;
-  },
-  //返回数据的格式
-  //其可选项是arraybuffer,blob,document,json,text,stream
-  responseType:'json',//default
-  //
-  xsrfCookieName: 'XSRF-TOKEN',//default
-  xsrfHeaderName:'X-XSRF-TOKEN',//default
-  //`onUploadProgress`上传进度事件
-  onUploadProgress:function(progressEvent){
-    //下载进度的事件
-onDownloadProgress:function(progressEvent){
-}
-  },
-  //相应内容的最大值
-  maxContentLength:2000,
-  //`validateStatus`定义了是否根据http相应状态码，来resolve或者reject promise
-  //如果`validateStatus`返回true(或者设置为`null`或者`undefined`),那么promise的状态将会是resolved,否则其状态就是rejected
-  validateStatus:function(status){
-    return status &gt;= 200 &amp;&amp; status &lt;300;//default
-  },
-  //`maxRedirects`定义了在nodejs中重定向的最大数量
-  maxRedirects: 5,//default
-  //`httpAgent/httpsAgent`定义了当发送http/https请求要用到的自定义代理
-  //keeyAlive在选项中没有被默认激活
-  httpAgent: new http.Agent({keeyAlive:true}),
-  httpsAgent: new https.Agent({keeyAlive:true}),
-  //proxy定义了主机名字和端口号，
-  //`auth`表明http基本认证应该与proxy代理链接，并提供证书
-  //这将会设置一个`Proxy-Authorization` header,并且会覆盖掉已经存在的`Proxy-Authorization`  header
-  proxy: {
-    host:'127.0.0.1',
-    port: 9000,
-    auth: {
-      username:'skda',
-      password:'radsd'
-    }
-  },
-  //`cancelToken`定义了一个用于取消请求的cancel token
-  //详见cancelation部分
-  cancelToken: new cancelToken(function(cancel){
-
-  })
-}
 </code></pre>
 ]]></content>
     </entry>
