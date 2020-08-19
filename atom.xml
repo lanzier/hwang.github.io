@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-08-07T10:33:03.702Z</updated>
+    <updated>2020-08-19T01:47:41.613Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,60 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 011]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-011/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-011/">
+        </link>
+        <updated>2020-08-19T01:46:18.000Z</updated>
+        <content type="html"><![CDATA[<p>很久没更新了，也没好好弄；</p>
+<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/2ZofDHL">Mac 视觉史 vol.1：从 Macintosh 到 Mac OS</a></p>
+<blockquote>
+<p>微信号 cloverfield11 功能介绍 夜晚正式开始。 2009 年，买不起 Macbook 的我在 PC 上装上了黑苹果。在此之前，我用虚拟机体验了 Apple ][ 、Mac OS 8.1、Mac OS 9.2.2 、Mac OS X 10.</p>
+</blockquote>
+<p><a href="https://ift.tt/2WCPx1S">张小龙 的 22 年和微信的 8 年</a></p>
+<p><a href="https://ift.tt/2Knyp9M">iPad Pro 鼠标/触控板横测，谁是体验 iPadOS 指针操作的最佳选择？</a></p>
+<blockquote>
+<p>上个月发布的 iPadOS 13.</p>
+</blockquote>
+<p><a href="https://ift.tt/2XvoBSX">Watchsmith Review: Create Your Own Apple Watch Complications</a></p>
+<blockquote>
+<p>Watchsmith, the latest app from David Smith, was birthed from the inability to create third-party watch faces on the Apple Watch. As Smith has previously explained, while third-party faces may never be possible, several first-party faces already offer significant room for customization.</p>
+</blockquote>
+<p><a href="https://ift.tt/31I8XWa">不会日语，毕业之后去日本工作的有趣体验</a></p>
+<blockquote>
+<p>功能介绍 一些有趣的互联网开发心得、技术探讨和好物剁手指南...</p>
+</blockquote>
+<p><a href="https://ift.tt/2zhQrYS">Python 真的是靠一个 switch 来执行字节码的吗？</a></p>
+<blockquote>
+<p>为了解释清楚整个过程，我们必须从底层讲起。分支预测（Branch Prediction）是 CPU 必备的功能。准确的分支预测能大大提高指令流水线的性能，反之则导致性能损耗。</p>
+</blockquote>
+<p><a href="https://ift.tt/33wN3WY">时代已经黑了</a></p>
+<blockquote>
+<p>而且，Castro 发完英文声明后，又用谷歌翻译发了一条中文声明，特意来告别它的中文用户。其中这一句「蹩脚」翻译显得最为传神：</p>
+</blockquote>
+<p><a href="https://ift.tt/3iUPOWx">3D界面的设计工作流 · 语雀</a></p>
+<p><a href="https://ift.tt/3cWAuq0">使用 WebP Server Go 优化图片提升网站加载速度</a></p>
+<blockquote>
+<p>同时，你的打分也会被下降了，如何解决这种问题呢？ 我们知道，图片一般有不同的格式，比如我们常见的 JPG，PNG 就分别属于两种不同的图片格式，通过是否对图片进行压缩…</p>
+</blockquote>
+<p><a href="https://ift.tt/3aGB8HG">比Intel快2倍的传说，Mac用苹果处理器的一点想法</a></p>
+<blockquote>
+<p>苹果 PowerPC 时代，我在上高中。那时有件事我印象很深刻。当时我们班有个很懂计算机的人，拿着一本计算机杂志，跟我安利 iMac G4，说你看这个电脑多好看啊，多牛逼啊，比 Windows 电脑不知道好看了多少倍</p>
+</blockquote>
+<p><a href="https://ift.tt/2PPX9dl">Developers v. Apple: Outlining Complaints about the App Store</a></p>
+<blockquote>
+<p>The early days of the App Store might have been rocky, but from the outside, they seemed like a virtual gold rush. The media was full of stories of independent developers becoming wealthy from simple apps.</p>
+</blockquote>
+<p><a href="https://ift.tt/3g3pVC5">MacBook要采用Arm处理器，难度有多大？</a></p>
+<blockquote>
+<p>实际上，有关 Mac 系列计算机要开始采用 Arm 处理器的传言似乎是从 2010 年就开始的，那会儿苹果也才刚刚开始做 iPhone 的 SoC。这一传言就 10 年过去了，起码今年前不久才更新的 MacBook Air 都还在用 Intel 的处理器。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Windows Server 域控——域下计算机管理员之间的文件隔离方案。]]></title>
         <id>https://hwang.top/post/windows-server-yu-kong-yu-xia-ji-suan-ji-guan-li-yuan-zhi-jian-de-wen-jian-ge-chi-fang-an/</id>
@@ -542,49 +596,6 @@ END;
 在该目录下创建<code>winCodeSign</code> 和 <code>nsis</code> 文件夹，把对应的内容解压进去即可。</p>
 <p>大致的目录结构：<br>
 <img src="https://hwang.top/post-images/1585648613243.png" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（十一） 通过 electron-release-server 部署更新服务]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-shi-yi-tong-guo-electron-release-server-bu-shu-geng-xin-fu-wu/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-shi-yi-tong-guo-electron-release-server-bu-shu-geng-xin-fu-wu/">
-        </link>
-        <updated>2020-03-30T05:09:18.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>官方文档：<a href="https://www.electronjs.org/docs/tutorial/updates#deploying-an-update-server">https://www.electronjs.org/docs/tutorial/updates#deploying-an-update-server</a></li>
-<li>可参考：<a href="https://juejin.im/post/5caf0e5a6fb9a0688144edae">https://juejin.im/post/5caf0e5a6fb9a0688144edae</a><br>
-由于 electron 服务需要私有部署，所以选择部署 electron-release-server ：</li>
-</ul>
-<blockquote>
-<p><a href="https://github.com/ArekSredzki/electron-release-server">electron-release-server</a> – 提供一个用于处理发布的仪表板，并且不需要在GitHub上发布发布。</p>
-</blockquote>
-<p>electron-release-server 提供了开箱即用的 docker 支持：</p>
-<ol>
-<li>克隆项目：</li>
-</ol>
-<pre><code class="language-js">$ git clone https://github.com/ArekSredzki/electron-release-server.git
-</code></pre>
-<ol start="2">
-<li>在你的机器上安装 docker、docker-compose。具体可以自行参见docker的相关文档。并添加当前用户到 docker 组，然后重新登录，刷新一下组的权限。</li>
-</ol>
-<pre><code class="language-js">$ sudo apt install docker
-$ sudo apt install docker-compose
-$ sudo gpasswd -a ${USER} docker // 添加当前用户到docker组中，没有docker 组的话，可以手动创建，具体可参考文档。
-</code></pre>
-<ol start="3">
-<li>运行 docker-compose 命令，build 容器，并启动服务。<br>
-先直接启动，看看正不正常吧，然后可以修改 docker-compose.yml 内的密码信息等内容。<br>
-<code>$ docker-compose up</code>如果正常，那么就会创建 docker image，并且启动服务，默认通过 <code>http://localhost:5000</code> 即可访问。</li>
-</ol>
-<p>当然，一般是不会那么顺利的，主要容易遇到的问题：</p>
-<ol>
-<li>npm 下载</li>
-</ol>
-<p>可以修改npm的源，在 Dockerfile 中修改，在  <code>npm install</code> 前面添加 一句，修改源的命令：</p>
-<pre><code class="language-js">RUM npm config set registry https://registry.npm.taobao.org \
-	&amp;&amp; npm install \
-....
-</code></pre>
 ]]></content>
     </entry>
 </feed>
