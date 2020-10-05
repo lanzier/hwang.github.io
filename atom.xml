@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-08-31T05:33:31.355Z</updated>
+    <updated>2020-10-05T05:34:00.023Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,37 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Samba 的一些简单经验]]></title>
+        <id>https://hwang.top/post/samba-de-yi-xie-jian-dan-jing-yan/</id>
+        <link href="https://hwang.top/post/samba-de-yi-xie-jian-dan-jing-yan/">
+        </link>
+        <updated>2020-10-05T05:32:50.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-合理有效的重装smb方式">1. 合理有效的重装smb方式：</h2>
+<p>如果你弄坏了 smb 的配置，那么可以：<br>
+添加 <code>—purge</code> 参数 卸载</p>
+<pre><code class="language-bash">$ sudo apt-get remove --purge samba-common
+$ sudo apt-get remove --purge samba
+</code></pre>
+<p>知识点：</p>
+<blockquote>
+<p>apt-get remove 只删除软件包，不删除配置文件<br>
+apt-get purge 删除软件包并删除配置文件<br>
+其中 apt-get purge packagename 等同于 apt-get remove packagename --purge</p>
+</blockquote>
+<p>然后重新安装</p>
+<pre><code class="language-bash">$ sudo apt install samba samba-common-bin
+</code></pre>
+<h2 id="2-smbconf-中-valid-users-记得这个user-时smb-user">2. smb.conf 中 <code>valid users</code> 记得这个user 时smb user</h2>
+<p>如果使用 <code>valid users</code> ，记得：</p>
+<pre><code class="language-bash">$ sudo smbpasswd -a [your-user] 
+</code></pre>
+<p>然后键入密码。</p>
+<h2 id="3-重启服务">3. 重启服务</h2>
+<pre><code class="language-bash">$ sudo /etc/init.d/smbd restart
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 011]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-011/</id>
@@ -577,25 +608,6 @@ END;
 <blockquote>
 <p>Forms provide several controls that make it easier to collect input from users. Using the right control at right place is a challenge while designing forms. A checkbox control has three states: unselected, selected, and indeterminate.</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Try Electron记实（十二） 在 Windows 上尝试打包]]></title>
-        <id>https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/</id>
-        <link href="https://hwang.top/post/try-electron-ji-shi-shi-er-zai-windows-shang-chang-shi-da-bao/">
-        </link>
-        <updated>2020-03-31T09:55:33.000Z</updated>
-        <content type="html"><![CDATA[<p>使用 electron-builder 构建项目，所以打包同样依赖：</p>
-<ol>
-<li>winCodeSign；</li>
-<li>nsis</li>
-<li>nsis-resources<br>
-这三个依赖是从 github 下载的，国内的环境并不能很好的下载，所以可以手动下载，然后手动移动到 electron-builder 中。</li>
-</ol>
-<p>目录：<code>C:\Users\your-user-name\AppData\Local\electron-builder\Cache\</code><br>
-在该目录下创建<code>winCodeSign</code> 和 <code>nsis</code> 文件夹，把对应的内容解压进去即可。</p>
-<p>大致的目录结构：<br>
-<img src="https://hwang.top/post-images/1585648613243.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
