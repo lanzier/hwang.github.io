@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-10-07T14:14:54.726Z</updated>
+    <updated>2020-10-15T05:55:57.454Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,37 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 013]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-013/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-013/">
+        </link>
+        <updated>2020-10-15T05:42:15.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/36ZyA7N">开源、可定制的网页批注工具——Hypothesis</a></p>
+<blockquote>
+<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。<br>
+<a href="https://ift.tt/33vmCAD">10 Awesome Python 3.9 Features</a><br>
+Just like most of the Python fans, I am super excited to explore and use the latest features. This article will provide an overview of the must-know features of Python 3.9. This is again an exciting time for the Python programmers.<br>
+<a href="https://ift.tt/3ixQJeQ">好中文网站重开记</a><br>
+既然我已有一个写了18年的博客白板报，为什么还要建这个新站呢？<br>
+<a href="https://ift.tt/34LouV0">我的日志系统：从 Notion 到 Dynalist</a><br>
+2019 年底 OneNote 把我的日记给搞丢了，我却发现那些日记除了发泄情绪，几乎没给我带来什么正面作用，就开始探寻一种更好的日志体系，希望解决以下问题：<br>
+<a href="https://ift.tt/3jycZ9A">「有没有一种恋爱脚本？」</a><br>
+TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种很 objective 的听，纯生物行为，不是那种「I’m here for you.</p>
+</blockquote>
+<p><a href="https://ift.tt/3kovVrB">iOS 14, Big Sur &amp; DNS over HTTPS / TLS</a></p>
+<blockquote>
+<p>iOS 14 &amp; MacOS Big Sur have finally added support for DNS over HTTPS and DNS over TLS standards — also known as encrypted DNS. What is DOH / DOT? Imagine you’re at a conference. You’re using its public Wi-Fi.<br>
+<a href="https://ift.tt/3cpuXbF">为什么工作?</a><br>
+工作是我们如今每个人都会面临的事情。我们从高校毕业，走入社会，走上工作岗位，开始十年如一日的辛勤工作。但，工作到底意味着什么?工作又到底为了什么?<br>
+<a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a><br>
+（本文首发于极客公园，本站收录时进行了修改。）</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 012]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-012/</id>
@@ -561,64 +592,6 @@ if let sureAnswer = answer {
 UILabel().text = answer ?? &quot;&quot;
 
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2020 - 我的主屏]]></title>
-        <id>https://hwang.top/post/2020-wo-de-zhu-ping/</id>
-        <link href="https://hwang.top/post/2020-wo-de-zhu-ping/">
-        </link>
-        <updated>2020-05-12T14:31:41.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1589293943135.PNG" alt="" loading="lazy"></figure>
-<h2 id="第一排-文件夹">第一排 文件夹</h2>
-<ul>
-<li>📦：工具类 App</li>
-<li>🎴：家庭、生活记录类 App</li>
-<li>🌍：不存在的 App</li>
-<li>🚪：闭门学习类 App</li>
-</ul>
-<h2 id="第二排-黑色">第二排 黑色</h2>
-<ul>
-<li>figma：我爱 Figma， Figma 牛逼！知道的都知道，工作用。</li>
-<li>极光字典：查字典的咯。</li>
-<li>Ulysses：包括本文，就是在这个 App 里面写的。</li>
-<li>NOMO：网红相机，并没有订阅</li>
-</ul>
-<h2 id="第三排-白色-一">第三排 白色 一</h2>
-<ul>
-<li>Notion： 知识管理、项目管理、团队协同。</li>
-<li>MoneyWiz 3： 记账的。</li>
-<li>PPHub：别问，问就交友。</li>
-<li>Pocket： Read it later，not NEVER。</li>
-</ul>
-<h2 id="第四排-白色-二">第四排 白色 二</h2>
-<ul>
-<li>轻芒杂志： 王俊昱团队的新产品，内测中。</li>
-<li>Tg：xxx。</li>
-<li>飞书：头条牛逼！我爱飞书！</li>
-<li>Outlook：微软苏州团队出品，非常棒。</li>
-</ul>
-<h2 id="第五排-蓝色">第五排 蓝色</h2>
-<ul>
-<li>快捷指令：效率工具， iPhone、iPad上处理许多流程的重要工具。</li>
-<li>App Store：没啥</li>
-<li>Tweetbot：没啥</li>
-<li>JSbox：脚本啥的，很好写</li>
-</ul>
-<h2 id="第六排-绿色">第六排 绿色</h2>
-<ol>
-<li>Castro：一个高效便捷好看的播客应用。已订阅。💰</li>
-<li>微信：糟糕的高墙。</li>
-<li>Spotify： 听歌的。</li>
-<li>Timepage： iOS 上最好看（没有之一，不是广告，不违反广告法） 的日历App。老用户，免费送了 iPad 版，相比（其他转订阅的厂商）而言，尽然有些不好意思。用以查看各种日程，离开学校后，明显还没有找到使用日历的节奏。需求并没有那么强了。</li>
-</ol>
-<h2 id="dock-栏">Dock 栏</h2>
-<ol>
-<li>Todoist ：任务管理，GTD。</li>
-<li>Drafts ：碎片收集与整理。</li>
-<li>Launch ：启动器。</li>
-<li>Reeder ：RSS阅读器。</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
