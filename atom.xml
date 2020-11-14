@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-10-15T05:55:57.454Z</updated>
+    <updated>2020-11-14T06:11:05.924Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,65 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[「30岁」前实现财务自由的觉悟]]></title>
+        <id>https://hwang.top/post/30-sui-qian-shi-xian-cai-wu-zi-you-de-jue-wu/</id>
+        <link href="https://hwang.top/post/30-sui-qian-shi-xian-cai-wu-zi-you-de-jue-wu/">
+        </link>
+        <updated>2020-11-14T05:54:13.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文是作者本科阶段和一位导师谈话后的感想。<br>
+这次谈话，老师大致上是在劝导我们需要更加「出事」，直面欲望，要带着「30岁」前实现财务自由的觉悟去努力</p>
+</blockquote>
+<p>老师所说的30岁前实现财务自由，我的理解是：肯定俗世的物质追求的意义。首先，实现财务自由，能够割舍人对于物质世界的追求。这种追求是原始的，是「社会动物」难以割舍的。在割舍这种追求后，人可以更加心无旁骛的去追求那些精神追求。其次，实现「财务自由」这个有些宽泛的概念，隐含着对于各种物质追求的满足。那么财务自由=物质追求的满足。这样的公式，就好像效用一样，人各有别。那么，接下来的思考，就是这个价值对于我来说，到底是多少了。</p>
+<p>老实说，我是思考过这个问题的。我的结果是，对于我来说，我基本上能克制我自己绝大多数的物质需求。比如，吃饭，我完全不挑食，对于我来说，只不是天天吃土豆这样极端的情况，其实就足够满足我了。再比如，穿衣什么的，我也没有对与些昂贵品牌的向往。其他诸如住一个特别大的别墅，去海边游玩什么的，我也并不在乎与向往。「有钱，真好」的观点，并不是我相信的。但是，这其实是有一个问题的：并不富裕的生活，是并不成功（世俗定义）的。所以如何平衡这种内外的矛盾呢？我可以不在乎其他人的观点，但这样是不是「阿Q」呢？这个就是「社会动物」的矛盾吧。</p>
+<p>之前，我说到了<a href="https://blog.yitianshijie.net">「李如一」</a>的生活方式，其实重点并不是说在美国住，在日本住，而是那种「自由」的状态。李如一在<a href="https://miechakucha.com/13">一期播客</a>（就是音频节目）中认为，欣赏艺术并不是一个比吃饭穿衣更高级的需求。他在反对的是世俗定义的「需求层次」理论。这种反对，只会被少数人接受，却被大多数人嘲讽。这种状态，其实在这个国家屡屡上演。中国人主张「中庸」，讲「过尤不及」，这样的教育下，人们都是「大一同」的，对于个人的肯定显然是不足的。人们会嘲笑穷画家，嘲笑所谓「北大毕业，菜场卖菜」这样的现象。这种对于不同人生选择的不尊重是实实在在存在的。即便看起来更加新潮的90后，也同样存在。对于个体的不够尊重，让我觉得并不自由。我完全能够测度好自己的需求，控制不必要的欲望的生长。但是我又不得不在这个社会原本撰写好的轨迹上前行。不论是所谓的出人头地也好，还是所谓的富甲一方，都是对于这个一同的社会轨迹的共同的追求。其实并没有其他的路给你走。</p>
+<p>老师的观点，对我来说，是在说，既然不能改变这些「轨迹」，那就花尽量少的时间，去完成这条轨迹。这样的选择我是能理解的。也许是非常好的解法。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 013]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/">
+        </link>
+        <updated>2020-10-15T05:42:15.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/36ZyA7N">开源、可定制的网页批注工具——Hypothesis</a></p>
+<blockquote>
+<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
+</blockquote>
+<p><a href="https://ift.tt/33vmCAD">10 Awesome Python 3.9 Features</a></p>
+<blockquote>
+<p>Just like most of the Python fans, I am super excited to explore and use the latest features. This article will provide an overview of the must-know features of Python 3.9. This is again an exciting time for the Python programmers.</p>
+</blockquote>
+<p><a href="https://ift.tt/3ixQJeQ">好中文网站重开记</a></p>
+<blockquote>
+<p>既然我已有一个写了18年的博客白板报，为什么还要建这个新站呢？</p>
+</blockquote>
+<p><a href="https://ift.tt/34LouV0">我的日志系统：从 Notion 到 Dynalist</a></p>
+<blockquote>
+<p>2019 年底 OneNote 把我的日记给搞丢了，我却发现那些日记除了发泄情绪，几乎没给我带来什么正面作用，就开始探寻一种更好的日志体系，希望解决以下问题：</p>
+</blockquote>
+<p><a href="https://ift.tt/3jycZ9A">「有没有一种恋爱脚本？」</a></p>
+<blockquote>
+<p>TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种很 objective 的听，纯生物行为，不是那种「I’m here for you.</p>
+</blockquote>
+<p><a href="https://ift.tt/3kovVrB">iOS 14, Big Sur &amp; DNS over HTTPS / TLS</a></p>
+<blockquote>
+<p>iOS 14 &amp; MacOS Big Sur have finally added support for DNS over HTTPS and DNS over TLS standards — also known as encrypted DNS. What is DOH / DOT? Imagine you’re at a conference. You’re using its public Wi-Fi.</p>
+</blockquote>
+<p><a href="https://ift.tt/3cpuXbF">为什么工作?</a></p>
+<blockquote>
+<p>工作是我们如今每个人都会面临的事情。我们从高校毕业，走入社会，走上工作岗位，开始十年如一日的辛勤工作。但，工作到底意味着什么?工作又到底为了什么?</p>
+</blockquote>
+<p><a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a></p>
+<blockquote>
+<p>（本文首发于极客公园，本站收录时进行了修改。）</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 013]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-013/</id>
@@ -379,219 +438,6 @@ SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include
 pipenv install m2crypto
 </code></pre>
 <p>最后，有一说一，pipenv 确实方便的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Hwang Reading List - New 010]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-010/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-010/">
-        </link>
-        <updated>2020-05-21T10:21:07.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2Rz3pHO">这场疫情，如果西方输了怎么办？</a></p>
-<blockquote>
-<p>[欢迎点击此处订阅新冠病毒疫情每日中文简报，或发送邮件至cn.letters@nytimes.<br>
-<a href="https://ift.tt/2Vge24F">最详尽的 JS 原型与原型链终极详解，没有「可能是」。（一）</a></p>
-</blockquote>
-<blockquote>
-<p>三篇文章都更新完毕，完整的剖析了 JS 原型与原型链，希望通过这些教程能让你对 Javascript 这门语言理解的更透彻！</p>
-</blockquote>
-<p><a href="https://ift.tt/39uPkB6">从邮件通讯的流行谈起</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/1WVBhwt">继承与原型链</a></p>
-<blockquote>
-<p>对于有基于类的语言经验 (如 Java 或 C++) 的开发人员来说，JavaScript 有点令人困惑，因为它是动态的，并且本身不提供一个class实现。（在 ES2015/ES6 中引入了class关键字，但只是语法糖，JavaScript 仍然是基于原型的）。</p>
-</blockquote>
-<p><a href="https://ift.tt/2VgUVY8">特别推荐丨克拉克奖得主苏珊·阿西：科技公司中的经济学家和经济学</a></p>
-<blockquote>
-<p>微信号 功能介绍 本号致力于为中国经管及其他社科学者提供可用于学术研究的大数据资源、数据可视化技术、因果识别、机器学习以及大数据学术前沿应用的相关资讯。 以下文章来源于比较 ，作者比较 比较 “以比较传递理念</p>
-</blockquote>
-<p><a href="https://ift.tt/3emyQyV">中港台 iPhone SE (2020) 文案对比</a></p>
-<blockquote>
-<p>英: Lots to love. Less to spend. 中：称心称手，超值入手。 港：精彩多多，付出不多。 台：精彩不少，付出不多。 英: iPhone 11 Pro called. It wants its chip back.</p>
-</blockquote>
-<p><a href="https://ift.tt/2SVh7W6">头条文章</a></p>
-<p><a href="https://ift.tt/2WmZa4X">公众号投放：我踩过的坑和换来的思考</a></p>
-<blockquote>
-<p>这篇文章，作者主要分享了自己在公众号投放上遇到的问题和思考，希望能对你有所帮助，避免踩坑。 最近在团队里，也在做一些投放的工作，从去年12月份到现在已经连续做了4期的训练营了，每期都做公众号投放。</p>
-</blockquote>
-<p><a href="https://ift.tt/2LhpaZ2">高可用用户中心设计</a></p>
-<blockquote>
-<p>概述 我们公司现在的账户体系比较混乱，每个系统都有一套自己的账户体系，没有办法进行统一的账户管理，比如统计一个人在哪个系统有账号，这样操作是比较麻烦的，还有就是我们如何进行用户行为分析，最终综合用户的</p>
-</blockquote>
-<p><a href="https://ift.tt/3blhEqB">图解新冠病毒：为什么单张图表根本不能说明新冠疫情的发展情况？</a></p>
-<blockquote>
-<p>微信号 BigDataDigest 功能介绍 普及数据思维，传播数据文化 大数据文摘出品来源：fivethirtyeight编译：青柠、Andy外国友人表示，这些天来，只要你在Twitter上浏览视频，几乎都会碰到COVID-19图表。人们试图用这些图表来判断疫情是否</p>
-</blockquote>
-<p><a href="https://ift.tt/35X5u6f">【图文】用曲线和 HSL 为自己制作一个专属滤镜</a></p>
-<blockquote>
-<p>微信号 zycai_house 功能介绍 这是一个学摄影的设计师哼哼唧唧的地方。 Hello，大家好！我是振原。这是照片调色入门完全指南第三支视频的图文，如果你之前对于调色并没有一个比较基础的了解，建议先看看前面两期。一、秒懂</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[iOS 开发学习笔记01 （基于DesignCode.io）]]></title>
-        <id>https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/</id>
-        <link href="https://hwang.top/post/ios-kai-fa-xue-xi-bi-ji-01-ji-yu-designcodeio/">
-        </link>
-        <updated>2020-05-17T14:53:55.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-xcode">1. Xcode</h2>
-<h3 id="项目">项目</h3>
-<figure data-type="image" tabindex="1"><img src="https://cleanshot-cloud-fra.s3.eu-central-1.amazonaws.com/media/1722/UqH39Tul0e7TWEVtae4za9i94EjYPVjx10gBJcMY.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5MF2VVMNBYBOTT5A%2F20200517%2Feu-central-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200517T085111Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=78bd42f194d56c826ce86d82b21f03ba78605e96ecb66832abf16cf739cf0768" alt="" loading="lazy"></figure>
-<ul>
-<li>
-<p>点击项目名称： 根目录填写相关的内容，其实类似了前端开发的 package.json，Xcode 以GUI的方式呈现了各个设置项。</p>
-</li>
-<li>
-<p>swift 大致等于 Javascript</p>
-</li>
-<li>
-<p>AppDelegate.swift 文件： （<code>Delegate： verb 委托、委派 noun 代表</code>）启动时的一些动作：</p>
-<ol>
-<li>应用程序第一次运行时执行：</li>
-</ol>
-<blockquote>
-<p>这个方法只有在App第一次运行的时候被执行过一次，每次App从后台激活时都不会再执行该方法。<br>
-（注：所有一般我们都在这里获取用户许可，比如本地消息推送的许可等）</p>
-</blockquote>
-<ol start="2">
-<li>应用程序挂起时执行</li>
-</ol>
-<blockquote>
-<p>当有电话进来或者锁屏时，应用程序便会挂起。</p>
-</blockquote>
-<ol start="3">
-<li>应用程序进入后台时执行</li>
-<li>应用程序将要重新回到前台时执行</li>
-<li>应用程序重新进入活动状态时执行</li>
-<li>应用程序将要退出时执行</li>
-</ol>
-</li>
-<li>
-<p>ViewController.swift 文件：制定初始化的ViewController 类</p>
-</li>
-<li>
-<p>Main.storyboard 文件：可以理解为 UI 文件，在这里可以通过 GUI的方式编辑 UI；</p>
-</li>
-<li>
-<p>Assets.xcassets 文件夹：存放图片资源；</p>
-</li>
-<li>
-<p>LaunchScreeen.storyboard 文件：启动屏的UI。</p>
-</li>
-</ul>
-<h2 id="storyboard">Storyboard</h2>
-<figure data-type="image" tabindex="2"><img src="CleanShot%202020-05-17%20at%2022.00.00@2x.png" alt="" loading="lazy"></figure>
-<h3 id="view-controller">View Controller</h3>
-<ul>
-<li>view： background
-<ul>
-<li>Safe Area</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="swift-基础">Swift 基础</h1>
-<pre><code class="language-swift">import UIKit
-// let 不可变的变量声明
-// var 可变的变量声明
-
-let myName = &quot;hwang&quot;
-var myAge = 23
-myAge = 24
-
-let myJob = &quot;Coder&quot;
-let myYear = 1997
-let isLearning = true
-let myTwitter: String = &quot;@hwang&quot;
-let label = &quot;the width is&quot;
-let width = 100
-let widthLable1 = label + String(width)
-
-var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
-colors[0]
-colors.append(&quot;orange&quot;)
-colors.remove(at: 1)
-
-if myAge &gt; 30 {
-    print(&quot;I am old&quot;)
-} else {
-    print(&quot;I am not old&quot;)
-}
-
-myAge &gt; 30 ? &quot;I am old&quot; : &quot;I am not old&quot; //支持三元表达式
-
-switch myAge {
-case 30...100:print(&quot;I am old&quot;)
-case 18...29: print(&quot;aaa&quot;)
-case 0...17:print(&quot;ssss&quot;)
-default:print(&quot;dsadsa&quot;)
-}
-
-for color in colors {
-    print(&quot;this color is \(color)&quot;)
-}
-
-func pointToRetina(point: Int) -&gt; Int {
-    return point * 2
-}
-
-pointToRetina(point: 200)
-
-struct UserStruct {
-    var name: String
-    var age: Int
-    var job: String
-}
-
-var user = UserStruct(name: &quot;hwang&quot;, age: 12, job: &quot;Some one &quot;)
-
-//struct 为所有属性定义了默认值
-
-
-class UserClass {
-    var name: String
-    var age: Int
-    var job: String
-    
-    init(name: String, age: Int, job:String) {
-        self.name = name
-        self.age = age
-        self.job = job
-    }
-}
-
-//class 需要出示化
-
-var userA = UserStruct(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
-var userB = userA
-userB.name = &quot;mmmeeee&quot;
-print(userA, userB)
-
-//class 是浅拷贝
-
-var userC = UserClass(name: &quot;me&quot;, age: 12, job: &quot;dasd&quot;)
-var userD = userC
-userD.name = &quot;mmmeeee&quot;// 修改了userC 的name
-print(userC.name, userD.name)
-
-
-var answer: String? // ? 标记不一定会有返回值
-
-var answerString: String! // 必定是由返回值
-
-if let sureAnswer = answer {
-    UILabel().text = sureAnswer
-}
-// 等价于下面
-
-UILabel().text = answer ?? &quot;&quot;
-
-</code></pre>
 ]]></content>
     </entry>
 </feed>
