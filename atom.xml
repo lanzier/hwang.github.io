@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-11-14T06:57:16.534Z</updated>
+    <updated>2020-11-28T07:28:30.359Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,48 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang Reading List - New 015]]></title>
+        <id>https://hwang.top/post/hwang-reading-list-new-015/</id>
+        <link href="https://hwang.top/post/hwang-reading-list-new-015/">
+        </link>
+        <updated>2020-11-28T07:27:34.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+<p><a href="https://ift.tt/3nP81bf">一日一技｜只要一台电脑，轻松获取米家设备 token</a></p>
+<blockquote>
+<p>不管你是想通过 Homebridge 还是 Home Assistant 把米家设备添加到苹果的 HomeKit 平台上，获取米家设备 token 是绕不开的关键一步。但是，这一步卡住了很多新手，因为很多人不具备安卓手机、Root 能力、命令行操作能力或者寻找传说<br>
+<a href="https://ift.tt/399gcrf">Why you sometimes need to break the rules in data viz</a></p>
+</blockquote>
+<blockquote>
+<p>It’s easy to visualise data badly. Choose the wrong chart type, omit labels or overload the graphic and you can quickly end up with something that is confusing, misleading or that fails to tell a story.<br>
+<a href="https://ift.tt/2PiMXYB">Data visualisation, from 1987 to today</a></p>
+</blockquote>
+<blockquote>
+<p>If you attend a conference about data visualisation in 2018 you will probably hear at least one speaker refer to William Playfair’s early line charts of prices and wages published in 1786.<br>
+<a href="https://ift.tt/3oaMREs">為什麼主管不想看你的報告？《經濟學人》記者：因為圖表踩了這 3 種雷</a></p>
+</blockquote>
+<blockquote>
+<p>【為什麼我們要挑選這篇文章】做完數據分析後，最後一個步驟就是用適當的方式，將資訊表現出來，讓主管、客戶、政府單位可以了解你的論點。然而，我們製作圖表的時候，常常踩到雷而不自知。</p>
+</blockquote>
+<p><a href="https://ift.tt/2y2EpSM">Measuring the true toll of the pandemic</a></p>
+<p><a href="https://ift.tt/2ytxQUQ">漫谈条形图</a></p>
+<blockquote>
+<p>这篇文章的起因是源于COS论坛中的下图，该图引起了热烈的讨论，具体的探讨细节见此。<br>
+<a href="https://ift.tt/2pSD2Ai">900 Years of Tree Diagrams, the Most Important Data Viz Tool in History</a><br>
+You'd be excused for thinking infographics are a modern invention.<br>
+<a href="https://ift.tt/3iP4XJm">How we used data to design modern record certification plaques</a></p>
+</blockquote>
+<blockquote>
+<p>Record labels regularly present their artists with recording certification plaques to celebrate milestones in the journey of a song or an album. This practice first started when Regal Zonophone Records awarded George Formby a silver disc after the song “The Window Cleaner” sold 100,000 copies.<br>
+<a href="https://ift.tt/31OM2YC">Pipenv 使用及 Pyinstaller 文件瘦身记录</a><br>
+我通常用 Pyinstaller 将 PixivBiu 的 Python 代码打包成可执行文件，但打包后的体积很令人在意。<br>
+<a href="https://ift.tt/3e022M6">新冠的额外死亡数</a><br>
+额外死亡数是用来估计突发公共卫生事件或政策系统影响的一个途径，原理非常简单，用突发公共卫生事件过程中死亡的人数去对比往年同时段的死亡平均数，多了就说明整体抬高了死亡率，低了则相反。一般认为，死亡这件事</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「30岁」前实现财务自由的觉悟]]></title>
         <id>https://hwang.top/post/30-sui-qian-shi-xian-cai-wu-zi-you-de-jue-wu/</id>
@@ -32,7 +74,7 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 013]]></title>
+        <title type="html"><![CDATA[Hwang Reading List - New 014]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/</id>
         <link href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/">
         </link>
@@ -410,34 +452,6 @@ https://sspai.com/post/61257</p>
 <p>其次，桌面端的操作其实除了键盘，还有非常重要的一环——鼠标操作：鼠标这独特的中间介质让桌面端的操作变得丰富起来。鼠标操作能够成为肌肉记忆吗？当然可以，Chrome 上鼠标手势插件就是一例。所以在桌面端，键盘操作是一种肌肉记忆，鼠标同样也能成为一种肌肉记忆。</p>
 <p>Dropzone 就是这样一款，既能给你带来键盘上如同 Launch Center Pro 体验同时，也提供了通过鼠标拖拽这样的操作，实现鼠标操作的肌肉记忆的应用。</p>
 <p><a href="https://sspai.com/post/61257">前往少数派 👉 阅读全文</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python2  macOS 安装 m2crypto]]></title>
-        <id>https://hwang.top/post/python2-macos-an-zhuang-m2crypto/</id>
-        <link href="https://hwang.top/post/python2-macos-an-zhuang-m2crypto/">
-        </link>
-        <updated>2020-06-05T05:47:04.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="安装工具">安装工具</h2>
-<pre><code class="language-bash">brew install openssl
-brew install swig
-</code></pre>
-<h2 id="修改-python-27">修改 (python 2.7)</h2>
-<pre><code class="language-bash">export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-</code></pre>
-<h2 id="安装">安装</h2>
-<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
-CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
-SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
-pip install m2crypto
-</code></pre>
-<p>OR  pipenv</p>
-<pre><code class="language-bash">sudo env LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; \
-CFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; \
-SWIG_FEATURES=&quot;-cpperraswarn -includeall -I$(brew --prefix openssl)/include&quot; \
-pipenv install m2crypto
-</code></pre>
-<p>最后，有一说一，pipenv 确实方便的。</p>
 ]]></content>
     </entry>
 </feed>
