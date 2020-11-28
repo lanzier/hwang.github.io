@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-11-28T07:28:30.359Z</updated>
+    <updated>2020-11-28T09:13:22.897Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,18 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[iOS 中的数据呈现]]></title>
+        <id>https://hwang.top/post/ios-zhong-de-shu-ju-cheng-xian/</id>
+        <link href="https://hwang.top/post/ios-zhong-de-shu-ju-cheng-xian/">
+        </link>
+        <updated>2020-11-28T09:11:34.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1606554740343.png" alt="" loading="lazy"></figure>
+<p>手机早已是现代生活的重要组成部分，手机与生活越来越密不可分，手机所手机的数据也越来越多。一些数据是需要被用户感知，那么如何传达这些信息呢？通过各种图表，合理的呈现数据，自然是最好的选择。</p>
+<p>在 iOS 中，有为了帮助减少使用手机，系统设置中有「屏幕时间」；为了帮助获得健康的生活，苹果提供了健康和健身两个 app；此外，你还可以在设置的许多地方看到不同的数据呈现方式，例如存储空间的使用、电池电量的使用、app 读取的定位信息等等。</p>
+<p>本文同样发布在少数派上，点击前往：https://sspai.com/post/63823</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang Reading List - New 015]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-015/</id>
@@ -436,22 +448,6 @@ apt-get purge 删除软件包并删除配置文件<br>
 <p><a href="https://blog.51cto.com/91xueit/1133999">https://blog.51cto.com/91xueit/1133999</a><br>
 <a href="https://jingyan.baidu.com/article/ea24bc395e32f8da62b331c3.html">https://jingyan.baidu.com/article/ea24bc395e32f8da62b331c3.html</a></p>
 <p>有了思路，参考上面的内容，做起来就相对容易了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Dropzone 也许能成为你 Mac 上的 Launch Center Pro]]></title>
-        <id>https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/</id>
-        <link href="https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/">
-        </link>
-        <updated>2020-07-24T05:51:59.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文发布于少数派，推荐前往少数派阅读<br>
-https://sspai.com/post/61257</p>
-</blockquote>
-<p>Launch Center Pro（以下简称LCP）作为 iOS 上享有盛誉的效率应用，其卖点之一就是类似按钮的设计利于肌肉记忆形成。就是拥有极其符合触屏设备上操作直觉的按钮样式，这样利用点按的设计让许多操作得以成为肌肉记忆。在桌面端，人们的肌肉记忆，总是与键盘操作挂钩，绝大多数的效率应用也是围绕着键盘操作展开的，如果说要成为桌面端的 LCP，那么支持键盘快捷操作必然是必要条件之一。</p>
-<p>其次，桌面端的操作其实除了键盘，还有非常重要的一环——鼠标操作：鼠标这独特的中间介质让桌面端的操作变得丰富起来。鼠标操作能够成为肌肉记忆吗？当然可以，Chrome 上鼠标手势插件就是一例。所以在桌面端，键盘操作是一种肌肉记忆，鼠标同样也能成为一种肌肉记忆。</p>
-<p>Dropzone 就是这样一款，既能给你带来键盘上如同 Launch Center Pro 体验同时，也提供了通过鼠标拖拽这样的操作，实现鼠标操作的肌肉记忆的应用。</p>
-<p><a href="https://sspai.com/post/61257">前往少数派 👉 阅读全文</a></p>
 ]]></content>
     </entry>
 </feed>
