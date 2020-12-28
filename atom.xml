@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2020-12-02T01:55:21.254Z</updated>
+    <updated>2020-12-28T04:54:08.384Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,27 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang's Read List — EP16]]></title>
+        <id>https://hwang.top/post/hwangs-read-list-ep16/</id>
+        <link href="https://hwang.top/post/hwangs-read-list-ep16/">
+        </link>
+        <updated>2020-12-28T04:50:35.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>由于 IFTTT 收费策略变更（没办法自动化了），加之最近工作繁忙，这部分内容已经很久没有更新了。<br>
+正在思考如何持续的整理内容。<br>
+过去我一直是 RSS 阅读一部分，好的内容 Read It Later （无论是 Pocket 还是 Instapaper），然后通过 IFTTT 关联，自动化的制作出「Hwang's Read List」。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNTY0NjEzNg==&amp;mid=2247486195&amp;idx=1&amp;sn=04afec9b65bf52915a81c4427c30c62e&amp;chksm=9b81a624acf62f329eb39f3bd124e795526ad62288cdfe2e73bbfae57da49bab8266a1944115&amp;mpshare=1&amp;scene=24&amp;srcid=1030lLUZmIuKBj3aCVUDSb2o&amp;sharer_sharetime=1604065570060&amp;sharer_shareid=88d327322b39d385fdc05bce3f8dcaca&amp;key=5bc6ec827fc55f93747b5c9bcc1c13e4c46ea79c1086e796e8cc7e336bd7f18708e0ab74ad4896db2196a1724d6838656323c46223ae6224954993aa20ef36f84dea5c773a7a83e300e0a4e316d319047f9e840df4ac61ec1c376b9e2a42569440f4c3eff5e0fa9d06b0540b981b3cdc8f8e157224481377bfd049927fff1fbd&amp;ascene=1&amp;uin=MTc1NTM1NDAzNQ%3D%3D&amp;devicetype=Windows+10+x64&amp;version=6300002f&amp;lang=zh_CN&amp;exportkey=Aw1dJOd1dhX6vM9x4SHKal8%3D&amp;pass_ticket=LRO4EKa7XnbABCmJdNu8EjNKxp8KBNRaBMPe4dZN2vagc7pcw2S88znWctzAEyj2&amp;wx_header=0">思维之熵</a></p>
+<p><a href="https://www.iteye.com/blog/robbin-1488199">ITeye Java编程 Spring框架 Ajax技术 agile敏捷软件开发 ruby on rails实践 - ITeye软件开发交流社区</a></p>
+<p><a href="http://www.tmtpost.com/4825416.html">新零售时代：腾讯干不了“脏”活</a></p>
+<p><a href="https://sspai.com/post/63370">我需要什么样的笔记？可全文检索的内容库 - 少数派</a></p>
+<p><a href="https://sspai.com/post/63348">iPadPro双持记：解答你关于iPad Pro的一切选择困难 - 少数派</a></p>
+<p><a href="https://sspai.com/post/63207">保姆级教程，低成本打造娱乐影音空间：NAS/硬盘/投影/幕布/音响/家具</a></p>
+<p><a href="https://mp.weixin.qq.com/s/A9DZ_4T9MxBtaCtbPAVY6g">为什么 Force Touch 逐渐被苹果舍弃了？</a></p>
+<p><a href="https://linmi.cc/15951.html">Notion CEO Ivan 专访：即使不会编程，人人都可以成为工作达人 - Linmi</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[毕业论文]]></title>
         <id>https://hwang.top/post/bi-ye-lun-wen/</id>
@@ -66,7 +87,7 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 015]]></title>
+        <title type="html"><![CDATA[Hwang's Read List - EP 015]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-015/</id>
         <link href="https://hwang.top/post/hwang-reading-list-new-015/">
         </link>
@@ -124,7 +145,7 @@ You'd be excused for thinking infographics are a modern invention.<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 014]]></title>
+        <title type="html"><![CDATA[Hwang's Read List - EP 014]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/</id>
         <link href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/">
         </link>
@@ -167,7 +188,7 @@ You'd be excused for thinking infographics are a modern invention.<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 013]]></title>
+        <title type="html"><![CDATA[Hwang's Read List - EP  013]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-013/</id>
         <link href="https://hwang.top/post/hwang-reading-list-new-013/">
         </link>
@@ -198,7 +219,7 @@ TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 012]]></title>
+        <title type="html"><![CDATA[Hwang's Read List - EP 012]]></title>
         <id>https://hwang.top/post/hwang-reading-list-new-012/</id>
         <link href="https://hwang.top/post/hwang-reading-list-new-012/">
         </link>
@@ -412,60 +433,6 @@ apt-get purge 删除软件包并删除配置文件<br>
 <h2 id="3-重启服务">3. 重启服务</h2>
 <pre><code class="language-bash">$ sudo /etc/init.d/smbd restart
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang Reading List - New 011]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-011/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-011/">
-        </link>
-        <updated>2020-08-19T01:46:18.000Z</updated>
-        <content type="html"><![CDATA[<p>很久没更新了，也没好好弄；</p>
-<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2ZofDHL">Mac 视觉史 vol.1：从 Macintosh 到 Mac OS</a></p>
-<blockquote>
-<p>微信号 cloverfield11 功能介绍 夜晚正式开始。 2009 年，买不起 Macbook 的我在 PC 上装上了黑苹果。在此之前，我用虚拟机体验了 Apple ][ 、Mac OS 8.1、Mac OS 9.2.2 、Mac OS X 10.</p>
-</blockquote>
-<p><a href="https://ift.tt/2WCPx1S">张小龙 的 22 年和微信的 8 年</a></p>
-<p><a href="https://ift.tt/2Knyp9M">iPad Pro 鼠标/触控板横测，谁是体验 iPadOS 指针操作的最佳选择？</a></p>
-<blockquote>
-<p>上个月发布的 iPadOS 13.</p>
-</blockquote>
-<p><a href="https://ift.tt/2XvoBSX">Watchsmith Review: Create Your Own Apple Watch Complications</a></p>
-<blockquote>
-<p>Watchsmith, the latest app from David Smith, was birthed from the inability to create third-party watch faces on the Apple Watch. As Smith has previously explained, while third-party faces may never be possible, several first-party faces already offer significant room for customization.</p>
-</blockquote>
-<p><a href="https://ift.tt/31I8XWa">不会日语，毕业之后去日本工作的有趣体验</a></p>
-<blockquote>
-<p>功能介绍 一些有趣的互联网开发心得、技术探讨和好物剁手指南...</p>
-</blockquote>
-<p><a href="https://ift.tt/2zhQrYS">Python 真的是靠一个 switch 来执行字节码的吗？</a></p>
-<blockquote>
-<p>为了解释清楚整个过程，我们必须从底层讲起。分支预测（Branch Prediction）是 CPU 必备的功能。准确的分支预测能大大提高指令流水线的性能，反之则导致性能损耗。</p>
-</blockquote>
-<p><a href="https://ift.tt/33wN3WY">时代已经黑了</a></p>
-<blockquote>
-<p>而且，Castro 发完英文声明后，又用谷歌翻译发了一条中文声明，特意来告别它的中文用户。其中这一句「蹩脚」翻译显得最为传神：</p>
-</blockquote>
-<p><a href="https://ift.tt/3iUPOWx">3D界面的设计工作流 · 语雀</a></p>
-<p><a href="https://ift.tt/3cWAuq0">使用 WebP Server Go 优化图片提升网站加载速度</a></p>
-<blockquote>
-<p>同时，你的打分也会被下降了，如何解决这种问题呢？ 我们知道，图片一般有不同的格式，比如我们常见的 JPG，PNG 就分别属于两种不同的图片格式，通过是否对图片进行压缩…</p>
-</blockquote>
-<p><a href="https://ift.tt/3aGB8HG">比Intel快2倍的传说，Mac用苹果处理器的一点想法</a></p>
-<blockquote>
-<p>苹果 PowerPC 时代，我在上高中。那时有件事我印象很深刻。当时我们班有个很懂计算机的人，拿着一本计算机杂志，跟我安利 iMac G4，说你看这个电脑多好看啊，多牛逼啊，比 Windows 电脑不知道好看了多少倍</p>
-</blockquote>
-<p><a href="https://ift.tt/2PPX9dl">Developers v. Apple: Outlining Complaints about the App Store</a></p>
-<blockquote>
-<p>The early days of the App Store might have been rocky, but from the outside, they seemed like a virtual gold rush. The media was full of stories of independent developers becoming wealthy from simple apps.</p>
-</blockquote>
-<p><a href="https://ift.tt/3g3pVC5">MacBook要采用Arm处理器，难度有多大？</a></p>
-<blockquote>
-<p>实际上，有关 Mac 系列计算机要开始采用 Arm 处理器的传言似乎是从 2010 年就开始的，那会儿苹果也才刚刚开始做 iPhone 的 SoC。这一传言就 10 年过去了，起码今年前不久才更新的 MacBook Air 都还在用 Intel 的处理器。</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
