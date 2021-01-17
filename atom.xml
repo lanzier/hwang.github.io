@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-17T08:53:14.737Z</updated>
+    <updated>2021-01-17T09:08:15.066Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -21,7 +21,20 @@
         <link href="https://hwang.top/post/1/">
         </link>
         <updated>2021-01-17T08:51:42.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://www.ixiqin.com/2020/12/what-kind-of-person-is-fit-to-be-independent-developers">什么样的人适合做独立开发者？ | 西秦公子</a></p>
+        <content type="html"><![CDATA[<blockquote>
+<p>由于 IFTTT 收费策略变更（没办法自动化了），加之最近工作繁忙，这部分内容已经很久没有更新了。<br>
+正在思考如何持续的整理内容。<br>
+过去我一直是 RSS 阅读一部分，好的内容 Read It Later （无论是 Pocket 还是 Instapaper），然后通过 IFTTT 关联，自动化的制作出「Hwang's Read List」。</p>
+</blockquote>
+<p><a href="https://jerryzhang.blog/apple-m1-past-and-future/">苹果 M1 芯片的前世今生 - Overflow by Jerry Zhang</a></p>
+<blockquote>
+<p>苹果是不是已经要淘汰 Mac 产品线了？」这个问题从今天看来答案肯定是否定的，可是一直都是吗？从 Apple Silicon 的很多特性，以及到来的时间点，都可以略显端倪。</p>
+</blockquote>
+<p><a href="https://jerryzhang.blog/cooknote/">「库克式发布会」- Overflow by Jerry Zhang</a></p>
+<blockquote>
+<p>本次发布会的亮点，并不在于苹果发布了哪些订阅服务，也不在于谁能用得上用不上，而是在于贯穿发布会始终的价值观。</p>
+</blockquote>
+<p><a href="https://www.ixiqin.com/2020/12/what-kind-of-person-is-fit-to-be-independent-developers">什么样的人适合做独立开发者？ | 西秦公子</a></p>
 <blockquote>
 <p>我这几天在 Twitter 上发了一条推，引起了一些热烈反响。不少推油也从不同的角度给出了看法。 https:… 继续阅读什么样的人适合做独立开发者？</p>
 </blockquote>
