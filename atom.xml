@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-15T02:13:56.014Z</updated>
+    <updated>2021-01-17T08:53:14.737Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,50 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang's Read List — EP17]]></title>
+        <id>https://hwang.top/post/1/</id>
+        <link href="https://hwang.top/post/1/">
+        </link>
+        <updated>2021-01-17T08:51:42.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://www.ixiqin.com/2020/12/what-kind-of-person-is-fit-to-be-independent-developers">什么样的人适合做独立开发者？ | 西秦公子</a></p>
+<blockquote>
+<p>我这几天在 Twitter 上发了一条推，引起了一些热烈反响。不少推油也从不同的角度给出了看法。 https:… 继续阅读什么样的人适合做独立开发者？</p>
+</blockquote>
+<p><a href="https://taiwan.chtsai.org/2018/12/17/ni_chengwei_lixiang_zhong_de_daren_le_ma/">你成為理想中的大人了嗎？</a></p>
+<blockquote>
+<p>小時候，你想像中成為大人的自己是個怎樣的人？長大後，你想像中的理想生涯會讓你成為怎樣的人？來到中年，回顧半生，你成為理想中的大人了嗎？</p>
+</blockquote>
+<p><a href="https://www.tmtpost.com/4885051.html">谁在靠你的“脸”赚钱?-钛媒体官方网站</a></p>
+<blockquote>
+<p>泛滥的人脸识别，猖獗的灰黑产。</p>
+</blockquote>
+<p><a href="https://www.zhangxinxu.top/wordpress/2019/08/css-flex-last-align/">让CSS flex布局最后一行列表左对齐的N种方法 «  张鑫旭-鑫空间-鑫生活</a></p>
+<blockquote>
+<p>本文提供了6种方法，用来解决最后一行的列表的不满，最后一行没有完全垂直对齐的问题。每种方法都有其适用场景，希望本文内容可以对您的学习有所帮助。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3NDQzNTk2Mw==&amp;mid=2247484145&amp;idx=1&amp;sn=2999bee4c932ddc9ff99b8c0f1be9ab7&amp;chksm=eb1558e5dc62d1f35deab3b446073327a15d8b361fc4f6d23ae16021d5705e51aef1a55a343c#rd">工具的社会化与创作者网络效应</a></p>
+<blockquote>
+<p>早期的工具生长在社区里，未来的工具里生长着社区。</p>
+</blockquote>
+<p><a href="https://haohailong.net/2020/time-tracking-methodology">走出时间记录的盲区</a></p>
+<blockquote>
+<p>本文于 2020 年 5 月 6 日首发于少数派。  原文地址：https://sspai.com/post/60310 .. toc:: 本文目录 也许你并不自知，但不管是学生还是职业人士，「时间</p>
+</blockquote>
+<p><a href="https://jesor.me/2020/sony-playstation-5-release/">索尼能再赢一次吗？</a></p>
+<blockquote>
+<p>新的世代来临，索尼想再赢一次。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNjgyODc4OA==&amp;mid=2651665746&amp;idx=1&amp;sn=f4c71d55b1cd7826dec8d59bbd34c764&amp;chksm=80174549b760cc5fbdbb4c4daef61b97759a2b41b080556713a812892322f6863fd0ae38c1a1#rd">开一个设计工作室，你需要了解的事情...</a></p>
+<blockquote>
+<p>这是一篇翻译文章。作者从动机、实操、注意事项等方面，给出很好的建议。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNzAyMjExNw==&amp;mid=2247484140&amp;idx=1&amp;sn=f070c1fc0ab35b0cdd61d99a70f9fbe2&amp;chksm=9beaaf26ac9d263010535f795251bbc1757cf9a5c89f81c64f043707e489cbe8e466550252c6#rd">深度 | 替刘强东花钱的人</a></p>
+<blockquote>
+<p>他们替刘强东买未来，买到的未必是他需要的未来。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 2021年 树莓派的 Home Assistant 手动安装方式]]></title>
         <id>https://hwang.top/post/2021-nian-shu-mei-pai-de-home-assistant-shou-dong-an-zhuang-fang-shi/</id>
@@ -390,107 +434,6 @@ TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种
 <blockquote>
 <p>（本文首发于极客公园，本站收录时进行了修改。）</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[iOS 开发学习笔记02 —— Swift UI 基础（ Design+Code 的学习笔记）]]></title>
-        <id>https://hwang.top/post/swift-ui-ji-chu-designcode-de-xue-xi-bi-ji-er/</id>
-        <link href="https://hwang.top/post/swift-ui-ji-chu-designcode-de-xue-xi-bi-ji-er/">
-        </link>
-        <updated>2020-10-05T05:49:50.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="states-and-animations">States and Animations</h2>
-<p>SwiftUI 会自动补全量高 states 之间的动画。和 Keynote 的 Magic Move 一样；</p>
-<pre><code class="language-swift">@State var show = true
-.onTapGesture {
-	self.show.toggle()
-}
-</code></pre>
-<h2 id="animations">Animations</h2>
-<p>具体的，SwiftUI 提供了许多方式定义你的动画：</p>
-<pre><code class="language-swift">// 线性
-.animation(.linear)
-
-// 简易的动画 Ease Animation
-.animation(.easeInOut(duration: 0.3))
-
-// 延迟动画 Delay  
-.animation（Animation.easeOut(duration: 0.6).delay(0.1))
-
-// spring
-.animation(.spring())
-
-</code></pre>
-<p>其实非常语意化：</p>
-<ul>
-<li>duration ： 持续时间</li>
-<li>delay： 延迟时间</li>
-</ul>
-<h2 id="stacks">Stacks</h2>
-<p>VStack ： 纵向布局<br>
-HStack ： 横向布局<br>
-ZStack  :   Z-index 容器<br>
-Spacer() : 相当于弹簧，会撑满可用的空间</p>
-<p>跨平台的兼容性：</p>
-<h4 id="all">All</h4>
-<ul>
-<li>ZStack</li>
-<li>VStack</li>
-<li>HStack</li>
-<li>TabView</li>
-<li>NavigationView</li>
-<li>Picker</li>
-<li>Stepper</li>
-<li>Slider</li>
-<li>…</li>
-<li>SF Symbols</li>
-</ul>
-<h4 id="ipad-mac">iPad / Mac</h4>
-<ul>
-<li>Tabview</li>
-</ul>
-<h4 id="mac">Mac</h4>
-<p>Keyboard Shortcuts</p>
-<h2 id="drag-and-drop-ui">Drag and Drop UI</h2>
-<h2 id="modifiers">Modifiers</h2>
-<pre><code class="language-swift">.frame(with:100, height: 100)
-.background(Color.blue)
-.shadow(radius:10)
-.offset(x: 10, y:10)
-.blur()
-.padding()
-</code></pre>
-<h2 id="sf-symbols">SF Symbols</h2>
-<pre><code class="language-swift">Image(systemName: item.icon)
-	.imageScale(.large)
-	.foregroundColor(.blue)
-	.frame(width: 32, height: 32)
-</code></pre>
-<h2 id="views-and-controls">Views and Controls</h2>
-<ul>
-<li>Text</li>
-<li>Image</li>
-<li>Rectangle</li>
-<li>Toggle</li>
-<li>Picker</li>
-<li>Stepper</li>
-<li>Slider</li>
-</ul>
-<h2 id="visual-effects">Visual Effects</h2>
-<pre><code class="language-swift">.rotationEffect(Angle(degress: 30)) // 旋转
-.rotation3DFffect(Angle(degress: 60), axis:(x:0, y:10, z:0))
-.scaleEffect(0.9)
-.blendMode(.hardLight)
-.blur(radius: 20)
-</code></pre>
-<h2 id="keyboard-shortcuts">keyboard Shortcuts</h2>
-<p>Keyboard Shortcuts<br>
-The most important Xcode keyboard shortcuts are the following:</p>
-<p>Cmd + Click: Contextual menu for code or UI.<br>
-Option + Click: Quick info for code.<br>
-Cmd + 0: Show/hide Navigator.<br>
-Cmd + Shift + L: Insert new element.<br>
-Cmd + R: Run the app.<br>
-Cmd + . : Stop the app.</p>
 ]]></content>
     </entry>
 </feed>
