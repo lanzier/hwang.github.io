@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-21T01:45:51.361Z</updated>
+    <updated>2021-01-21T02:06:47.531Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,39 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Stata 虚拟内存不足，报错“I/O error writing .dta file”]]></title>
+        <id>https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/</id>
+        <link href="https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/">
+        </link>
+        <updated>2021-01-21T02:04:23.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="错误信息">错误信息</h2>
+<p>具体报错为：</p>
+<pre><code class="language-bash">I/O error writing .dta file
+Usually such I/O errors are caused by disk or file system being full
+</code></pre>
+<h2 id="解决步骤">解决步骤</h2>
+<ol>
+<li>在c盘以外的磁盘建一个 temp 文件夹（例如 d盘）：<code>d:\temp</code></li>
+<li>打开 cmd 运行：<code>set TEMP=d:\temp</code></li>
+<li>重启电脑</li>
+<li>在stata里面运行一下：</li>
+</ol>
+<pre><code class="language-bash">tempfile findout
+display &quot;`findout'&quot;
+</code></pre>
+<p>查看显示的是否为 <code>d:\temp</code></p>
+<h2 id="原因">原因：</h2>
+<p>具体参见官方文档的内容：<br>
+<a href="https://www.stata.com/statalist/archive/2004-01/msg00542.html">https://www.stata.com/statalist/archive/2004-01/msg00542.html</a></p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1611194758292.png" alt="" loading="lazy"></figure>
+<p>原理（资料来自stata官方文档）：</p>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1611194766558.png" alt="" loading="lazy"></figure>
+<p>简单来说就是 stata 读取文件，会读到内存里，如果你的原始数据是10G，而你电脑内存只有8G，stata为了计算可能需要20G的内存，即便电脑把所有内存都分给了stata，那也是不够用的，所以就有了虚拟内存。虚拟内存就是把硬盘当作内存来用，优点是便宜，缺点是速度慢。</p>
+<p>默认的虚拟内存储存在 C 盘的，而C盘很可能没有20G的可用空间。这时，stata就会报这个错，并且说<code>caused by disk or file system being full</code>，出现这个问题时，可以查看 C 盘是不是只剩下1-2G的可用空间了。</p>
+<p>解决步骤就是上例说的，将虚拟内存的存储地址移动到其他空间富裕的盘。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang's Read List — EP17]]></title>
         <id>https://hwang.top/post/1/</id>
@@ -361,91 +394,6 @@ TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种
 工作是我们如今每个人都会面临的事情。我们从高校毕业，走入社会，走上工作岗位，开始十年如一日的辛勤工作。但，工作到底意味着什么?工作又到底为了什么?<br>
 <a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a><br>
 （本文首发于极客公园，本站收录时进行了修改。）</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang's Read List - EP 012]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-012/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-012/">
-        </link>
-        <updated>2020-10-07T14:13:04.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/2YMyjQo">家庭 10Gbps 网络施工指南</a></p>
-<blockquote>
-<p>千兆网已经普及了块一二十年，其他计算设备瓶颈都在大幅改善，存储设备速度都翻了快 30 倍（HDD 普遍连续读取速度为 160MB/s，现在最快 SSD 可到 5000MB/s），也是时候在网络设备上动手了。</p>
-</blockquote>
-<p><a href="https://ift.tt/34RuwFl">REPO 风格之争：MONO VS MULTI</a></p>
-<blockquote>
-<p>首先，我们解释一下什么是 monorepo 和 multirepo。这两者都是管理组织代码的方式，顾名思义 monorepo 就是把所有的相关项目都放在一个仓库中（比如 React, Angular, Babel, Google...），multirepo 则是按模块分为多个仓库。</p>
-</blockquote>
-<p><a href="https://ift.tt/2BNgI2g">Roam Research Report ——理念与功能</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/3bbl2FY">为什么快手的宣传片能一次次刷屏？</a></p>
-<blockquote>
-<p>文 | 竹光侍 一个月前，B站的青年节宣传视频《后浪》全网刷屏随即被全网群嘲，“后浪“也成为满世界浪游体验、追求“烧钱”爱好的年轻人的代名词。绝大多数早早被生活压在五行山下的年轻人自称不配“后浪”，乃至于以</p>
-</blockquote>
-<p><a href="https://ift.tt/3bc3HNf">Mac 视觉史 vol.2：90年代失败操作系统大赏</a></p>
-<blockquote>
-<p>微信号 cloverfield11 功能介绍 夜晚正式开始。 在第一篇 Mac 视觉史当中，我梳理过了整个 Mac 系统第一阶段的明线，而这一篇，我们来聊一下它的「暗线」。Mac 视觉史 vol.</p>
-</blockquote>
-<p><a href="https://ift.tt/2QFvGvd">GQ报道</a></p>
-<blockquote>
-<p>[摘要]很难断言理想主义对罗永浩而言是灯塔还是外衣。这些年，他近乎偏执地选择一些少有人走的路: 零背景闯入手机制造业、签署个人无限连带责任贷款、身负巨债却拒绝申请破产……现在，为了还债，他做起曾经不屑一顾</p>
-</blockquote>
-<p><a href="https://ift.tt/3hZDC6G">焦点分析 | 百度的“钱袋子”过时了吗？</a></p>
-<blockquote>
-<p>9 月 3 日，长沙梅溪湖金茂酒店的电梯里，几位“站长”在交流彼此网站的广告价格，当日，百度联盟峰会在这里举行，这也是百度联盟成立的第十八年。</p>
-</blockquote>
-<p><a href="https://ift.tt/33pZ0fb">甘肃首富跌落史</a></p>
-<blockquote>
-<p>微信号 biz-leaders 功能介绍 定义中国商业力量 以下文章来源于八点健闻 ，作者吴靖吴晔婷徐卓君 八点健闻 看得懂的健康专业资讯 作者：吴靖、吴晔婷、徐卓君编辑：徐卓君来源：八点健闻（ID：Healthlnsight）2015年夏天，以一味</p>
-</blockquote>
-<p><a href="https://ift.tt/3gMDMgm">小议超链接的规范使用</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/2ZxljyI">404,您访问的页面已经不存在!</a></p>
-<p><a href="https://www.youtube.com/watch?v=KQ9FfzMKBNc&amp;feature=youtu.be">How caffeine and alcohol affect your sleep | Sleeping with Science, a TED series</a></p>
-<blockquote>
-<p>Caffeine wakes you up, and alcohol makes you nod off, right? It's not that simple. Sleep scientist Matt Walker takes us into the eye-opening ways that these drinks affect the quantity and quality of our sleep.</p>
-</blockquote>
-<p><a href="https://ift.tt/2R9udOk">How Microsoft built its folding Android phone</a></p>
-<blockquote>
-<p>Microsoft is returning to making phones this week, as part of an ambitious project to usher in a new era of dual-screen and folding devices. The company has spent around six years developing Surface Duo, its Android-powered device that folds out to be a phone or a miniature tablet.</p>
-</blockquote>
-<p><a href="https://ift.tt/3izx92P">买奢侈品的小镇青年：隐秘角落里的欲望与身份认同</a></p>
-<blockquote>
-<p>今年7月末，林玉回湖北红安县的农村参加婚礼。村民——那些她叫不全名字的亲戚们，用一个塑料桶装着掺了雪碧的长城红酒。</p>
-</blockquote>
-<p><a href="https://ift.tt/3mt0T3o">不要浪费一场危机的机会 ——华为轮值董事长郭平与新员工座谈纪要</a></p>
-<p><a href="https://ift.tt/3458Rrb">聊聊 iOS14 中「时间控件」的设计</a></p>
-<blockquote>
-<p>微信号 icojumpin 功能介绍 一位有多年设计经验的产品设计老师傅 hi 大家好，断更3年多的我又回来了继续写公众号了～前几天升级 iOS14 后在「日历App」中遇到个「时间控件」使用体验问题，在朋友圈「吐了个槽」后收到很多类似</p>
-</blockquote>
-<p><a href="https://ift.tt/3cFtpdK">Chinese Communist party asserts greater control over private enterprise</a></p>
-<blockquote>
-<p>Gain a global perspective on the US and go beyond with curated news and analysis from 600 journalists in 50+ countries covering politics, business, innovation, trends and more.</p>
-</blockquote>
-<p><a href="https://ift.tt/35LRBts">装修脑壳痛：家庭万兆光纤网络、智能家居</a></p>
-<blockquote>
-<p>最近忙装修的事，各种乱七八糟真是脑壳痛。目前进度是已经给物业报建，目测装修队下周进场。布局已定，具体设计图还没定稿。 老婆把控全屋设计风格，我负责材料、水电、家电这些，网络这些事情当然都靠我了。</p>
-</blockquote>
-<p><a href="https://ift.tt/2HMWWXF">2020 书单：白露</a></p>
-<blockquote>
-<p>白露是夏天的尾巴，从三月开始的居家令一下子竟过去了六个月，美国的疫情控制就不多说了，抛开政府和媒体的各种嘴炮和烟雾弹，从曲线上来看是成功做到了“flatten the curve”，问题只在于 flatten 到最高点上了。不过现在整</p>
-</blockquote>
-<p><a href="https://ift.tt/3jAWKJ6">2020 生活手册系列：家用网络配置与选购指南</a></p>
-<blockquote>
-<p>最近有好多朋友找我咨询该买什么路由，每次都需要花很长的时间去解释原理和了解需求，于是便写了这篇文章。本文将从基本原理层面带你去理解，该怎样去选购和部署家用网络设备。</p>
-</blockquote>
-<p><a href="https://ift.tt/2RTuPHW">逃离硅谷</a></p>
-<blockquote>
-<p>（本文首发于极客公园，本站收录时进行了修改。）</p>
 </blockquote>
 ]]></content>
     </entry>
