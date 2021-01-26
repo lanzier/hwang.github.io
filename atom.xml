@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-26T05:38:11.150Z</updated>
+    <updated>2021-01-26T08:52:59.942Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,47 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[开源一个头像生成器]]></title>
+        <id>https://hwang.top/post/kai-yuan-yi-ge-tou-xiang-sheng-cheng-qi/</id>
+        <link href="https://hwang.top/post/kai-yuan-yi-ge-tou-xiang-sheng-cheng-qi/">
+        </link>
+        <updated>2021-01-26T08:47:49.000Z</updated>
+        <content type="html"><![CDATA[<p>为了个用户提供一个独特又有风格的头像，我们开发制作了一款很棒的头像生成器。<br>
+长话短说，如果你想生成一个有趣的头像：</p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1611650888726.png" alt="" loading="lazy"></figure>
+<p>可以前往线上体验地址 ：</p>
+<p>https://avatar.gaoxiazhitu.com</p>
+<p>或扫描下方二维码 (微信中，请选择在「Safari中打开」以便能够下载图片）：</p>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1611650900722.png" alt="" loading="lazy"></figure>
+<p>如果对这个小网页有兴趣，欢迎继续阅读</p>
+<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1611650920813.gif" alt="" loading="lazy"></figure>
+<hr>
+<p>我们团队使用 Figma 作为设计协同工具。所以在某日闲暇中，产品兼设计 Hwang 在 Figma 社区中逛到了这个由 Micah Lanier 设计的素材，<a href="https://www.figma.com/community/file/829741575478342595/Avatar-Illustration-System">Avatar Illustration System</a>：</p>
+<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1611650961927.png" alt="" loading="lazy"></figure>
+<p>无论是色彩还是风格，都和我们要做的产品非常搭。作为设计师，Hwang 就将其导入了自家产品的设计图中，「非常合适」：</p>
+<figure data-type="image" tabindex="5"><img src="https://hwang.top/post-images/1611651020919.png" alt="" loading="lazy"></figure>
+<p>之后的一段时间里，这个「头像」一直作为默认头像，出现在我们的资源库中。</p>
+<h3 id="我们的产品需要头像">我们的产品需要头像</h3>
+<p>在开发进度推进到了用户系统的环节时，我们正式考虑起了这个头像的事宜。一般而言，作为工具类的产品，是不是需要头像，其实一致没有定论。具体到我们自己的产品，后续我们有计划添加分享功能，为了使用户有独特的标识，我们认为头像是需要的。</p>
+<h3 id="我们希望为用户提供一套默认的头像">我们希望为用户提供一套默认的头像</h3>
+<p>既然头像是需要的，那么我们是不是需要为用户提供一些默认头像呢？一方面节省用户注册时间，另一方面一个可以与整体的设计风格保持一致。我们看看我们的榜样 Notion：</p>
+<figure data-type="image" tabindex="6"><img src="https://hwang.top/post-images/1611651047015.png" alt="" loading="lazy"></figure>
+<p>Notion 在自己的网页中，有非常多好看风格一致的「头像」，我们非常喜欢这种美感。不过，Notion并没有为用户提供一个可用的工具创建这样的头像 。</p>
+<h3 id="一个可以随机生成头像的工具也许非常不错">一个可以随机生成头像的工具也许非常不错</h3>
+<p>既然需要有一套默认头像，那我们为什么不直接做一个生成器呢？综合考虑下来，我们觉得开发一个头像生成器，会很有趣。</p>
+<p>剩下的就是素材的问题了。我们尝试了一些选择，最后，我们还是决定继续使用Micah Lanier 设计的素材，并且在此基础上，扩展我们自己的素材。</p>
+<p>因为我们基础素材来自社区，所以我们将服务开源，以便大家都能够使用。</p>
+<p>最后我们的开发 CatsJuice 用了一个周末，完成了基本的原型开发，之后设计师 人青小妹妹在原有组件基础上，绘制了更多有趣的小组件：</p>
+<figure data-type="image" tabindex="7"><img src="https://hwang.top/post-images/1611651088205.png" alt="" loading="lazy"></figure>
+<p>我们的头像生成器就完成了！</p>
+<figure data-type="image" tabindex="8"><img src="https://hwang.top/post-images/1611651101154.png" alt="" loading="lazy"></figure>
+<h3 id="开源">开源！</h3>
+<figure data-type="image" tabindex="9"><img src="https://hwang.top/post-images/1611651130158.png" alt="" loading="lazy"></figure>
+<p>🌍 GitHub 源码地址 ：https://github.com/wave-charts/avatar-gen/</p>
+<p>欢迎各位转发体验，以及去GitHub star 我们的项目。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Docker 中 Nginx 软链接的配置]]></title>
         <id>https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/</id>
@@ -409,49 +450,6 @@ You'd be excused for thinking infographics are a modern invention.<br>
 <p>老实说，我是思考过这个问题的。我的结果是，对于我来说，我基本上能克制我自己绝大多数的物质需求。比如，吃饭，我完全不挑食，对于我来说，只不是天天吃土豆这样极端的情况，其实就足够满足我了。再比如，穿衣什么的，我也没有对与些昂贵品牌的向往。其他诸如住一个特别大的别墅，去海边游玩什么的，我也并不在乎与向往。「有钱，真好」的观点，并不是我相信的。但是，这其实是有一个问题的：并不富裕的生活，是并不成功（世俗定义）的。所以如何平衡这种内外的矛盾呢？我可以不在乎其他人的观点，但这样是不是「阿Q」呢？这个就是「社会动物」的矛盾吧。</p>
 <p>之前，我说到了<a href="https://blog.yitianshijie.net">「李如一」</a>的生活方式，其实重点并不是说在美国住，在日本住，而是那种「自由」的状态。李如一在<a href="https://miechakucha.com/13">一期播客</a>（就是音频节目）中认为，欣赏艺术并不是一个比吃饭穿衣更高级的需求。他在反对的是世俗定义的「需求层次」理论。这种反对，只会被少数人接受，却被大多数人嘲讽。这种状态，其实在这个国家屡屡上演。中国人主张「中庸」，讲「过尤不及」，这样的教育下，人们都是「大一同」的，对于个人的肯定显然是不足的。人们会嘲笑穷画家，嘲笑所谓「北大毕业，菜场卖菜」这样的现象。这种对于不同人生选择的不尊重是实实在在存在的。即便看起来更加新潮的90后，也同样存在。对于个体的不够尊重，让我觉得并不自由。我完全能够测度好自己的需求，控制不必要的欲望的生长。但是我又不得不在这个社会原本撰写好的轨迹上前行。不论是所谓的出人头地也好，还是所谓的富甲一方，都是对于这个一同的社会轨迹的共同的追求。其实并没有其他的路给你走。</p>
 <p>老师的观点，对我来说，是在说，既然不能改变这些「轨迹」，那就花尽量少的时间，去完成这条轨迹。这样的选择我是能理解的。也许是非常好的解法。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang's Read List - EP 014]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/">
-        </link>
-        <updated>2020-10-15T05:42:15.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/36ZyA7N">开源、可定制的网页批注工具——Hypothesis</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。</p>
-</blockquote>
-<p><a href="https://ift.tt/33vmCAD">10 Awesome Python 3.9 Features</a></p>
-<blockquote>
-<p>Just like most of the Python fans, I am super excited to explore and use the latest features. This article will provide an overview of the must-know features of Python 3.9. This is again an exciting time for the Python programmers.</p>
-</blockquote>
-<p><a href="https://ift.tt/3ixQJeQ">好中文网站重开记</a></p>
-<blockquote>
-<p>既然我已有一个写了18年的博客白板报，为什么还要建这个新站呢？</p>
-</blockquote>
-<p><a href="https://ift.tt/34LouV0">我的日志系统：从 Notion 到 Dynalist</a></p>
-<blockquote>
-<p>2019 年底 OneNote 把我的日记给搞丢了，我却发现那些日记除了发泄情绪，几乎没给我带来什么正面作用，就开始探寻一种更好的日志体系，希望解决以下问题：</p>
-</blockquote>
-<p><a href="https://ift.tt/3jycZ9A">「有没有一种恋爱脚本？」</a></p>
-<blockquote>
-<p>TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种很 objective 的听，纯生物行为，不是那种「I’m here for you.</p>
-</blockquote>
-<p><a href="https://ift.tt/3kovVrB">iOS 14, Big Sur &amp; DNS over HTTPS / TLS</a></p>
-<blockquote>
-<p>iOS 14 &amp; MacOS Big Sur have finally added support for DNS over HTTPS and DNS over TLS standards — also known as encrypted DNS. What is DOH / DOT? Imagine you’re at a conference. You’re using its public Wi-Fi.</p>
-</blockquote>
-<p><a href="https://ift.tt/3cpuXbF">为什么工作?</a></p>
-<blockquote>
-<p>工作是我们如今每个人都会面临的事情。我们从高校毕业，走入社会，走上工作岗位，开始十年如一日的辛勤工作。但，工作到底意味着什么?工作又到底为了什么?</p>
-</blockquote>
-<p><a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a></p>
-<blockquote>
-<p>（本文首发于极客公园，本站收录时进行了修改。）</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
