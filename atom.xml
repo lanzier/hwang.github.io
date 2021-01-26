@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-24T10:07:03.154Z</updated>
+    <updated>2021-01-26T05:37:44.420Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,94 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Docker 中 Nginx 软链接的配置]]></title>
+        <id>https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/</id>
+        <link href="https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/">
+        </link>
+        <updated>2021-01-26T05:37:21.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="需求描述">需求描述</h2>
+<p>A 服务器硬盘空间用完了，需要扩容，所以需要在新扩展的磁盘中做一个的软链接，用于存放静态文件。其中，nginx 做代理静态文件服务，用于部分资源的下载业务。同时，nginx 运行在 docker 中。</p>
+<p>所以需要在旧的路径中读取到新磁盘软链接的路径，然后将软链接里的内容</p>
+<h2 id="正确步骤">正确步骤</h2>
+<ol>
+<li>开启软链接</li>
+</ol>
+<pre><code class="language-bash">    # 开启软链接
+    disable_symlinks off;
+</code></pre>
+<ol start="2">
+<li>确认docker是否挂载了新的磁盘<br>
+这次是使用 docker-compose 配置的，所以查看<code>docker-compose.yml</code>:<br>
+在 volumes 中添加新磁盘的位置（本例中为<code>/mnt/bus</code></li>
+</ol>
+<pre><code class="language-bash">version: '3.4'
+services:
+  # ----------------------------------------------------------
+  web:
+    image: nginx
+    container_name: web_nginx
+    restart: always
+    volumes:
+      - ./nginx/www/:/www
+      - ./nginx/files/:/files
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/files/bus:/mnt/bus
+    ports:
+      - 8080:8080
+      - 8001:8001
+</code></pre>
+<ol start="3">
+<li>重启 docker-compose</li>
+</ol>
+<h2 id="最后参考">最后参考：</h2>
+<p>nginx的配置：</p>
+<pre><code class="language-bash">server {
+  listen       8080;
+
+  
+  location / {
+    root /www/web;
+    try_files $uri $uri/ /index.html last;
+    index index.html;
+  }
+
+
+  location /download/ {
+    alias /files/;
+    # 开启软链接
+    disable_symlinks off;
+    charset utf-8;
+
+    # 开启目录浏览功能；
+    autoindex on;
+    #关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b；
+    autoindex_exact_size off;
+    #开启以服务器本地时区显示文件修改日期！
+    autoindex_localtime on;
+    # 这个将为打开文件指定缓存，默认是没有启用的，max 指定缓存数量，
+    # 建议和打开文件数一致，inactive 是指经过多长时间文件没被请求后删除缓存。
+    # open_file_cache 指令中的inactive 参数时间内文件的最少使用次数，
+    open_file_cache max=204800 inactive=20s;
+    # 如果超过这个数字，文件描述符一直
+    # 是在缓存中打开的，如上例，如果有一个
+    # 文件在inactive 时间内一次没被使用，它将被移除。
+    open_file_cache_min_uses 1;
+
+    # 这个是指多长时间检查一次缓存的有效信息
+    open_file_cache_valid 30s;
+
+    # gzip
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 2;
+    gzip_types application/vnd.ms-excel;
+  }
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Stata 虚拟内存不足，报错“I/O error writing .dta file”]]></title>
         <id>https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/</id>
@@ -363,37 +451,6 @@ You'd be excused for thinking infographics are a modern invention.<br>
 <p><a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a></p>
 <blockquote>
 <p>（本文首发于极客公园，本站收录时进行了修改。）</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang's Read List - EP  013]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-013/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-013/">
-        </link>
-        <updated>2020-10-15T05:42:15.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/36ZyA7N">开源、可定制的网页批注工具——Hypothesis</a></p>
-<blockquote>
-<p>Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matrix 最优质的文章，展示来自用户的最真实的体验和观点。<br>
-<a href="https://ift.tt/33vmCAD">10 Awesome Python 3.9 Features</a><br>
-Just like most of the Python fans, I am super excited to explore and use the latest features. This article will provide an overview of the must-know features of Python 3.9. This is again an exciting time for the Python programmers.<br>
-<a href="https://ift.tt/3ixQJeQ">好中文网站重开记</a><br>
-既然我已有一个写了18年的博客白板报，为什么还要建这个新站呢？<br>
-<a href="https://ift.tt/34LouV0">我的日志系统：从 Notion 到 Dynalist</a><br>
-2019 年底 OneNote 把我的日记给搞丢了，我却发现那些日记除了发泄情绪，几乎没给我带来什么正面作用，就开始探寻一种更好的日志体系，希望解决以下问题：<br>
-<a href="https://ift.tt/3jycZ9A">「有没有一种恋爱脚本？」</a><br>
-TH：虽然我愿意听你港一港，但我必须先澄清一下，这是一种很 objective 的听，纯生物行为，不是那种「I’m here for you.</p>
-</blockquote>
-<p><a href="https://ift.tt/3kovVrB">iOS 14, Big Sur &amp; DNS over HTTPS / TLS</a></p>
-<blockquote>
-<p>iOS 14 &amp; MacOS Big Sur have finally added support for DNS over HTTPS and DNS over TLS standards — also known as encrypted DNS. What is DOH / DOT? Imagine you’re at a conference. You’re using its public Wi-Fi.<br>
-<a href="https://ift.tt/3cpuXbF">为什么工作?</a><br>
-工作是我们如今每个人都会面临的事情。我们从高校毕业，走入社会，走上工作岗位，开始十年如一日的辛勤工作。但，工作到底意味着什么?工作又到底为了什么?<br>
-<a href="https://ift.tt/3mHMLnb">iOS 14 和广告业的破墙与重建</a><br>
-（本文首发于极客公园，本站收录时进行了修改。）</p>
 </blockquote>
 ]]></content>
     </entry>
