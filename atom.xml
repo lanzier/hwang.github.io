@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-01-30T07:25:31.351Z</updated>
+    <updated>2021-02-01T05:03:49.999Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,61 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang's Read List - EP18]]></title>
+        <id>https://hwang.top/post/hwangs-read-list-ep/</id>
+        <link href="https://hwang.top/post/hwangs-read-list-ep/">
+        </link>
+        <updated>2021-02-01T05:00:38.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。<br>
+ps. 现在链接都是正常的了。</p>
+</blockquote>
+<p><a href="https://iois.me/archives/10328.html">放弃 Kindle 后，我开始在 iPad Pro 读书 – Dailyio</a></p>
+<p><a href="https://sspai.com/post/64613">有关产品的一些瞎想 - 少数派</a></p>
+<blockquote>
+<p>在有知有行，我有多个身份。我是一个半吊子产品经理，因为我经常对大家的产品指手画脚；我是一个高产（zhi）量的内容创作者，说白了就是写稿的；我还是一个投资研究员，和我的伙伴们一起将我们的投资理念落地为策 ...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s/BS8D5vntAFOXZenk-vihPA">帕梅拉，一个顶级运动IP的中国“历险记”</a></p>
+<blockquote>
+<p>一场直播后，帕梅拉正式打开了她的中国市场。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/64613">有关产品的一些瞎想 - 少数派</a></p>
+<blockquote>
+<p>在有知有行，我有多个身份。我是一个半吊子产品经理，因为我经常对大家的产品指手画脚；我是一个高产（zhi）量的内容创作者，说白了就是写稿的；我还是一个投资研究员，和我的伙伴们一起将我们的投资理念落地为策 ...</p>
+</blockquote>
+<p><a href="https://jesor.me/2021/banishing-donald-trump/">放逐特朗普</a></p>
+<blockquote>
+<p>按照计划，拜登的就任典礼将于 1 月 20 日下周三举办。这位新总统，将面对一个思想、观点已经彻底走向极端，满目疮痍的美国。他的首要任务，就是弥合双方的分歧，建立起沟通的桥梁。 而这个问题，从来都不只是美国人的问题。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/64586">身处异地也能「内网办公」，这个技巧你的团队或许能用得上 - 少数派</a></p>
+<blockquote>
+<p>考虑到接下来春节前后可能会持续的「远程办公」状态，希望这篇文章能为你和你的团队带来一些参考。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0ODc5MDE1Mw==&amp;mid=2247488785&amp;idx=1&amp;sn=25400de670b46a06de4db488ddb24654&amp;chksm=fbb89ff7cccf16e1469316c5418557c6e0ca86f438f655732e1a4015c4fd6e6a14ef8677616a#rd">B端设计指南-06表格（上）</a></p>
+<blockquote>
+<p>目前我主要深耕于B端设计中，深知B端表格设计与C端有很大的不同，无论是表格的展示形式以及承载内容上都有非常大</p>
+</blockquote>
+<p><a href="https://imtx.me/blog/talk-about-maintenance-plan-for-app-and-web-projects/">谈谈如何合理地为 App 与 Web 项目制定维护计划</a></p>
+<blockquote>
+<p>上周我有两项工作内容是和产品维护有关的，刚好一个是 App 项目，一个是 Web 项目，每个项目都遇到了一点问题，于是借此我决定好好梳理一下，如何为 App 与 Web 项目制定合理的维护计划，让项目本身在持续运作与维护成本之间找到一个平衡。</p>
+</blockquote>
+<p><a href="https://frankseptillion.com/2021/01/10/android-iphone/">从屏幕最大的 Android 换到屏幕最小的 iPhone，移动生产力居然奇迹般地提升了</a></p>
+<blockquote>
+<p>从我拥有第一台智能手机开始，手里的屏幕就不停地在变大。4.0 寸、4.7 寸、5.5 寸、6.5 寸……我从来…</p>
+</blockquote>
+<p><a href="https://daimajia.com/2021/01/04/database-history">简明数据库史 | 代码家</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDQ3MTEyMQ==&amp;mid=2653331121&amp;idx=1&amp;sn=f46e78c9d113f85405d2f552d6035736&amp;chksm=bd96780f8ae1f119868b0ad8dbc713ab140d70549e3b6f56833c6a9d0865c3f7e237c6fc7c22#rd">2020年，我的新闻女主角</a></p>
+<blockquote>
+<p>舆论的热度冷却之后</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU3Mjk1OTQ0Ng==&amp;mid=2247487110&amp;idx=1&amp;sn=2e42b72b60c59bcd055695abb91e0381&amp;chksm=fcc9b13fcbbe38290333bf9a8d110cde82085cc75ad24f361c44b4e8d0ff68eea16b94939415#rd">晚点独家 | 字节跳动硬件业务调整：原锤子团队被合并，暂停手机，聚焦教育</a></p>
+<blockquote>
+<p>“做一切”的同时，字节跳动也在担心“业务线太长”。</p>
+</blockquote>
+<p><a href="https://www.itgeeker.net/raspbian-how-to-install-home-assistant-manually/">树莓派Raspbian如何安装Home Assistant 非img刷卡安装 – ITGeeker技术奇客</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[日记20210130-我希望的团队关系]]></title>
         <id>https://hwang.top/post/ri-ji-20210130-wo-xi-wang-de-tuan-dui-guan-xi/</id>
@@ -419,48 +474,6 @@ hass
 <p>手机早已是现代生活的重要组成部分，手机与生活越来越密不可分，手机所手机的数据也越来越多。一些数据是需要被用户感知，那么如何传达这些信息呢？通过各种图表，合理的呈现数据，自然是最好的选择。</p>
 <p>在 iOS 中，有为了帮助减少使用手机，系统设置中有「屏幕时间」；为了帮助获得健康的生活，苹果提供了健康和健身两个 app；此外，你还可以在设置的许多地方看到不同的数据呈现方式，例如存储空间的使用、电池电量的使用、app 读取的定位信息等等。</p>
 <p>本文同样发布在少数派上，点击前往：https://sspai.com/post/63823</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang's Read List - EP 015]]></title>
-        <id>https://hwang.top/post/hwang-reading-list-new-015/</id>
-        <link href="https://hwang.top/post/hwang-reading-list-new-015/">
-        </link>
-        <updated>2020-11-28T07:27:34.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
-</blockquote>
-<p><a href="https://ift.tt/3nP81bf">一日一技｜只要一台电脑，轻松获取米家设备 token</a></p>
-<blockquote>
-<p>不管你是想通过 Homebridge 还是 Home Assistant 把米家设备添加到苹果的 HomeKit 平台上，获取米家设备 token 是绕不开的关键一步。但是，这一步卡住了很多新手，因为很多人不具备安卓手机、Root 能力、命令行操作能力或者寻找传说<br>
-<a href="https://ift.tt/399gcrf">Why you sometimes need to break the rules in data viz</a></p>
-</blockquote>
-<blockquote>
-<p>It’s easy to visualise data badly. Choose the wrong chart type, omit labels or overload the graphic and you can quickly end up with something that is confusing, misleading or that fails to tell a story.<br>
-<a href="https://ift.tt/2PiMXYB">Data visualisation, from 1987 to today</a></p>
-</blockquote>
-<blockquote>
-<p>If you attend a conference about data visualisation in 2018 you will probably hear at least one speaker refer to William Playfair’s early line charts of prices and wages published in 1786.<br>
-<a href="https://ift.tt/3oaMREs">為什麼主管不想看你的報告？《經濟學人》記者：因為圖表踩了這 3 種雷</a></p>
-</blockquote>
-<blockquote>
-<p>【為什麼我們要挑選這篇文章】做完數據分析後，最後一個步驟就是用適當的方式，將資訊表現出來，讓主管、客戶、政府單位可以了解你的論點。然而，我們製作圖表的時候，常常踩到雷而不自知。</p>
-</blockquote>
-<p><a href="https://ift.tt/2y2EpSM">Measuring the true toll of the pandemic</a></p>
-<p><a href="https://ift.tt/2ytxQUQ">漫谈条形图</a></p>
-<blockquote>
-<p>这篇文章的起因是源于COS论坛中的下图，该图引起了热烈的讨论，具体的探讨细节见此。<br>
-<a href="https://ift.tt/2pSD2Ai">900 Years of Tree Diagrams, the Most Important Data Viz Tool in History</a><br>
-You'd be excused for thinking infographics are a modern invention.<br>
-<a href="https://ift.tt/3iP4XJm">How we used data to design modern record certification plaques</a></p>
-</blockquote>
-<blockquote>
-<p>Record labels regularly present their artists with recording certification plaques to celebrate milestones in the journey of a song or an album. This practice first started when Regal Zonophone Records awarded George Formby a silver disc after the song “The Window Cleaner” sold 100,000 copies.<br>
-<a href="https://ift.tt/31OM2YC">Pipenv 使用及 Pyinstaller 文件瘦身记录</a><br>
-我通常用 Pyinstaller 将 PixivBiu 的 Python 代码打包成可执行文件，但打包后的体积很令人在意。<br>
-<a href="https://ift.tt/3e022M6">新冠的额外死亡数</a><br>
-额外死亡数是用来估计突发公共卫生事件或政策系统影响的一个途径，原理非常简单，用突发公共卫生事件过程中死亡的人数去对比往年同时段的死亡平均数，多了就说明整体抬高了死亡率，低了则相反。一般认为，死亡这件事</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
