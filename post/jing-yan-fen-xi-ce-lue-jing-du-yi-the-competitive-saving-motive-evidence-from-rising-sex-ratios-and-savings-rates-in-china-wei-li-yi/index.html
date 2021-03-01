@@ -1,0 +1,392 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一） - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一） - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="
+本文发布于数据seminar公众号
+
+毋庸讳言，当前经济学的潮流逐渐转向依托数据与计量分析的经验研究范式。
+主流经济学经验研究已经实现从相关分析到因果分析的跨步。计量经济学的发展使得经济学家能够通过对于调查数据的熟练使用，实现因果效应分析..." />
+  <meta property="og:title" content="经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一） - Hwang&#39;s Blog">
+  <meta property="og:description" content="
+本文发布于数据seminar公众号
+
+毋庸讳言，当前经济学的潮流逐渐转向依托数据与计量分析的经验研究范式。
+主流经济学经验研究已经实现从相关分析到因果分析的跨步。计量经济学的发展使得经济学家能够通过对于调查数据的熟练使用，实现因果效应分析..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/jing-yan-fen-xi-ce-lue-jing-du-yi-the-competitive-saving-motive-evidence-from-rising-sex-ratios-and-savings-rates-in-china-wei-li-yi/" />
+  <meta property="og:image" content="https://hwang.top/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一） - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="
+本文发布于数据seminar公众号
+
+毋庸讳言，当前经济学的潮流逐渐转向依托数据与计量分析的经验研究范式。
+主流经济学经验研究已经实现从相关分析到因果分析的跨步。计量经济学的发展使得经济学家能够通过对于调查数据的熟练使用，实现因果效应分析...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/jing-yan-fen-xi-ce-lue-jing-du-yi-the-competitive-saving-motive-evidence-from-rising-sex-ratios-and-savings-rates-in-china-wei-li-yi/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-synthwave84.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一）
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2021-03-01 · 8 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>本文发布于<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1614585178&amp;ver=2919&amp;signature=j1pxWxrSVN3ZrTzWic1k0Njnuhha7FB9Zt7W8miHLh5clc-2hmpkr7vPBuKy8WM2gAptc*KJY9sYk8KamCIsgBbWVWbektQo*wxTMS9d9qirI4TRmthdPkJPCA063g3Z&amp;new=1">数据seminar公众号</a></p>
+</blockquote>
+<p>毋庸讳言，当前经济学的潮流逐渐转向依托数据与计量分析的经验研究范式。<br>
+主流经济学经验研究已经实现从相关分析到因果分析的跨步。计量经济学的发展使得经济学家能够通过对于调查数据的熟练使用，实现因果效应分析。那么具体是怎么做的呢？<br>
+本文将就魏尚进、张晓波两位大牌教授（以下简称&quot;魏和张&quot;）关于中国持续增长的性别比例带来的竞争性储蓄动机的实证文章：The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例，解释经济学如何精妙使用各类数据和计量方法，实现因果关系的有效识别。</p>
+<h2 id="一-构建逻辑"><strong>一、构建逻辑</strong></h2>
+<p>经济学解释现象。张五常在《经济解释》中说：</p>
+<blockquote>
+<p>解释现象是需要非事实的抽象理论的。为什么事实的解释要牵涉到抽象的思想那方面去呢？答案是：事实的规律不能不言自明，自我解释。天下雨，天上一定有云 -- 这是现象的规律 -- 但雨的出现不能解释云的存在。小麦在泥土中生 -- 这是规律 -- 但泥土不能解释小麦。<br>
+所以对于经济学来说，第一步需要做的就是指出现实：<br>
+...the Chinese household savings as a share of disposal income nearly doubled from 16 percent in 1990 to 30 percent in 2007, it has caught special attention.<br>
+魏和张在文章中指出1990-2007年，中国的储蓄率从16%增长到30%。这是一个十分显著和重要的现实。对于储蓄率的增长有许多现有的解释，但是为了排除这些&quot;竞争性&quot;理论，作者努力说明，此前关于储蓄动机的理论，面对中国如此之高的储蓄率其解释力都显不足。<br>
+<img src="https://mmbiz.qpic.cn/mmbiz_jpg/n6RrVL6rxiaIs2ndPr95iabVzUocNms1YZ33ryoWiaLh4LZxNrw1gBcEg5eRUwjsHW2TqibkwgsgGJzszXBS0nsOsQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"><br>
+例如：生命周期理论认为，随着工作年龄人口占比的增加，储蓄会增长。但这与家庭层面数据相悖（ Chamon and Prasad 2010）。<br>
+First, the life-cycle theory (Modigliani 1970; Modigliani and Cao 2004) predicts that the savings rate rises with the share of working age population in the total population. This explanation does not appear to be consistent with the proﬁle of savings at the household level (Chamon and Prasad 2010).<br>
+逐一驳斥现有理论，指出这些理论对于现象的解释力不足，因此，需要去探寻新的「规律」。<br>
+所以，第二步就是用探寻的「规律」去解释这个现象。也就是说，构建自己对于现象的解释逻辑。<br>
+在本文中，魏和张认为：<br>
+In this paper, we suggest that an alternative savings motive may be at work: people save in order to improve their relative standing in the marriage market.<br>
+除了已有的储蓄动机外（生命周期理论、预防性储蓄、金融市场欠发达等），竞争性的储蓄动机是一个值得关注的储蓄动机。所谓竞争性储蓄动机就是指，人们为了能够在婚姻市场获得优势而进行储蓄。<br>
+而一个从现实中抽离出来「规律」就必须有强有力的证据。数据的证据通过如下两个方面分析得来：1.描述性统计；2.计量经济分析。</p>
+</blockquote>
+<h2 id="二-描述性统计"><strong>二、描述性统计</strong></h2>
+<p>在本文中，魏和张利用人口普查数据、2007年统计年鉴数据、CFPS数据和贵州调查数据等，做了如下描述性统计：</p>
+<ol>
+<li>首先，只能比较性别比和储蓄率的变化趋势：<br>
+<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="" loading="lazy"><br>
+魏和张利用20年前的出生率作为性别比，利用2007年统计年鉴的储蓄率时序数据来做比较，将两者都标准化后得到上图。<br>
+通过这张图，我们能够很直观的感受到，两者变化是接近的，相关系数为0.822。当然，这里的描述性统计是对两者关系的粗略呈现，只能作为一个不严谨的证据。</li>
+<li>其次，利用2002年家庭收入项目（ICPSR）的问卷统计，得到了以下的储蓄动机自评表：<br>
+<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="" loading="lazy"><br>
+可以看到，即便将建房/买房 这种可能与子女相关的因素（本文中，作者认为问卷调查提问时难以严格区分是否与子女相关故而将其归为不相关）归入不相关，与子女直接相关的比例依然高于不直接相关的比例，并且关于与子女直接相关的比例，有儿子的家庭也是高于有女儿的家庭。<br>
+更具体的：</li>
+</ol>
+<ul>
+<li>大多数储蓄行为与孩子有关。（The table shows that 92.2 percent of the son-households give at least one factor directly related to their son as their primary or secondary reason for savings）</li>
+<li>在为孩子储蓄的差异上，男孩与女儿之间存在显著差异。（It is also telling to look at savings for children's weddings: 29.8 percent of son-families list savings for their son's wedding as the primary or secondary most important reason for savings versus only 18.3 percent of daughter-families who give the same answer.）</li>
+<li>遗产和教育的性别比差异较小。<br>
+此外：</li>
+<li>还对四口家庭进行了比较，结果也是类似的。婚姻因素，一男孩一女孩多于只有女孩，有两个男孩的多于一男一女。</li>
+</ul>
+<blockquote>
+<p>It is important to point out that these numbers do not directly reveal the intensity of savings for a given type of household. (For that, we will perform formal regression analyses.)<br>
+这几点同样为本文的逻辑提供了证据。<br>
+最后，利用贵州省调查的数据，绘制了新郎与新娘结婚前2年和婚后4年的储蓄水平（结婚那一年横坐标0，婚前为负，婚后为正）。<br>
+<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="" loading="lazy"><br>
+图显示了婚前一年是储蓄最高的一年，婚后储蓄开始下降。</p>
+</blockquote>
+<ul>
+<li>（1）图形呈现倒V型，峰值在婚前1年。男性的储蓄率比女性的高50%。</li>
+<li>（2）储蓄率在婚姻后会快速减少。说明有很大一部分储蓄在婚姻中被花掉了。</li>
+<li>（3）新郎储蓄率在大多数情况都高于新娘，说明为结婚储蓄的话，新郎家庭储蓄率比新娘家庭更重要。<br>
+当然，倒V型的图形，可能会被指责：性别比上升对于储蓄率总的影响可能是0，即性别比的上升，带来婚前储蓄上升，但是婚后被消耗掉了，所以总的效应为0。<br>
+对于这个方面，原文中用文本说明加以保护：</li>
+</ul>
+<blockquote>
+<p>While the inverse-V shape of the savings curve in ﬁgure 2 means that savings rates tend to decline after a wedding, it does not imply that the net consequence of a higher sex ratio on savings rates is zero. First, in a society with a positive population growth rate, the sum of the extra savings by families preparing for a wedding may grow faster than the sum of the dis-savings by postwedding families. Second, more impor- tantly, in response to a rising sex ratio, the entire savings curve is likely to shift upward, especially for households with a son. In addition, parents wish to leave a positive bequest for their children.<br>
+即：</p>
+</blockquote>
+<ul>
+<li>（1）在一个人口增长率为正的社会里，准备结婚的家庭额外储蓄的总和比婚后家庭的储蓄总和要多。</li>
+<li>（2）更重要的是，随着性别比例的上升，竞争性的储蓄会导致整个储蓄曲线可能会向上移动，特别是对于有儿子的家庭。</li>
+<li>（3）父母希望为孩子留下遗产而非欠债。<br>
+以上3张图表是利用折线图、表格等方式做的描述性统计，利用数据引导人们初步接受文章提出的关于竞争性储蓄动机的可能性。但是光有描述性的统计显然不够的，更精彩的识别策略我们将在下次推文为大家详解。</li>
+</ul>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E6%9E%84%E5%BB%BA%E9%80%BB%E8%BE%91"><strong>一、构建逻辑</strong></a></li>
+<li><a href="#%E4%BA%8C-%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><strong>二、描述性统计</strong></a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
