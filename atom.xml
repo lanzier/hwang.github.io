@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-03-17T09:34:15.839Z</updated>
+    <updated>2021-03-18T10:22:42.212Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,114 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[学习 Elasticsearch ! EP01]]></title>
+        <id>https://hwang.top/post/xue-xi-elasticsearch-ep01/</id>
+        <link href="https://hwang.top/post/xue-xi-elasticsearch-ep01/">
+        </link>
+        <updated>2021-03-18T10:21:18.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="macos-上安装">macOS 上安装</h2>
+<p>使用 Homebrew 进行安装，当然可以先安装好 Java 环境；</p>
+<pre><code class="language-bash">brew install elasticsearch
+</code></pre>
+<p>安装目录在：</p>
+<pre><code class="language-bash">/usr/local/Cellar/elasticsearch-full
+</code></pre>
+<p>启动：</p>
+<pre><code class="language-bash">elasticsearch
+</code></pre>
+<p>即可启动。</p>
+<p>安装完本体，还可以安装一个配套管理工具：</p>
+<pre><code class="language-bash">brew install kibana
+</code></pre>
+<p>安装完成后直接执行<code>kibana</code>命令启动 Kibana，浏览器中通过：<code>http://localhost:5601</code> 即可访问。</p>
+<h2 id="elasticsearch-的核心概念">Elasticsearch 的核心概念</h2>
+<ul>
+<li>Node： 节点；集群中每个运行中的 es服务器称之为节点；</li>
+<li>Cluster：集群，由具有相同的一个或多个 es 节点组成的，各个节点协同工作，共享数据。同一个集群内节点的名字不能重复，但集群名称一定要相同。
+<ol>
+<li>一般启动新集群时，会用一个名称代替默认的 cluster.name，避免其自动加入到局域网内的其他集群中。</li>
+<li>集群状态如下
+<ul>
+<li>green：表示所有节点正常运行</li>
+<li>yellow：表示预警，所有主分片正常，至少有一个副本不正常；</li>
+<li>red：集群无法正常，至少一个分片的主分片及它的全部副本分片都不可正常工作。<strong>依然可以查询（正常的分片还是工作的），但是只能查询部分数据（正常分片中的数据）！</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Shards： 分片。当索引数据量太大时，受限于单个节点的内存、磁盘处理能力等，节点无足够快的响应客户端请求，此时需要将一个索引上的数据进行水平拆分，拆分出来数据称为分片。
+<ol>
+<li><strong>通常，每个分片都会放到不同的服务器上。</strong>
+<ol start="2">
+<li>创建索引时需要制定分片数量，并且分片数量一旦确定就不能更改；</li>
+<li>默认一个索引创建5个主分片，并且分别为每个主分片创建一个副本</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Replicas：备份或是副本。指对主分片的备份；
+<ol>
+<li>备份能提高系统的高可用性
+<ol start="2">
+<li>提高检索的并非性能：（可以理解为当主分片查询繁忙时，可以直接从副本中查询）</li>
+<li>过多会增加系统的同步负担</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Index：索引。索引由一个和多个分片组成，在使用中需要通过索引名称来作为集群中的唯一标识；</li>
+<li>Type：类别。指索引内部的逻辑分区。通过type的名字，在索引內进行唯一标识。在查询时 ，如果没有该值吗，则表示需要在整个索引中查询（似乎是tag的意思？）</li>
+<li>Document：文档。索引中的每一条数据叫做文档，与通过<code>_id</code> 在 <code>Type</code> 内进行唯一标识；</li>
+<li>Settings：指集群内索引的定义信息，比如索引默认的分片数、副本数等。</li>
+<li>Mapping：保存定义索引字段的存储类型、分词方式、是否存储等信息。类似 MySQL的表结构信息；
+<ol>
+<li>一般是动态识别的，不需要手动创建。
+<ol start="2">
+<li>一个索引的 Mapping 一旦创建，若已经存储量数据，就不可以修改了。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Analyzer：表示字段分词方式的定义。一个 analyzer通常由 一个Tokenizer 和0到多个 Filter 组成。</li>
+</ul>
+<p>附录：与关系型数据库的对应</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ES</th>
+<th style="text-align:left">关系型数据库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">索引 Indices</td>
+<td style="text-align:left">库database</td>
+</tr>
+<tr>
+<td style="text-align:left">类型 Types</td>
+<td style="text-align:left">表 Table</td>
+</tr>
+<tr>
+<td style="text-align:left">文档 Documents</td>
+<td style="text-align:left">行 Rows</td>
+</tr>
+<tr>
+<td style="text-align:left">字段 Fields</td>
+<td style="text-align:left">列 Columns</td>
+</tr>
+<tr>
+<td style="text-align:left">映射 Mapping</td>
+<td style="text-align:left">Schema</td>
+</tr>
+<tr>
+<td style="text-align:left">Put/Post/delete/update/Get</td>
+<td style="text-align:left">增删改查</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang's Read List - EP 19]]></title>
         <id>https://hwang.top/post/hwangs-read-list-ep-19/</id>
@@ -504,95 +612,6 @@ display &quot;`findout'&quot;
 <blockquote>
 <p>他们替刘强东买未来，买到的未必是他需要的未来。</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ 2021年 树莓派的 Home Assistant 手动安装方式]]></title>
-        <id>https://hwang.top/post/2021-nian-shu-mei-pai-de-home-assistant-shou-dong-an-zhuang-fang-shi/</id>
-        <link href="https://hwang.top/post/2021-nian-shu-mei-pai-de-home-assistant-shou-dong-an-zhuang-fang-shi/">
-        </link>
-        <updated>2021-01-10T09:39:36.000Z</updated>
-        <content type="html"><![CDATA[<p>时间来到2021年，Home Assistant 的 Python 最低支持版本已经来到了3.8，可惜的是，Raspberry Pi 的 Python 最新版还是3.7.2，所以手动安装的第一步就是需要手动安装 Python 3.8：</p>
-<h2 id="step1-安装相关依赖">Step.1 安装相关依赖</h2>
-<p>如果直接安装，可能会导致部分依赖缺失，出现一些第三包引入时莫名其妙的报错，诸如：<code>Python3: ImportError: No module named '_ctypes' when using Value from module multiprocessing</code> ；</p>
-<p>所以开始前，可以先卸载 3.7之类的python版本，然后安装：</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
-sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus
-sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev
-sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev
-sudo apt-get install libssl-dev openssl
-sudo apt-get install libffi-dev
-</code></pre>
-<p>参考：<a href="https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul" title="StackoverFlow上的相关回答">https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul</a></p>
-<h2 id="step2-手动安装-python3">Step.2 手动安装 Python3</h2>
-<p>这个过程还是比较简单的：</p>
-<pre><code class="language-bash">sudo  apt  update
-sudo  apt  upgrade
-
-sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev
-
-wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
-tar zxvf Python-3.8.0.tgz
-
-cd Python-3.8.0
-sudo ./configure
-sudo make
-sudo make install
-</code></pre>
-<p>安装完成后，使用<code>python3</code> 查看一下版本信息。</p>
-<h2 id="setp3-安装home-assistant">Setp.3 安装Home Assistant</h2>
-<p>安装步骤参照官方文档即可：</p>
-<ul>
-<li>抓取最新源数据：<code>sudo apt-get update</code>，如果速度太慢请参考 <a href="https://home-assistant.cc/cn/source/">此处</a> 更换软件源</li>
-<li>更新系统：<code>sudo apt-get upgrade -y</code></li>
-<li>安装依赖：<code>sudo apt-get install python3 python3-venv python3-pip</code></li>
-<li>创建名为 <code>homeassistant</code> 的用户：<code>sudo useradd -rm homeassistant</code></li>
-<li>创建安装文件夹</li>
-</ul>
-<pre><code>    cd /srv
-    sudo mkdir homeassistant
-    sudo chown homeassistant:homeassistant homeassistant
-
-</code></pre>
-<ul>
-<li>创建虚拟环境</li>
-</ul>
-<pre><code>    sudo su -s /bin/bash homeassistant
-    cd /srv/homeassistant
-    python3 -m venv .
-    source bin/activate
-
-</code></pre>
-<ul>
-<li>安装 Home Assistant：<code>pip3 install homeassistant</code></li>
-<li>初次启动 Home assistant：<code>hass</code></li>
-<li>等待几分钟让后台下载依赖，之后你便可以从局域网内任意终端浏览器访问 <code>http://树莓派的 IP 地址:8123</code>，进入 Home Asssitant</li>
-</ul>
-<p>另外，如<code>pip</code>比较慢，同样可修改源，加快下载速度；<br>
-最后，<code>hass</code> 命令启动后，**不会显示log！**所以干等着，可能他已经安装好了、启动了，但是你可能还不知道🤦‍♂️。</p>
-<p>通过进程可以查看，我一般用 <code>htop</code>。</p>
-<h2 id="step4-使用pm2-守护进程后台执行">Step.4 使用pm2 守护进程，后台执行</h2>
-<p><code>npm install -g pm2</code><br>
-然后 pm2 执行一下脚本：<br>
-在 <code>/home/pi</code> 目录下，使用vim新建 <code>start_hass.sh</code>:</p>
-<pre><code class="language-bash">clear
-cd /srv/homeassistant
-sudo su - homeassistant -s /bin/bash &quot;/home/homeassistant/start_homeassistant.sh&quot;
-</code></pre>
-<p>然后可以把这个文件授权成 <code>777</code>啥的：</p>
-<pre><code class="language-bash">chmod 777 start_hass.sh
-</code></pre>
-<p>再在<code>/home/homeassistant/</code>目录下使用vim新建 <code>start_homeassistant.sh</code>:</p>
-<pre><code class="language-bash">cd /srv/homeassistant
-source bin/activate
-hass
-</code></pre>
-<p>使用 pm2 运行：</p>
-<pre><code class="language-bash">pm2 start ./start_hass.sh
-</code></pre>
-<p>即可。</p>
 ]]></content>
     </entry>
 </feed>
