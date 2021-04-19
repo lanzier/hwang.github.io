@@ -1,0 +1,471 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>在 Ubuntu 中部署 Elasticsearch 集群 - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="在 Ubuntu 中部署 Elasticsearch 集群 - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="Step 1. Install Java
+给每一台服务器安装 java 环境
+sudo apt install openjdk-15-jdk
+
+Step 2. Download Elasticsearch
+下载 Elasticsearch ..." />
+  <meta property="og:title" content="在 Ubuntu 中部署 Elasticsearch 集群 - Hwang&#39;s Blog">
+  <meta property="og:description" content="Step 1. Install Java
+给每一台服务器安装 java 环境
+sudo apt install openjdk-15-jdk
+
+Step 2. Download Elasticsearch
+下载 Elasticsearch ..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/" />
+  <meta property="og:image" content="https://hwang.top/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="在 Ubuntu 中部署 Elasticsearch 集群 - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="Step 1. Install Java
+给每一台服务器安装 java 环境
+sudo apt install openjdk-15-jdk
+
+Step 2. Download Elasticsearch
+下载 Elasticsearch ...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-synthwave84.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          在 Ubuntu 中部署 Elasticsearch 集群
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2021-04-19 · 5 min read</div>
+          
+            <a href="https://hwang.top/tag/S4Dj-L0FK/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              elasticsearch
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="step-1-install-java">Step 1. Install Java</h2>
+<p>给每一台服务器安装 java 环境</p>
+<p><code>sudo apt install openjdk-15-jdk</code></p>
+<!-- more -->
+<h2 id="step-2-download-elasticsearch">Step 2. Download Elasticsearch</h2>
+<p>下载 Elasticsearch 的安装包：<a href="https://www.elastic.co/cn/start">::https://www.elastic.co/cn/start::</a> 选择Linux 版本，下载 Elasticsearch 与 Kibana 的 tar 包。</p>
+<p>考虑到复杂的网络环境问题，我这边直接使用下载到本地再上传到服务器的方式。</p>
+<p>文件上传：</p>
+<ul>
+<li>
+<p>你可以使用 scp 进行上传:</p>
+<p><code>scp [local path] [your-server]:[remote path]</code></p>
+</li>
+<li>
+<p>也可以使用 VScode remote shell 进行上传；</p>
+</li>
+<li>
+<p>还可以使用 sftp 进行上传；</p>
+</li>
+</ul>
+<p>文件上传后，将Elasticsearch的包文件传给局域网内的机器中；</p>
+<h2 id="step3-install-elasticsearch">Step3. Install Elasticsearch</h2>
+<h4 id="31-创建一个标准用户">3.1 创建一个标准用户</h4>
+<p>::Elasticsearch 会动态执行一些脚本，所以为了安全起见，务必创建一个新用户（没有管理员权限那种）：::</p>
+<p><code>adduser [username]</code></p>
+<p>之后设置密码。</p>
+<h4 id="32-创建项目目录">3.2 创建项目目录</h4>
+<pre><code class="language-other">cd /home/[your es user]
+mkdir -p elasticsearch/data
+mkdir -p elasticsearch/logs
+</code></pre>
+<p><strong>data</strong>：存储Elasticsearch索引文件数据</p>
+<p><strong>logs</strong>：存储日志文件</p>
+<h4 id="33-解压文件-修改配置">3.3 解压文件、修改配置</h4>
+<p>将将Elasticsearch的包文件移动到 elasticsearch 目录下，使用以下命令进行解压缩：</p>
+<pre><code class="language-other">tar -xvf elasticsearch-7.12.0-linux-x86_64.tar.gz
+</code></pre>
+<p>接下来，修改配置：</p>
+<pre><code class="language-other">vim elasticsearch-7.12.0/config/elasticsearch.yml
+</code></pre>
+<p>其中需要修改的是：</p>
+<ul>
+<li><code>cluster.name</code>: 名称</li>
+<li><code>node.name</code>: 节点名称</li>
+<li><code>path.data</code>: 数据文件目录，修改为上面data目录，即 <code>/home/[your es user]/elasticsearch/data</code></li>
+<li><code>path.logs</code>: 日志文件目录，修改为上面logs目录，即 <code>/home/[your es user]/elasticsearch/logs</code></li>
+<li><code>network.host</code>: 本机IP</li>
+<li><code>discovery.seed_hosts</code>: 子节点的ip</li>
+<li><code>cluster.initial_master_nodes</code>: 参与竞选的节点</li>
+</ul>
+<p>之后可以直接将 这个 elasticsearch 文件夹通过 scp 发送到另外两台服务器中::，注意修改IP地址；::</p>
+<h4 id="34-逐一启动-elasticsearch-检查是否有错误">3.4 逐一启动 elasticsearch ，检查是否有错误</h4>
+<p>使用后台启动的方式：</p>
+<pre><code class="language-other">./bin/elasticsearch -d -p pid
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-other">curl http://192.168.28.129:9200/_cat/health?v
+</code></pre>
+<p>查看返回的结果是否是 “green”</p>
+<h4 id="35-最后可能会有的问题参考链接">3.5 最后可能会有的问题（<a href="https://segmentfault.com/a/1190000021589726"><code>参考链接</code></a>）：</h4>
+<h4 id="351-设置虚拟内存">3.5.1 设置虚拟内存</h4>
+<p>将虚拟内存设置大一些，否则在启动elasticsearch时会出错导致启动失败：</p>
+<pre><code class="language-other">ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+</code></pre>
+<p>输入 <code>vi /etc/sysctl.conf</code> 命令在 <code>sysctl.conf</code> 中配置如下内容：</p>
+<pre><code class="language-other">vm.max_map_count=655360
+</code></pre>
+<p>接着输入如下命令让配置生效：</p>
+<pre><code class="language-other">sysctl -p
+</code></pre>
+<p>3.5.2 设置最大文件描述符</p>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at
+least [65536]
+</code></pre>
+<p>错误说明：elasticsearch过程的最大文件描述符 <code>[4096]</code> 太低，增加到</p>
+<p>最少 <code>[65536]</code></p>
+<p>接下来我们修改最大文件描述符，输入 <code>vi /etc/security/limits.conf</code> 命令在 <code>limits.conf</code> 中配置如下内容：</p>
+<pre><code class="language-other">* soft nofile 65536
+* hard nofile 131072
+* soft nproc 2048
+* hard nproc 4096
+</code></pre>
+<h4 id="353-设置最大线程数">3.5.3 设置最大线程数</h4>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[2]: max number of threads [1024] for user [elsearch] is too low, increase to atleast[4096]
+</code></pre>
+<p>错误说明：线程<code>[1024]</code>用户<code>[elsearch]</code>的最大数量太低，增加至少<code>[4096]</code></p>
+<p>接下来我们修改线程数，输入 <code>vi /etc/security/limits.d/20-nproc.conf</code> 命令在 <code>20-nproc.conf</code>中配置如下内容：</p>
+<pre><code class="language-other">* soft nproc 4096
+</code></pre>
+<h4 id="354-seccomp">3.5.4 SecComp</h4>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[3]: system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
+</code></pre>
+<p>错误说明：系统调用过滤器安装失败;检查日志和修复配置或禁用系统调用过滤器需要您自担风险</p>
+<p>这是在因为 <code>Centos7</code> 不支持 <code>SecComp</code> ，而ES5.2.0之后默认 <code>bootstrap.system_call_filter</code> 为<code>true</code>进行检测，所以导致检测失败，失败后直接导致ES不能启动。</p>
+<p>接下来我们修改配置文件，输入 <code>vim config/elasticsearch.yml</code> 命令，在 <code>elasticsearch.yml</code> 中配置如下内容：</p>
+<pre><code class="language-other"># ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+# 设置为false不进行检测
+bootstrap.system_call_filter: false
+#
+# Make sure that the heap size is set to about half the memory available
+# on the system and that the owner of the process is allowed to use this
+# limit.
+#
+# Elasticsearch performs poorly when the system is swapping the memory.
+#
+</code></pre>
+<h2 id="step4install-kibana">Step4.Install kibana</h2>
+<p>安装 kibana 作为 elasticsearch 的管理软件。下载 tar 包，之后scp传输到对应的服务器中；</p>
+<p>使用 tar 进行解压缩。运行 <code>./bin/kibana</code>  即可前台启动，运行 <code>nohup ./bin/kibana &amp;</code> 即可后台启动。</p>
+<p>其配置文件和es一样，在 <code>./config/kibana.yml</code> 其中可能要修改的有：</p>
+<ul>
+<li><strong>server.port</strong>: 服务的端口号</li>
+<li><strong>server.host:</strong> 服务的ip地址</li>
+<li><strong>elasticsearch.hosts:</strong>  es 集群们的地址，如果大于一个，可以使用<code>[ &quot;http://yourEsHost:yourEsPort&quot;, &quot;http://yourEsHost:yourEsPort&quot;,&quot;http://yourEsHost:yourEsPort&quot;]</code> 的方式。</li>
+</ul>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#step-1-install-java">Step 1. Install Java</a></li>
+<li><a href="#step-2-download-elasticsearch">Step 2. Download Elasticsearch</a></li>
+<li><a href="#step3-install-elasticsearch">Step3. Install Elasticsearch</a><br>
+*
+<ul>
+<li><a href="#31-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%87%E5%87%86%E7%94%A8%E6%88%B7">3.1 创建一个标准用户</a></li>
+<li><a href="#32-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95">3.2 创建项目目录</a></li>
+<li><a href="#33-%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE">3.3 解压文件、修改配置</a></li>
+<li><a href="#34-%E9%80%90%E4%B8%80%E5%90%AF%E5%8A%A8-elasticsearch-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%9C%89%E9%94%99%E8%AF%AF">3.4 逐一启动 elasticsearch ，检查是否有错误</a></li>
+<li><a href="#35-%E6%9C%80%E5%90%8E%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9C%89%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">3.5 最后可能会有的问题（<code>参考链接</code>）：</a></li>
+<li><a href="#351-%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98">3.5.1 设置虚拟内存</a></li>
+<li><a href="#353-%E8%AE%BE%E7%BD%AE%E6%9C%80%E5%A4%A7%E7%BA%BF%E7%A8%8B%E6%95%B0">3.5.3 设置最大线程数</a></li>
+<li><a href="#354-seccomp">3.5.4 SecComp</a></li>
+</ul>
+</li>
+<li><a href="#step4install-kibana">Step4.Install kibana</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

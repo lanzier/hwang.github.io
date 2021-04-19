@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-04-14T06:13:50.774Z</updated>
+    <updated>2021-04-19T13:42:51.860Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,141 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[在 Ubuntu 中部署 Elasticsearch 集群]]></title>
+        <id>https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/</id>
+        <link href="https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/">
+        </link>
+        <updated>2021-04-19T13:41:41.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="step-1-install-java">Step 1. Install Java</h2>
+<p>给每一台服务器安装 java 环境</p>
+<p><code>sudo apt install openjdk-15-jdk</code></p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="step-1-install-java">Step 1. Install Java</h2>
+<p>给每一台服务器安装 java 环境</p>
+<p><code>sudo apt install openjdk-15-jdk</code></p>
+<!-- more -->
+<h2 id="step-2-download-elasticsearch">Step 2. Download Elasticsearch</h2>
+<p>下载 Elasticsearch 的安装包：<a href="https://www.elastic.co/cn/start">::https://www.elastic.co/cn/start::</a> 选择Linux 版本，下载 Elasticsearch 与 Kibana 的 tar 包。</p>
+<p>考虑到复杂的网络环境问题，我这边直接使用下载到本地再上传到服务器的方式。</p>
+<p>文件上传：</p>
+<ul>
+<li>
+<p>你可以使用 scp 进行上传:</p>
+<p><code>scp [local path] [your-server]:[remote path]</code></p>
+</li>
+<li>
+<p>也可以使用 VScode remote shell 进行上传；</p>
+</li>
+<li>
+<p>还可以使用 sftp 进行上传；</p>
+</li>
+</ul>
+<p>文件上传后，将Elasticsearch的包文件传给局域网内的机器中；</p>
+<h2 id="step3-install-elasticsearch">Step3. Install Elasticsearch</h2>
+<h4 id="31-创建一个标准用户">3.1 创建一个标准用户</h4>
+<p>::Elasticsearch 会动态执行一些脚本，所以为了安全起见，务必创建一个新用户（没有管理员权限那种）：::</p>
+<p><code>adduser [username]</code></p>
+<p>之后设置密码。</p>
+<h4 id="32-创建项目目录">3.2 创建项目目录</h4>
+<pre><code class="language-other">cd /home/[your es user]
+mkdir -p elasticsearch/data
+mkdir -p elasticsearch/logs
+</code></pre>
+<p><strong>data</strong>：存储Elasticsearch索引文件数据</p>
+<p><strong>logs</strong>：存储日志文件</p>
+<h4 id="33-解压文件-修改配置">3.3 解压文件、修改配置</h4>
+<p>将将Elasticsearch的包文件移动到 elasticsearch 目录下，使用以下命令进行解压缩：</p>
+<pre><code class="language-other">tar -xvf elasticsearch-7.12.0-linux-x86_64.tar.gz
+</code></pre>
+<p>接下来，修改配置：</p>
+<pre><code class="language-other">vim elasticsearch-7.12.0/config/elasticsearch.yml
+</code></pre>
+<p>其中需要修改的是：</p>
+<ul>
+<li><code>cluster.name</code>: 名称</li>
+<li><code>node.name</code>: 节点名称</li>
+<li><code>path.data</code>: 数据文件目录，修改为上面data目录，即 <code>/home/[your es user]/elasticsearch/data</code></li>
+<li><code>path.logs</code>: 日志文件目录，修改为上面logs目录，即 <code>/home/[your es user]/elasticsearch/logs</code></li>
+<li><code>network.host</code>: 本机IP</li>
+<li><code>discovery.seed_hosts</code>: 子节点的ip</li>
+<li><code>cluster.initial_master_nodes</code>: 参与竞选的节点</li>
+</ul>
+<p>之后可以直接将 这个 elasticsearch 文件夹通过 scp 发送到另外两台服务器中::，注意修改IP地址；::</p>
+<h4 id="34-逐一启动-elasticsearch-检查是否有错误">3.4 逐一启动 elasticsearch ，检查是否有错误</h4>
+<p>使用后台启动的方式：</p>
+<pre><code class="language-other">./bin/elasticsearch -d -p pid
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-other">curl http://192.168.28.129:9200/_cat/health?v
+</code></pre>
+<p>查看返回的结果是否是 “green”</p>
+<h4 id="35-最后可能会有的问题参考链接">3.5 最后可能会有的问题（<a href="https://segmentfault.com/a/1190000021589726"><code>参考链接</code></a>）：</h4>
+<h4 id="351-设置虚拟内存">3.5.1 设置虚拟内存</h4>
+<p>将虚拟内存设置大一些，否则在启动elasticsearch时会出错导致启动失败：</p>
+<pre><code class="language-other">ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+</code></pre>
+<p>输入 <code>vi /etc/sysctl.conf</code> 命令在 <code>sysctl.conf</code> 中配置如下内容：</p>
+<pre><code class="language-other">vm.max_map_count=655360
+</code></pre>
+<p>接着输入如下命令让配置生效：</p>
+<pre><code class="language-other">sysctl -p
+</code></pre>
+<p>3.5.2 设置最大文件描述符</p>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at
+least [65536]
+</code></pre>
+<p>错误说明：elasticsearch过程的最大文件描述符 <code>[4096]</code> 太低，增加到</p>
+<p>最少 <code>[65536]</code></p>
+<p>接下来我们修改最大文件描述符，输入 <code>vi /etc/security/limits.conf</code> 命令在 <code>limits.conf</code> 中配置如下内容：</p>
+<pre><code class="language-other">* soft nofile 65536
+* hard nofile 131072
+* soft nproc 2048
+* hard nproc 4096
+</code></pre>
+<h4 id="353-设置最大线程数">3.5.3 设置最大线程数</h4>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[2]: max number of threads [1024] for user [elsearch] is too low, increase to atleast[4096]
+</code></pre>
+<p>错误说明：线程<code>[1024]</code>用户<code>[elsearch]</code>的最大数量太低，增加至少<code>[4096]</code></p>
+<p>接下来我们修改线程数，输入 <code>vi /etc/security/limits.d/20-nproc.conf</code> 命令在 <code>20-nproc.conf</code>中配置如下内容：</p>
+<pre><code class="language-other">* soft nproc 4096
+</code></pre>
+<h4 id="354-seccomp">3.5.4 SecComp</h4>
+<p>在启动Elasticsearch有可能会出现如下错误：</p>
+<pre><code class="language-other">[3]: system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
+</code></pre>
+<p>错误说明：系统调用过滤器安装失败;检查日志和修复配置或禁用系统调用过滤器需要您自担风险</p>
+<p>这是在因为 <code>Centos7</code> 不支持 <code>SecComp</code> ，而ES5.2.0之后默认 <code>bootstrap.system_call_filter</code> 为<code>true</code>进行检测，所以导致检测失败，失败后直接导致ES不能启动。</p>
+<p>接下来我们修改配置文件，输入 <code>vim config/elasticsearch.yml</code> 命令，在 <code>elasticsearch.yml</code> 中配置如下内容：</p>
+<pre><code class="language-other"># ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+# 设置为false不进行检测
+bootstrap.system_call_filter: false
+#
+# Make sure that the heap size is set to about half the memory available
+# on the system and that the owner of the process is allowed to use this
+# limit.
+#
+# Elasticsearch performs poorly when the system is swapping the memory.
+#
+</code></pre>
+<h2 id="step4install-kibana">Step4.Install kibana</h2>
+<p>安装 kibana 作为 elasticsearch 的管理软件。下载 tar 包，之后scp传输到对应的服务器中；</p>
+<p>使用 tar 进行解压缩。运行 <code>./bin/kibana</code>  即可前台启动，运行 <code>nohup ./bin/kibana &amp;</code> 即可后台启动。</p>
+<p>其配置文件和es一样，在 <code>./config/kibana.yml</code> 其中可能要修改的有：</p>
+<ul>
+<li><strong>server.port</strong>: 服务的端口号</li>
+<li><strong>server.host:</strong> 服务的ip地址</li>
+<li><strong>elasticsearch.hosts:</strong>  es 集群们的地址，如果大于一个，可以使用<code>[ &quot;http://yourEsHost:yourEsPort&quot;, &quot;http://yourEsHost:yourEsPort&quot;,&quot;http://yourEsHost:yourEsPort&quot;]</code> 的方式。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hwang's Read List - EP 20]]></title>
         <id>https://hwang.top/post/hwangs-read-list-ep-20/</id>
@@ -554,39 +689,6 @@ services:
     gzip_types application/vnd.ms-excel;
   }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stata 虚拟内存不足，报错“I/O error writing .dta file”]]></title>
-        <id>https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/</id>
-        <link href="https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/">
-        </link>
-        <updated>2021-01-21T02:04:23.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="错误信息">错误信息</h2>
-<p>具体报错为：</p>
-<pre><code class="language-bash">I/O error writing .dta file
-Usually such I/O errors are caused by disk or file system being full
-</code></pre>
-<h2 id="解决步骤">解决步骤</h2>
-<ol>
-<li>在c盘以外的磁盘建一个 temp 文件夹（例如 d盘）：<code>d:\temp</code></li>
-<li>打开 cmd 运行：<code>set TEMP=d:\temp</code></li>
-<li>重启电脑</li>
-<li>在stata里面运行一下：</li>
-</ol>
-<pre><code class="language-bash">tempfile findout
-display &quot;`findout'&quot;
-</code></pre>
-<p>查看显示的是否为 <code>d:\temp</code></p>
-<h2 id="原因">原因：</h2>
-<p>具体参见官方文档的内容：<br>
-<a href="https://www.stata.com/statalist/archive/2004-01/msg00542.html">https://www.stata.com/statalist/archive/2004-01/msg00542.html</a></p>
-<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1611194758292.png" alt="" loading="lazy"></figure>
-<p>原理（资料来自stata官方文档）：</p>
-<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1611194766558.png" alt="" loading="lazy"></figure>
-<p>简单来说就是 stata 读取文件，会读到内存里，如果你的原始数据是10G，而你电脑内存只有8G，stata为了计算可能需要20G的内存，即便电脑把所有内存都分给了stata，那也是不够用的，所以就有了虚拟内存。虚拟内存就是把硬盘当作内存来用，优点是便宜，缺点是速度慢。</p>
-<p>默认的虚拟内存储存在 C 盘的，而C盘很可能没有20G的可用空间。这时，stata就会报这个错，并且说<code>caused by disk or file system being full</code>，出现这个问题时，可以查看 C 盘是不是只剩下1-2G的可用空间了。</p>
-<p>解决步骤就是上例说的，将虚拟内存的存储地址移动到其他空间富裕的盘。</p>
 ]]></content>
     </entry>
 </feed>
