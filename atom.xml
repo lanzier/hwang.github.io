@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-04-19T13:47:18.296Z</updated>
+    <updated>2021-04-24T13:27:42.540Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,62 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Elasticsearch 管理]]></title>
+        <id>https://hwang.top/post/elasticsearch-guan-li/</id>
+        <link href="https://hwang.top/post/elasticsearch-guan-li/">
+        </link>
+        <updated>2021-04-24T13:27:06.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="重启-elasticsearch-集群">重启 Elasticsearch 集群</h2>
+<ol>
+<li>
+<h3 id="关闭集群">关闭集群</h3>
+</li>
+</ol>
+<h4 id="第一步关闭自动分布">第一步：关闭自动分布</h4>
+<pre><code class="language-other">curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+  &quot;persistent&quot;: {
+	&quot;cluster.routing.allocation.enable&quot;: &quot;primaries&quot;
+  }
+}
+</code></pre>
+<h4 id="第二步执行同步刷新">第二步：执行同步刷新</h4>
+<pre><code class="language-other">curl -X POST &quot;localhost:9200/_flush/synced?pretty&quot;
+</code></pre>
+<p>::注意查看返回的结果中，是否有失败的信息，如果有的话，再执行一次；（执行失败也会返回 200 状态码的，还是要注意看内容）::</p>
+<h4 id="第三步关闭所有节点">第三步：关闭所有节点</h4>
+<p>通过kill 对应的 pid 进行关闭；</p>
+<ol start="2">
+<li>
+<h2 id="重新启动集群"><a href="https://blog.csdn.net/zzqaaasss/article/details/104191044">重新启动集群</a></h2>
+</li>
+</ol>
+<h4 id="第一步">第一步：</h4>
+<p>执行完操作后逐个启动节点</p>
+<pre><code class="language-other">cd [your es home path]
+./bin/elasticsearch -d -p  [your es home path]/pid.txt
+</code></pre>
+<h4 id="第二步">第二步：</h4>
+<p>等所有节点启动完成后，可以通过执行如下请求查看集群状态：</p>
+<pre><code class="language-other">curl -X GET &quot;localhost:9200/_cat/health?pretty&quot;
+curl -X GET &quot;localhost:9200/_cat/nodes?pretty&quot;
+</code></pre>
+<p>状态分别有：red，yellow，green。</p>
+<h4 id="第三步">第三步：</h4>
+<p>启用分片自动分布</p>
+<pre><code class="language-other">curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H 'Content-Type: application/json' -d'
+
+{
+	&quot;persistent&quot;: {  
+	&quot;cluster.routing.allocation.enable&quot;: null
+	}
+
+}
+</code></pre>
+<p>重新启用分配后，集群便开始将副本分片分配给数据节点。此时，恢复索引和搜索是安全的，但是如果您可以等待直到成功分配了所有主分片和副本分片并且所有节点的状态为，集群就会恢复得更快green。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在 Ubuntu 中部署 Elasticsearch 集群]]></title>
         <id>https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/</id>
@@ -601,94 +657,6 @@ ps. 现在链接都是正常的了。</p>
 <figure data-type="image" tabindex="9"><img src="https://hwang.top/post-images/1611651130158.png" alt="" loading="lazy"></figure>
 <p>🌍 GitHub 源码地址 ：https://github.com/wave-charts/avatar-gen/</p>
 <p>欢迎各位转发体验，以及去GitHub star 我们的项目。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Docker 中 Nginx 软链接的配置]]></title>
-        <id>https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/</id>
-        <link href="https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/">
-        </link>
-        <updated>2021-01-26T05:37:21.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="需求描述">需求描述</h2>
-<p>A 服务器硬盘空间用完了，需要扩容，所以需要在新扩展的磁盘中做一个的软链接，用于存放静态文件。其中，nginx 做代理静态文件服务，用于部分资源的下载业务。同时，nginx 运行在 docker 中。</p>
-<p>所以需要在旧的路径中读取到新磁盘软链接的路径，然后将软链接里的内容</p>
-<h2 id="正确步骤">正确步骤</h2>
-<ol>
-<li>开启软链接</li>
-</ol>
-<pre><code class="language-bash">    # 开启软链接
-    disable_symlinks off;
-</code></pre>
-<ol start="2">
-<li>确认docker是否挂载了新的磁盘<br>
-这次是使用 docker-compose 配置的，所以查看<code>docker-compose.yml</code>:<br>
-在 volumes 中添加新磁盘的位置（本例中为<code>/mnt/bus</code></li>
-</ol>
-<pre><code class="language-bash">version: '3.4'
-services:
-  # ----------------------------------------------------------
-  web:
-    image: nginx
-    container_name: web_nginx
-    restart: always
-    volumes:
-      - ./nginx/www/:/www
-      - ./nginx/files/:/files
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/files/bus:/mnt/bus
-    ports:
-      - 8080:8080
-      - 8001:8001
-</code></pre>
-<ol start="3">
-<li>重启 docker-compose</li>
-</ol>
-<h2 id="最后参考">最后参考：</h2>
-<p>nginx的配置：</p>
-<pre><code class="language-bash">server {
-  listen       8080;
-
-  
-  location / {
-    root /www/web;
-    try_files $uri $uri/ /index.html last;
-    index index.html;
-  }
-
-
-  location /download/ {
-    alias /files/;
-    # 开启软链接
-    disable_symlinks off;
-    charset utf-8;
-
-    # 开启目录浏览功能；
-    autoindex on;
-    #关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b；
-    autoindex_exact_size off;
-    #开启以服务器本地时区显示文件修改日期！
-    autoindex_localtime on;
-    # 这个将为打开文件指定缓存，默认是没有启用的，max 指定缓存数量，
-    # 建议和打开文件数一致，inactive 是指经过多长时间文件没被请求后删除缓存。
-    # open_file_cache 指令中的inactive 参数时间内文件的最少使用次数，
-    open_file_cache max=204800 inactive=20s;
-    # 如果超过这个数字，文件描述符一直
-    # 是在缓存中打开的，如上例，如果有一个
-    # 文件在inactive 时间内一次没被使用，它将被移除。
-    open_file_cache_min_uses 1;
-
-    # 这个是指多长时间检查一次缓存的有效信息
-    open_file_cache_valid 30s;
-
-    # gzip
-    gzip on;
-    gzip_min_length 1k;
-    gzip_buffers 4 16k;
-    gzip_http_version 1.0;
-    gzip_comp_level 2;
-    gzip_types application/vnd.ms-excel;
-  }
-</code></pre>
 ]]></content>
     </entry>
 </feed>
