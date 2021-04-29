@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hwang.top</id>
     <title>Hwang&apos;s Blog</title>
-    <updated>2021-04-28T09:05:18.446Z</updated>
+    <updated>2021-04-29T10:59:59.728Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hwang.top"/>
     <link rel="self" href="https://hwang.top/atom.xml"/>
@@ -15,6 +15,108 @@
     <logo>https://hwang.top/images/avatar.png</logo>
     <icon>https://hwang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hwang's Read List - EP 21]]></title>
+        <id>https://hwang.top/post/hwangs-read-list-ep-21/</id>
+        <link href="https://hwang.top/post/hwangs-read-list-ep-21/">
+        </link>
+        <updated>2021-04-29T10:57:22.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。</p>
+</blockquote>
+<p><a href="https://www.theverge.com/22231657/mkbhd-marques-brownlee-interview-youtube-creator-influencer-decoder">The business of influence with MKBHD</a></p>
+<blockquote>
+<p>Nilay Patel talks with Marques Brownlee, otherwise known as MKBHD, about building a business as a YouTuber, how content creators make money, and how to scale when you are the brand.</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzU4ODQ2MA==&amp;mid=2676502839&amp;idx=1&amp;sn=a8f057a40db134d2589570619d7553f0&amp;chksm=bcab2db48bdca4a2a7cf63bbe277562eaffda0c930847e7dd5d6ba3fc2774a8d03615b1bcde9#rd">如何做一档“好看”的播客？我们研究了100+档中文播客的logo｜若有所播</a></p>
+<blockquote>
+<p>中文播客视觉大赏</p>
+</blockquote>
+<p><a href="https://thesweetsetup.com/how-to-use-a-calendar/">How to Use a Calendar – The Sweet Setup</a></p>
+<blockquote>
+<p>In this article, I’m going to share two very important things for how to use your calendar: why your task list should be on your calendar, and how to get it there by using time blocking</p>
+</blockquote>
+<p><a href="https://sspai.com/post/65051">重度使用这款墨水屏手机之后，谈谈我对电子纸的理解和预测 - 少数派</a></p>
+<blockquote>
+<p>我们的每一次表达，都是在优化这个世界。</p>
+</blockquote>
+<p><a href="https://www.allnow.com/post/601444d3da5e4a26e2df5403">即使可以居家办公，为什么人们还是热衷于去咖啡馆？-全现在官方网站</a></p>
+<blockquote>
+<p>如果你被周围环境的刺激稍微分散一下注意力，能提高抽象思维能力，从而产生更有创意的想法 居家办公,咖啡馆,随机共振,咖啡馆效应,未来实验手册</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/UbuntuTouch/article/details/100112283">Elasticsearch：应用 Nodejs 来访问 Elasticsearch_Elastic-CSDN博客_elasticsearch nodejs</a></p>
+<blockquote>
+<p>Nodejs Elasticsearch教程示例是今天的主要主题。 Elasticsearch是一个开源搜索引擎，由于其高性能和分布式架构而变得非常流行。 Elasticsearch构建于Apache Lucene之上，后者是一个高性能的文本搜索引擎库。 虽然Elasticsearch可以执行数据的存储和检索，但其主要目的不是用作数据库。 相反，它是一个搜索引擎（服务器），其主要目标是索引，...</p>
+</blockquote>
+<p><a href="https://yuezhu.org/bstories-7/">三月恢复期 – MilkShakism</a></p>
+<blockquote>
+<p>undefined</p>
+</blockquote>
+<p><a href="https://jesor.me/2021/three-stories-about-zhihu/">跟知乎有关的三个故事 | 大破进击</a></p>
+<blockquote>
+<p>知乎是一个由大家共建的问答社区，这里也许没有标准答案。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/60414">Homeassistant：不仅仅是更优秀的智能家居解决方案 - 少数派</a></p>
+<blockquote>
+<p>引言在智能家居市场，米家无疑是垄断地位。但是米家对于空调控制的优化不佳。首先是每次打开空调都是从16°起步，无法记住上次的温度。米家智能中温度风量只能二选一，只有16°和高速或者其他温度和自动风速。就 ...</p>
+</blockquote>
+<p><a href="https://sspai.com/post/65938">信息收集的新工具：Walling vs. my mind - 少数派</a></p>
+<blockquote>
+<p>前言当我回顾少数派2020年度征文活动中的获奖文章时，发现作者们提到了很多关于信息收集的工具：空谷使用Airtable搭建科研学术知识库,啊森通过印象笔记和Eagle来收集网络文章和图片素材，chyi ...</p>
+</blockquote>
+<p><a href="https://linhongbo.com/posts/openwrt-on-esxi/">ESXi 安装&amp;配置 OpenWrt</a></p>
+<blockquote>
+<p>基于 ESXi X86 虚拟机设备构建 OpenWrt 路由器是一种兼顾性能和敏捷性的软路由解决方案。本文详细介绍了如何在 vSphere ESXi 6.7 下部署最新版本的 OpenWrt。</p>
+</blockquote>
+<p><a href="https://www.xiaoyuzhoufm.com/episode/6063b931c62ceb1d7cf29f42">37: 茫茫相似将万物勾连</a></p>
+<blockquote>
+<p>Analog vs Digital，这不是一个新问题。analog 既是指类似物，又指模拟技术，同时在今天这个时代意味着数字化生活的反面。找寻 analog 和 digital<br>
+广义和狭义的意义，或许对思维方式也有启示。<br>
+邮箱：bukelilun@outlook.com<br>
+网站：bukelilun.com</p>
+</blockquote>
+<ul>
+<li>TEDx Talks 视频 “Finding My Analog Self In A Digital World”</li>
+<li>Alexander Galloway 学术讲座视频 &quot;The Golden Age of Analog (It's Now)&quot;</li>
+<li>Alexander Galloway “The Digital and the Analog&quot; 课程大纲 （本期节目大部分的引用都可以在其中找到）</li>
+<li>Alexander Galloway “How to Spot an Analog Philosopher”</li>
+<li>Alexander Galloway “How to Spot an Digital Philosopher”</li>
+<li>知乎回答：如何简单清晰地解释哥德尔不完备定理？</li>
+<li>边缘意识</li>
+<li>Walt Whitman, On the Beach at Night Alone<br>
+最后推荐的书：</li>
+<li>Benjamin Peters (editor), Digital Keywords: A Vocabulary of Information Society and Culture</li>
+<li>Brain Massumi, Parables for the Virtual</li>
+<li>Hito Steyerl, “In Defense of the Poor Image”</li>
+<li>Shane Denson, Discorrelated Images</li>
+<li>Austin Kleon, Steal Like an Artist</li>
+<li>Sönke Ahrens, How to Take Smart Notes</li>
+</ul>
+<p><a href="http://www.woshipm.com/pd/4421411.html">B端Dashboard设计指南（一） | 人人都是产品经理</a></p>
+<blockquote>
+<p>编辑导语：Dashboard在B端设计中经常可以见到，并且在网页端用的比较多，Dashboard的设计页面不用过于复杂，因为对于To B用户而言，它的核心始终是传递信息；本文作者分享了关于B端Dashboard设计的详细指南，我们一起来了解一下。 一、Dash</p>
+</blockquote>
+<p><a href="https://www.qikqiak.com/post/gitlab-install-on-k8s/">在 Kubernetes 上安装 Gitlab</a></p>
+<p>Gitlab官方提供了 Helm 的方式在 Kubernetes 集群中来快速安装，但是在使用的过程中发现 Helm 提供的 Chart 包中有很多其他额外的配置，所以我们这里使用自定义的方式来安装，也就是自己来定义一些资源清单文件。</p>
+<p>Gitlab主要涉及到3个应用：Redis、Postgresql、Gitlab 核心程序，实际上我们只要将这3个应用分别启动起来，然后加上对应的配置就可以很方便的安装 Gitlab 了，我们这里选择使用的镜像不是官方的，而是 Gitlab 容器化中使用非常多的一个第三方镜像：sameersbn/gitlab，基本上和官方保持同步更新，地址：http://www.damagehead.com/docker-gitlab/</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2OTA4NTY0MA==&amp;mid=2650429172&amp;idx=2&amp;sn=3c6807759cfb79e2c09747025ab9b4ec&amp;chksm=f2eb4853c59cc145f3302283f9be46a62ebffa0dee4220efa467ae787e769d388a4555ddae4b#rd">关于中国猿的知识，看这一篇就够了</a></p>
+<blockquote>
+<p>长臂猿保护的Q\x26amp;A大全。</p>
+</blockquote>
+<p><a href="https://segmentfault.com/a/1190000021589726">Elasticsearch集群搭建（基于Elasticsearch7.5.1）</a></p>
+<blockquote>
+<p>Elasticsearch集群搭建 环境介绍：CentOS7、jdk11.0.5、Elasticsearch7.5.1 准备三台Linux系统，本教程使用的是CentOS7如下IP地址： {代码...} 注意：以上三台Linux系统都要安装jdk 下载Elasticsearch Linux: elasticsearch-7.5.1-linux-x86_64.tar.gz {代码...} 系统设置 Elasticsearch不能在 root 用户下启动，我们需...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNDE0MjA2OQ==&amp;mid=2650422689&amp;idx=1&amp;sn=578338e62c7a2bfbd1e9231b2d5a8ecf&amp;chksm=839942bbb4eecbadd8055f19860b51be6f20933830c9ed5d2da5f4178053dd54baa601c6b0d3#rd">作为 flomo 的工程师，我在思考些什么？</a></p>
+<blockquote>
+<p>分享我作为 flomo 工程师的部分思考和决策。</p>
+</blockquote>
+<p><a href="https://fooleng.com/2020/03/10/vmware-esxi-single_ip_for_nat/">Vmware Esxi 使用单个外网IP地址实现NAT – FoolEng</a></p>
+<blockquote>
+<p>undefined</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[K8S 中的 Ingress/NFS的持久化存储]]></title>
         <id>https://hwang.top/post/k8s-zhong-de-ingressnfs-de-chi-jiu-hua-cun-chu/</id>
@@ -662,67 +764,6 @@ In this paper, we suggest that an alternative savings motive may be at work: peo
 <p>如果不想直接上传自己的照片，还可以点击 「Try with Emoji 🤪」，使用emoji表情先看看效果：</p>
 <hr>
 <p>全文请前往少数派：<a href="https://sspai.com/post/65026">https://sspai.com/post/65026</a> 阅读哦</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hwang's Read List - EP18]]></title>
-        <id>https://hwang.top/post/hwangs-read-list-ep/</id>
-        <link href="https://hwang.top/post/hwangs-read-list-ep/">
-        </link>
-        <updated>2021-02-01T05:00:38.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。<br>
-ps. 现在链接都是正常的了。</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。<br>
-ps. 现在链接都是正常的了。</p>
-</blockquote>
-<!-- more -->
-<p><a href="https://iois.me/archives/10328.html">放弃 Kindle 后，我开始在 iPad Pro 读书 – Dailyio</a></p>
-<p><a href="https://sspai.com/post/64613">有关产品的一些瞎想 - 少数派</a></p>
-<blockquote>
-<p>在有知有行，我有多个身份。我是一个半吊子产品经理，因为我经常对大家的产品指手画脚；我是一个高产（zhi）量的内容创作者，说白了就是写稿的；我还是一个投资研究员，和我的伙伴们一起将我们的投资理念落地为策 ...</p>
-</blockquote>
-<p><a href="https://mp.weixin.qq.com/s/BS8D5vntAFOXZenk-vihPA">帕梅拉，一个顶级运动IP的中国“历险记”</a></p>
-<blockquote>
-<p>一场直播后，帕梅拉正式打开了她的中国市场。</p>
-</blockquote>
-<p><a href="https://sspai.com/post/64613">有关产品的一些瞎想 - 少数派</a></p>
-<blockquote>
-<p>在有知有行，我有多个身份。我是一个半吊子产品经理，因为我经常对大家的产品指手画脚；我是一个高产（zhi）量的内容创作者，说白了就是写稿的；我还是一个投资研究员，和我的伙伴们一起将我们的投资理念落地为策 ...</p>
-</blockquote>
-<p><a href="https://jesor.me/2021/banishing-donald-trump/">放逐特朗普</a></p>
-<blockquote>
-<p>按照计划，拜登的就任典礼将于 1 月 20 日下周三举办。这位新总统，将面对一个思想、观点已经彻底走向极端，满目疮痍的美国。他的首要任务，就是弥合双方的分歧，建立起沟通的桥梁。 而这个问题，从来都不只是美国人的问题。</p>
-</blockquote>
-<p><a href="https://sspai.com/post/64586">身处异地也能「内网办公」，这个技巧你的团队或许能用得上 - 少数派</a></p>
-<blockquote>
-<p>考虑到接下来春节前后可能会持续的「远程办公」状态，希望这篇文章能为你和你的团队带来一些参考。</p>
-</blockquote>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0ODc5MDE1Mw==&amp;mid=2247488785&amp;idx=1&amp;sn=25400de670b46a06de4db488ddb24654&amp;chksm=fbb89ff7cccf16e1469316c5418557c6e0ca86f438f655732e1a4015c4fd6e6a14ef8677616a#rd">B端设计指南-06表格（上）</a></p>
-<blockquote>
-<p>目前我主要深耕于B端设计中，深知B端表格设计与C端有很大的不同，无论是表格的展示形式以及承载内容上都有非常大</p>
-</blockquote>
-<p><a href="https://imtx.me/blog/talk-about-maintenance-plan-for-app-and-web-projects/">谈谈如何合理地为 App 与 Web 项目制定维护计划</a></p>
-<blockquote>
-<p>上周我有两项工作内容是和产品维护有关的，刚好一个是 App 项目，一个是 Web 项目，每个项目都遇到了一点问题，于是借此我决定好好梳理一下，如何为 App 与 Web 项目制定合理的维护计划，让项目本身在持续运作与维护成本之间找到一个平衡。</p>
-</blockquote>
-<p><a href="https://frankseptillion.com/2021/01/10/android-iphone/">从屏幕最大的 Android 换到屏幕最小的 iPhone，移动生产力居然奇迹般地提升了</a></p>
-<blockquote>
-<p>从我拥有第一台智能手机开始，手里的屏幕就不停地在变大。4.0 寸、4.7 寸、5.5 寸、6.5 寸……我从来…</p>
-</blockquote>
-<p><a href="https://daimajia.com/2021/01/04/database-history">简明数据库史 | 代码家</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDQ3MTEyMQ==&amp;mid=2653331121&amp;idx=1&amp;sn=f46e78c9d113f85405d2f552d6035736&amp;chksm=bd96780f8ae1f119868b0ad8dbc713ab140d70549e3b6f56833c6a9d0865c3f7e237c6fc7c22#rd">2020年，我的新闻女主角</a></p>
-<blockquote>
-<p>舆论的热度冷却之后</p>
-</blockquote>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzU3Mjk1OTQ0Ng==&amp;mid=2247487110&amp;idx=1&amp;sn=2e42b72b60c59bcd055695abb91e0381&amp;chksm=fcc9b13fcbbe38290333bf9a8d110cde82085cc75ad24f361c44b4e8d0ff68eea16b94939415#rd">晚点独家 | 字节跳动硬件业务调整：原锤子团队被合并，暂停手机，聚焦教育</a></p>
-<blockquote>
-<p>“做一切”的同时，字节跳动也在担心“业务线太长”。</p>
-</blockquote>
-<p><a href="https://www.itgeeker.net/raspbian-how-to-install-home-assistant-manually/">树莓派Raspbian如何安装Home Assistant 非img刷卡安装 – ITGeeker技术奇客</a></p>
 ]]></content>
     </entry>
 </feed>
